@@ -31,14 +31,16 @@ if ~exist('nruns','var')
     nruns = 10;
 end
 
-
-% Testing
 if not(exist('method'))
     mtd = @conformalLassoWithSupport;
     method = 'BF';
-elseif method == 'predSupp'
+elseif isequal(method,'predSupp')
     mtd = @conformalLassoWithSupportSearch;
+elseif isequal(method,'predMultSupp')
+    mtd = @conformalLassoWithSupportMultSearch;
 end
+
+% Testing
 fprintf('TESTING SETTING %s, METHOD %s.\n',setting,method);
         
 coverage = zeros(nruns,1);
@@ -47,7 +49,7 @@ for i=1:nruns
     fprintf('TESTING=== run %d/%d.\n',i,nruns);
     if isequal(method,'BF')
         option = [min(Y):stepsize:max(Y)];
-    elseif isequal(method,'predSupp')
+    elseif isequal(method,'predSupp') | isequal(method,'predMultSupp')
         option = stepsize;
     end
     
@@ -63,7 +65,7 @@ for i=1:nruns
     coverage(i) = sum((min(yconf)<y)&(y<max(yconf)))/10000;
     fprintf('\tCoverage is %f\n',coverage(i))
 end
-fprintf('10-fold average coverage is %f\n', mean(coverage))
+fprintf('%d-fold average coverage is %f\n', nruns, mean(coverage))
 
 
 

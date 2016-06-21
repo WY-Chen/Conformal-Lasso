@@ -15,6 +15,7 @@ elseif setting=='B'
      xnew = normrnd(0,1,[1,2000]);
      y = 3*xnew(:,1).^2+2*xnew(:,2).^3+xnew(:,3).^4+trnd(2,[10000,1]);
 elseif setting=='C'
+    beta = [2,2,2,2,2,zeros(1,1995)];
     X = zeros(200,2000);
     X(1:66,:)=normrnd(0,1,66,2000);
     X(67:132,:)=pearsrnd(0,1,1,5,[66,2000]);
