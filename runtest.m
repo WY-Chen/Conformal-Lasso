@@ -10,10 +10,14 @@ function runtest(setting,method,alpha,stepsize,nruns)
 % Method = 
 %       ALL             : run lasso for all. VERY SLOW
 %       []  or BF       : brutal force search from lowest Y value to highest
-%       predSupp        : treaverse the support from prediction
-%       predMultSupp    : treaverse the support from prediction, then search
+%       predSupp        : traverse the support from prediction
+%       predMultSupp    : traverse the support from prediction, then search
 %                           support of lasso fitting known data and new trial 
 %                           until no more trials are valid.
+%       AllSupp         : traverse all point in trial set, compute full
+%                           lasso if not in known support, and give such
+%                           support. Use subgradient method if in known
+%                           support. 
 
 % alpha = level of confidence
 
@@ -45,6 +49,8 @@ elseif isequal(method,'predMultSupp')
     mtd = @conformalLassoWithSupportMultSearch;
 elseif isequal(method,'ALL')
     mtd = @conformalLasso;
+elseif isequal(method,'AllSupp')
+    mtd = @conformalLassoAllSupp;
 end
 
 % Testing
@@ -58,7 +64,7 @@ for i=1:nruns
     [X,Y,xnew,y] = getSetting(setting);
     
     % Get additional parameters to pass to method
-    if isequal(method,'BF')| isequal(method,'ALL')
+    if isequal(method,'BF')| isequal(method,'ALL') |isequal(method,'AllSupp')
         option = [min(Y):stepsize:max(Y)];
     elseif isequal(method,'predSupp') | isequal(method,'predMultSupp') 
         option = stepsize;
