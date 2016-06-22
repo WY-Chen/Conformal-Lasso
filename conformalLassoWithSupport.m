@@ -3,7 +3,7 @@
 % only run Lasso by Lars once, and calculate boundary of y,  
 % then run with known model for the points in ytrial. 
 %% Method
-function [yconf,supportcoverage,E] = conformalLassoWithSupport(X,Y,xnew,alpha,ytrial)
+function [yconf,supportcoverage,modelsize] = conformalLassoWithSupport(X,Y,xnew,alpha,ytrial)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
@@ -65,4 +65,5 @@ for i = 1:n
 end
 yconf = ytrial(Pi_trial<=1-alpha);
 supportcoverage = (n-jumpcount)/n;
+modelsize = length(E);
 end

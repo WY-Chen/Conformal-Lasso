@@ -3,7 +3,7 @@
 % only run Lasso by Lars once, and calculate boundary of y,  
 % then run with known model for the points in ytrial. 
 %% Method
-function [yconf,supportcoverage,E] = conformalLassoWithSupportMultSearch(X,Y,xnew,alpha,stepsize)
+function [yconf,supportcoverage,modelsize] = conformalLassoWithSupportMultSearch(X,Y,xnew,alpha,stepsize)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
@@ -12,6 +12,7 @@ function [yconf,supportcoverage,E] = conformalLassoWithSupportMultSearch(X,Y,xne
 % prepare for fitting
 X_withnew = [X;xnew];
 [m,p] = size(X);
+modelsize=0;
 
 % Tune GLMNET
 options = glmnetSet();
@@ -82,11 +83,12 @@ while all(A*[Y;temp]-b<=0)
     end
     temp = temp + stepsize;
 end
+modelsize = length(E);
 
 % the secondary runs
 yconflowerold = yconflower;
 yconfupperold = yconfupper;
-iter = 1;
+iterl = 1;
 while 1
     temp = yconflower - stepsize;
     % get the new support
@@ -121,11 +123,12 @@ while 1
     if yconflower == yconflowerold
         break;
     end    
-    iter = iter + 1;
-    fprintf('\t\tSupport Iteration Left: %d\n',iter)
+    iterl = iterl + 1;
+    fprintf('\t\tSupport Iteration Left: %d\n',iterl)
     yconflowerold = yconflower;
+    modelsize = modelsize+length(E);
 end
-iter = 1;
+iterr = 1;
 while 1
     temp = yconfupper + stepsize;
     % get the new support
@@ -160,11 +163,12 @@ while 1
     if yconfupper == yconfupperold
         break;
     end    
-    iter = iter + 1;
-    fprintf('\t\tSupport Iteration Right:%d\n',iter)
+    iterr = iterr + 1;
+    fprintf('\t\tSupport Iteration Right:%d\n',iterr)
     yconfupperold = yconfupper;
+    modelsize = modelsize+length(E);
 end
-
+modelsize = modelsize/(iterl+iterr+1);
 yconf = [yconflower,yconfupper];
 supportcoverage = 1;
 end

@@ -8,6 +8,7 @@ function runtest(setting,method,alpha,stepsize,nruns)
 %       C : Linear. X highly correlated. epsilon iid t(2).
 
 % Method = 
+%       ALL             : run lasso for all. VERY SLOW
 %       []  or BF       : brutal force search from lowest Y value to highest
 %       predSupp        : treaverse the support from prediction
 %       predMultSupp    : treaverse the support from prediction, then search
@@ -35,13 +36,15 @@ if ~exist('nruns','var')
 end
 
 % Formatting methods
-if not(exist('method'))
+if ~exist('method')  | isequal(method,'BF')
     mtd = @conformalLassoWithSupport;
     method = 'BF';
 elseif isequal(method,'predSupp')
     mtd = @conformalLassoWithSupportSearch;
 elseif isequal(method,'predMultSupp')
     mtd = @conformalLassoWithSupportMultSearch;
+elseif isequal(method,'ALL')
+    mtd = @conformalLasso;
 end
 
 % Testing
@@ -55,15 +58,18 @@ for i=1:nruns
     [X,Y,xnew,y] = getSetting(setting);
     
     % Get additional parameters to pass to method
-    if isequal(method,'BF')
+    if isequal(method,'BF')| isequal(method,'ALL')
         option = [min(Y):stepsize:max(Y)];
-    elseif isequal(method,'predSupp') | isequal(method,'predMultSupp')
+    elseif isequal(method,'predSupp') | isequal(method,'predMultSupp') 
         option = stepsize;
     end
     
     % run method
-    [yconf,supportcoverage,model] = mtd(X,Y,xnew,alpha,option);
-    fprintf('\tModel size =%d\n',length(model))
+    [yconf,supportcoverage,modelsize] = mtd(X,Y,xnew,alpha,option);
+    if modelsize == -1
+        fprintf('\tModel size varies');
+    end
+    fprintf('\tModel size =%.1f\n',modelsize);
     fprintf('\t%.2f%% trials in support.\n',supportcoverage*100);
     fprintf('\tInterval [%f, %f].\n',min(yconf),max(yconf));
     
