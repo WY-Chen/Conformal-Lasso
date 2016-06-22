@@ -8,14 +8,17 @@ function runtest(setting,method,alpha,stepsize,nruns)
 %       C : Linear. X highly correlated. epsilon iid t(2).
 
 % Method = 
-%       []  or BF   : brutal force search from lowest Y value to highest
-%       predSupp    : treaverse the support from prediction
+%       []  or BF       : brutal force search from lowest Y value to highest
+%       predSupp        : treaverse the support from prediction
+%       predMultSupp    : treaverse the support from prediction, then search
+%                           support of lasso fitting known data and new trial 
+%                           until no more trials are valid.
 
 % alpha = level of confidence
 
 % stepsize = stepsize in searching
 
-% nruns = total number of runs
+% nruns = total number of testing runs
 
 % Default:
 if ~exist('alpha','var')
@@ -31,6 +34,7 @@ if ~exist('nruns','var')
     nruns = 10;
 end
 
+% Formatting methods
 if not(exist('method'))
     mtd = @conformalLassoWithSupport;
     method = 'BF';
@@ -45,14 +49,19 @@ fprintf('TESTING SETTING %s, METHOD %s.\n',setting,method);
         
 coverage = zeros(nruns,1);
 for i=1:nruns
-    [X,Y,xnew,y] = getSetting(setting);
     fprintf('TESTING=== run %d/%d.\n',i,nruns);
+    
+    % Get testing data
+    [X,Y,xnew,y] = getSetting(setting);
+    
+    % Get additional parameters to pass to method
     if isequal(method,'BF')
         option = [min(Y):stepsize:max(Y)];
     elseif isequal(method,'predSupp') | isequal(method,'predMultSupp')
         option = stepsize;
     end
     
+    % run method
     [yconf,supportcoverage,model] = mtd(X,Y,xnew,alpha,option);
     fprintf('\tModel size =%d\n',length(model))
     fprintf('\t%.2f%% trials in support.\n',supportcoverage*100);
