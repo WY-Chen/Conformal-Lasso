@@ -10,6 +10,7 @@ function [yconf,s,ms] = conformalLasso(X,Y,xnew,alpha,ytrial)
 
 % prepare for fitting
 n = length(ytrial);
+addpath(genpath(pwd));
 
 X_withnew = [X;xnew];
 Pi_trial = zeros(1,n);

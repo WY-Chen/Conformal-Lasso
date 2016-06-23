@@ -10,6 +10,7 @@ function [yconf,supportcoverage,modelsize] = conformalLassoWithSupport(X,Y,xnew,
 % ytrial    trail set for y
 
 % prepare for fitting
+addpath(genpath(pwd));
 n = length(ytrial);
 
 X_withnew = [X;xnew];

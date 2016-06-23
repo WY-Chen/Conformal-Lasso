@@ -75,7 +75,7 @@ for i=1:nruns
     if modelsize == -1
         fprintf('\tModel size varies');
     end
-    fprintf('\tModel size =%.1f\n',modelsize);
+%     fprintf('\tModel size =%.1f\n',modelsize);
     fprintf('\t%.2f%% trials in support.\n',supportcoverage*100);
     fprintf('\tInterval [%f, %f].\n',min(yconf),max(yconf));
     

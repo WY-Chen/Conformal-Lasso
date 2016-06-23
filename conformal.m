@@ -11,6 +11,7 @@ function yconf = conformal(X,Y,xnew,alpha,A,ytrial)
 
 % prepare for fitting
 n = length(ytrial);
+addpath(genpath(pwd));
 
 X_withnew = [X;xnew];
 Pi_trial = zeros(1,n);

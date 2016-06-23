@@ -10,6 +10,7 @@ function [yconf,supportcoverage,modelsize] = conformalLassoWithSupportSearch(X,Y
 % stepsize  stepsize of searching for upper and lower bound of interval
 
 % prepare for fitting
+addpath(genpath(pwd));
 X_withnew = [X;xnew];
 [m,p] = size(X);
 

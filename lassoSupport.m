@@ -4,6 +4,7 @@
 function [beta,A,b,lambda] = lassoSupport(X,Y,X_withnew)
 
 % prepare for fitting
+addpath(genpath(pwd));
 [m,p] = size(X);
 [mnew,pnew] = size(X_withnew);
 if ~pnew==p

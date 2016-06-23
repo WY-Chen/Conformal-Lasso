@@ -10,9 +10,11 @@ function [yconf,supportcoverage,modelsize] = conformalLassoAllSupp(X,Y,xnew,alph
 % stepsize  stepsize of searching for upper and lower bound of interval
 
 % prepare for fitting
+addpath(genpath(pwd));
 X_withnew = [X;xnew];
 [m,p] = size(X);
 n = length(ytrial);
+modelsizes = zeros(1,n);
 
 % Tune GLMNET
 options = glmnetSet();
@@ -28,6 +30,7 @@ yconf = [];
 E = find(beta);
 Z = sign(beta);
 Z_E = Z(E);
+supportcounter = 1;
 
 h = waitbar(0,'Please wait...');
 for i = 1:n
@@ -53,10 +56,14 @@ for i = 1:n
         if Pi_trial<=1-alpha
             yconf = [yconf y];
         end
+        supportcounter = supportcounter+1;
     end   
-    waitbar(i/n)
+    modelsizes(i) = length(E);
+    % waitbar
+    waitbar(i/n,h,sprintf('Number of Lasso support computed %d',supportcounter))
 end
 close(h)
 supportcoverage = 1;
-modelsize = length(E);
+modelsize = mean(modelsizes);
+% plot(modelsizes)
 end
