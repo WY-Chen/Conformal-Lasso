@@ -3,7 +3,7 @@
 % only run Lasso by Lars once, and calculate boundary of y,  
 % then run with known model for the points in ytrial. 
 %% Method
-function [yconf,supportcoverage,modelsize] = conformalLassoWithSupportMultSearch(X,Y,xnew,alpha,stepsize)
+function [yconf,supportcoverage,modelsize] = conformalLassopredMultSupp(X,Y,xnew,alpha,stepsize)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
@@ -41,7 +41,7 @@ A = [X_minusE'*(eye(m+1)-P_E)./lambda;
 b = [ones(p-length(E),1)-X_minusE'*pinv(X_E')*Z_E;
     ones(p-length(E),1)+X_minusE'*pinv(X_E')*Z_E;
     -lambda*diag(Z_E)*((X_E'*X_E)\Z_E)];
-
+fprintf('\tPrediction point is %2.2f\n', xnew*beta)
 if isempty(E)
     fprintf('ERROR: LASSO gives NULL model\n')
     yconf = [];

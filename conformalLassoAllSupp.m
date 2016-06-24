@@ -31,6 +31,7 @@ E = find(beta);
 Z = sign(beta);
 Z_E = Z(E);
 supportcounter = 1;
+fprintf('\tPrediction point is %2.2f\n', xnew*beta)
 
 h = waitbar(0,'Please wait...');
 for i = 1:n

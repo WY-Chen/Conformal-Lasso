@@ -3,18 +3,15 @@
 % only run Lasso by Lars once, and calculate boundary of y,  
 % then run with known model for the points in ytrial. 
 %% Method
-function [yconf,supportcoverage,modelsize] = conformalLassoWithSupport(X,Y,xnew,alpha,ytrial)
+function [yconf,supportcoverage,modelsize] = conformalLassopredOneSupp(X,Y,xnew,alpha,stepsize)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
-% ytrial    trail set for y
+% stepsize  stepsize of searching for upper and lower bound of interval
 
 % prepare for fitting
 addpath(genpath(pwd));
-n = length(ytrial);
-
 X_withnew = [X;xnew];
-Pi_trial = ones(1,n);
 [m,p] = size(X);
 
 % Tune GLMNET
@@ -43,28 +40,53 @@ A = [X_minusE'*(eye(m+1)-P_E)./lambda;
 b = [ones(p-length(E),1)-X_minusE'*pinv(X_E')*Z_E;
     ones(p-length(E),1)+X_minusE'*pinv(X_E')*Z_E;
     -lambda*diag(Z_E)*((X_E'*X_E)\Z_E)];
-jumpcount=0;
+fprintf('\tPrediction point is %2.2f\n', xnew*beta)
 
 if isempty(E)
+    fprintf('ERROR: LASSO gives NULL model\n')
     yconf = [];
     supportcoverage = 0;
     return
 end
 
-for i = 1:n
-    y = ytrial(i);
-    if not(all(A*[Y;y]<=b))
-        jumpcount=jumpcount+1;
-%         disp(max(A*[Y;y]-b))
-        continue
-    end
-    beta = zeros(p,1);
-    beta(E) = pinv(X_E)*[Y;y] - lambda*((X_E'*X_E)\Z_E);  
-    yfit = X_withnew*beta;
-    Resid = abs(yfit - [Y;y]);
-    Pi_trial(i) = sum(Resid<=Resid(end))/(m+1);
+% setting the initial guess
+yinit = cvglmnetPredict(fit,xnew);
+
+if not(all(A*[Y;yinit]-b<=0))
+    fprintf('ERROR: Initial Guess not in support\n')
+    yconf = [];
+    supportcoverage = 0;
+    return
 end
-yconf = ytrial(Pi_trial<=1-alpha);
-supportcoverage = (n-jumpcount)/n;
+
+% Build confidence interval around the initial guess 
+yconflower = yinit; yconfupper = yinit; temp = yinit;
+while all(A*[Y;temp]-b<=0)
+    beta = zeros(p,1);
+    beta(E) = pinv(X_E)*[Y;temp] - lambda*((X_E'*X_E)\Z_E);  
+    yfit = X_withnew*beta;
+    Resid = abs(yfit - [Y;temp]);
+    Pi_trial = sum(Resid<=Resid(end))/(m+1);
+    if Pi_trial<=1-alpha
+        yconflower = temp;
+    end
+    temp = temp - stepsize;
+end
+
+temp = yinit;
+while all(A*[Y;temp]-b<=0)
+    beta = zeros(p,1);
+    beta(E) = pinv(X_E)*[Y;temp] - lambda*((X_E'*X_E)\Z_E);  
+    yfit = X_withnew*beta;
+    Resid = abs(yfit - [Y;temp]);
+    Pi_trial = sum(Resid<=Resid(end))/(m+1);
+    if Pi_trial<=1-alpha
+        yconfupper = temp;
+    end
+    temp = temp + stepsize;
+end
+
+yconf = [yconflower,yconfupper];
+supportcoverage = 1;
 modelsize = length(E);
 end

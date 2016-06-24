@@ -23,7 +23,7 @@ elseif setting=='C'
     X=X(:, randperm(size(X,2)));
     X=X(randperm(size(X,1)), :);
     for k=1:2000
-       X(:,k)=0.3*X(:,max(1,k-1)) + 0.5*X(:,max(1,k-2)) + 0.2*X(:,max(1,k-3));
+       X(:,k)=0.4*X(:,k)+0.3*X(:,max(1,k-1)) + 0.2*X(:,max(1,k-2)) + 0.1*X(:,max(1,k-3));
     end
     Y = X*beta' + trnd(2,[200,1]);
     xnew = normrnd(0,1,[1,2000]);

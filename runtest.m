@@ -9,8 +9,8 @@ function runtest(setting,method,alpha,stepsize,nruns)
 
 % Method = 
 %       ALL             : run lasso for all. VERY SLOW
-%       []  or BF       : brutal force search from lowest Y value to highest
-%       predSupp        : traverse the support from prediction
+%       []  or oneSupp  : brutal force search from lowest Y value to highest
+%       predOneSupp     : traverse the support from prediction
 %       predMultSupp    : traverse the support from prediction, then search
 %                           support of lasso fitting known data and new trial 
 %                           until no more trials are valid.
@@ -40,13 +40,13 @@ if ~exist('nruns','var')
 end
 
 % Formatting methods
-if ~exist('method')  | isequal(method,'BF')
-    mtd = @conformalLassoWithSupport;
-    method = 'BF';
-elseif isequal(method,'predSupp')
-    mtd = @conformalLassoWithSupportSearch;
+if ~exist('method')  | isequal(method,'oneSupp')
+    mtd = @conformalLassoOneSupport;
+    method = 'oneSupp';
+elseif isequal(method,'predOneSupp')
+    mtd = @conformalLassopredOneSupp;
 elseif isequal(method,'predMultSupp')
-    mtd = @conformalLassoWithSupportMultSearch;
+    mtd = @conformalLassopredMultSupp;
 elseif isequal(method,'ALL')
     mtd = @conformalLasso;
 elseif isequal(method,'AllSupp')
@@ -64,27 +64,25 @@ for i=1:nruns
     [X,Y,xnew,y] = getSetting(setting);
     
     % Get additional parameters to pass to method
-    if isequal(method,'BF')| isequal(method,'ALL') |isequal(method,'AllSupp')
+    if isequal(method,'oneSupp')| isequal(method,'ALL') |isequal(method,'AllSupp')
         option = [min(Y):stepsize:max(Y)];
-    elseif isequal(method,'predSupp') | isequal(method,'predMultSupp') 
+    elseif isequal(method,'predOneSupp') | isequal(method,'predMultSupp') 
         option = stepsize;
     end
     
     % run method
     [yconf,supportcoverage,modelsize] = mtd(X,Y,xnew,alpha,option);
-    if modelsize == -1
-        fprintf('\tModel size varies');
-    end
-%     fprintf('\tModel size =%.1f\n',modelsize);
-    fprintf('\t%.2f%% trials in support.\n',supportcoverage*100);
-    fprintf('\tInterval [%f, %f].\n',min(yconf),max(yconf));
-    
-    if supportcoverage==0
-        continue
-    end
-    
     coverage(i) = sum((min(yconf)<y)&(y<max(yconf)))/10000;
-    fprintf('\tCoverage is %f\n',coverage(i))
+
+    % format print
+    if isequal(method,'oneSupp')
+        fprintf('\tModel size =%.1f\n',modelsize);
+        fprintf('\t%.2f%% trials in support.\n',supportcoverage*100);
+    else
+        fprintf('\tAverage model size =%.1f\n',modelsize);
+    end
+    fprintf('\tInterval [%f, %f].\n',min(yconf),max(yconf));
+    fprintf('\tCoverage is %f\n',coverage(i));
 end
 fprintf('%d-fold average coverage is %f\n', nruns, mean(coverage))
 
