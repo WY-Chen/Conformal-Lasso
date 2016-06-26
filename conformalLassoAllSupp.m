@@ -25,7 +25,7 @@ options.alpha = 1.0;                % Lasso (no L2 norm penalty)
 options.thresh = 1E-12;
 
 % Build confidence interval
-yconf = [];
+yconfidx = [];
 [beta,A,b,lambda] = lassoSupport(X_withnew,[Y;ytrial(1)],X_withnew);
 E = find(beta);
 Z = sign(beta);
@@ -44,7 +44,7 @@ for i = 1:n
         Resid = abs(yfit - [Y;y]);
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
         if Pi_trial<=1-alpha
-            yconf = [yconf y];
+            yconfidx = [yconfidx i];
         end
     else 
         [beta,A,b,lambda] = lassoSupport(X_withnew,[Y;y],X_withnew);
@@ -55,7 +55,7 @@ for i = 1:n
         Resid = abs(yfit - [Y;y]);
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
         if Pi_trial<=1-alpha
-            yconf = [yconf y];
+            yconfidx = [yconfidx i];
         end
         supportcounter = supportcounter+1;
     end   
@@ -66,5 +66,17 @@ end
 close(h)
 supportcoverage = 1;
 modelsize = mean(modelsizes);
-% plot(modelsizes)
+yconf  = ytrial(yconfidx);
+% Plots
+plotFlag=1;  % change to 0 to turn off
+if plotFlag == 1
+    subplot(1,2,1)
+    boxplot(yconf);
+    title('Spread of Yconf')
+    subplot(1,2,2)
+    plot(ytrial,modelsizes);
+    title('Model size vs. Ytrial')
+    hold on, plot(ytrial(yconfidx), modelsizes(yconfidx), 'r.')
+    hold off
+end
 end
