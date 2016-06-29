@@ -23,6 +23,7 @@ options.intr = false;               % no intersection
 options.standardize_resp = false;   % original Y
 options.alpha = 1.0;                % Lasso (no L2 norm penalty)
 options.thresh = 1E-12;
+Linoptions = optimset('Display','off');
 
 % Build confidence interval
 yconfidx = [];
@@ -32,18 +33,20 @@ Z = sign(beta);
 Z_E = Z(E);
 supportcounter = 1;
 fprintf('\tPrediction point is %2.2f\n', xnew*beta)
+supportmax = linprog(-1,A(:,201),b-A(:,1:200)*Y,[],[],[],[],[],Linoptions);
+supportmin = linprog(1,A(:,201),b-A(:,1:200)*Y,[],[],[],[],[],Linoptions);
 
 h = waitbar(0,'Please wait...');
 for i = 1:n
     y = ytrial(i);
-    if all(A*[Y;y]-b<=0)
+    if supportmin<= y && supportmax >=y
         beta = zeros(p,1);
         X_E = X_withnew(:,E);
         beta(E) = pinv(X_E)*[Y;y] - lambda*((X_E'*X_E)\Z_E);  
         yfit = X_withnew*beta;
         Resid = abs(yfit - [Y;y]);
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
-        if Pi_trial<=1-alpha
+        if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
             yconfidx = [yconfidx i];
         end
     else 
@@ -54,10 +57,12 @@ for i = 1:n
         yfit = X_withnew*beta;
         Resid = abs(yfit - [Y;y]);
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
-        if Pi_trial<=1-alpha
+        if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
             yconfidx = [yconfidx i];
         end
         supportcounter = supportcounter+1;
+        supportmax = linprog(-1,A(:,201),b-A(:,1:200)*Y,[],[],[],[],[],Linoptions);
+        supportmin = linprog(1,A(:,201),b-A(:,1:200)*Y,[],[],[],[],[],Linoptions);
     end   
     modelsizes(i) = length(E);
     % waitbar
@@ -67,6 +72,7 @@ close(h)
 supportcoverage = 1;
 modelsize = mean(modelsizes);
 yconf  = ytrial(yconfidx);
+
 % Plots
 plotFlag=1;  % change to 0 to turn off
 if plotFlag == 1

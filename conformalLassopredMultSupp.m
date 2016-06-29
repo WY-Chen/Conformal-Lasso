@@ -14,6 +14,7 @@ addpath(genpath(pwd));
 X_withnew = [X;xnew];
 [m,p] = size(X);
 modelsize=0;
+yconf = [];
 
 % Tune GLMNET
 options = glmnetSet();
@@ -69,6 +70,7 @@ while all(A*[Y;temp]-b<=0)
     Pi_trial = sum(Resid<=Resid(end))/(m+1);
     if Pi_trial<=1-alpha
         yconflower = temp;
+        yconf = [yconf temp];
     end
     temp = temp - stepsize;
 end
@@ -81,6 +83,7 @@ while all(A*[Y;temp]-b<=0)
     Pi_trial = sum(Resid<=Resid(end))/(m+1);
     if Pi_trial<=1-alpha
         yconfupper = temp;
+        yconf = [yconf temp];
     end
     temp = temp + stepsize;
 end
@@ -118,6 +121,7 @@ while 1
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
         if Pi_trial<=1-alpha
             yconflower = temp;
+            yconf = [yconf temp];
         end
         temp = temp - stepsize;
     end
@@ -158,6 +162,7 @@ while 1
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
         if Pi_trial<=1-alpha
             yconfupper = temp;
+            yconf = [yconf temp];
         end
         temp = temp + stepsize;
     end
@@ -170,6 +175,5 @@ while 1
     modelsize = modelsize+length(E);
 end
 modelsize = modelsize/(iterl+iterr+1);
-yconf = [yconflower,yconfupper];
 supportcoverage = 1;
 end
