@@ -14,7 +14,8 @@ function runtest(setting,method,alpha,stepsize,nruns)
 %                           lasso if not in known support, and give such
 %                           support. Use subgradient method if in known
 %                           support. 
-%       ENAllSupp            : All Support method with elastic net 
+%       ENOneSupp            : One Support method with elastic net 
+%       LTSOneSupp           : One Support method with LTS lasso
 
 % alpha = level of confidence
 
@@ -44,10 +45,10 @@ elseif isequal(method,'ALL')
     mtd = @conformalLasso;
 elseif isequal(method,'LassoAllSupp')
     mtd = @conformalLassoAllSupp;
-elseif isequal(method,'ENAllSupp')
-    mtd = @conformalENAllSupp;
 elseif isequal(method,'ENOneSupp')
     mtd = @conformalENOneSupp;
+elseif isequal(method,'LTSOneSupp')
+    mtd = @conformalLTSLassoOneSupp;
 end
 
 % Testing
