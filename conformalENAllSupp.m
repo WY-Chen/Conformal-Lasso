@@ -1,7 +1,7 @@
 %% Conformal inference
 % Method: run conformal inference on a data set,
 % Check if the new point is in known support, if yes, subgradient method
-% if no, run full lasso
+% if no, run full Elastic net
 %% Method
 function [yconf,modelsize] = conformalLassoAllSupp(X,Y,xnew,alpha,ytrial)
 % X, Y      input data, in format of matrix
@@ -21,13 +21,13 @@ options = glmnetSet();
 options.standardize = false;        % original X
 options.intr = false;               % no intersection
 options.standardize_resp = false;   % original Y
-options.alpha = 1.0;                % Lasso (no L2 norm penalty)
+options.alpha = 0.8;                % Elastic net
 options.thresh = 1E-12;
 Linoptions = optimset('Display','off');
 
 % Build confidence interval
 yconfidx = [];
-[beta,A,b,lambda] = lassoSupport(X_withnew,[Y;ytrial(1)],X_withnew);
+[beta,A,b,lambda] = ENSupport(X_withnew,[Y;ytrial(1)],X_withnew,0.8);
 E = find(beta);
 Z = sign(beta);
 Z_E = Z(E);
@@ -42,7 +42,8 @@ for i = 1:n
     if supportmin<= y && supportmax >=y
         beta = zeros(p,1);
         X_E = X_withnew(:,E);
-        beta(E) = pinv(X_E)*[Y;y] - lambda*((X_E'*X_E)\Z_E);  
+        beta(E) = (X_E'*X_E+eye(length(E))*0.8)\X_E'*[Y;y]...
+            - 0.8*lambda*((X_E'*X_E+eye(length(E))*0.8)\Z_E);  
         yfit = X_withnew*beta;
         Resid = abs(yfit - [Y;y]);
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
@@ -50,7 +51,7 @@ for i = 1:n
             yconfidx = [yconfidx i];
         end
     else 
-        [beta,A,b,lambda] = lassoSupport(X_withnew,[Y;y],X_withnew);
+        [beta,A,b,lambda] = ENSupport(X_withnew,[Y;y],X_withnew,0.8);
         E = find(beta);
         Z = sign(beta);
         Z_E = Z(E);

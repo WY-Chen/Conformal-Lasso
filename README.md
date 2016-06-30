@@ -20,20 +20,8 @@ Since Lasso is cheap to compute if given the subgradient (supports and signs) of
 ## One Support
 
 1. Run Lasso on known data (X,Y), use the fitted parameters to determine a polyhedron for support and signs. 
-2. Traverse the trial y set, paired with new x values, skip if the knew data not in the polyhedron.
-3. Run conformal prediction with subgradient lasso only on trial y's that lands in the support and determine confidence interval.
-
-## Prediction & One Support
-
-1. Run Lasso on known data (X,Y), use the fitted parameters to determine a polyhedron for support and signs. 
-2. Find the prediction point for new x value.
-3. From the prediction point, search up and down, stop when searched out of the support polyhedron. Run conformal prediction with subgradient lasso on the trial y's in polyhedron and determine confidence interval.
-
-## Prediction & Multiple Support
-
-1. Run Prediction with One Support. Get confidence interval C0.
-2. Run Lasso with (X,xnew) cross (Y,yi) where yi is the first trial y that lies out of the support. Use this support, repeat step 2 of the previous method, get C1, combine with C0.
-3. Repeat until the new support gives no valid conformal prediction point (i.e., all errors are in top 5% percent). Stop and combine all previous Confidence Intervals with respect to each supports.
+2. Solve for a range of observed value that would land in the polyhedron if paired with the new point. 
+3. Run conformal prediction with subgradient lasso only on the trial values in this range and determine confidence interval.
 
 ## All Support 
 

@@ -1,6 +1,8 @@
-function beta = LADlasso(X,Y)
+function beta = LADlasso(X,Y,lambda)
 [m,p]=size(X);
-lambda = pi*sqrt(log(p)/m);
+if nargin < 3
+	lambda = pi*sqrt(log(p)/m);
+end
 X_new = [X;eye(p)*lambda];
 Y_new = [Y;zeros(p,1)];
 beta = lad(X_new,Y_new);
