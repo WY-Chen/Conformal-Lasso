@@ -8,16 +8,15 @@ function runtest(setting,method,alpha,stepsize,nruns)
 %       C : Linear. X highly correlated. epsilon iid t(2).
 
 % Method = 
-%       ALL             : run lasso for all. VERY SLOW
-%       []  or oneSupp  : brutal force search from lowest Y value to highest
-%       predOneSupp     : traverse the support from prediction
-%       predMultSupp    : traverse the support from prediction, then search
-%                           support of lasso fitting known data and new trial 
-%                           until no more trials are valid.
-%       AllSupp         : traverse all point in trial set, compute full
+%       ALL                  : run lasso for all. VERY SLOW
+%       []  or LassoOneSupp  : Use one support, run Lassp
+%       LassoAllSupp         : traverse all point in trial set, compute full
 %                           lasso if not in known support, and give such
 %                           support. Use subgradient method if in known
 %                           support. 
+%       ENOneSupp            : One Support method with elastic net 
+%       LTSOneSupp           : One Support method with LTS lasso
+%       LTSAllSupp           : All Support method with LTS lasso
 
 % alpha = level of confidence
 
@@ -40,17 +39,19 @@ if ~exist('nruns','var')
 end
 
 % Formatting methods
-if ~exist('method')  | isequal(method,'oneSupp')
-    mtd = @conformalLassoOneSupport;
-    method = 'oneSupp';
-elseif isequal(method,'predOneSupp')
-    mtd = @conformalLassopredOneSupp;
-elseif isequal(method,'predMultSupp')
-    mtd = @conformalLassopredMultSupp;
+if ~exist('method')  | isequal(method,'LassoOneSupp')
+    mtd = @conformalLassoOneSupp;
+    method = 'LassoOneSupp';
 elseif isequal(method,'ALL')
     mtd = @conformalLasso;
-elseif isequal(method,'AllSupp')
+elseif isequal(method,'LassoAllSupp')
     mtd = @conformalLassoAllSupp;
+elseif isequal(method,'ENOneSupp')
+    mtd = @conformalENOneSupp;
+elseif isequal(method,'LTSOneSupp')
+    mtd = @conformalLTSLassoOneSupp;
+elseif isequal(method,'LTSAllSupp')
+    mtd = @conformalLTSLassoAllSupp;
 end
 
 % Testing
@@ -64,23 +65,17 @@ for i=1:nruns
     [X,Y,xnew,y] = getSetting(setting);
     
     % Get additional parameters to pass to method
-    if isequal(method,'oneSupp')| isequal(method,'ALL') |isequal(method,'AllSupp')
-        option = [min(Y):stepsize:max(Y)];
-    elseif isequal(method,'predOneSupp') | isequal(method,'predMultSupp') 
-        option = stepsize;
-    end
-    
+    option = [min(Y):stepsize:max(Y)];    
     % run method
-    [yconf,supportcoverage,modelsize] = mtd(X,Y,xnew,alpha,option);
+    [yconf,modelsize] = mtd(X,Y,xnew,alpha,option);
+    if isempty(yconf)
+        fprintf('WARNING: no valid point returned.\n')
+        continue
+    end
     coverage(i) = sum((min(yconf)<y)&(y<max(yconf)))/10000;
 
     % format print
-    if isequal(method,'oneSupp')
-        fprintf('\tModel size =%.1f\n',modelsize);
-        fprintf('\t%.2f%% trials in support.\n',supportcoverage*100);
-    else
-        fprintf('\tAverage model size =%.1f\n',modelsize);
-    end
+    fprintf('\tAverage model size =%.1f\n',modelsize);
     fprintf('\tInterval [%f, %f].\n',min(yconf),max(yconf));
     fprintf('\tCoverage is %f\n',coverage(i));
 end

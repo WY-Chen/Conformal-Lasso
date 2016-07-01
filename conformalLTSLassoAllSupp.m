@@ -3,7 +3,7 @@
 % Check if the new point is in known support, if yes, subgradient method
 % if no, run full lasso
 %% Method
-function [yconf,modelsize] = conformalLassoAllSupp(X,Y,xnew,alpha,ytrial)
+function [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,alpha,ytrial)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
@@ -27,33 +27,54 @@ Linoptions = optimset('Display','off');
 
 % Build confidence interval
 yconfidx = [];
-[beta,A,b,lambda] = lassoSupport(X_withnew,[Y;ytrial(1)],X_withnew);
+[beta,A,b,lambda,H] = LTSlassoSupport(X_withnew,[Y;ytrial(1)],xnew);
+h=length(H);
 E = find(beta);
 Z = sign(beta);
 Z_E = Z(E);
 supportcounter = 1;
 fprintf('\tPrediction point is %2.2f\n', xnew*beta)
-supportmax = linprog(-1,A(:,m+1),b-A(:,1:m)*Y,[],[],[],[],[],Linoptions);
-supportmin = linprog(1,A(:,m+1),b-A(:,1:m)*Y,[],[],[],[],[],Linoptions);
+supportmax = linprog(-1,A(:,h+1),realmin+b-A(:,1:h)*Y(H),[],[],[],[],[],Linoptions);
+supportmin = linprog(1,A(:,h+1),realmin+b-A(:,1:h)*Y(H),[],[],[],[],[],Linoptions);
+supportmin = min(supportmin,supportmax);
+supportmax = max(supportmin,supportmax);
 
-h = waitbar(0,'Please wait...');
-for i = 1:n
+wb = waitbar(0,'Please wait...');
+i=1;
+while i<=n
     y = ytrial(i);
-    if supportmin<= y && supportmax >=y
+    yfit = X_withnew*beta;
+    Resid = ([Y;y] - yfit).^2;
+    [Rval Rind] = sort(Resid);
+    Hknew = Rind(1:h);
+    Hknew = sort(Hknew);
+    if ~ismember(m+1,Hknew)
+%         Resid = abs(yfit - [Y;y]);
+%         Pi_trial = sum(Resid<=Resid(end))/(m+1);
+%         if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
+%             yconfidx = [yconfidx i];
+%         end
+        i=i+1;
+    elseif supportmin<= y && supportmax >=y
         beta = zeros(p,1);
-        X_E = X_withnew(:,E);
-        beta(E) = pinv(X_E)*[Y;y] - lambda*((X_E'*X_E)\Z_E);  
+        X_E = X_withnew([H;m+1],E);
+        beta(E) = pinv(X_E)*[Y(H);y] - lambda*((X_E'*X_E)\Z_E);
         yfit = X_withnew*beta;
         Resid = abs(yfit - [Y;y]);
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
         if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
             yconfidx = [yconfidx i];
         end
-    else 
-        [beta,A,b,lambda] = lassoSupport(X_withnew,[Y;y],X_withnew);
+        i=i+1;
+    else
+        [beta,A,b,lambda,H] = LTSlassoSupport(X_withnew,[Y;ytrial(1)],xnew);
         E = find(beta);
         Z = sign(beta);
         Z_E = Z(E);
+        supportmax = linprog(-1,A(:,h+1),realmin+b-A(:,1:h)*Y(H),[],[],[],[],[],Linoptions);
+        supportmin = linprog(1,A(:,h+1),realmin+b-A(:,1:h)*Y(H),[],[],[],[],[],Linoptions);
+        supportmin = min(supportmin,supportmax);
+        supportmax = max(supportmin,supportmax);
         yfit = X_withnew*beta;
         Resid = abs(yfit - [Y;y]);
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
@@ -61,19 +82,18 @@ for i = 1:n
             yconfidx = [yconfidx i];
         end
         supportcounter = supportcounter+1;
-        supportmax = linprog(-1,A(:,m+1),b-A(:,1:m)*Y,[],[],[],[],[],Linoptions);
-        supportmin = linprog(1,A(:,m+1),b-A(:,1:m)*Y,[],[],[],[],[],Linoptions);
-    end   
+        i=i+1;
+    end
     modelsizes(i) = length(E);
     % waitbar
-    waitbar(i/n,h,sprintf('Number of Lasso support computed %d',supportcounter))
+    waitbar(i/n,wb,sprintf('Number of Lasso support computed %d',supportcounter))
 end
-close(h)
+close(wb)
 modelsize = mean(modelsizes);
 yconf  = ytrial(yconfidx);
 
 % Plots
-plotFlag=1;  % change to 0 to turn off
+plotFlag=0;  % change to 0 to turn off
 if plotFlag == 1
     subplot(1,2,1)
     boxplot(yconf);
