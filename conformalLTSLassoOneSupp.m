@@ -20,6 +20,7 @@ Linoptions = optimset('Display','off');
 % fit the model
 yconfidx = [];
 [beta,A,b,lambda,H] = LTSlassoSupport(X,Y,xnew);
+H=sort(H);
 h= length(H);
 supportmax = linprog(-1,A(:,h+1),realmin+b-A(:,1:h)*Y(H),[],[],[],[],[],Linoptions);
 supportmin = linprog(1,A(:,h+1),realmin+b-A(:,1:h)*Y(H),[],[],[],[],[],Linoptions);
@@ -28,21 +29,9 @@ supportmax = max(supportmin,supportmax);
 Supp=find(ytrial>=supportmin & ytrial<=supportmax);
 disp([supportmin supportmax])
 
-% h = waitbar(0,'Please wait...');
-% for i=1:n
-%     y = ytrial(i); 
-%     Resid = abs(X_withnew*beta - [Y;y]);
-%     Pi_trial = sum(Resid<=Resid(end))/(m+1);
-%     if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
-%         yconfidx = [yconfidx i];
-%     end
-%     waitbar(i/n,h)
-% end
-% close(h)
-
 h = waitbar(0,'Please wait...');
-for i=Supp
-    y = ytrial(i);  
+for i=1:n
+    y = ytrial(i); 
     Resid = abs(X_withnew*beta - [Y;y]);
     Pi_trial = sum(Resid<=Resid(end))/(m+1);
     if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)

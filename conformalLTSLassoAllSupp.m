@@ -49,16 +49,16 @@ while i<=n
     Hknew = Rind(1:h);
     Hknew = sort(Hknew);
     if ~ismember(m+1,Hknew)
-%         Resid = abs(yfit - [Y;y]);
-%         Pi_trial = sum(Resid<=Resid(end))/(m+1);
-%         if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
-%             yconfidx = [yconfidx i];
-%         end
+        Resid = abs(yfit - [Y;y]);
+        Pi_trial = sum(Resid<=Resid(end))/(m+1);
+        if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
+            yconfidx = [yconfidx i];
+        end
         i=i+1;
     elseif supportmin<= y && supportmax >=y
         beta = zeros(p,1);
-        X_E = X_withnew([H;m+1],E);
-        beta(E) = pinv(X_E)*[Y(H);y] - lambda*((X_E'*X_E)\Z_E);
+        X_E = X_withnew(H,E);
+        beta(E) = pinv(X_E)*[Y(H(1:(h-1)));y] - lambda*((X_E'*X_E)\Z_E);
         yfit = X_withnew*beta;
         Resid = abs(yfit - [Y;y]);
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
@@ -67,12 +67,13 @@ while i<=n
         end
         i=i+1;
     else
-        [beta,A,b,lambda,H] = LTSlassoSupport(X_withnew,[Y;ytrial(1)],xnew);
+        [beta,A,b,lambda,H] = LTSlassoSupport(X_withnew,[Y;ytrial(i)],xnew);
+        H=sort(H);
         E = find(beta);
         Z = sign(beta);
         Z_E = Z(E);
-        supportmax = linprog(-1,A(:,h+1),realmin+b-A(:,1:h)*Y(H),[],[],[],[],[],Linoptions);
-        supportmin = linprog(1,A(:,h+1),realmin+b-A(:,1:h)*Y(H),[],[],[],[],[],Linoptions);
+        supportmax = linprog(-1,A(:,h),realmin+b-A(:,1:(h-1))*Y(H(1:(h-1))),[],[],[],[],[],Linoptions);
+        supportmin = linprog(1,A(:,h),realmin+b-A(:,1:(h-1))*Y(H(1:(h-1))),[],[],[],[],[],Linoptions);
         supportmin = min(supportmin,supportmax);
         supportmax = max(supportmin,supportmax);
         yfit = X_withnew*beta;

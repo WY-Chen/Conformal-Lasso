@@ -1,4 +1,4 @@
-# Conformal Prediction with Lasso
+# Conformal Prediction with Lasso-like methods
 
 Conformal prediction using Lasso support. 
 
@@ -17,31 +17,85 @@ Since Lasso is cheap to compute if given the subgradient (supports and signs) of
 
 # Methods
 
-## One Support
+## LASSO methods
+
+### One Support
 
 1. Run Lasso on known data (X,Y), use the fitted parameters to determine a polyhedron for support and signs. 
 2. Solve for a range of observed value that would land in the polyhedron if paired with the new point. 
 3. Run conformal prediction with subgradient lasso only on the trial values in this range and determine confidence interval.
 
-## All Support 
+__Coverage not guaranteed__ 
+
+__Problem__: the supports might change very frequently, thus the interval we are examining is too short. 
+
+### All Support
 
 1. Traverse the trial set, for each new trial y, run full Lasso if the combined data  (X,xnew) cross (Y,yi) is not in the previous support, and record this new support; run subgradient Lasso if the  (X,xnew) cross (Y,yi) is in previous support.  
 2. Construct confidence Interval. 
 
-# Comparison
+__Advantage__: This method works. In fact, there is a similar method [Sparse Conformal Predictors _by Mohamed Hebiri_](http://arxiv.org/abs/0902.1970) 
 
-1. By far, __All Support is the best working method__ because it does not make any additional assumption and is also computationally easy.
-2. One Support method is fast and works for the ideal setting of no noise, but no data is so ideal that the support doesn't change. 
-3. Prediction One Support method is faster version of One Support, which suffers from the same problem of One Support.
-4. Prediction Multiple Support method fixes the problem of changing support, is also fast, and has good coverage. However its advantage would be compromised if encounters supports which contains only one trial value, which leads to a stopping too early, and gives an interval smaller than required.
-5. All Support method does not have any of the problems above, but it can be significantly slower than all of them for some condition when the support changes frequently. While the previous methods would terminate in a short time no matter what, this method could potentially run full lasso on every trial value, which is as slow as the original method of running each lasso. 
+__Problems__: Sometimes can be really slow if the data is heavily depended on the new data pair, which results in constant support/sign changes. 
 
-## Discussion
+------
 
-1. All Support method and Prediction Multiple Support method is essentially the same method but the former traverses the whole trial set and the latter only 'grows' from the prediction point. By this nature, the former tends to give larger coverage and the latter tends to give smaller coverage. 
-2. The next step of the study is to either give a better stopping condition to Prediction Multiple Support method or give a condition to abandon computation for All Support method. 
+## LAD-Lasso methods
 
-## Updates
+The computation of this method is basically LAD with additional p many data pairs for constraint. However, this runs very slowly per trial, and is not as good for shrinkage empirically.
 
-- 16.6.21: First commit. Implemented conformal method with lasso, computation of support polyhedron, and Multiple Support method that does conformal prediction on different supports until the last one has no more valid point.
-- 16.6.23: Implemented AllSupp method that traverse the whole trial set and run full lasso if not in previous support and subgradient lasso if in previous support. 
+Need to see whether computation can be simplified with known support.
+
+Need to see whether computation can be simplified with known support.
+Source: [LAD-lasso](https://www.researchgate.net/publication/4724848_Robust_Regression_Shrinkage_and_Consistent_Variable_Selection_Through_the_LAD-Lasso?enrichId=rgreq-c8d87c27a1813dd29252d4abf613721e-XXX&enrichSource=Y292ZXJQYWdlOzQ3MjQ4NDg7QVM6OTg5OTE0ODQxNzg0NDJAMTQwMDYxMjgxNzU0NA%3D%3D&el=1_x_2)
+
+------
+
+## (in construction) Lasso with Huber loss
+
+This is not hard to implement using the CVX package.
+
+Need to figure out how to decide the shape and how to decide if a new y is in the support.
+
+Need to figure out a simplified way to compute parameter given support
+
+Source: [Huber Loss](http://arxiv.org/pdf/math/0406470.pdf)
+
+------
+
+## LTS-Lasso methods
+
+### LTS-lasso One Support
+
+1. Set alpha=0.9, i.e., using only 90% of the data. Use recursive C-steps that run lasso only on the data points with residual in lower 90% quantile until the chosen set does not change. 
+2. Use the parameter from the C-steps to fit and do conformal prediction on the whole range. 
+
+__Coverage not guaranteed__ 
+
+__Problem__: The method is technically incorrect, for the support changes if the new data pair is in the chosen set, while here we treat all cases as if the new data pair is already outlier.
+
+### LTS-lasso All Support
+
+Similar to Lasso All support. Traverse the trial set, compute a model by LTS-lasso, check if the new pair is in the chosen 'good' data set. 
+
+1. If new pair is with weight 0 (classified as outlier in C-step), run conformal prediction with the given model. 
+2. If new pair is with weight 1 (classified as 'good' data in C-step) and is in the range of the previous support/signs polyhedron, refit the lasso with the chosen data set and given support.
+3. if new pair is with weight 1 (classified as 'good' data in C-step) and is out of the range of the previous polyhedron, rerun the C-steps with new pair. Get new polyhedron and new chosen set. 
+
+__Advantage__: this is significantly faster than lasso-all support, for we do not need to fit full lasso for trial values that are far off (which was ususally hard to compute using original lasso because it is vulnerable against outlier). Effectively, we compute lass full lasso. Also since this method is robust to outliers, it gives a sharper sparse result. 
+
+__Problem__: the current version of this algorithm lacks cross-validation or BIC method of choosing lambda (now it uses the alpha-rescaled lambda of a cv-full lasso fit as magic number). Another real problem is that we are wasting 10% of data. 
+
+Source: [LTS-lasso](https://arxiv.org/pdf/1304.4773.pdf)
+
+------
+
+## Elastic Net methods
+
+### Elastic net One Support
+
+Do Lasso one support method with elastic nets instead of lasso with the same Lars algorithm. This method does not show robustness against outlier, and the support is even narrower (because the L2 penalty helps choose many correlated features rather than one, as in lasso). 
+
+Source: [Elastic net](http://www.jmlr.org/proceedings/papers/v28/yang13e.pdf)
+
+------
