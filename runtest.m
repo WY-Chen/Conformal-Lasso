@@ -16,6 +16,7 @@ function runtest(setting,method,alpha,stepsize,nruns)
 %                           support. 
 %       ENOneSupp            : One Support method with elastic net 
 %       LTSOneSupp           : One Support method with LTS lasso
+%       LTSAllSupp           : All Support method with LTS lasso
 
 % alpha = level of confidence
 
@@ -49,6 +50,8 @@ elseif isequal(method,'ENOneSupp')
     mtd = @conformalENOneSupp;
 elseif isequal(method,'LTSOneSupp')
     mtd = @conformalLTSLassoOneSupp;
+elseif isequal(method,'LTSAllSupp')
+    mtd = @conformalLTSLassoAllSupp;
 end
 
 % Testing
@@ -65,6 +68,10 @@ for i=1:nruns
     option = [min(Y):stepsize:max(Y)];    
     % run method
     [yconf,modelsize] = mtd(X,Y,xnew,alpha,option);
+    if isempty(yconf)
+        fprintf('WARNING: no valid point returned.\n')
+        continue
+    end
     coverage(i) = sum((min(yconf)<y)&(y<max(yconf)))/10000;
 
     % format print
