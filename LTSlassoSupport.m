@@ -17,10 +17,10 @@ options.thresh = 1E-12;
 
 % fit the lasso and calculate support.
 fit = cvglmnet(X,Y,[],options);
-lambda = fit.lambda_1se*0.9;
+lambda = fit.lambda_1se*0.9;        % Need to consider other ways to choose
 
 % fit the lasso and calculate support.
-[beta,H,bic] = LTSlasso(X,Y,lambda,0.9);
+[beta,H] = LTSlasso(X,Y,lambda,0.9);
 h=length(H);
 lambda = lambda*m;
 E = find(beta);
