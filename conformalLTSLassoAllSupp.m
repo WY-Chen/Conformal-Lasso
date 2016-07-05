@@ -34,8 +34,8 @@ Z = sign(beta);
 Z_E = Z(E);
 supportcounter = 1;
 fprintf('\tPrediction point is %2.2f\n', xnew*beta)
-supportmax = linprog(-1,A(:,h+1),realmin+b-A(:,1:h)*Y(H),[],[],[],[],[],Linoptions);
-supportmin = linprog(1,A(:,h+1),realmin+b-A(:,1:h)*Y(H),[],[],[],[],[],Linoptions);
+supportmax = linprog(-1,A(:,h),realmin+b-A(:,1:(h-1))*Y(H(1:(h-1))),[],[],[],[],[],Linoptions);
+supportmin = linprog(1,A(:,h),realmin+b-A(:,1:(h-1))*Y(H(1:(h-1))),[],[],[],[],[],Linoptions);
 supportmin = min(supportmin,supportmax);
 supportmax = max(supportmin,supportmax);
 
@@ -55,7 +55,7 @@ while i<=n
             yconfidx = [yconfidx i];
         end
         i=i+1;
-    elseif supportmin<= y && supportmax >=y
+    elseif supportmin<= y & supportmax >=y
         beta = zeros(p,1);
         X_E = X_withnew(H,E);
         beta(E) = pinv(X_E)*[Y(H(1:(h-1)));y] - lambda*((X_E'*X_E)\Z_E);
