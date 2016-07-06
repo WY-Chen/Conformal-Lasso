@@ -12,7 +12,7 @@ function [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,alpha,ytrial)
 % ytrial    a set of value to test
 % tau       proportion of error predetermined
 
-tau=0.95;
+tau=0.99;
 
 % prepare for fitting
 addpath(genpath(pwd));
@@ -72,7 +72,7 @@ for i=1:n
                 end
                 continue
             end
-            [suppmin,suppmax]=solveInt(A,b,[Y(H(1:(h-1)));y]);
+            [suppmin,suppmax]=solveInt(A,b,Y(H(1:(h-1))));
             if suppmin>=suppmax
                 fprintf('WARNING: bad support %d size %d\n',...
                     supportcounter, length(E));
@@ -83,7 +83,7 @@ for i=1:n
             if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
                 yconfidx = [yconfidx i];
             end
-            if  all(A*[Y(H(1:(h-1)));y;ytrial(min(i+1,n))]-b<=0)
+            if  all(A*[Y(H(1:(h-1)));ytrial(min(i+1,n))]-b<=0)
                 compcase=2;
             end
         case 2
@@ -96,7 +96,7 @@ for i=1:n
             if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
                 yconfidx = [yconfidx i];
             end
-            if  ~all(A*[Y(H(1:(h-1)));y;ytrial(min(i+1,n))]-b<=0)
+            if  ~all(A*[Y(H(1:(h-1)));ytrial(min(i+1,n))]-b<=0)
                 compcase=1;
             end
             modelsizes(i) = length(E);
