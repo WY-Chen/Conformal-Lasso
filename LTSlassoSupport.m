@@ -1,11 +1,12 @@
 %% Costumised Lasso with GLMnet
 % return polyhedron
 %% Method
-function [beta,A,b,lambda,H] = LTSlassoSupport(X,Y,xnew)
+function [beta,A,b,lambda,H] = LTSlassoSupport(X,Y,xnew,tau)
 
 % prepare for fitting
 addpath(genpath(pwd));
 [m,p] = size(X);
+h = floor((m+1)*tau);
 
 % Tune GLMNET
 options = glmnetSet();
@@ -16,13 +17,12 @@ options.alpha = 1.0;                % Lasso (no L2 norm penalty)
 options.thresh = 1E-12;
 
 % fit the lasso and calculate support.
-fit = cvglmnet(X,Y,[],options);
-lambda = fit.lambda_1se*0.9;        % Need to consider other ways to choose
+lambda = 0.3031;
 
 % fit the lasso and calculate support.
-[beta,H] = LTSlasso(X,Y,lambda,0.9);
+[beta,H] = LTSlasso(X,Y,lambda,tau);
 h=length(H);
-lambda = lambda*m;
+lambda = lambda*h;
 E = find(beta);
 Z = sign(beta);
 Z_E = Z(E);

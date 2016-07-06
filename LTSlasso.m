@@ -55,7 +55,7 @@ switch nargin
                 stepcount = stepcount+1;
             end
             HC(j,:) = Hk;
-            fprintf('\t%d C-Steps\n',stepcount);
+%             fprintf('\t%d C-Steps\n',stepcount);
         end
         [uA,~,uIdx] = unique(HC,'rows');
         modeIdx = mode(uIdx);
@@ -77,7 +77,7 @@ switch nargin
             Hk = Hknew;
             stepcount = stepcount+1;
         end
-        fprintf('\t%d C-Steps\n',stepcount);
+%         fprintf('\t%d C-Steps\n',stepcount);
         H=Hk;
 end
         
