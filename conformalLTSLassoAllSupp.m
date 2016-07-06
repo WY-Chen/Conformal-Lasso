@@ -76,7 +76,6 @@ for i=1:n
             if suppmin>=suppmax
                 fprintf('WARNING: bad support %d size %d\n',...
                     supportcounter, length(E));
-                disp([suppmin y suppmax])
             end
             % conformal prediction
             Resid = abs(X_withnew*beta - [Y;y]);

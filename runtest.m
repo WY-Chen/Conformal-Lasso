@@ -68,7 +68,9 @@ for i=1:nruns
     % Get additional parameters to pass to method
     option = [min(Y):stepsize:max(Y)];    
     % run method
+    tic;
     [yconf,modelsize] = mtd(X,Y,xnew,alpha,option);
+    toc;
     if isempty(yconf)
         fprintf('WARNING: no valid point returned.\n')
         continue
