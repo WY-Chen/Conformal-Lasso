@@ -1,75 +1,83 @@
-function [beta,H,bic] = LTSlasso(X,Y,lambda,alpha)
+function [beta,H] = LTSlasso(X,Y,lambda,alpha,~)
 % alpha:    proportion of 'good' data
-[m,p]=size(X);
+% mtd:      If empty, run the simple method. else run 50-fold
+% initialization
 
 % Parameters
-h = floor((m+1)*alpha);
+[m,~]=size(X);
+h = floor((m+1)*alpha);     % length of chosen set
 
-%% The procedure in paper
-% Draw initial guess of H0
-% Q = zeros(1,500);
-% H = zeros(500,h);
-% 
-% % Two C-steps
-% for i=1:500
-%    s = randsample(1:m,3);
-%    beta = lasso(X(s,:),Y(s),'Lambda',lambda);
-%    Resid = (Y - X*beta).^2;
-%    [Rval Rind] = sort(Resid);
-%    H0 = Rind(1:h);
-%    beta = lasso(X(H0,:),Y(H0),'Lambda',lambda);
-%    Resid = (Y - X*beta).^2;
-%    [Rval Rind] = sort(Resid);
-%    H(i,:) = Rind(1:h);
-%    Q(i) = sum(Rval(1:h))+ h*lambda*sum(abs(beta));
-% end
-% 
-% % Further C-steps
-% [val s1] = sort(Q);
-% s1 = s1(1:10);
-% HC = zeros(10,h);
-% 
-% for i=s1
-%     Hk = H(i,:);
-%     Hk=sort(Hk);
-%     stepcount=2;
-%     while 1
-%         beta = lasso(X(Hk,:),Y(Hk),'Lambda',lambda);
-%         Resid = (Y - X*beta).^2;
-%         [Rval Rind] = sort(Resid);
-%         Hknew = Rind(1:h);
-%         Hknew = sort(Hknew);
-%         if isequal(Hknew,Hk) | stepcount == 20
-%             break
-%         end
-%         Hk = Hknew;
-%         fprintf('C-Steps %d\n',stepcount);
-%         stepcount = stepcount+1;
-%     end
-%     HC(i,:) = Hk; 
-% end
-%     
-% [nrows t] = size(unique(HC,'rows'));
-% H = HC(1,:); %need fix here
-%% The simple way (without 500-fold)
-Hk = randsample(1:m,h);
-Hk=sort(Hk);
-stepcount = 1;
-while 1
-   beta = lasso(X(Hk,:),Y(Hk),'Lambda',lambda);
-   Resid = (Y - X*beta).^2;
-   [Rval Rind] = sort(Resid);
-   Hknew = Rind(1:h);
-   Hknew = sort(Hknew);
-   if isequal(Hknew,Hk) | stepcount == 20
-       break
-   end
-   Hk = Hknew;
-   fprintf('\tC-Steps %d\n',stepcount);
-   stepcount = stepcount+1;
+switch nargin
+    case 5
+        %% The procedure in paper
+        Q = zeros(1,50);
+        H = zeros(50,h);
+        verboseFlag=1;  % print logs
+        % Draw initial guess of H0
+        
+        % Two C-steps
+        wb = waitbar(0,'Initializing C-steps...');
+        for i=1:50
+            s = randsample(1:m,3);
+            beta = lasso(X(s,:),Y(s),'Lambda',lambda);
+            Resid = (Y - X*beta).^2;
+            [~,Rind] = sort(Resid);
+            H0 = Rind(1:h);
+            beta = lasso(X(H0,:),Y(H0),'Lambda',lambda);
+            Resid = (Y - X*beta).^2;
+            [Rval,Rind] = sort(Resid);
+            H(i,:) = sort(Rind(1:h));
+            Q(i) = sum(Rval(1:h))+ h*lambda*sum(abs(beta));
+            if verboseFlag==1
+               waitbar(i/50,wb,sprintf('Randomizing initial set'));
+            end
+        end
+        close(wb);
+        
+        % Further C-steps
+        [~,s1] = sort(Q);   % Get 10 initializations with smallest error
+        s1 = s1(1:10);
+        HC = zeros(10,h);
+        
+        for j=1:10
+            i=s1(j);
+            Hk = H(i,:);
+            stepcount=2;
+            while 1
+                beta = lasso(X(Hk,:),Y(Hk),'Lambda',lambda);
+                Resid = (Y - X*beta).^2;
+                [~,Rind] = sort(Resid);
+                Hknew = sort(Rind(1:h));
+                if isequal(Hknew,Hk) || stepcount == 20
+                    break
+                end
+                Hk = Hknew;
+                stepcount = stepcount+1;
+            end
+            HC(j,:) = Hk;
+%             fprintf('\t%d C-Steps\n',stepcount);
+        end
+        [uA,~,uIdx] = unique(HC,'rows');
+        modeIdx = mode(uIdx);
+        H = uA(modeIdx,:)'; %# the first output argument
+    case 4
+        %% The simple way (without 50-fold)
+        Hk = randsample(1:m,h);
+        Hk=sort(Hk);
+        stepcount = 1;
+        while 1
+            beta = lasso(X(Hk,:),Y(Hk),'Lambda',lambda);
+            Resid = (Y - X*beta).^2;
+            [~,Rind] = sort(Resid);
+            Hknew = Rind(1:h);
+            Hknew = sort(Hknew);
+            if isequal(Hknew,Hk) || stepcount == 20
+                break
+            end
+            Hk = Hknew;
+            stepcount = stepcount+1;
+        end
+%         fprintf('\t%d C-Steps\n',stepcount);
+        H=Hk;
 end
-H=Hk;
-mu = sum((Y - X*beta))./h;
-sig = sqrt(sum((Y - X*beta - mu).^2)./h);
-bic = log(sig) + length(find(beta))*log(m)/m;
-    
+        

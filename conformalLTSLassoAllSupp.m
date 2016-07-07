@@ -1,100 +1,110 @@
 %% Conformal inference
 % Method: run conformal inference on a data set,
-% Check if the new point is in known support, if yes, subgradient method
+% Check if the new pair is outlier in model, if yes, use fit of known data
+% Then:
+% Check if the new pair is in known support, if yes, subgradient method
 % if no, run full lasso
 %% Method
 function [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,alpha,ytrial)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
-% stepsize  stepsize of searching for upper and lower bound of interval
+% ytrial    a set of value to test
+% tau       proportion of error predetermined
+
+tau=0.99;
 
 % prepare for fitting
 addpath(genpath(pwd));
 X_withnew = [X;xnew];
 [m,p] = size(X);
 n = length(ytrial);
+
+% Build a model when new pair is outlier with only the known data
+[betaN,~,~,~,H] = LTSlassoSupport(X,Y,xnew,tau);
+hN=length(H);
+[Rval,~] = sort((Y - X*betaN).^2);
+bounds = [sqrt(Rval(hN))+xnew*betaN,-sqrt(Rval(hN))+xnew*betaN];
+outminN = min(bounds);
+outmaxN = max(bounds);
+fprintf('\tPrediction point is %2.2f\n', xnew*betaN)
+
+
 modelsizes = zeros(1,n);
+compcase = 1; suppmax=-inf; outmin = -inf; outmax=inf;
+supportcounter = 0; yconfidx = [];
 
-% Tune GLMNET
-options = glmnetSet();
-options.standardize = false;        % original X
-options.intr = false;               % no intersection
-options.standardize_resp = false;   % original Y
-options.alpha = 1.0;                % Lasso (no L2 norm penalty)
-options.thresh = 1E-12;
-Linoptions = optimset('Display','off');
-
-% Build confidence interval
-yconfidx = [];
-[beta,A,b,lambda,H] = LTSlassoSupport(X_withnew,[Y;ytrial(1)],xnew);
-h=length(H);
-E = find(beta);
-Z = sign(beta);
-Z_E = Z(E);
-supportcounter = 1;
-fprintf('\tPrediction point is %2.2f\n', xnew*beta)
-supportmax = linprog(-1,A(:,h),realmin+b-A(:,1:(h-1))*Y(H(1:(h-1))),[],[],[],[],[],Linoptions);
-supportmin = linprog(1,A(:,h),realmin+b-A(:,1:(h-1))*Y(H(1:(h-1))),[],[],[],[],[],Linoptions);
-supportmin = min(supportmin,supportmax);
-supportmax = max(supportmin,supportmax);
 
 wb = waitbar(0,'Please wait...');
-i=1;
-while i<=n
+for i=1:n
+    waitbar(i/n,wb,...
+        sprintf('In mode %d. Number of Lasso support computed %d'...
+        ,compcase,supportcounter))
     y = ytrial(i);
-    yfit = X_withnew*beta;
-    Resid = ([Y;y] - yfit).^2;
-    [Rval Rind] = sort(Resid);
-    Hknew = Rind(1:h);
-    Hknew = sort(Hknew);
-    if ~ismember(m+1,Hknew)
-        Resid = abs(yfit - [Y;y]);
+    % if new pair not in chosen model, use the competed model
+    if y<=outminN || y>=outmaxN || y<=outmin || y>=outmax
+        Resid = abs(X_withnew*betaN - [Y;y]);
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
         if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
             yconfidx = [yconfidx i];
         end
-        i=i+1;
-    elseif supportmin<= y & supportmax >=y
-        beta = zeros(p,1);
-        X_E = X_withnew(H,E);
-        beta(E) = pinv(X_E)*[Y(H(1:(h-1)));y] - lambda*((X_E'*X_E)\Z_E);
-        yfit = X_withnew*beta;
-        Resid = abs(yfit - [Y;y]);
-        Pi_trial = sum(Resid<=Resid(end))/(m+1);
-        if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
-            yconfidx = [yconfidx i];
-        end
-        i=i+1;
-    else
-        [beta,A,b,lambda,H] = LTSlassoSupport(X_withnew,[Y;ytrial(i)],xnew);
-        H=sort(H);
-        E = find(beta);
-        Z = sign(beta);
-        Z_E = Z(E);
-        supportmax = linprog(-1,A(:,h),realmin+b-A(:,1:(h-1))*Y(H(1:(h-1))),[],[],[],[],[],Linoptions);
-        supportmin = linprog(1,A(:,h),realmin+b-A(:,1:(h-1))*Y(H(1:(h-1))),[],[],[],[],[],Linoptions);
-        supportmin = min(supportmin,supportmax);
-        supportmax = max(supportmin,supportmax);
-        yfit = X_withnew*beta;
-        Resid = abs(yfit - [Y;y]);
-        Pi_trial = sum(Resid<=Resid(end))/(m+1);
-        if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
-            yconfidx = [yconfidx i];
-        end
-        supportcounter = supportcounter+1;
-        i=i+1;
+        modelsizes(i)=length(find(betaN));
+        continue;
     end
-    modelsizes(i) = length(E);
-    % waitbar
-    waitbar(i/n,wb,sprintf('Number of Lasso support computed %d',supportcounter))
+    switch compcase
+        case 1
+            % Compute full LTS-lasso
+            [beta,A,b,lambda,H]=LTSlassoSupport(X_withnew,[Y;y],xnew,tau);
+            h=length(H);
+            supportcounter = supportcounter+1;
+            % updata support 
+            E = find(beta);
+            Z = sign(beta);
+            Z_E = Z(E);
+            modelsizes(i) = length(E);
+            [Rval,~] = sort((Y - X*beta).^2);
+            bounds = [sqrt(Rval(h))+xnew*beta,-sqrt(Rval(h))+xnew*beta];
+            outmin = min(bounds);
+            outmax = max(bounds);
+            if H(end)~=m+1
+                continue
+            end
+%             [suppmin,suppmax]=solveInt(A,b,Y(H(1:(h-1))));
+%             if suppmin>=suppmax
+%                 fprintf('WARNING: bad support %d size %d\n',...
+%                     supportcounter, length(E));
+%             end
+            % conformal prediction
+            Resid = abs(X_withnew*beta - [Y;y]);
+            Pi_trial = sum(Resid<=Resid(end))/(m+1);
+            if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
+                yconfidx = [yconfidx i];
+            end
+            if  all(A*[Y(H(1:(h-1)));ytrial(min(i+1,n))]-b<=0)
+                compcase=2;
+            end
+        case 2
+            % Compute LTS-lasso based on support
+            beta = zeros(p,1);
+            X_E = X_withnew(H,E);
+            beta(E) = pinv(X_E)*[Y(H(1:(h-1)));y] - lambda*((X_E'*X_E)\Z_E);
+            Resid = abs(X_withnew*beta - [Y;y]);
+            Pi_trial = sum(Resid<=Resid(end))/(m+1);
+            if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
+                yconfidx = [yconfidx i];
+            end
+            if  ~all(A*[Y(H(1:(h-1)));ytrial(min(i+1,n))]-b<=0)
+                compcase=1;
+            end
+            modelsizes(i) = length(E);
+    end
 end
 close(wb)
 modelsize = mean(modelsizes);
 yconf  = ytrial(yconfidx);
 
 % Plots
-plotFlag=0;  % change to 0 to turn off
+plotFlag=1;  % change to 0 to turn off
 if plotFlag == 1
     subplot(1,2,1)
     boxplot(yconf);

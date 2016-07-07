@@ -58,6 +58,7 @@ end
 fprintf('TESTING SETTING %s, METHOD %s.\n',setting,method);
         
 coverage = zeros(nruns,1);
+conflen = zeros(nruns,1);
 for i=1:nruns
     fprintf('TESTING=== run %d/%d.\n',i,nruns);
     
@@ -67,12 +68,18 @@ for i=1:nruns
     % Get additional parameters to pass to method
     option = [min(Y):stepsize:max(Y)];    
     % run method
+    tic;
     [yconf,modelsize] = mtd(X,Y,xnew,alpha,option);
+    toc;
     if isempty(yconf)
         fprintf('WARNING: no valid point returned.\n')
         continue
     end
     coverage(i) = sum((min(yconf)<y)&(y<max(yconf)))/10000;
+    conflen(i) = max(yconf)-min(yconf);
+    if coverage(i)<0.4
+        save('broken_case.mat','X','Y','xnew');
+    end
 
     % format print
     fprintf('\tAverage model size =%.1f\n',modelsize);
@@ -80,6 +87,7 @@ for i=1:nruns
     fprintf('\tCoverage is %f\n',coverage(i));
 end
 fprintf('%d-fold average coverage is %f\n', nruns, mean(coverage))
+fprintf('Average inverval length =%.1f\n',mean(conflen));
 
 
 
