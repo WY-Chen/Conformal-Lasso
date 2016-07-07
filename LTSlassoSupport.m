@@ -17,7 +17,7 @@ options.alpha = 1.0;                % Lasso (no L2 norm penalty)
 options.thresh = 1E-12;
 
 % fit the lasso and calculate support.
-lambda = 0.4;
+lambda = 0.6;
 
 % fit the lasso and calculate support.
 [beta,H] = LTSlasso(X,Y,lambda,tau);

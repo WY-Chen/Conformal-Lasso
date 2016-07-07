@@ -67,16 +67,13 @@ for i=1:n
             outmin = min(bounds);
             outmax = max(bounds);
             if H(end)~=m+1
-                if y>outmin
-                    fprintf('Wrong\n')
-                end
                 continue
             end
-            [suppmin,suppmax]=solveInt(A,b,Y(H(1:(h-1))));
-            if suppmin>=suppmax
-                fprintf('WARNING: bad support %d size %d\n',...
-                    supportcounter, length(E));
-            end
+%             [suppmin,suppmax]=solveInt(A,b,Y(H(1:(h-1))));
+%             if suppmin>=suppmax
+%                 fprintf('WARNING: bad support %d size %d\n',...
+%                     supportcounter, length(E));
+%             end
             % conformal prediction
             Resid = abs(X_withnew*beta - [Y;y]);
             Pi_trial = sum(Resid<=Resid(end))/(m+1);
