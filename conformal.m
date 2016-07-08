@@ -29,8 +29,6 @@ for i = 1:n
     Yfit = mtd([Y;y],X_withnew);
     Resid = abs(Yfit - [Y;y]);
     Pi_trial(i) = sum(Resid<=Resid(end))/(m+1);
-    disp('running with y=          pi=')
-    disp([y,sum(Resid<=Resid(end))/(m+1)])
 end
 yconf = ytrial((m+1)*Pi_trial<=ceil((1-alpha)*(m+1)));
     

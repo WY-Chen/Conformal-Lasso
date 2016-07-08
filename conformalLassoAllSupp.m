@@ -32,14 +32,14 @@ E = find(beta);
 Z = sign(beta);
 Z_E = Z(E);
 supportcounter = 1;
-fprintf('\tPrediction point is %2.2f\n', xnew*beta)
+fprintf('\tPrediction point is %2.2f\n', cvglmnetPredict(cvglmnet(X,Y),xnew));
 supportmax = linprog(-1,A(:,m+1),b-A(:,1:m)*Y,[],[],[],[],[],Linoptions);
 supportmin = linprog(1,A(:,m+1),b-A(:,1:m)*Y,[],[],[],[],[],Linoptions);
 
 h = waitbar(0,'Please wait...');
 for i = 1:n
     y = ytrial(i);
-    if supportmin<= y && supportmax >=y
+    if supportmin<= y & supportmax >=y
         beta = zeros(p,1);
         X_E = X_withnew(:,E);
         beta(E) = pinv(X_E)*[Y;y] - lambda*((X_E'*X_E)\Z_E);  
@@ -66,7 +66,8 @@ for i = 1:n
     end   
     modelsizes(i) = length(E);
     % waitbar
-    waitbar(i/n,h,sprintf('Number of Lasso support computed %d',supportcounter))
+    waitbar(i/n,h,sprintf('Current model size %d. Number of Lasso support computed %d',...
+        length(E),supportcounter))
 end
 close(h)
 modelsize = mean(modelsizes);
