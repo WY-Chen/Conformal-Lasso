@@ -38,6 +38,7 @@ if ~exist('nruns','var')
     nruns = 10;
 end
 
+H=1:200;h=200;
 % Formatting methods
 if ~exist('method')  | isequal(method,'LassoOneSupp')
     mtd = @conformalLassoOneSupp;
@@ -52,6 +53,8 @@ elseif isequal(method,'LTSOneSupp')
     mtd = @conformalLTSLassoOneSupp;
 elseif isequal(method,'LTSAllSupp')
     mtd = @conformalLTSLassoAllSupp;
+    h = 152;
+    H=randsample(1:200,h);
 end
 
 % Testing
@@ -65,11 +68,18 @@ for i=1:nruns
     % Get testing data
     [X,Y,xnew,y] = getSetting(setting);
     
+    % Get lambda from normal
+    t=0;
+    for i=1:100
+        t=t+norm(X(H,:)'*normrnd(0,1,[h,1]),inf)*2;
+    end
+    lambda = t/100;
+    
     % Get additional parameters to pass to method
     option = [min(Y):stepsize:max(Y)];    
     % run method
     tic;
-    [yconf,modelsize] = mtd(X,Y,xnew,alpha,option);
+    [yconf,modelsize] = mtd(X,Y,xnew,alpha,option,lambda);
     toc;
     if isempty(yconf)
         fprintf('WARNING: no valid point returned.\n')

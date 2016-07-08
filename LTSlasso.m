@@ -66,7 +66,7 @@ switch nargin
         Hk=sort(Hk);
         stepcount = 1;
         while 1
-            beta = lasso(X(Hk,:),Y(Hk),'Lambda',lambda);
+            beta = lasso(X(Hk,:),Y(Hk),'Lambda',lambda/h);
             Resid = (Y - X*beta).^2;
             [~,Rind] = sort(Resid);
             Hknew = Rind(1:h);

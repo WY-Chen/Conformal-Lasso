@@ -1,7 +1,7 @@
 %% Costumised Lasso with GLMnet
 % return polyhedron
 %% Method
-function [beta,A,b,lambda] = lassoSupport(X,Y,X_withnew)
+function [beta,A,b,lambda] = lassoSupport(X,Y,X_withnew,lambda)
 
 % prepare for fitting
 addpath(genpath(pwd));
@@ -21,10 +21,15 @@ options.alpha = 1.0;                % Lasso (no L2 norm penalty)
 options.thresh = 1E-12;
 
 % fit the lasso and calculate support.
-fit = cvglmnet(X,Y,[],options);
-lambda = fit.lambda_1se*m;
-beta = cvglmnetCoef(fit);
-beta = beta(2:p+1);
+if ~isequal(lambda,'null')
+    beta = lasso(X,Y,'Lambda',lambda/m);
+else
+    fit = cvglmnet(X,Y,[],options);
+    lambda = fit.lambda_1se*m;
+    beta = cvglmnetCoef(fit);
+    beta = beta(2:p+1);
+end
+
 E = find(beta);
 Z = sign(beta);
 Z_E = Z(E);

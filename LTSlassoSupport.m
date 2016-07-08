@@ -1,7 +1,7 @@
 %% Costumised Lasso with GLMnet
 % return polyhedron
 %% Method
-function [beta,A,b,lambda,H] = LTSlassoSupport(X,Y,xnew,tau)
+function [beta,A,b,lambda,H] = LTSlassoSupport(X,Y,xnew,tau,lambdain)
 
 % prepare for fitting
 addpath(genpath(pwd));
@@ -17,7 +17,10 @@ options.alpha = 1.0;                % Lasso (no L2 norm penalty)
 options.thresh = 1E-12;
 
 % fit the lasso and calculate support.
-lambda = 0.6;
+lambda = lambdain;
+
+% use lambda = 0.41 for A
+% use lambda = 1.11 for C
 
 % fit the lasso and calculate support.
 [beta,H] = LTSlasso(X,Y,lambda,tau);

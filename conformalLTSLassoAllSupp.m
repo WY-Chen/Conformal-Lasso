@@ -5,14 +5,14 @@
 % Check if the new pair is in known support, if yes, subgradient method
 % if no, run full lasso
 %% Method
-function [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,alpha,ytrial)
+function [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,alpha,ytrial,lambdain)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
 % ytrial    a set of value to test
 % tau       proportion of error predetermined
 
-tau=0.99;
+tau=0.95;
 
 % prepare for fitting
 addpath(genpath(pwd));
@@ -21,7 +21,7 @@ X_withnew = [X;xnew];
 n = length(ytrial);
 
 % Build a model when new pair is outlier with only the known data
-[betaN,~,~,~,H] = LTSlassoSupport(X,Y,xnew,tau);
+[betaN,~,~,~,H] = LTSlassoSupport(X,Y,xnew,tau,lambdain);
 hN=length(H);
 [Rval,~] = sort((Y - X*betaN).^2);
 bounds = [sqrt(Rval(hN))+xnew*betaN,-sqrt(Rval(hN))+xnew*betaN];
@@ -38,8 +38,8 @@ supportcounter = 0; yconfidx = [];
 wb = waitbar(0,'Please wait...');
 for i=1:n
     waitbar(i/n,wb,...
-        sprintf('In mode %d. Number of Lasso support computed %d'...
-        ,compcase,supportcounter))
+        sprintf('Current model size %d. Number of Lasso support computed %d'...
+        ,modelsizes(max(i-1,1)),supportcounter))
     y = ytrial(i);
     % if new pair not in chosen model, use the competed model
     if y<=outminN || y>=outmaxN || y<=outmin || y>=outmax
@@ -54,7 +54,7 @@ for i=1:n
     switch compcase
         case 1
             % Compute full LTS-lasso
-            [beta,A,b,lambda,H]=LTSlassoSupport(X_withnew,[Y;y],xnew,tau);
+            [beta,A,b,lambda,H]=LTSlassoSupport(X_withnew,[Y;y],xnew,tau,lambdain);
             h=length(H);
             supportcounter = supportcounter+1;
             % updata support 
