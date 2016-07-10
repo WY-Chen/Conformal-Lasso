@@ -29,7 +29,7 @@ if ~exist('alpha','var')
     alpha = 0.05;
 end
 if ~exist('stepsize','var')
-    stepsize = 0.01;
+    stepsize = 0.1;
 end
 if ~exist('setting','var')
     setting = 'A';

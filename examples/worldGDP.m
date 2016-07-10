@@ -19,7 +19,7 @@ for i=test
     xnew = data(i,1:p-1);
     y = data(i,p);
     ytrial = [-2:0.001:2];
-    [yconf,modelsize] = conformalLassoAllSupp(X,Y,xnew,0.05,ytrial);
+    [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,0.05,ytrial,8.5);
     fprintf('Prediction interval is [%.3f,%.3f] with model size %d while real data is %.3f\n',...
         min(yconf),max(yconf),modelsize,y);
     if (min(yconf)<y)&&(y<max(yconf))

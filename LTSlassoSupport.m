@@ -23,7 +23,7 @@ lambda = lambdain;
 % use lambda = 1.11 for C
 
 % fit the lasso and calculate support.
-[beta,H] = LTSlasso(X,Y,lambda,tau);
+[beta,H,lambda] = LTSlasso(X,Y,lambda,tau);
 h=length(H);
 lambda = lambda*h;
 E = find(beta);
