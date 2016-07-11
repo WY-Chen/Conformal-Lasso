@@ -8,6 +8,7 @@ addpath(genpath(pwd));
 [m,p] = size(X);
 h = floor((m+1)*tau);
 
+
 % Tune GLMNET
 options = glmnetSet();
 options.standardize = false;        % original X
@@ -17,13 +18,11 @@ options.alpha = 1.0;                % Lasso (no L2 norm penalty)
 options.thresh = 1E-12;
 
 % fit the lasso and calculate support.
-lambda = lambdain;
-
 % use lambda = 0.41 for A
 % use lambda = 1.11 for C
 
 % fit the lasso and calculate support.
-[beta,H,lambda] = LTSlasso(X,Y,lambda,tau);
+[beta,H,lambda] = LTSlasso(X,Y,lambdain,tau);
 h=length(H);
 E = find(beta);
 Z = sign(beta);

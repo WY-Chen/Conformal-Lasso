@@ -12,7 +12,7 @@ function [yconf,modelsize] = conformalLassoAllSupp(X,Y,xnew,alpha,ytrial,lambdai
 % call it without lambda to use the cv lambda method
 
 if nargin==5
-    lambdain = 'null';
+    lambdain = 'CV';
 end
 
 % prepare for fitting
@@ -69,6 +69,7 @@ for i = 1:n
         supportcounter = supportcounter+1;
         supportmax = linprog(-1,A(:,m+1),b-A(:,1:m)*Y,[],[],[],[],[],Linoptions);
         supportmin = linprog(1,A(:,m+1),b-A(:,1:m)*Y,[],[],[],[],[],Linoptions);
+        disp([supportmin y supportmax])
     end   
     modelsizes(i) = length(E);
     % waitbar

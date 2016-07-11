@@ -2,7 +2,7 @@
 % Method: run conformal inference on a data set with Lasso
 % runs lasso for all points in ytrial. 
 %% Method
-function [yconf,s,ms] = conformalLasso(X,Y,xnew,alpha,ytrial)
+function [yconf,s,ms] = conformalLasso(X,Y,xnew,alpha,ytrial,lambda)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
@@ -15,17 +15,26 @@ addpath(genpath(pwd));
 X_withnew = [X;xnew];
 Pi_trial = zeros(1,n);
 [m,p] = size(X);
+modelsizes = zeros(1,n);
+yconfidx = [];
+
 h = waitbar(0,'Please wait...');
 for i = 1:n
     y = ytrial(i);
-    fit = cvglmnet(X_withnew,[Y;y]);
-    Yfit = cvglmnetPredict(fit,X_withnew);
-    Resid = abs(Yfit - [Y;y]);
-    Pi_trial(i) = sum(Resid<=Resid(end))/(m+1);
-    waitbar(i/n)
+    beta = lasso(X,Y,'Lambda',lambda/m);
+    Resid = abs(X_withnew*beta - [Y;y]);
+    Pi_trial = sum(Resid<=Resid(end))/(m+1);
+    if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
+        yconfidx = [yconfidx i];
+    end
+    waitbar(i/n,h,...
+        sprintf('Current model size %d. Number of models computed %d'...
+        ,length(find(beta)),i))
+    modelsizes(i)=length(find(beta));
 end
 close(h) 
-yconf = ytrial((m+1)*Pi_trial<=ceil((1-alpha)*(m+1)));
-s=1; ms=-1;
+yconf = ytrial(yconfidx);
+s=n;
+ms = mean(modelsizes);
     
     
