@@ -71,7 +71,7 @@ for i=1:nruns
     % Get lambda from normal
     t=0;
     for i=1:100
-        t=t+norm(X(H,:)'*normrnd(0,1,[h,1]),inf)*2;
+        t=t+norm(X(H,:)'*trnd(2,[h,1]),inf)*2;
     end
     lambda = t/100;
     

@@ -25,7 +25,6 @@ lambda = lambdain;
 % fit the lasso and calculate support.
 [beta,H,lambda] = LTSlasso(X,Y,lambda,tau);
 h=length(H);
-lambda = lambda*h;
 E = find(beta);
 Z = sign(beta);
 Z_E = Z(E);

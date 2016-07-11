@@ -75,10 +75,10 @@ switch nargin
         Hk=sort(Hk);
         stepcount = 1;
         while 1
-            fit = cvglmnet(X(Hk,:),Y(Hk));
-            beta = cvglmnetCoef(fit);
-            beta = beta(2:p+1);
-%             beta = lasso(X(Hk,:),Y(Hk),'Lambda',lambda/h);
+%             fit = cvglmnet(X(Hk,:),Y(Hk));
+%             beta = cvglmnetCoef(fit);
+%             beta = beta(2:p+1);
+            beta = lasso(X(Hk,:),Y(Hk),'Lambda',lambda/h);
             Resid = (Y - X*beta).^2;
             [~,Rind] = sort(Resid);
             Hknew = Rind(1:h);
