@@ -2,7 +2,7 @@
 % Method: run conformal inference on a data set with Lasso
 % runs lasso for all points in ytrial. 
 %% Method
-function [yconf,s,ms] = conformalLasso(X,Y,xnew,alpha,ytrial,lambda)
+function [yconf,ms] = conformalLasso(X,Y,xnew,alpha,ytrial,lambda)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
@@ -34,7 +34,6 @@ for i = 1:n
 end
 close(h) 
 yconf = ytrial(yconfidx);
-s=n;
 ms = mean(modelsizes);
     
     
