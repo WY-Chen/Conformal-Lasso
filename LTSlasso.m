@@ -1,4 +1,4 @@
-function [beta,H,lambda] = LTSlasso(X,Y,lambda,alpha,~)
+function [beta,H,lambda] = LTSlasso(X,Y,lambdain,alpha,~)
 % alpha:    proportion of 'good' data
 % mtd:      If empty, run the simple method. else run 50-fold
 % initialization
@@ -14,7 +14,6 @@ options.intr = false;               % no intersection
 options.standardize_resp = false;   % original Y
 options.alpha = 1.0;                % Lasso (no L2 norm penalty)
 options.thresh = 1E-12;
-
 
 switch nargin
     case 5
@@ -75,10 +74,16 @@ switch nargin
         Hk=sort(Hk);
         stepcount = 1;
         while 1
-%             fit = cvglmnet(X(Hk,:),Y(Hk));
-%             beta = cvglmnetCoef(fit);
-%             beta = beta(2:p+1);
-            beta = lasso(X(Hk,:),Y(Hk),'Lambda',lambda/h);
+            if ~isequal(lambdain,'CV')
+                lambda = lambdain;
+                beta = lasso(X(Hk,:),Y(Hk),...
+                    'Lambda',lambda/h,'Standardize',0,'RelTol',1E-8);
+            else
+                fit = cvglmnet(X(Hk,:),Y(Hk),[],options);
+                lambda = fit.lambda_1se*h;
+                beta = cvglmnetCoef(fit);
+                beta = beta(2:p+1);
+            end
             Resid = (Y - X*beta).^2;
             [~,Rind] = sort(Resid);
             Hknew = Rind(1:h);

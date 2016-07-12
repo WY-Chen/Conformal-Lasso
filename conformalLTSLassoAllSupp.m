@@ -13,6 +13,10 @@ function [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,alpha,ytrial,lamb
 % tau       proportion of error predetermined
 
 tau=0.95;
+if nargin==5
+    lambdain = 'CV';
+end
+
 
 % prepare for fitting
 addpath(genpath(pwd));
@@ -31,7 +35,7 @@ fprintf('\tPrediction point is %2.2f\n', xnew*betaN)
 
 
 modelsizes = zeros(1,n);
-compcase = 1; suppmax=-inf; outmin = -inf; outmax=inf;
+compcase = 1; outmin = -inf; outmax=inf;
 supportcounter = 0; yconfidx = [];
 
 
@@ -69,11 +73,6 @@ for i=1:n
             if H(end)~=m+1
                 continue
             end
-%             [suppmin,suppmax]=solveInt(A,b,Y(H(1:(h-1))));
-%             if suppmin>=suppmax
-%                 fprintf('WARNING: bad support %d size %d\n',...
-%                     supportcounter, length(E));
-%             end
             % conformal prediction
             Resid = abs(X_withnew*beta - [Y;y]);
             Pi_trial = sum(Resid<=Resid(end))/(m+1);

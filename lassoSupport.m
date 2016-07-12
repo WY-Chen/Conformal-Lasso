@@ -21,7 +21,7 @@ options.thresh = 1E-12;
 % fit the lasso and calculate support.
 if ~isequal(lambdain,'CV')
     lambda = lambdain;
-    beta = lasso(X,Y,'Lambda',lambda/m,'Standardize',0,'RelTol',1E-8);
+    beta = lasso(X,Y,'Lambda',lambda/m,'Standardize',0,'RelTol',1E-12);
 else
     fit = cvglmnet(X,Y,[],options);
     lambda = fit.lambda_1se*m;

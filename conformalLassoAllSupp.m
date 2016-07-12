@@ -69,7 +69,6 @@ for i = 1:n
         supportcounter = supportcounter+1;
         supportmax = linprog(-1,A(:,m+1),b-A(:,1:m)*Y,[],[],[],[],[],Linoptions);
         supportmin = linprog(1,A(:,m+1),b-A(:,1:m)*Y,[],[],[],[],[],Linoptions);
-        disp([supportmin y supportmax])
     end   
     modelsizes(i) = length(E);
     % waitbar

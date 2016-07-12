@@ -13,11 +13,13 @@ function runtest(setting,method,alpha,stepsize,nruns,CV)
 %                           lasso if not in known support, and give such
 %                           support. Use subgradient method if in known
 %                           support. 
-%       ENOneSupp            : One Support method with elastic net 
-%       LTSOneSupp           : One Support method with LTS lasso
 %       LTSAllSupp           : All Support method with LTS lasso
+%       LOO                  : leave one out version of LTS
+
 % BAD METHODS: just for comparison
 %       LassoOneSupp  : Use one support, run Lassp
+%       ENOneSupp            : One Support method with elastic net 
+%       LTSOneSupp           : One Support method with LTS lasso
 
 % CV = off by default. Turn on for comparison
 
@@ -59,7 +61,11 @@ elseif isequal(method,'LTSOneSupp')
     mtd = @conformalLTSLassoOneSupp;
 elseif isequal(method,'LTSAllSupp')
     mtd = @conformalLTSLassoAllSupp;
-    h = 152;
+    h = 190;
+    H=randsample(1:200,h);
+elseif isequal(method,'LOO')
+    mtd = @conformalLOO;
+    h = 199;
     H=randsample(1:200,h);
 end
 
