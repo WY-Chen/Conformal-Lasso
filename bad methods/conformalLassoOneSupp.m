@@ -3,11 +3,17 @@
 % only run Lasso by Lars once, and calculate boundary of y,  
 % then run with known model for the points in ytrial. 
 %% Method
-function [yconf,modelsize] = conformalLassoOneSupp(X,Y,xnew,alpha,ytrial)
+function [yconf,modelsize] = conformalLassoOneSupp(X,Y,xnew,alpha,ytrial,lambdain)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
 % ytrial    trail set for y
+
+if nargin==5
+    lambda = 'CV';
+else
+    lambda = lambdain;
+end
 
 % prepare for fitting
 addpath(genpath(pwd));
@@ -16,17 +22,11 @@ X_withnew = [X;xnew];
 n = length(ytrial);
 
 % Tune GLMNET
-options = glmnetSet();
-options.standardize = false;        % original X
-options.intr = false;               % no intersection
-options.standardize_resp = false;   % original Y
-options.alpha = 1.0;                % Lasso (no L2 norm penalty)
-options.thresh = 1E-12;
 Linoptions = optimset('Display','off');
 
 % fit the first model and calculate support.
 yconfidx = [];
-[beta,A,b,lambda] = lassoSupport(X,Y,X_withnew);
+[beta,A,b,lambda] = lassoSupport(X,Y,X_withnew,lambda);
 E = find(beta);
 Z = sign(beta);
 Z_E = Z(E);
@@ -40,6 +40,7 @@ if isempty(Supp)
     yconf = ytrial;  % rather return the whole interval
     fprintf('WARNING: returned the whole interval.\n');
     modelsize = length(E);
+    close(h)
     return
 end
 for i=Supp

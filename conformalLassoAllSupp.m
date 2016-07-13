@@ -3,11 +3,17 @@
 % Check if the new point is in known support, if yes, subgradient method
 % if no, run full lasso
 %% Method
-function [yconf,modelsize] = conformalLassoAllSupp(X,Y,xnew,alpha,ytrial)
+function [yconf,modelsize] = conformalLassoAllSupp(X,Y,xnew,alpha,ytrial,lambdain)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
 % stepsize  stepsize of searching for upper and lower bound of interval
+% call it with lambda to use the fixed lambda method
+% call it without lambda to use the cv lambda method
+
+if nargin==5
+    lambdain = 'CV';
+end
 
 % prepare for fitting
 addpath(genpath(pwd));
@@ -27,7 +33,7 @@ Linoptions = optimset('Display','off');
 
 % Build confidence interval
 yconfidx = [];
-[beta,A,b,lambda] = lassoSupport(X_withnew,[Y;ytrial(1)],X_withnew);
+[beta,A,b,lambda] = lassoSupport(X_withnew,[Y;ytrial(1)],X_withnew,lambdain);
 E = find(beta);
 Z = sign(beta);
 Z_E = Z(E);
@@ -50,7 +56,7 @@ for i = 1:n
             yconfidx = [yconfidx i];
         end
     else 
-        [beta,A,b,lambda] = lassoSupport(X_withnew,[Y;y],X_withnew);
+        [beta,A,b,lambda] = lassoSupport(X_withnew,[Y;y],X_withnew,lambdain);
         E = find(beta);
         Z = sign(beta);
         Z_E = Z(E);
@@ -74,7 +80,7 @@ modelsize = mean(modelsizes);
 yconf  = ytrial(yconfidx);
 
 % Plots
-plotFlag=1;  % change to 0 to turn off
+plotFlag=0;  % change to 0 to turn off
 if plotFlag == 1
     subplot(1,2,1)
     boxplot(yconf);

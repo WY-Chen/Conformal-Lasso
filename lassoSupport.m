@@ -1,16 +1,14 @@
 %% Costumised Lasso with GLMnet
 % return polyhedron
+% If called with lambdain=='CV', do cross validation version.
+% if called with given lambdain, use this lambda to fit lasso.
 %% Method
-function [beta,A,b,lambda] = lassoSupport(X,Y,X_withnew)
+function [beta,A,b,lambda] = lassoSupport(X,Y,X_withnew,lambdain)
 
 % prepare for fitting
 addpath(genpath(pwd));
 [m,p] = size(X);
-[mnew,pnew] = size(X_withnew);
-if ~pnew==p
-    fprintf('ERROR: new X matrix dimension')
-    return
-end
+[mnew,~] = size(X_withnew);
 
 % Tune GLMNET
 options = glmnetSet();
@@ -21,10 +19,16 @@ options.alpha = 1.0;                % Lasso (no L2 norm penalty)
 options.thresh = 1E-12;
 
 % fit the lasso and calculate support.
-fit = cvglmnet(X,Y,[],options);
-lambda = fit.lambda_1se*m;
-beta = cvglmnetCoef(fit);
-beta = beta(2:p+1);
+if ~isequal(lambdain,'CV')
+    lambda = lambdain;
+    beta = lasso(X,Y,'Lambda',lambda/m,'Standardize',0,'RelTol',1E-12);
+else
+    fit = cvglmnet(X,Y,[],options);
+    lambda = fit.lambda_1se*m;
+    beta = cvglmnetCoef(fit);
+    beta = beta(2:p+1);
+end
+
 E = find(beta);
 Z = sign(beta);
 Z_E = Z(E);

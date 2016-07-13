@@ -7,7 +7,7 @@ for i=1:m
     data(i,:)=(data(i,:)-data(i,1))./(max(data(i,1:(p-1)))-min(data(i,1:(p-1))));
 end
 
-% use 20 countries as training data
+% use 30 countries as training data
 sample = randsample(1:m,30);
 X = data(sample,1:p-1);
 Y = data(sample,p);
@@ -19,7 +19,8 @@ for i=test
     xnew = data(i,1:p-1);
     y = data(i,p);
     ytrial = [-2:0.001:2];
-    [yconf,modelsize] = conformalLassoAllSupp(X,Y,xnew,0.05,ytrial);
+    lambda=0.1;
+    [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,0.1,ytrial,lambda);
     fprintf('Prediction interval is [%.3f,%.3f] with model size %d while real data is %.3f\n',...
         min(yconf),max(yconf),modelsize,y);
     if (min(yconf)<y)&&(y<max(yconf))

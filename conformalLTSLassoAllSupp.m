@@ -5,14 +5,18 @@
 % Check if the new pair is in known support, if yes, subgradient method
 % if no, run full lasso
 %% Method
-function [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,alpha,ytrial)
+function [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,alpha,ytrial,lambdain)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
 % ytrial    a set of value to test
 % tau       proportion of error predetermined
 
-tau=0.99;
+tau=0.95;
+if nargin==5
+    lambdain = 'CV';
+end
+
 
 % prepare for fitting
 addpath(genpath(pwd));
@@ -21,7 +25,7 @@ X_withnew = [X;xnew];
 n = length(ytrial);
 
 % Build a model when new pair is outlier with only the known data
-[betaN,~,~,~,H] = LTSlassoSupport(X,Y,xnew,tau);
+[betaN,~,~,~,H] = LTSlassoSupport(X,Y,xnew,tau,lambdain);
 hN=length(H);
 [Rval,~] = sort((Y - X*betaN).^2);
 bounds = [sqrt(Rval(hN))+xnew*betaN,-sqrt(Rval(hN))+xnew*betaN];
@@ -31,15 +35,15 @@ fprintf('\tPrediction point is %2.2f\n', xnew*betaN)
 
 
 modelsizes = zeros(1,n);
-compcase = 1; suppmax=-inf; outmin = -inf; outmax=inf;
+compcase = 1; outmin = -inf; outmax=inf;
 supportcounter = 0; yconfidx = [];
 
 
 wb = waitbar(0,'Please wait...');
 for i=1:n
     waitbar(i/n,wb,...
-        sprintf('In mode %d. Number of Lasso support computed %d'...
-        ,compcase,supportcounter))
+        sprintf('Current model size %d. Number of Lasso support computed %d'...
+        ,modelsizes(max(i-1,1)),supportcounter))
     y = ytrial(i);
     % if new pair not in chosen model, use the competed model
     if y<=outminN || y>=outmaxN || y<=outmin || y>=outmax
@@ -54,7 +58,7 @@ for i=1:n
     switch compcase
         case 1
             % Compute full LTS-lasso
-            [beta,A,b,lambda,H]=LTSlassoSupport(X_withnew,[Y;y],xnew,tau);
+            [beta,A,b,lambda,H]=LTSlassoSupport(X_withnew,[Y;y],xnew,tau,lambdain);
             h=length(H);
             supportcounter = supportcounter+1;
             % updata support 
@@ -69,11 +73,6 @@ for i=1:n
             if H(end)~=m+1
                 continue
             end
-%             [suppmin,suppmax]=solveInt(A,b,Y(H(1:(h-1))));
-%             if suppmin>=suppmax
-%                 fprintf('WARNING: bad support %d size %d\n',...
-%                     supportcounter, length(E));
-%             end
             % conformal prediction
             Resid = abs(X_withnew*beta - [Y;y]);
             Pi_trial = sum(Resid<=Resid(end))/(m+1);
@@ -104,7 +103,7 @@ modelsize = mean(modelsizes);
 yconf  = ytrial(yconfidx);
 
 % Plots
-plotFlag=1;  % change to 0 to turn off
+plotFlag=0;  % change to 0 to turn off
 if plotFlag == 1
     subplot(1,2,1)
     boxplot(yconf);
