@@ -103,7 +103,7 @@ modelsize = mean(modelsizes);
 yconf  = ytrial(yconfidx);
 
 % Plots
-plotFlag=1;  % change to 0 to turn off
+plotFlag=0;  % change to 0 to turn off
 if plotFlag == 1
     subplot(1,2,1)
     boxplot(yconf);

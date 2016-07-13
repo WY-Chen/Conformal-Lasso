@@ -19,10 +19,13 @@ X_withnew = [X;xnew];
 
 % initialize beta and E
 betaN = lasso(X,Y,'Lambda',lambdain/m);
+ypred=xnew*betaN;
+fprintf('\tPrediction point is %2.2f\n', ypred);
 [maxOutErrNval,~] = max((X*betaN - Y).^2);
-ytrial = ytrial(ytrial> xnew*betaN-sqrt(maxOutErrNval)...
-    & ytrial < xnew*betaN+sqrt(maxOutErrNval));
+ytrial = ytrial(ytrial> ypred-sqrt(maxOutErrNval)...
+    & ytrial < ypred+sqrt(maxOutErrNval));
 n = length(ytrial);
+
 
 i=1; compcase=1;yconfidx=[];
 h = waitbar(0,'Please wait...');
