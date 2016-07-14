@@ -6,7 +6,7 @@ Conformal prediction using Lasso support.
 
 Running conformal prediction with Lasso is extremely slow because it requires fitting a full lasso for every trial value. 
 
-## Possible solution and General Steps
+## Possible solution and General Approaches
 
 Since Lasso is cheap to compute if given the supports and signs of the model, we hope the trial value does not change the supports and signs, and thus reduce the incidents of computing full lasso.  In general, the method bases on the two modes:
 
@@ -15,7 +15,7 @@ Since Lasso is cheap to compute if given the supports and signs of the model, we
 
 # Methods
 
-## Full Lasso 
+## Full Lasso
 
 _(conformalLasso.m)_
 
@@ -41,8 +41,6 @@ __Notice__: I also implemented a cross-validation version that recalculates lamb
 ## LTS-lasso All Support
 
 _(conformalLTSLassoAllSupp.m)_
-
-#### Conformal LTS-lasso:
 
 1. __Get rid of outliers__: fit a lasso to the original _N_ data. Rank the residues to compute a interval for trial values that the trial pair is included in the selected data set _H_. Discard the rest trial values, because they does not satisfy stopping condition of C-steps.
 2. __LTS-Lasso C-Steps__:
@@ -81,7 +79,7 @@ __Problem__: Not found yet. Testing.
 
 __Notice__: theoretically, this method should totally replace the LTS-lasso, because we should believe that there are very few, if not none, real outliers in the data. 
 
--------
+------
 
 # Examples:
 
@@ -101,7 +99,9 @@ _beta_ is 2000*1 vector, _beta_ = [2,2,2,2,2,0,0,...,0]
 
 _Y=beta*X+epsilon_ where _epsilon_ is iid t(2).
 
-## World GDP (Notice: technically invalid because violated weak exchangeability)
+## World GDP 
+
+__(Notice: technically invalid because violated weak exchangeability)__
 
 _X_ is 30*35 matrix. The GDP data of 30 countries in the 35 years (1980-2014). 
 
@@ -109,7 +109,7 @@ _Y_ is 30*1 vector of GDP of year 2015.
 
 Testing data is the data pairs of the other 129 countries. 
 
-## Bike (unknown model, could be linear with skewed error)
+## Capital Bikeshare (unknown model, could be linear with skewed error)
 
 _X_ is 100*117 matrix. The visit to each station of 100 bikes. 
 
@@ -119,11 +119,11 @@ Testing data is the data pairs of the other 839 bikes.
 
 ------
 
-# Simulation Study
+# Simulation Studies
 
+Run the 4 methods on the same data for 20 times. Confidence intervals are computed with 10000 draws from known model. Testing level is 0.95, with step size 0.05. 
 
-
-
+<table><tr><th></th><th></th><th>Full Lasso</th><th>Lasso-AllSupp</th><th>LTS-Lasso-AllSupp</th><th>LOO-Lasso-AllSupp</th></tr><tr><td rowspan="3">Setting A</td><td>Coverage</td><td>95.6%</td><td>96.0%</td><td>95.7%</td><td>96.0%</td></tr><tr><td>Length</td><td>6.0</td><td>6.2</td><td>7.3</td><td>6.3</td></tr><tr><td>Time(second)</td><td>14.43</td><td>1.40</td><td>14.46</td><td>0.41</td></tr><tr><td rowspan="3">Setting C</td><td>Coverage</td><td>95.0%</td><td>95.0%</td><td>95.5%</td><td>95.3%</td></tr><tr><td>Length</td><td>11.1</td><td>11.0</td><td>11.9</td><td>11.0</td></tr><tr><td>Time(second)</td><td>24.76</td><td>17.15</td><td>24.80</td><td>10.74</td></tr></table>
 
 
 
@@ -133,7 +133,7 @@ Testing data is the data pairs of the other 839 bikes.
 
 The following methods are discarded for either inefficiency or inaccuracy. Some are worth noticing, thus are listed below. _the code for these are in the bad method folder_.
 
-### Lasso One Support
+## Lasso One Support
 
 1. Run Lasso on known data (X,Y), use the fitted parameters to determine a polyhedron for support and signs. 
 2. Solve for a range of observed value that would land in the polyhedron if paired with the new point. 
@@ -143,7 +143,7 @@ __Coverage not guaranteed__
 
 __Problem__: the supports might change very frequently, thus the interval we are examining is too short. 
 
-### LTS-lasso One Support
+## LTS-lasso One Support
 
 1. Set alpha=0.9, i.e., using only 90% of the data. Use recursive C-steps that run lasso only on the data points with residual in lower 90% quantile until the chosen set does not change. 
 2. Use the parameter from the C-steps to fit and do conformal prediction on the whole range. 
@@ -152,7 +152,7 @@ __Coverage not guaranteed__
 
 __Problem__: The method is technically incorrect, for the support changes if the new data pair is in the chosen set, while here we treat all cases as if the new data pair is already outlier.
 
-### LAD-Lasso methods
+## LAD-Lasso methods
 
 The computation of this method is basically LAD with additional p many data pairs for constraint. However, this runs very slowly per trial, and is not as good for shrinkage empirically.
 
@@ -163,7 +163,7 @@ Need to see whether computation can be simplified with known support.
 __Too slow__
 Source: [LAD-lasso](https://www.researchgate.net/publication/4724848_Robust_Regression_Shrinkage_and_Consistent_Variable_Selection_Through_the_LAD-Lasso?enrichId=rgreq-c8d87c27a1813dd29252d4abf613721e-XXX&enrichSource=Y292ZXJQYWdlOzQ3MjQ4NDg7QVM6OTg5OTE0ODQxNzg0NDJAMTQwMDYxMjgxNzU0NA%3D%3D&el=1_x_2)
 
-### Elastic net One Support
+## Elastic net One Support
 
 Do Lasso one support method with elastic nets instead of lasso with the same Lars algorithm. This method does not show robustness against outlier, and the support is even narrower (because the L2 penalty helps choose many correlated features rather than one, as in lasso). 
 
