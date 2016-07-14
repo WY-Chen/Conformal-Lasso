@@ -1,9 +1,12 @@
 %% Conformal inference
-% Method: run conformal inference on a data set,
-% Check if the new pair is outlier in model, if yes, use fit of known data
-% Then:
-% Check if the new pair is in known support, if yes, subgradient method
-% if no, run full lasso
+% 1. Get rid of outliers: fit a lasso to the original N data. 
+%   Rank the residues to compute a interval that the trial pair is included
+%   in the selected set H. Discard the rest.
+% 2. All Support method: similar to Lasso All support. 
+%   Traverse the trial set, compute models by LTS-lasso on combined data: 
+%       (a) If the new pair is within known polyhedron of support and signs,
+%       apply the simplified computation on the selected set H; 
+%       (b) if not, fit full LTS-lasso with C-Steps. 
 %% Method
 function [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,alpha,ytrial,lambdain)
 % X, Y      input data, in format of matrix
@@ -11,42 +14,45 @@ function [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,alpha,ytrial,lamb
 % alpha     level
 % ytrial    a set of value to test
 % tau       proportion of error predetermined
+% lambdain  initial lambda. Unlike others, this method does not have CV
 
-tau=0.95;
+%% Preparations for fitting
+tau=0.95;               % pre-determined proportion of good data
 if nargin==5
-    lambdain = 'CV';
+    lambdain = 'CV';    % turn on cvglmnet
 end
+addpath(genpath(pwd));  % may use glmnet
+X_withnew = [X;xnew];   % new combined data
+[m,p] = size(X);        % X is m*p, Y is m*1
+oldn = length(ytrial);  % total trial 
 
 
-% prepare for fitting
-addpath(genpath(pwd));
-X_withnew = [X;xnew];
-[m,p] = size(X);
-n = length(ytrial);
-
-% Build a model when new pair is outlier with only the known data
+%% Fit the known data. 
+% this is the condition of the new pair being outlier
 [betaN,~,~,~,H] = LTSlassoSupport(X,Y,xnew,tau,lambdain);
 hN=length(H);
 [Rval,~] = sort((Y - X*betaN).^2);
 bounds = [sqrt(Rval(hN))+xnew*betaN,-sqrt(Rval(hN))+xnew*betaN];
 outminN = min(bounds);
 outmaxN = max(bounds);
-fprintf('\tPrediction point is %2.2f\n', xnew*betaN)
+message = sprintf('\tPrediction point is %2.2f', xnew*betaN);
+disp(message);
+ytrial = ytrial(ytrial>outminN & ytrial<outmaxN);
+n = length(ytrial); % new truncated trial set. 
 
-
+%% Fit the trial set
 modelsizes = zeros(1,n);
 compcase = 1; outmin = -inf; outmax=inf;
 supportcounter = 0; yconfidx = [];
 
-
 wb = waitbar(0,'Please wait...');
 for i=1:n
-    waitbar(i/n,wb,...
+    waitbar((oldn-n+i)/oldn,wb,...
         sprintf('Current model size %d. Number of Lasso support computed %d'...
         ,modelsizes(max(i-1,1)),supportcounter))
     y = ytrial(i);
     % if new pair not in chosen model, use the competed model
-    if y<=outminN || y>=outmaxN || y<=outmin || y>=outmax
+    if y<=outmin || y>=outmax
         Resid = abs(X_withnew*betaN - [Y;y]);
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
         if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)

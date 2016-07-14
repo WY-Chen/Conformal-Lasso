@@ -34,11 +34,16 @@ Z = sign(beta);
 Z_E = Z(E);
 X_minusE = X_withnew(:,setxor(E,1:p));
 X_E = X_withnew(:,E);
-P_E = X_E*((X_E'*X_E)\X_E');
+% accelerate computation
+% accelerate the computation
+xesquareinv = (X_E'*X_E)\eye(length(E));
+P_E = X_E*xesquareinv*X_E';
+temp = X_minusE'*pinv(X_E')*Z_E;
+a0=X_minusE'*(eye(mnew)-P_E)./lambda;
 % calculate the inequalities for fitting. 
-A = [X_minusE'*(eye(mnew)-P_E)./lambda;
-    -X_minusE'*(eye(mnew)-P_E)./lambda;
-    -diag(Z_E)*((X_E'*X_E)\X_E')];
-b = [ones(p-length(E),1)-X_minusE'*pinv(X_E')*Z_E;
-    ones(p-length(E),1)+X_minusE'*pinv(X_E')*Z_E;
-    -lambda*diag(Z_E)*((X_E'*X_E)\Z_E)];
+A = [a0;
+    -a0;
+    -diag(Z_E)*xesquareinv*X_E'];
+b = [ones(p-length(E),1)-temp;
+    ones(p-length(E),1)+temp;
+    -lambda*diag(Z_E)*xesquareinv*Z_E];

@@ -29,7 +29,6 @@ options.intr = false;               % no intersection
 options.standardize_resp = false;   % original Y
 options.alpha = 1.0;                % Lasso (no L2 norm penalty)
 options.thresh = 1E-12;
-Linoptions = optimset('Display','off');
 
 % Build confidence interval
 yconfidx = [];
@@ -37,10 +36,11 @@ yconfidx = [];
 E = find(beta);
 Z = sign(beta);
 Z_E = Z(E);
+X_E = X_withnew(:,E);
+xesquareinv = (X_E'*X_E)\eye(length(E));
 supportcounter = 1;
 fprintf('\tPrediction point is %2.2f\n', cvglmnetPredict(cvglmnet(X,Y),xnew));
-supportmax = linprog(-1,A(:,m+1),b-A(:,1:m)*Y,[],[],[],[],[],Linoptions);
-supportmin = linprog(1,A(:,m+1),b-A(:,1:m)*Y,[],[],[],[],[],Linoptions);
+[supportmin,supportmax] = solveInt(A,b,Y);
 
 h = waitbar(0,'Please wait...');
 for i = 1:n
@@ -48,7 +48,7 @@ for i = 1:n
     if supportmin<= y & supportmax >=y
         beta = zeros(p,1);
         X_E = X_withnew(:,E);
-        beta(E) = pinv(X_E)*[Y;y] - lambda*((X_E'*X_E)\Z_E);  
+        beta(E) = pinv(X_E)*[Y;y] - lambda*xesquareinv*Z_E;  
         yfit = X_withnew*beta;
         Resid = abs(yfit - [Y;y]);
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
@@ -56,19 +56,43 @@ for i = 1:n
             yconfidx = [yconfidx i];
         end
     else 
-        [beta,A,b,lambda] = lassoSupport(X_withnew,[Y;y],X_withnew,lambdain);
+        if ~isequal(lambdain,'CV')
+            lambda = lambdain;
+            beta = lasso(X_withnew,[Y;y],'Lambda',lambda/m,...
+                'Standardize',0,'RelTol',1E-12);
+        else
+            fit = cvglmnet(X_withnew,[Y;y],[],options);
+            lambda = fit.lambda_1se*m;
+            beta = cvglmnetCoef(fit);
+            beta = beta(2:p+1);
+        end
         E = find(beta);
         Z = sign(beta);
         Z_E = Z(E);
+        X_minusE = X_withnew(:,setxor(E,1:p));
+        X_E = X_withnew(:,E);
+        % accelerate computation
+        % accelerate the computation
+        xesquareinv = (X_E'*X_E)\eye(length(E));
+        P_E = X_E*xesquareinv*X_E';
+        temp = X_minusE'*pinv(X_E')*Z_E;
+        a0=X_minusE'*(eye(m+1)-P_E)./lambda;
+        % calculate the inequalities for fitting.
+        A = [a0;
+            -a0;
+            -diag(Z_E)*xesquareinv*X_E'];
+        b = [ones(p-length(E),1)-temp;
+            ones(p-length(E),1)+temp;
+            -lambda*diag(Z_E)*xesquareinv*Z_E];
         yfit = X_withnew*beta;
+        % conformal
         Resid = abs(yfit - [Y;y]);
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
         if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
             yconfidx = [yconfidx i];
         end
         supportcounter = supportcounter+1;
-        supportmax = linprog(-1,A(:,m+1),b-A(:,1:m)*Y,[],[],[],[],[],Linoptions);
-        supportmin = linprog(1,A(:,m+1),b-A(:,1:m)*Y,[],[],[],[],[],Linoptions);
+        [supportmin,supportmax] = solveInt(A,b,Y);
     end   
     modelsizes(i) = length(E);
     % waitbar
