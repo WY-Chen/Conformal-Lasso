@@ -16,17 +16,16 @@ elseif setting=='B'
      y = 3*xnew(:,1).^2+2*xnew(:,2).^3+xnew(:,3).^4+trnd(2,[10000,1]);
 elseif setting=='C'
     beta = [2,2,2,2,2,zeros(1,1995)];
-    X = zeros(200,2000);
-    X(1:66,:)=normrnd(0,1,66,2000);
-    X(67:132,:)=pearsrnd(0,1,1,5,[66,2000]);
-    X(133:200,:)=binornd(1,0.5,[68,2000]);
-    X=X(:, randperm(size(X,2)));
-    X=X(randperm(size(X,1)), :);
+    X = randi([1,3],201,2000);
+    X(X==1)=normrnd(0,1,[1,length(X(X==1))]);
+    X(X==2)=pearsrnd(0,1,1,5,[1,length(X(X==2))]);
+    X(X==3)=binornd(1,.5,[1,length(X(X==3))]);
     for k=1:2000
        X(:,k)=0.4*X(:,k)+0.3*X(:,max(1,k-1)) + 0.2*X(:,max(1,k-2)) + 0.1*X(:,max(1,k-3));
     end
+    xnew = X(201,:);
+    X = X(1:200,:);
     Y = X*beta' + trnd(2,[200,1]);
-    xnew = normrnd(0,1,[1,2000]);
     y = xnew * beta'+trnd(2,[10000,1]);
 else
     fprintf('ERROR: No such Setting')

@@ -16,6 +16,8 @@ function [yconf,modelsize] = conformalLOO(X,Y,xnew,alpha,ytrial,lambdain)
 addpath(genpath(pwd));
 X_withnew = [X;xnew];
 [m,p] = size(X);
+Linoptions = optimset('Display','off');
+oldn = length(ytrial);
 
 % initialize beta and E
 betaN = lasso(X,Y,'Lambda',lambdain/m);
@@ -37,8 +39,8 @@ while i<=n
             % recompute full lasso: C-steps
             
             %initiation
-            initOuts = zeros(1,10);
-            for j=1:10
+            initOuts = zeros(1,5);
+            for j=1:5
                 init = randsample(1:m+1,3);
                 initlambda = 2*norm((X_withnew(init,:)'*normrnd(0,1,[3,1])),inf);
                 beta = lasso(X_withnew(init,:),Y_withnew(init),'Lambda',initlambda);
@@ -83,7 +85,9 @@ while i<=n
             b = [ones(p-length(E),1)-X_minusE'*pinv(X_E')*Z_E;
                 ones(p-length(E),1)+X_minusE'*pinv(X_E')*Z_E;
                 -lambdain*diag(Z_E)*((X_E'*X_E)\Z_E)];
-            if max(A*[Y(selection(1:m-1));ytrial(min(i+1,n))]-b)<=0
+            supportmax = linprog(-1,A(:,m),b-A(:,1:(m-1))*Y_withnew(selection(1:m-1)),[],[],[],[],[],Linoptions);
+            supportmin = linprog(1,A(:,m),b-A(:,1:(m-1))*Y_withnew(selection(1:m-1)),[],[],[],[],[],Linoptions);
+            if supportmin<= ytrial(min(i+1,n)) & ytrial(min(i+1,n))<=supportmax
                 compcase=2;
             end
             supportcounter = supportcounter+1;
@@ -94,6 +98,9 @@ while i<=n
             yfit = X_withnew*beta;
             Resid = abs(yfit - [Y;y]);
             [~,fitoutind]=max(Resid);
+            if supportmin> ytrial(min(i+1,n)) | ytrial(min(i+1,n))>supportmax
+                compcase=1;
+            end
             if fitoutind == outlier
                 Pi_trial = sum(Resid<=Resid(end))/(m+1);
                 if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
@@ -104,7 +111,7 @@ while i<=n
                 continue;
             end
     end
-    waitbar(i/n,h,sprintf('Current model size %d. Number of Lasso support computed %d',...
+    waitbar((oldn-n+i)/oldn,h,sprintf('Current model size %d. Number of Lasso support computed %d',...
         length(E),supportcounter))
     modelsizes(i)=length(E);
     i=i+1;

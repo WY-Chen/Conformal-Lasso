@@ -61,11 +61,11 @@ Bike = ic;
 
 M=length(unique(Bike));
 p=length(unique(Startstation));
-m=100;
+m=200;
 
 data = zeros(M,p^2); d=zeros(M,1);
 for i=1:length(Bike)
-    data(Bike(i),(Startstation(i)-1)*p+Endstation(i))=data(Bike(i),(Startstation(i)-1)*p+Endstation(i))+1;
+    data(Bike(i),Startstation(i))=data(Bike(i),Startstation(i))+1;
     d(Bike(i))=d(Bike(i))+Duration(i);
 end
 d=(d-mean(d))/(max(d)-min(d))*2;
@@ -81,7 +81,7 @@ for i=test
     y = d(i);
     ytrial = [-2:0.01:2];
 %     [yconf,modelsize] = conformalLasso(X,Y,xnew,0.1,ytrial,5);
-    [yconf,modelsize] = conformalLOO(X,Y,xnew,0.1,ytrial,2);
+    [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,0.1,ytrial,15);
     fprintf('Prediction interval is [%.3f,%.3f] with model size %d while real data is %.3f\n',...
         min(yconf),max(yconf),modelsize,y);
     if (min(yconf)<y)&&(y<max(yconf))
