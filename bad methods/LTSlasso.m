@@ -7,13 +7,15 @@ function [beta,H,lambda] = LTSlasso(X,Y,lambdain,alpha,~)
 [m,p]=size(X);
 h = floor((m+1)*alpha);     % length of chosen set
 
-% Tune GLMNET
+%% Tune GLMNET
 options = glmnetSet();
 options.standardize = false;        % original X
 options.intr = false;               % no intersection
 options.standardize_resp = false;   % original Y
 options.alpha = 1.0;                % Lasso (no L2 norm penalty)
 options.thresh = 1E-12;
+options.nlambda = 1;
+options.lambda = lambdain/h;
 
 switch nargin
     case 5
@@ -27,11 +29,21 @@ switch nargin
         wb = waitbar(0,'Initializing C-steps...');
         for i=1:50
             s = randsample(1:m,3);
-            beta = lasso(X(s,:),Y(s),'Lambda',lambda);
+            optioninit = glmnetSet();
+            optioninit.standardize = false;        % original X
+            optioninit.intr = false;               % no intersection
+            optioninit.standardize_resp = false;   % original Y
+            optioninit.alpha = 1.0;                % Lasso (no L2 norm penalty)
+            optioninit.thresh = 1E-12;
+            optioninit.nlambda = 1;
+            optioninit.lambda = X'*normrnd(0,1,[3,1])*2/m;
+            beta = glmnetCoef(glmnet(X(s,:),Y(s),[],optioninit));
+            beta = beta(2:p+1);
             Resid = (Y - X*beta).^2;
             [~,Rind] = sort(Resid);
             H0 = Rind(1:h);
-            beta = lasso(X(H0,:),Y(H0),'Lambda',lambda);
+            beta = glmnetCoef(glmnet(X(H0,:),Y(H0),[],options));
+            beta = beta(2:p+1);
             Resid = (Y - X*beta).^2;
             [Rval,Rind] = sort(Resid);
             H(i,:) = sort(Rind(1:h));
@@ -52,7 +64,8 @@ switch nargin
             Hk = H(i,:);
             stepcount=2;
             while 1
-                beta = lasso(X(Hk,:),Y(Hk),'Lambda',lambda);
+                beta = glmnetCoef(glmnet(X(Hk,:),Y(Hk),[],options));
+                beta = beta(2:p+1);
                 Resid = (Y - X*beta).^2;
                 [~,Rind] = sort(Resid);
                 Hknew = sort(Rind(1:h));
@@ -76,8 +89,8 @@ switch nargin
         while 1
             if ~isequal(lambdain,'CV')
                 lambda = lambdain;
-                beta = lasso(X(Hk,:),Y(Hk),...
-                    'Lambda',lambda/h,'Standardize',0,'RelTol',1E-8);
+                beta = glmnetCoef(glmnet(X(Hk,:),Y(Hk),[],options));
+                beta = beta(2:p+1);
             else
                 fit = cvglmnet(X(Hk,:),Y(Hk),[],options);
                 lambda = fit.lambda_1se*h;
