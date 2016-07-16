@@ -28,9 +28,19 @@ X_withnew = [X;xnew];   % new combined data
 [m,p] = size(X);        % X is m*p, Y is m*1
 oldn = length(ytrial);  % total trial 
 
+%% Tune GLMNET
+options = glmnetSet();
+options.standardize = false;        % original X
+options.intr = false;               % no intersection
+options.standardize_resp = false;   % original Y
+options.alpha = 1.0;                % Lasso (no L2 norm penalty)
+options.thresh = 1E-12;
+options.nlambda = 1;
+options.lambda = lambdain/m;
 %% Fit the known data. 
 % this is the condition of the new pair being outlier
-betaN = lasso(X,Y,'Lambda',lambdain/m);
+betaN = glmnetCoef(glmnet(X,Y,[],options));
+betaN=betaN(2:p+1);
 ypred=xnew*betaN;
 message = sprintf('\tPrediction point is %2.2f', ypred);
 disp(message);
@@ -57,15 +67,25 @@ while i<=n
                     % Initialize with 3 points
                     init = randsample(1:m+1,3);
                     initlambda = 2*norm((X_withnew(init,:)'*normrnd(0,1,[3,1])),inf);
-                    beta = lasso(X_withnew(init,:),Y_withnew(init),...
-                        'Lambda',initlambda,'Standardize',0,'RelTol',1E-4);
-                            % use less precission here. 
+                    
+                    optioninit = glmnetSet();
+                    optioninit.standardize = false;        % original X
+                    optioninit.intr = false;               % no intersection
+                    optioninit.standardize_resp = false;   % original Y
+                    optioninit.alpha = 1.0;                % Lasso (no L2 norm penalty)
+                    optioninit.thresh = 1E-4;              % use less precission here. 
+                    optioninit.nlambda = 1;
+                    optioninit.lambda = initlambda/3;
+                    
+                    beta = glmnetCoef(glmnet(X_withnew(init,:),Y_withnew(init),...
+                        [],optioninit));
+                    beta = beta(2:p+1);
                     [~,initOut]=max((X_withnew*beta-Y_withnew).^2);
                     selection = setxor(1:m+1,initOut);
                     % C-Step in initialzation. 
-                    beta = lasso(X_withnew(selection,:),Y_withnew(selection),...
-                        'Lambda',lambdain/m,'Standardize',0,'RelTol',1E-4);
-                            % use less precission here. 
+                    beta = glmnetCoef(glmnet(X_withnew(selection,:),Y_withnew(selection),...
+                        [],options));
+                    beta = beta(2:p+1);
                     [~,initOut]=max((X_withnew*beta-Y_withnew).^2);
                     initOuts(j) = initOut;
                 end
@@ -81,8 +101,9 @@ while i<=n
             ccount=0;
             while 1
                 selection = setxor(1:m+1,outlier);
-                beta = lasso(X_withnew(selection,:),Y_withnew(selection),...
-                    'Lambda',lambdain/m,'Standardize',0,'RelTol',1E-12);
+                beta = glmnetCoef(glmnet(X_withnew(selection,:),Y_withnew(selection),...
+                    [],options));
+                beta = beta(2:p+1);
                 [~,outlier]=max((X_withnew*beta-Y_withnew).^2);
                 if outlier == outlierOld || ccount>20
                     break
@@ -116,18 +137,26 @@ while i<=n
             b = [ones(p-length(E),1)-temp;
                 ones(p-length(E),1)+temp;
                 -lambdain*diag(Z_E)*xesquareinv*Z_E];
+            if selection(end)~=m+1
+                i=i+1;
+                continue;
+            end
             [supportmin,supportmax] = solveInt(A,b,Y(selection(1:m-1)));
             
             % Change computation mode
             if supportmin<= ytrial(min(i+1,n)) & ytrial(min(i+1,n))<=supportmax
                 compcase=2;
+                beta = zeros(p,1);
+                % the following is to ease computation in mode 2
+                pinvxe=pinv(X_E);
+                beta(E) = pinvxe*Y_withnew(selection) - lambdain*xesquareinv*Z_E;
+                betalast = pinvxe(:,end);
             end
             supportcounter = supportcounter+1;
         case 2
             % Fit the known support/sign
-            beta = zeros(p,1);
-            X_E = X_withnew(selection,E);
-            beta(E) = pinv(X_E)*Y_withnew(selection) - lambdain*xesquareinv*Z_E;
+            stepsize = ytrial(i)-ytrial(i-1);
+            beta(E) = beta(E) + betalast*stepsize;
             yfit = X_withnew*beta;
             Resid = abs(yfit - [Y;y]);
             [~,fitoutind]=max(Resid);

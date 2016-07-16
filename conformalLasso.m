@@ -13,15 +13,24 @@ n = length(ytrial);
 addpath(genpath(pwd));
 
 X_withnew = [X;xnew];
-Pi_trial = zeros(1,n);
 [m,p] = size(X);
 modelsizes = zeros(1,n);
 yconfidx = [];
+%% Tune GLMNET
+options = glmnetSet();
+options.standardize = false;        % original X
+options.intr = false;               % no intersection
+options.standardize_resp = false;   % original Y
+options.alpha = 1.0;                % Lasso (no L2 norm penalty)
+options.thresh = 1E-12;
+options.nlambda = 1;
+options.lambda = lambda/m;
 
 h = waitbar(0,'Please wait...');
 for i = 1:n
     y = ytrial(i);
-    beta = lasso(X,Y,'Lambda',lambda/m,'Standardize',0,'RelTol',1E-8);
+    beta = glmnetCoef(glmnet(X_withnew,[Y;y],[],options));
+    beta = beta(2:p+1);
     Resid = abs(X_withnew*beta - [Y;y]);
     Pi_trial = sum(Resid<=Resid(end))/(m+1);
     if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
