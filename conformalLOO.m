@@ -73,20 +73,19 @@ while i<=n
                     optioninit.intr = false;               % no intersection
                     optioninit.standardize_resp = false;   % original Y
                     optioninit.alpha = 1.0;                % Lasso (no L2 norm penalty)
-                    optioninit.thresh = 1E-4;
+                    optioninit.thresh = 1E-4;              % use less precission here. 
                     optioninit.nlambda = 1;
-                    optioninit.lambda = initlambda/m;
+                    optioninit.lambda = initlambda/3;
                     
                     beta = glmnetCoef(glmnet(X_withnew(init,:),Y_withnew(init),...
                         [],optioninit));
-                            % use less precission here. 
                     beta = beta(2:p+1);
                     [~,initOut]=max((X_withnew*beta-Y_withnew).^2);
                     selection = setxor(1:m+1,initOut);
                     % C-Step in initialzation. 
                     beta = glmnetCoef(glmnet(X_withnew(selection,:),Y_withnew(selection),...
                         [],options));
-                            % use less precission here. 
+                    beta = beta(2:p+1);
                     [~,initOut]=max((X_withnew*beta-Y_withnew).^2);
                     initOuts(j) = initOut;
                 end
@@ -138,18 +137,26 @@ while i<=n
             b = [ones(p-length(E),1)-temp;
                 ones(p-length(E),1)+temp;
                 -lambdain*diag(Z_E)*xesquareinv*Z_E];
+            if selection(end)~=m+1
+                i=i+1;
+                continue;
+            end
             [supportmin,supportmax] = solveInt(A,b,Y(selection(1:m-1)));
             
             % Change computation mode
             if supportmin<= ytrial(min(i+1,n)) & ytrial(min(i+1,n))<=supportmax
                 compcase=2;
+                beta = zeros(p,1);
+                % the following is to ease computation in mode 2
+                pinvxe=pinv(X_E);
+                beta(E) = pinvxe*Y_withnew(selection) - lambdain*xesquareinv*Z_E;
+                betalast = pinvxe(:,end);
             end
             supportcounter = supportcounter+1;
         case 2
             % Fit the known support/sign
-            beta = zeros(p,1);
-            X_E = X_withnew(selection,E);
-            beta(E) = pinv(X_E)*Y_withnew(selection) - lambdain*xesquareinv*Z_E;
+            stepsize = ytrial(i)-ytrial(i-1);
+            beta(E) = beta(E) + betalast*stepsize;
             yfit = X_withnew*beta;
             Resid = abs(yfit - [Y;y]);
             [~,fitoutind]=max(Resid);

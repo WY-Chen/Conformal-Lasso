@@ -13,7 +13,6 @@ n = length(ytrial);
 addpath(genpath(pwd));
 
 X_withnew = [X;xnew];
-Pi_trial = zeros(1,n);
 [m,p] = size(X);
 modelsizes = zeros(1,n);
 yconfidx = [];
@@ -30,7 +29,7 @@ options.lambda = lambda/m;
 h = waitbar(0,'Please wait...');
 for i = 1:n
     y = ytrial(i);
-    beta = glmnetCoef(glmnet(X,Y,[],options));
+    beta = glmnetCoef(glmnet(X_withnew,[Y;y],[],options));
     beta = beta(2:p+1);
     Resid = abs(X_withnew*beta - [Y;y]);
     Pi_trial = sum(Resid<=Resid(end))/(m+1);

@@ -30,7 +30,7 @@ __Problem__: Slow, as stated above.
 _(conformalLassoAllSupp.m)_
 
 1. Traverse the trial set, for each new trial yi, run full Lasso if the combined data  (X,xnew) cross (Y,yi) is not in the previous support, and record this new support; run subgradient Lasso if the  (X,xnew) cross (Y,yi) is in previous support.  
-2. Construct confidence Interval. 
+2. Construct confidence Interval.
 
 __Advantage__: This method works well with different generative simulation data types. There is a similar method [Sparse Conformal Predictors _by Mohamed Hebiri_](http://arxiv.org/abs/0902.1970) which does this to the whole lasso path. Effectively, this method yields the same output as running lasso at each point. It does not depend on any additional assumption. 
 
@@ -42,11 +42,13 @@ __Notice__: I also implemented a cross-validation version that recalculates lamb
 
 _(conformalLTSLassoAllSupp.m)_
 
+__This method is discarded__
+
 1. __Get rid of outliers__: fit a lasso to the original _N_ data. Rank the residues to compute a interval for trial values that the trial pair is included in the selected data set _H_. Discard the rest trial values, because they does not satisfy stopping condition of C-steps.
 2. __LTS-Lasso C-Steps__:
    1. __Initialization__: randomly draw three data and fit a lasso. Rank the residues, take the first _h_ many to run another lasso; rerun twice. Do this 50 times, take the simple majority of selected data set _H_ to run C-steps.
-   2. __C-Steps__: Given a subset _H_ of _h_ pairs of data, fit a lasso and rank the residues. Pick the lowest _h_ data as new set _Hnew_. Repeat while _H_ and _Hnew_ are different, or until 20 steps. The rest of data are seen as outliers. 
-3. __All Support__: similar to Lasso All support. Traverse the trial set, compute models by LTS-lasso on known data with trial pair: If the new trial pair is within known polyhedron of support and signs, apply the simplified computation on the selected set _H_; if not, fit full LTS-lasso with C-Steps. 
+   2. __C-Steps__: Given a subset _H_ of _h_ pairs of data, fit a lasso and rank the residues. Pick the lowest _h_ data as new set _Hnew_. Repeat while _H_ and _Hnew_ are different, or until 20 steps. The rest of data are seen as outliers.
+3. __All Support__: similar to Lasso All support. Traverse the trial set, compute models by LTS-lasso on known data with trial pair: If the new trial pair is within known polyhedron of support and signs, apply the simplified computation on the selected set _H_; if not, fit full LTS-lasso with C-Steps.
 
 __Advantage__: If the data has a very sharp model, this method is significantly faster than lasso-all support, for we do not need to fit full lasso for trial values that are far off (which was ususally hard to compute using original lasso because it is vulnerable against outlier). Effectively, we compute lass full lasso. 
 
@@ -60,7 +62,7 @@ __Problem__:
 
 __Notice__: The CV version runs even slower for most of the time, but gives the shortest (hence also the sharpest) confidence interval of all the working methods.  However, when the problem stated in the "problem" section occurs, the CV method takes forever, thus should never be used. 
 
-Source: [LTS-lasso](https://arxiv.org/pdf/1304.4773.pdf)
+Source: [LTS-lasso](https://arxiv.org/pdf/1304.4773.pdf)
 
 ## LOO(Leave One Out)-Lasso All Support
 
@@ -73,11 +75,11 @@ This method is exactly the previous method when setting _h=m-1_, i.e., only disc
    1. __Mode 1__: for a new trial pair, apply initialization and C-steps described in previous method, get a LTS-Lasso fit. Do conformal prediction. Check if the next trial value is within the polyhedron, if yes, switch to mode 2. If not, continue with mode 1. 
    2. __Mode 2__: use the known support and signs to refit the data, rank the residues to check if the outlier is also the same.  __(a)__. If yes, proceed with mode 2 on the next trial value until the next one is not in known support. __(b)__ If not, rerun with mode 1.
 
-__Advantage__: This method is the fastest one. It also gives a sharpest confidence interval, because we are using more data than the LTS method, and less affected by outliers than LassoAllSupport. For less noisy linear data (In setting A), this method is usually at least 3 times as fast as LassoAllSupp, and twice as fast as LTSAllSupport. When encountering data that results in frequent support changing (as described in the "problem" session of previous methods), this method is more stable, because the selected data set usually stays the same. And when the support changes from point to point, this method is at least as slow as LassoAllSupp. 
+__Advantage__: This method is the fastest one. It sometimes also gives sharpest confidence intervals, because we are using more data than the LTS method, and less affected by outliers. For less noisy linear data (In setting A), this method is usually as fast as LTSAllSupport (ususally slightly faster). When encountering data that results in frequent support changing (as described in the "problem" session of previous methods), this method is more stable, because the selected data set usually stays the same, basically, it computes fewer full lasso. And when the support changes from point to point, this method is at most as slow as LassoAllSupp. 
 
-__Problem__: Not found yet. Testing.
+__Problem__: For "good" model, i.e., iid linear, this method gives longer confidence interval, because when the new pair is within the selected set of data, we are throwing away a "real" data pair for the trial pair. However the effect is not very significant. 
 
-__Notice__: theoretically, this method should totally replace the LTS-lasso, because we should believe that there are very few, if not none, real outliers in the data. 
+__Notice__: theoretically, this method should replace the LTS-lasso, because we should believe that there are very few, if not none, real outliers in the data. 
 
 ------
 
@@ -146,7 +148,7 @@ __Problem__: the supports might change very frequently, thus the interval we are
 ## LTS-lasso One Support
 
 1. Set alpha=0.9, i.e., using only 90% of the data. Use recursive C-steps that run lasso only on the data points with residual in lower 90% quantile until the chosen set does not change. 
-2. Use the parameter from the C-steps to fit and do conformal prediction on the whole range. 
+2. Use the parameter from the C-steps to fit and do conformal prediction on the whole range.
 
 __Coverage not guaranteed__ 
 
@@ -172,4 +174,3 @@ __Too slow__
 Source: [Elastic net](http://www.jmlr.org/proceedings/papers/v28/yang13e.pdf)
 
 ------
-

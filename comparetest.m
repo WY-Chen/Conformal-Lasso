@@ -34,7 +34,7 @@ if ~exist('nruns','var')
     nruns = 10;
 end
 h = 199;
-H=randsample(1:200,h);
+H=randsample(1:201,h);
 % Testing
         
 coverage1 = zeros(nruns,1);
@@ -51,6 +51,7 @@ for i=1:nruns
     
     % Get testing data
     [X,Y,xnew,y] = getSetting(setting);
+    X_withnew = [X;xnew];
     ytrial = [min(Y):stepsize:max(Y)];   
     % Get lambda from empirical expectation
     t=0;
@@ -60,7 +61,7 @@ for i=1:nruns
         else
             epsilon = trnd(2,[h,1]);
         end
-        t=t+norm(X(H,:)'*epsilon,inf)*2;
+        t=t+norm(X_withnew(H,:)'*epsilon,inf)*2;
     end
     lambda = t/100;
 
@@ -92,7 +93,7 @@ for i=1:nruns
     fprintf('\tTime \t\t%.3f\t\t\t%.3f\t\t\t%.3f,\n',t1,t2,t4);
 end
 fprintf('%d-fold average coverage is %.3f, %.3f, %.3f\n', nruns, mean(coverage1),mean(coverage2),mean(coverage4))
-fprintf('Average inverval length is %.1f, %.1f, %.1f\n',mean(conflen1),mean(conflen2),mean(conflen4));
+fprintf('Average inverval length is %.3f, %.3f, %.3f\n',mean(conflen1),mean(conflen2),mean(conflen4));
 fprintf('Average time is %.3f, %.3f, %.3f\n',time1/nruns,time2/nruns,time4/nruns);
 
 
