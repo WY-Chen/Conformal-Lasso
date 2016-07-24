@@ -3,7 +3,7 @@
 % Check if the new point is in known support, if yes, subgradient method
 % if no, run full lasso
 %% Method
-function [yconf,modelsize] = conformalLassoAllSupp(X,Y,xnew,alpha,ytrial,lambdain)
+function [yconf,modelsize,supportcounter] = conformalLassoAllSupp(X,Y,xnew,alpha,ytrial,lambdain)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
@@ -38,13 +38,17 @@ for i = 1:n
     y = ytrial(i);
     switch compcase
         case 2
-            stepsize=ytrial(i)-ytrial(i-1);
-            beta(E) = beta(E) + betalast*stepsize;
+            stepsize = ytrial(i)-ytrial(i-1);
+            yfit = yfit + yfitincrement*stepsize;
             yfit = X_withnew*beta;
             Resid = abs(yfit - [Y;y]);
             Pi_trial = sum(Resid<=Resid(end))/(m+1);
             if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
                 yconfidx = [yconfidx i];
+            end
+            % Change computation mode
+            if supportmin>= ytrial(min(i+1,n)) | ytrial(min(i+1,n))>=supportmax
+                compcase=1;
             end
         case 1
             beta = glmnetCoef(glmnet(X_withnew,[Y;y],[],options));
@@ -80,6 +84,9 @@ for i = 1:n
                 compcase=2;
                 pinvxe=pinv(X_E);
                 betalast = pinvxe(:,end);
+                betaincrement = zeros(p,1);
+                betaincrement(E) = betalast;
+                yfitincrement = X_withnew*betaincrement;
             end
     end
     modelsizes(i) = length(E);

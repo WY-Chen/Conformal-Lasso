@@ -1,0 +1,35 @@
+TESTING SETTING C.
+TESTING=== run 1/5.
+				LassoAllSupp			LOO
+	Modelsize 	3.0				4.0
+	Interval 	[-0.081,9.699] [0.229,10.229].
+	Coverage 	0.947			0.954,
+	Time 		1.800			0.785,
+TESTING=== run 2/5.
+				LassoAllSupp			LOO
+	Modelsize 	4.0				4.0
+	Interval 	[-11.482,-1.052] [-11.382,0.248].
+	Coverage 	0.954			0.954,
+	Time 		2.861			1.516,
+TESTING=== run 3/5.
+				LassoAllSupp			LOO
+	Modelsize 	4.0				4.0
+	Interval 	[-5.873,2.857] [-5.673,3.037].
+	Coverage 	0.955			0.954,
+	Time 		2.317			1.239,
+TESTING=== run 4/5.
+				LassoAllSupp			LOO
+	Modelsize 	3.0				3.6
+	Interval 	[1.490,13.930] [1.670,14.810].
+	Coverage 	0.942			0.961,
+	Time 		1.970			1.289,
+TESTING=== run 5/5.
+				LassoAllSupp			LOO
+	Modelsize 	4.0				4.5
+	Interval 	[-7.994,1.156] [-7.704,1.646].
+	Coverage 	0.941			0.949,
+	Time 		1.782			1.338,
+5-fold average coverage is 0.948, 0.955
+Average inverval length is 10.106, 10.566
+Average number of support computed is 1.00, 1.40
+Average time is 2.146, 1.234

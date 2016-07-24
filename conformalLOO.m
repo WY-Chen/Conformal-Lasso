@@ -14,7 +14,7 @@
 %                       until the next one is not in known support. 
 %               (b) If not, rerun with mode 1.
 %% Method
-function [yconf,modelsize] = conformalLOO(X,Y,xnew,alpha,ytrial,lambdain,initn)
+function [yconf,modelsize,supportcounter] = conformalLOO(X,Y,xnew,alpha,ytrial,lambdain,initn)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
@@ -42,8 +42,8 @@ options.lambda = lambdain/m;
 betaN = glmnetCoef(glmnet(X,Y,[],options));
 betaN=betaN(2:p+1);
 ypred=xnew*betaN;
-message = sprintf('\tPrediction point is %2.2f', ypred);
-disp(message);
+% message = sprintf('\tPrediction point is %2.2f', ypred);
+% disp(message);
 [maxOutErrNval,~] = max((X*betaN - Y).^2);
 ytrial = ytrial(ytrial> ypred-sqrt(maxOutErrNval)...
     & ytrial < ypred+sqrt(maxOutErrNval));
@@ -151,13 +151,15 @@ while i<=n
                 pinvxe=pinv(X_E);
                 beta(E) = pinvxe*Y_withnew(selection) - lambdain*xesquareinv*Z_E;
                 betalast = pinvxe(:,end);
+                betaincrement = zeros(p,1);
+                betaincrement(E) = betalast;
+                yfitincrement = X_withnew*betaincrement;
             end
             supportcounter = supportcounter+1;
         case 2
             % Fit the known support/sign
             stepsize = ytrial(i)-ytrial(i-1);
-            beta(E) = beta(E) + betalast*stepsize;
-            yfit = X_withnew*beta;
+            yfit = yfit + yfitincrement*stepsize;
             Resid = abs(yfit - [Y;y]);
             [~,fitoutind]=max(Resid);
             
