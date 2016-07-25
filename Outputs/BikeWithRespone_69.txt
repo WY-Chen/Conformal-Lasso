@@ -1,0 +1,148 @@
+Taking Station number 69 as response.
+Prediction interval is [0.00,6.61] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.96] with model size 1.00 while real data is 5
+Real data is IN
+Prediction interval is [0.00,7.43] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,7.43] with model size 1.00 while real data is 7
+Real data is IN
+Prediction interval is [0.00,6.49] with model size 1.00 while real data is 4
+Real data is IN
+Prediction interval is [0.00,6.02] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.73] with model size 1.00 while real data is 4
+Real data is IN
+Prediction interval is [0.00,6.96] with model size 1.00 while real data is 4
+Real data is IN
+Prediction interval is [0.00,7.08] with model size 1.00 while real data is 3
+Real data is IN
+Prediction interval is [0.00,7.08] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,6.61] with model size 1.00 while real data is 5
+Real data is IN
+Prediction interval is [0.00,6.25] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.02] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,6.37] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,6.73] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.37] with model size 1.00 while real data is 4
+Real data is IN
+Prediction interval is [0.00,6.49] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.49] with model size 1.00 while real data is 6
+Real data is IN
+Prediction interval is [0.00,6.73] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,6.02] with model size 1.15 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.25] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.02] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,6.25] with model size 1.00 while real data is 4
+Real data is IN
+Prediction interval is [0.00,6.25] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,6.37] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,6.02] with model size 1.13 while real data is 0
+Real data is IN
+Prediction interval is [0.00,5.55] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,6.37] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,5.90] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,6.25] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,5.66] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,6.02] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,5.78] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,6.02] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,6.14] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,5.90] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,6.25] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,5.66] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,5.43] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,5.43] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,5.19] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,5.78] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,5.90] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,5.90] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,5.78] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,5.66] with model size 1.00 while real data is 5
+Real data is IN
+Prediction interval is [0.00,6.14] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.37] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,6.25] with model size 1.00 while real data is 3
+Real data is IN
+Prediction interval is [0.00,6.02] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.25] with model size 1.00 while real data is 0
+Real data is IN
+Prediction interval is [0.00,6.02] with model size 1.00 while real data is 3
+Real data is IN
+Prediction interval is [0.00,6.49] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.25] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,6.25] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.37] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,5.90] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.73] with model size 1.00 while real data is 4
+Real data is IN
+Prediction interval is [0.00,6.37] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,5.66] with model size 1.16 while real data is 2
+Real data is IN
+Prediction interval is [0.00,6.25] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.37] with model size 1.00 while real data is 6
+Real data is IN
+Prediction interval is [0.00,7.08] with model size 1.00 while real data is 3
+Real data is IN
+Prediction interval is [0.00,5.55] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,6.02] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,6.14] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.14] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.25] with model size 1.00 while real data is 4
+Real data is IN
+Prediction interval is [0.00,6.37] with model size 1.00 while real data is 3
+Real data is IN
+Prediction interval is [0.00,6.49] with model size 1.00 while real data is 3
+Real data is IN
+Prediction interval is [0.00,6.73] with model size 1.00 while real data is 2
+Real data is IN
+Prediction interval is [0.00,6.49] with model size 1.00 while real data is 1
+Real data is IN
+Prediction interval is [0.00,6.37] with model size 1.00 while real data is 3
+Real data is IN
+The coverage is 1.00
