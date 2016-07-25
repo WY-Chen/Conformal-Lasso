@@ -53,8 +53,10 @@ for i=1:nruns
     % Get lambda from empirical expectation
     t=0;
     for j=1:100
-        if setting=='A' | setting=='Astrong'
+        if setting=='A' | strcmp(setting,'Astrong')
             epsilon = normrnd(0,1,[201,1]);
+        elseif strcmp(setting,'Asmall')
+            epsilon = normrnd(0,1,[51,1]);
         else
             epsilon = trnd(2,[201,1]);
         end

@@ -1,0 +1,125 @@
+TESTING SETTING Asmall.
+TESTING=== run 1/20.
+				LassoAllSupp			LOO
+	Modelsize 	40.6				10.9
+	Interval 	[-171.986,-46.036] [-56.686,-45.636].
+	Coverage 	1.000			1.000,
+	Time 		14.418			0.347,
+TESTING=== run 2/20.
+				LassoAllSupp			LOO
+	Modelsize 	43.0				24.9
+	Interval 	[-248.147,94.203] [75.603,91.953].
+	Coverage 	1.000			1.000,
+	Time 		50.549			0.499,
+TESTING=== run 3/20.
+				LassoAllSupp			LOO
+	Modelsize 	45.2				40.9
+	Interval 	[-175.759,115.741] [92.441,108.291].
+	Coverage 	0.998			0.000,
+	Time 		44.648			0.784,
+TESTING=== run 4/20.
+				LassoAllSupp			LOO
+	Modelsize 	44.0				46.8
+	Interval 	[-191.897,139.753] [-79.747,-65.147].
+	Coverage 	1.000			1.000,
+	Time 		19.180			1.502,
+TESTING=== run 5/20.
+				LassoAllSupp			LOO
+	Modelsize 	43.6				43.8
+	Interval 	[-182.887,113.413] [-62.337,-44.287].
+	Coverage 	1.000			1.000,
+	Time 		34.944			0.791,
+TESTING=== run 6/20.
+				LassoAllSupp			LOO
+	Modelsize 	43.8				25.3
+	Interval 	[-174.693,34.107] [21.407,32.007].
+	Coverage 	1.000			1.000,
+	Time 		24.857			0.398,
+TESTING=== run 7/20.
+				LassoAllSupp			LOO
+	Modelsize 	42.8				42.5
+	Interval 	[-203.452,54.398] [37.298,50.148].
+	Coverage 	1.000			1.000,
+	Time 		22.513			0.700,
+TESTING=== run 8/20.
+				LassoAllSupp			LOO
+	Modelsize 	41.8				13.9
+	Interval 	[-224.780,-42.330] [-54.880,-44.480].
+	Coverage 	1.000			1.000,
+	Time 		28.324			0.398,
+TESTING=== run 9/20.
+				LassoAllSupp			LOO
+	Modelsize 	40.2				19.7
+	Interval 	[-193.281,112.919] [-87.831,-75.981].
+	Coverage 	1.000			0.738,
+	Time 		23.085			0.390,
+TESTING=== run 10/20.
+				LassoAllSupp			LOO
+	Modelsize 	40.2				16.3
+	Interval 	[-162.987,87.213] [75.163,85.613].
+	Coverage 	0.999			0.954,
+	Time 		9.355			0.320,
+TESTING=== run 11/20.
+				LassoAllSupp			LOO
+	Modelsize 	45.4				46.2
+	Interval 	[-165.537,165.463] [148.163,162.113].
+	Coverage 	0.983			0.122,
+	Time 		79.453			0.850,
+TESTING=== run 12/20.
+				LassoAllSupp			LOO
+	Modelsize 	48.4				47.1
+	Interval 	[-157.421,172.379] [41.329,56.079].
+	Coverage 	1.000			1.000,
+	Time 		100.676			2.149,
+TESTING=== run 13/20.
+				LassoAllSupp			LOO
+	Modelsize 	44.6				44.5
+	Interval 	[-227.736,82.264] [64.014,80.864].
+	Coverage 	1.000			1.000,
+	Time 		40.405			0.802,
+TESTING=== run 14/20.
+				LassoAllSupp			LOO
+	Modelsize 	41.2				12.4
+	Interval 	[-291.801,1.849] [-11.201,0.049].
+	Coverage 	1.000			1.000,
+	Time 		52.809			0.326,
+TESTING=== run 15/20.
+				LassoAllSupp			LOO
+	Modelsize 	48.0				39.2
+	Interval 	[-128.538,166.462] [159.062,166.462].
+	Coverage 	0.000			0.000,
+	Time 		48.395			0.296,
+TESTING=== run 16/20.
+				LassoAllSupp			LOO
+	Modelsize 	46.4				44.9
+	Interval 	[-172.206,168.744] [3.644,17.344].
+	Coverage 	1.000			1.000,
+	Time 		47.719			0.311,
+TESTING=== run 17/20.
+				LassoAllSupp			LOO
+	Modelsize 	48.8				NaN
+	Interval 	[-256.991,153.859] [-268.691,153.859].
+	Coverage 	0.000			0.000,
+	Time 		154.519			0.081,
+TESTING=== run 18/20.
+				LassoAllSupp			LOO
+	Modelsize 	43.9				29.1
+	Interval 	[-239.788,-34.188] [-56.238,-43.288].
+	Coverage 	1.000			1.000,
+	Time 		38.851			0.577,
+TESTING=== run 19/20.
+				LassoAllSupp			LOO
+	Modelsize 	43.6				17.7
+	Interval 	[-272.944,-27.494] [-43.844,-28.794].
+	Coverage 	1.000			1.000,
+	Time 		60.591			0.463,
+TESTING=== run 20/20.
+				LassoAllSupp			LOO
+	Modelsize 	48.1				NaN
+	Interval 	[-144.864,-130.664] [-144.864,243.986].
+	Coverage 	0.000			0.000,
+	Time 		25.324			0.088,
+20-fold average coverage is 0.849, 0.741
+Average inverval length is 268.488, 52.467
+Average number of support computed is 982.05, 13.55
+Average time is 46.031, 0.604

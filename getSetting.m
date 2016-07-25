@@ -9,10 +9,16 @@ if setting=='A'
     Y = X*beta'+normrnd(0,1,[200,1]);
     xnew = normrnd(0,1,[1,2000]);
     y = xnew*beta'+normrnd(0,1,[10000,1]);
-elseif setting=='Astrong'
+elseif strcmp(setting,'Astrong')
     beta = [2,2,2,2,2,zeros(1,1995)]*20;
     X = normrnd(0,1,[200,2000]);
     Y = X*beta'+normrnd(0,1,[200,1]);
+    xnew = normrnd(0,1,[1,2000]);
+    y = xnew*beta'+normrnd(0,1,[10000,1]);
+elseif strcmp(setting,'Asmall')
+    beta = [2,2,2,2,2,zeros(1,1995)]*20;
+    X = normrnd(0,1,[50,2000]);
+    Y = X*beta'+normrnd(0,1,[50,1]);
     xnew = normrnd(0,1,[1,2000]);
     y = xnew*beta'+normrnd(0,1,[10000,1]);
 elseif setting=='B'
