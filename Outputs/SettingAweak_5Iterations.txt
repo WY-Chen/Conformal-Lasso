@@ -1,0 +1,35 @@
+TESTING SETTING Aweak.
+TESTING=== run 1/5.
+				LassoAllSupp			LOO
+	Modelsize 	36.0				5.0
+	Interval 	[-123.975,-111.025] [-98.355,-84.715].
+	Coverage 	0.000			0.999,
+	Time 		23.816			1.009,
+TESTING=== run 2/5.
+				LassoAllSupp			LOO
+	Modelsize 	112.0				5.0
+	Interval 	[-157.218,-131.978] [58.842,74.212].
+	Coverage 	0.000			1.000,
+	Time 		30.868			1.264,
+TESTING=== run 3/5.
+				LassoAllSupp			LOO
+	Modelsize 	99.0				5.0
+	Interval 	[-119.899,-97.999] [48.161,60.811].
+	Coverage 	0.000			1.000,
+	Time 		28.012			0.907,
+TESTING=== run 4/5.
+				LassoAllSupp			LOO
+	Modelsize 	119.0				5.0
+	Interval 	[-111.198,-88.848] [101.672,116.962].
+	Coverage 	0.000			1.000,
+	Time 		23.743			1.000,
+TESTING=== run 5/5.
+				LassoAllSupp			LOO
+	Modelsize 	118.0				5.0
+	Interval 	[-86.769,-66.329] [60.881,74.051].
+	Coverage 	0.000			1.000,
+	Time 		25.794			0.876,
+5-fold average coverage is 0.000, 1.000
+Average inverval length is 20.576, 14.024
+Average number of support computed is 15.80, 1.00
+Average time is 26.447, 1.011

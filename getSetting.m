@@ -9,11 +9,17 @@ if setting=='A'
     Y = X*beta'+normrnd(0,1,[200,1]);
     xnew = normrnd(0,1,[1,2000]);
     y = xnew*beta'+normrnd(0,1,[10000,1]);
+elseif setting=='Astrong'
+    beta = [2,2,2,2,2,zeros(1,1995)]*20;
+    X = normrnd(0,1,[200,2000]);
+    Y = X*beta'+normrnd(0,1,[200,1]);
+    xnew = normrnd(0,1,[1,2000]);
+    y = xnew*beta'+normrnd(0,1,[10000,1]);
 elseif setting=='B'
      X = normrnd(0,1,[200,2000]);
-     Y = 3*X(:,1).^2+2*X(:,2).^3+X(:,3).^4+trnd(2,[200,1]);
+     Y = 3*X(:,1).^2+2*X(:,2).^3+5*X(:,3).^4+trnd(2,[200,1]);
      xnew = normrnd(0,1,[1,2000]);
-     y = 3*xnew(:,1).^2+2*xnew(:,2).^3+xnew(:,3).^4+trnd(2,[10000,1]);
+     y = 3*xnew(:,1).^2+2*xnew(:,2).^3+5*xnew(:,3).^4+trnd(2,[10000,1]);
 elseif setting=='C'
     beta = [2,2,2,2,2,zeros(1,1995)];
     X = randi([1,3],201,2000);
