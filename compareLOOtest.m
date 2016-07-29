@@ -53,7 +53,7 @@ for i=1:nruns
     % Get lambda from empirical expectation
     t=0;
     for j=1:100
-        if setting=='A' | strcmp(setting,'Astrong')
+        if setting=='A' | strcmp(setting,'Astrong') | setting=='D' | setting=='B'
             epsilon = normrnd(0,1,[201,1]);
         elseif strcmp(setting,'Asmall')
             epsilon = normrnd(0,1,[51,1]);
@@ -63,6 +63,9 @@ for i=1:nruns
         t=t+norm(X_withnew'*epsilon,inf)*2;
     end
     lambda = t/100;
+%     if setting=='B'
+%         lambda = 400;
+%     end
 
     % run method
     tic;
@@ -95,7 +98,7 @@ fprintf(fileID,'%d-fold average coverage is %.3f, %.3f\n', nruns, mean(coverage2
 fprintf(fileID,'Average inverval length is %.3f, %.3f\n',mean(conflen2),mean(conflen4));
 fprintf(fileID,'Average number of support computed is %.2f, %.2f\n',totalsp1/nruns,totalsp2/nruns);
 fprintf(fileID,'Average time is %.3f, %.3f\n',time2/nruns,time4/nruns);
-if exist('fileID','var')
+if ~isequal(fileID,1)
     fclose(fileID);
 end
 
