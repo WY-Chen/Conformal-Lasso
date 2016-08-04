@@ -8,7 +8,7 @@
 %       apply the simplified computation on the selected set H; 
 %       (b) if not, fit full LTS-lasso with C-Steps. 
 %% Method
-function [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,alpha,ytrial,lambdain)
+function [yconf,modelsize,sc] = conformalLTSLassoAllSupp(X,Y,xnew,alpha,ytrial,lambdain,tau)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
@@ -17,9 +17,9 @@ function [yconf,modelsize] = conformalLTSLassoAllSupp(X,Y,xnew,alpha,ytrial,lamb
 % lambdain  initial lambda. Unlike others, this method does not have CV
 
 %% Preparations for fitting
-tau=0.95;               % pre-determined proportion of good data
-if nargin==5
-    lambdain = 'CV';    % turn on cvglmnet
+sc=0;
+if nargin == 6
+    tau=0.80;               % pre-determined proportion of good data
 end
 addpath(genpath(pwd));  % may use glmnet
 X_withnew = [X;xnew];   % new combined data
@@ -35,8 +35,8 @@ hN=length(H);
 bounds = [sqrt(Rval(hN))+xnew*betaN,-sqrt(Rval(hN))+xnew*betaN];
 outminN = min(bounds);
 outmaxN = max(bounds);
-message = sprintf('\tPrediction point is %2.2f', xnew*betaN);
-disp(message);
+% message = sprintf('\tPrediction point is %2.2f', xnew*betaN);
+% disp(message);
 ytrial = ytrial(ytrial>outminN & ytrial<outmaxN);
 n = length(ytrial); % new truncated trial set. 
 

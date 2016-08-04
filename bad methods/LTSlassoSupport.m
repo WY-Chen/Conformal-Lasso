@@ -8,7 +8,7 @@ addpath(genpath(pwd));
 [~,p] = size(X);
 
 % fit the lasso and calculate support.
-[beta,H,lambda] = LTSlasso(X,Y,lambdain,tau);
+[beta,H,lambda] = LTSlasso(X,Y,lambdain,tau);        % decide whether to use glmnet here
 h=length(H);
 E = find(beta);
 Z = sign(beta);

@@ -14,7 +14,7 @@
 %                       until the next one is not in known support. 
 %               (b) If not, rerun with mode 1.
 %% Method
-function [yconf,modelsize,supportcounter] = conformalLOO(X,Y,xnew,alpha,ytrial,lambdain,initn)
+function [yconf,modelsize,supportcounter] = conformalLOOnoglmnet(X,Y,xnew,alpha,ytrial,lambdain,initn)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
@@ -27,20 +27,9 @@ addpath(genpath(pwd));  % may use glmnet
 X_withnew = [X;xnew];   % new combined data
 [m,p] = size(X);        % X is m*p, Y is m*1
 oldn = length(ytrial);  % total trial 
-
-%% Tune GLMNET
-options = glmnetSet();
-options.standardize = false;        % original X
-options.intr = false;               % no intersection
-options.standardize_resp = false;   % original Y
-options.alpha = 1.0;                % Lasso (no L2 norm penalty)
-options.thresh = 1E-12;
-options.nlambda = 1;
-options.lambda = lambdain/m;
 %% Fit the known data. 
 % this is the condition of the new pair being outlier
-betaN = glmnetCoef(glmnet(X,Y,[],options));
-betaN=betaN(2:p+1);
+betaN = lasso(X,Y,'Lambda',lambdain/m,'Standardize',0,'RelTol',1E-4);
 ypred=xnew*betaN;
 % message = sprintf('\tPrediction point is %2.2f', ypred);
 % disp(message);
@@ -77,15 +66,14 @@ while i<=n
                     optioninit.nlambda = 1;
                     optioninit.lambda = initlambda/3;
                     
-                    beta = glmnetCoef(glmnet(X_withnew(init,:),Y_withnew(init),...
-                        [],optioninit));
-                    beta = beta(2:p+1);
+                    beta = lasso(X_withnew(init,:),Y_withnew(init),...
+                        'Lambda',initlambda,'Standardize',0,'RelTol',1E-4);
                     [~,initOut]=max((X_withnew*beta-Y_withnew).^2);
                     selection = setxor(1:m+1,initOut);
                     % C-Step in initialzation. 
-                    beta = glmnetCoef(glmnet(X_withnew(selection,:),Y_withnew(selection),...
-                        [],options));
-                    beta = beta(2:p+1);
+                    beta = lasso(X_withnew(selection,:),Y_withnew(selection),...
+                        'Lambda',lambdain/m,'Standardize',0,'RelTol',1E-4);
+                            % use less precission here. 
                     [~,initOut]=max((X_withnew*beta-Y_withnew).^2);
                     initOuts(j) = initOut;
                 end
@@ -101,14 +89,8 @@ while i<=n
             ccount=0;
             while 1
                 selection = setxor(1:m+1,outlier);
-                try
-                beta = glmnetCoef(glmnet(X_withnew(selection,:),Y_withnew(selection),...
-                    [],options));
-                beta = beta(2:p+1);
-                catch ME
-                    [yconf,modelsize,supportcounter] = [ytrial,0,0];
-                    return;
-                end
+                beta = lasso(X_withnew(selection,:),Y_withnew(selection),...
+                    'Lambda',lambdain/m,'Standardize',0,'RelTol',1E-12);
                 [~,outlier]=max((X_withnew*beta-Y_withnew).^2);
                 if outlier == outlierOld || ccount>20
                     break
