@@ -1,0 +1,605 @@
+TESTING SETTING E.
+TESTING=== run 1/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.276,2.944] [-3.096,3.364].
+	Coverage 	0.998			0.999,
+	Time 		1.249			0.534,
+TESTING=== run 2/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.1				5.0
+	Interval 	[-4.678,1.092] [-4.528,1.282].
+	Coverage 	0.996			0.994,
+	Time 		1.870			0.491,
+TESTING=== run 3/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-2.464,4.256] [-2.564,4.536].
+	Coverage 	0.992			0.996,
+	Time 		1.531			0.518,
+TESTING=== run 4/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.2				5.0
+	Interval 	[-5.103,0.757] [-5.033,1.197].
+	Coverage 	0.996			0.996,
+	Time 		1.884			0.449,
+TESTING=== run 5/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-4.424,1.846] [-4.374,2.456].
+	Coverage 	0.995			0.994,
+	Time 		1.300			0.472,
+TESTING=== run 6/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.604,2.636] [-3.494,2.876].
+	Coverage 	0.997			0.998,
+	Time 		1.377			0.455,
+TESTING=== run 7/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-10.325,-3.795] [-10.145,-3.235].
+	Coverage 	0.768			0.709,
+	Time 		1.986			0.609,
+TESTING=== run 8/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.637,2.253] [-3.507,2.753].
+	Coverage 	0.996			0.999,
+	Time 		1.430			0.509,
+TESTING=== run 9/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-4.834,1.286] [-4.864,1.616].
+	Coverage 	0.983			0.984,
+	Time 		1.397			0.533,
+TESTING=== run 10/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-9.217,-3.657] [-8.987,-3.107].
+	Coverage 	0.899			0.856,
+	Time 		1.246			0.425,
+TESTING=== run 11/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-4.304,1.776] [-4.224,2.066].
+	Coverage 	0.997			0.998,
+	Time 		1.278			0.509,
+TESTING=== run 12/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-0.936,5.564] [-0.866,5.694].
+	Coverage 	0.967			0.977,
+	Time 		1.329			0.504,
+TESTING=== run 13/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.5				5.0
+	Interval 	[2.482,9.012] [2.632,9.132].
+	Coverage 	0.785			0.816,
+	Time 		1.414			0.475,
+TESTING=== run 14/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-9.889,-4.209] [-9.839,-3.719].
+	Coverage 	0.688			0.669,
+	Time 		2.248			0.477,
+TESTING=== run 15/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-0.115,5.505] [0.055,5.725].
+	Coverage 	0.920			0.947,
+	Time 		1.822			0.522,
+TESTING=== run 16/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-1.266,4.814] [-0.796,5.554].
+	Coverage 	0.916			0.983,
+	Time 		1.252			0.473,
+TESTING=== run 17/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.259,2.451] [-3.129,2.681].
+	Coverage 	0.990			0.994,
+	Time 		1.415			0.502,
+TESTING=== run 18/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[0.437,6.587] [0.637,6.877].
+	Coverage 	0.861			0.915,
+	Time 		1.160			0.493,
+TESTING=== run 19/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-5.955,-0.315] [-5.905,0.455].
+	Coverage 	0.992			0.991,
+	Time 		1.481			0.554,
+TESTING=== run 20/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-4.419,0.921] [-4.399,1.411].
+	Coverage 	0.960			0.958,
+	Time 		1.333			0.439,
+TESTING=== run 21/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-7.721,-2.081] [-7.681,-1.651].
+	Coverage 	0.933			0.929,
+	Time 		1.651			0.502,
+TESTING=== run 22/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-6.759,-1.469] [-6.739,-1.179].
+	Coverage 	0.956			0.954,
+	Time 		1.427			0.511,
+TESTING=== run 23/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.1				5.0
+	Interval 	[-2.818,3.022] [-2.758,3.282].
+	Coverage 	0.996			0.996,
+	Time 		1.517			0.557,
+TESTING=== run 24/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.696,2.954] [-3.436,3.464].
+	Coverage 	0.998			0.999,
+	Time 		1.137			0.507,
+TESTING=== run 25/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-4.912,0.718] [-4.922,1.168].
+	Coverage 	0.967			0.969,
+	Time 		1.270			0.449,
+TESTING=== run 26/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.2				5.0
+	Interval 	[-3.928,2.212] [-3.868,2.442].
+	Coverage 	0.998			0.998,
+	Time 		1.266			0.484,
+TESTING=== run 27/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-2.523,3.327] [-2.553,3.457].
+	Coverage 	0.996			0.997,
+	Time 		1.490			0.490,
+TESTING=== run 28/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-4.335,1.305] [-4.175,1.675].
+	Coverage 	0.994			0.996,
+	Time 		1.608			0.502,
+TESTING=== run 29/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-0.886,5.314] [-0.746,5.724].
+	Coverage 	0.992			0.997,
+	Time 		1.174			0.532,
+TESTING=== run 30/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-2.108,3.962] [-1.828,4.372].
+	Coverage 	0.968			0.988,
+	Time 		1.234			0.481,
+TESTING=== run 31/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-9.054,-2.964] [-9.004,-2.254].
+	Coverage 	0.817			0.803,
+	Time 		1.037			0.438,
+TESTING=== run 32/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-2.741,4.249] [-2.221,4.639].
+	Coverage 	0.952			0.983,
+	Time 		1.348			0.531,
+TESTING=== run 33/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-2.107,3.683] [-1.917,3.983].
+	Coverage 	0.995			0.997,
+	Time 		1.247			0.522,
+TESTING=== run 34/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-0.944,5.296] [-0.894,5.436].
+	Coverage 	0.954			0.968,
+	Time 		1.240			0.513,
+TESTING=== run 35/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-0.589,5.191] [-0.389,5.441].
+	Coverage 	0.965			0.981,
+	Time 		1.459			0.586,
+TESTING=== run 36/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.647,3.003] [-3.617,3.453].
+	Coverage 	0.998			1.000,
+	Time 		1.430			0.536,
+TESTING=== run 37/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-2.734,3.676] [-2.584,3.836].
+	Coverage 	0.998			0.998,
+	Time 		1.263			0.442,
+TESTING=== run 38/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-4.785,1.615] [-4.705,1.835].
+	Coverage 	0.999			0.999,
+	Time 		1.268			0.508,
+TESTING=== run 39/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.1				5.0
+	Interval 	[1.429,7.179] [1.819,7.539].
+	Coverage 	0.829			0.902,
+	Time 		1.647			0.473,
+TESTING=== run 40/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.3				5.0
+	Interval 	[-2.490,3.290] [-2.480,3.370].
+	Coverage 	0.994			0.996,
+	Time 		1.420			0.481,
+TESTING=== run 41/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-5.122,0.348] [-5.172,0.638].
+	Coverage 	0.962			0.965,
+	Time 		1.529			0.532,
+TESTING=== run 42/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.4				5.0
+	Interval 	[-5.012,1.318] [-5.052,1.548].
+	Coverage 	0.998			0.998,
+	Time 		2.254			0.496,
+TESTING=== run 43/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-0.758,5.552] [-0.608,5.632].
+	Coverage 	0.994			0.995,
+	Time 		1.440			0.464,
+TESTING=== run 44/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.166,3.164] [-2.946,3.704].
+	Coverage 	0.993			0.998,
+	Time 		1.413			0.495,
+TESTING=== run 45/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-5.472,0.628] [-5.162,1.298].
+	Coverage 	0.995			0.987,
+	Time 		1.304			0.473,
+TESTING=== run 46/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.1				5.0
+	Interval 	[-5.092,0.678] [-5.042,1.238].
+	Coverage 	0.995			0.995,
+	Time 		1.495			0.494,
+TESTING=== run 47/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-7.685,-2.375] [-7.635,-1.835].
+	Coverage 	0.916			0.909,
+	Time 		1.496			0.532,
+TESTING=== run 48/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-0.162,6.698] [0.118,6.798].
+	Coverage 	0.983			0.987,
+	Time 		1.703			0.472,
+TESTING=== run 49/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-4.552,1.438] [-4.392,1.658].
+	Coverage 	0.994			0.997,
+	Time 		1.273			0.480,
+TESTING=== run 50/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.2				5.0
+	Interval 	[2.836,8.346] [3.226,8.726].
+	Coverage 	0.603			0.737,
+	Time 		1.645			0.415,
+TESTING=== run 51/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-2.073,3.927] [-1.723,4.517].
+	Coverage 	0.991			0.998,
+	Time 		1.408			0.531,
+TESTING=== run 52/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.841,2.159] [-3.811,2.659].
+	Coverage 	0.998			0.999,
+	Time 		1.304			0.461,
+TESTING=== run 53/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.759,1.931] [-3.619,2.821].
+	Coverage 	0.996			0.996,
+	Time 		1.310			0.471,
+TESTING=== run 54/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.1				5.0
+	Interval 	[-0.354,6.066] [-0.144,6.336].
+	Coverage 	0.887			0.934,
+	Time 		1.355			0.495,
+TESTING=== run 55/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.213,2.307] [-3.263,2.437].
+	Coverage 	0.995			0.996,
+	Time 		1.237			0.457,
+TESTING=== run 56/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-7.979,-1.519] [-7.979,-0.949].
+	Coverage 	0.909			0.909,
+	Time 		1.312			0.506,
+TESTING=== run 57/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.803,2.317] [-3.243,3.147].
+	Coverage 	0.997			0.997,
+	Time 		1.463			0.538,
+TESTING=== run 58/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.1				5.0
+	Interval 	[1.312,7.772] [1.782,7.892].
+	Coverage 	0.972			0.980,
+	Time 		1.312			0.477,
+TESTING=== run 59/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-6.736,-1.076] [-6.726,-0.836].
+	Coverage 	0.968			0.967,
+	Time 		1.199			0.470,
+TESTING=== run 60/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-6.140,-0.640] [-5.930,0.280].
+	Coverage 	0.950			0.923,
+	Time 		1.444			0.602,
+TESTING=== run 61/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-2.058,4.382] [-1.938,4.652].
+	Coverage 	0.992			0.996,
+	Time 		1.374			0.457,
+TESTING=== run 62/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-5.239,0.331] [-5.029,0.891].
+	Coverage 	0.987			0.979,
+	Time 		1.419			0.474,
+TESTING=== run 63/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-1.562,4.188] [-1.402,4.418].
+	Coverage 	0.956			0.973,
+	Time 		1.710			0.545,
+TESTING=== run 64/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-5.126,1.154] [-4.976,1.874].
+	Coverage 	0.998			0.999,
+	Time 		1.515			0.523,
+TESTING=== run 65/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-1.850,3.740] [-1.730,3.970].
+	Coverage 	0.994			0.995,
+	Time 		1.499			0.487,
+TESTING=== run 66/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.2				5.0
+	Interval 	[-2.866,3.274] [-2.736,3.704].
+	Coverage 	0.991			0.997,
+	Time 		1.857			0.506,
+TESTING=== run 67/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.920,2.440] [-3.870,2.660].
+	Coverage 	0.998			0.999,
+	Time 		1.298			0.460,
+TESTING=== run 68/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-1.652,4.128] [-1.192,4.648].
+	Coverage 	0.944			0.983,
+	Time 		1.271			0.458,
+TESTING=== run 69/100.
+				LassoAllSupp			LOO
+	Modelsize 	6.0				5.0
+	Interval 	[2.733,8.743] [3.363,9.203].
+	Coverage 	0.669			0.815,
+	Time 		1.935			0.613,
+TESTING=== run 70/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.699,2.061] [-3.709,2.401].
+	Coverage 	0.996			0.997,
+	Time 		1.425			0.445,
+TESTING=== run 71/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-1.989,4.551] [-2.059,4.761].
+	Coverage 	0.996			0.998,
+	Time 		1.245			0.527,
+TESTING=== run 72/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.1				5.0
+	Interval 	[-4.078,1.562] [-3.928,1.992].
+	Coverage 	0.993			0.989,
+	Time 		1.550			0.466,
+TESTING=== run 73/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.540,3.230] [-3.570,3.340].
+	Coverage 	0.998			0.998,
+	Time 		1.198			0.500,
+TESTING=== run 74/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.1				5.0
+	Interval 	[1.043,7.593] [1.293,7.813].
+	Coverage 	0.803			0.862,
+	Time 		1.283			0.478,
+TESTING=== run 75/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.2				5.0
+	Interval 	[-5.181,0.999] [-5.011,1.509].
+	Coverage 	0.991			0.984,
+	Time 		1.846			0.492,
+TESTING=== run 76/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-4.836,1.134] [-4.836,1.524].
+	Coverage 	0.996			0.997,
+	Time 		1.350			0.462,
+TESTING=== run 77/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-4.251,1.209] [-4.161,1.759].
+	Coverage 	0.994			0.996,
+	Time 		1.469			0.500,
+TESTING=== run 78/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-5.091,0.689] [-5.061,0.959].
+	Coverage 	0.971			0.968,
+	Time 		1.270			0.452,
+TESTING=== run 79/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-8.173,-2.693] [-8.033,-2.113].
+	Coverage 	0.900			0.873,
+	Time 		1.358			0.477,
+TESTING=== run 80/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-2.502,3.768] [-2.472,3.958].
+	Coverage 	0.997			0.998,
+	Time 		1.436			0.453,
+TESTING=== run 81/100.
+				LassoAllSupp			LOO
+	Modelsize 	6.0				6.0
+	Interval 	[-0.388,6.032] [0.182,6.452].
+	Coverage 	0.873			0.944,
+	Time 		1.256			0.481,
+TESTING=== run 82/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.391,2.559] [-3.321,2.899].
+	Coverage 	0.997			0.998,
+	Time 		1.276			0.452,
+TESTING=== run 83/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-3.684,2.886] [-3.504,3.346].
+	Coverage 	0.998			0.999,
+	Time 		1.170			0.513,
+TESTING=== run 84/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.4				5.0
+	Interval 	[-6.291,-0.421] [-6.121,0.329].
+	Coverage 	0.903			0.874,
+	Time 		1.573			0.562,
+TESTING=== run 85/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.1				5.0
+	Interval 	[-8.298,-2.188] [-8.158,-1.538].
+	Coverage 	0.860			0.827,
+	Time 		1.586			0.528,
+TESTING=== run 86/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.2				5.0
+	Interval 	[-2.403,4.487] [-2.413,4.987].
+	Coverage 	0.986			0.996,
+	Time 		1.201			0.586,
+TESTING=== run 87/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-9.938,-4.358] [-9.888,-3.738].
+	Coverage 	0.457			0.437,
+	Time 		1.485			0.469,
+TESTING=== run 88/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-4.226,1.544] [-4.246,1.874].
+	Coverage 	0.997			0.998,
+	Time 		1.319			0.566,
+TESTING=== run 89/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-10.515,-4.715] [-10.325,-3.765].
+	Coverage 	0.529			0.452,
+	Time 		1.266			0.527,
+TESTING=== run 90/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-9.086,-3.556] [-9.086,-2.976].
+	Coverage 	0.775			0.775,
+	Time 		1.318			0.551,
+TESTING=== run 91/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[0.243,6.313] [0.423,6.283].
+	Coverage 	0.981			0.980,
+	Time 		1.485			0.488,
+TESTING=== run 92/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[2.682,8.942] [3.752,9.782].
+	Coverage 	0.552			0.833,
+	Time 		1.450			0.481,
+TESTING=== run 93/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.8				5.0
+	Interval 	[-11.146,-5.426] [-11.026,-4.686].
+	Coverage 	0.501			0.450,
+	Time 		2.693			0.533,
+TESTING=== run 94/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-1.341,5.449] [-0.931,5.969].
+	Coverage 	0.949			0.985,
+	Time 		1.284			0.556,
+TESTING=== run 95/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-1.652,4.758] [-1.512,4.818].
+	Coverage 	0.991			0.993,
+	Time 		1.461			0.501,
+TESTING=== run 96/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.1				5.0
+	Interval 	[-6.102,-0.412] [-6.132,-0.122].
+	Coverage 	0.947			0.949,
+	Time 		1.546			0.564,
+TESTING=== run 97/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.2				5.0
+	Interval 	[-4.523,1.757] [-4.493,2.207].
+	Coverage 	0.998			0.999,
+	Time 		1.813			0.470,
+TESTING=== run 98/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.0				5.0
+	Interval 	[-6.239,0.021] [-6.319,0.381].
+	Coverage 	0.970			0.975,
+	Time 		1.211			0.495,
+TESTING=== run 99/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.2				5.0
+	Interval 	[-10.966,-5.516] [-10.886,-5.026].
+	Coverage 	0.763			0.737,
+	Time 		2.209			0.482,
+TESTING=== run 100/100.
+				LassoAllSupp			LOO
+	Modelsize 	5.1				5.0
+	Interval 	[1.584,8.284] [2.044,9.174].
+	Coverage 	0.284			0.627,
+	Time 		1.365			0.544,
+100-fold average coverage is 0.926, 0.937
+Average inverval length is 6.036, 6.294
+Average number of support computed is 5.55, 1.01
+Average time is 1.453, 0.500

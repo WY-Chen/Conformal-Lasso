@@ -1,7 +1,7 @@
 %% Run Testing
 % Run testing on a setting with a method. 
 %% Implementation
-function compareLOOtest(setting,alpha,stepsize,nruns,filename)
+function compareLOOtest(setting,tail,alpha,stepsize,nruns,filename)
 % Setting = 'A', 'B', 'C'.
 %       A : Linear. X iid N(0,1). epsilon iid N(0,1). 
 %       B : B-spline. X iid N(0,1). epsilon iid t(2).
@@ -30,7 +30,7 @@ if ~exist('filename','var')
     fileID = 1;
 else
     folder = fullfile(pwd, '\Outputs');
-    filename = sprintf('Setting%s_%dIterations.txt',setting,nruns);
+    filename = sprintf('Setting%s%s_%dIterations.txt',setting,tail,nruns);
     fileID = fopen(fullfile(folder, filename),'w');
 end
 % Testing
@@ -47,31 +47,43 @@ for i=1:nruns
     fprintf(2,'TESTING=== run %d/%d.\n',i,nruns);
     
     % Get testing data
-    [X,Y,xnew,y] = getSetting(setting);
+    [X,Y,xnew,y] = getSetting(setting,tail);
     X_withnew = [X;xnew];
     ytrial = min(Y):stepsize:max(Y);   
     % Get lambda from empirical expectation
     t=0;
     for j=1:100
-        if setting=='A' | strcmp(setting,'Astrong') | setting=='D' | setting=='B'
+        if strcmp(tail,'norm')
             epsilon = normrnd(0,1,[201,1]);
-        elseif strcmp(setting,'Asmall')
-            epsilon = normrnd(0,1,[51,1]);
         else
             epsilon = trnd(2,[201,1]);
         end
         t=t+norm(X_withnew'*epsilon,inf)*2;
     end
     lambda = t/100;
-%     if setting=='B'
-%         lambda = 400;
-%     end
+    if setting=='B'
+        lambda=400;
+        range = max(Y)-min(Y);
+        ytrial = (min(Y)-range/2):stepsize:(max(Y)+range/2); 
+    end
 
     % run method
     tic;
-    [yconf2,modelsize2,sc1] = conformalLassoAllSupp(X,Y,xnew,alpha,ytrial,lambda);
+    try
+        [yconf2,modelsize2,sc1] = conformalLassoAllSupp(X,Y,xnew,alpha,ytrial,lambda);
+    catch ME
+        yconf2 = ytrial;
+        modelsize2=0;sc1=0;
+        fprintf('GLMNET ERROR\n');
+    end
     t2=toc;time2=time2+t2;tic;
-    [yconf4,modelsize4,sc2] = conformalLOO(X,Y,xnew,alpha,ytrial,lambda);
+    try
+        [yconf4,modelsize4,sc2] = conformalLOO(X,Y,xnew,alpha,ytrial,lambda);
+    catch ME
+        yconf4 = ytrial;
+        modelsize4=0;sc2=0;
+        fprintf('GLMNET ERROR\n');
+    end
     t4=toc;time4=time4+t4;
     totalsp1 = totalsp1+sc1;
     totalsp2 = totalsp2+sc2;

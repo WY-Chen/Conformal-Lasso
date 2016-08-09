@@ -1,0 +1,3402 @@
+Prediction interval is [0.07,0.55] with model size 17.74 while real data is 0.67
+Real data is OUT
+Prediction interval is [0.12,0.59] with model size 17.51 while real data is 0.43
+Real data is IN
+Prediction interval is [0.13,0.67] with model size 17.87 while real data is 0.12
+Real data is OUT
+Prediction interval is [0.00,0.26] with model size 17.70 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.68 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 18.09 while real data is 0.03
+Real data is IN
+Prediction interval is [0.28,0.79] with model size 17.13 while real data is 0.55
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.06 while real data is 0.15
+Real data is IN
+Prediction interval is [0.26,0.76] with model size 17.81 while real data is 0.24
+Real data is OUT
+Prediction interval is [0.00,0.33] with model size 19.06 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 18.55 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.34 while real data is 0.21
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.73 while real data is 0.30
+Real data is IN
+Prediction interval is [0.27,0.76] with model size 17.71 while real data is 0.49
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.90 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.09 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.58 while real data is 0.03
+Real data is IN
+Prediction interval is [0.08,0.54] with model size 17.21 while real data is 0.34
+Real data is IN
+Prediction interval is [0.20,0.67] with model size 17.33 while real data is 0.69
+Real data is OUT
+Prediction interval is [0.01,0.49] with model size 17.36 while real data is 0.63
+Real data is OUT
+Prediction interval is [0.29,0.85] with model size 16.61 while real data is 0.31
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 16.89 while real data is 0.12
+Real data is IN
+Prediction interval is [0.32,0.80] with model size 17.76 while real data is 0.84
+Real data is OUT
+Prediction interval is [0.00,0.34] with model size 17.27 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.21 while real data is 0.16
+Real data is IN
+Prediction interval is [0.07,0.56] with model size 17.24 while real data is 0.19
+Real data is IN
+Prediction interval is [0.06,0.57] with model size 17.40 while real data is 0.15
+Real data is IN
+Prediction interval is [0.16,0.63] with model size 17.46 while real data is 0.31
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 17.82 while real data is 0.08
+Real data is IN
+Prediction interval is [0.09,0.55] with model size 17.00 while real data is 0.24
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.36 while real data is 0.11
+Real data is IN
+Prediction interval is [0.09,0.57] with model size 17.61 while real data is 0.22
+Real data is IN
+Prediction interval is [0.04,0.51] with model size 17.98 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 18.30 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 16.56 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.62 while real data is 0.06
+Real data is IN
+Prediction interval is [0.30,0.84] with model size 17.55 while real data is 0.80
+Real data is IN
+Prediction interval is [0.00,0.59] with model size 17.76 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 18.17 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.33 while real data is 0.16
+Real data is IN
+Prediction interval is [0.02,0.48] with model size 17.53 while real data is 0.20
+Real data is IN
+Prediction interval is [0.08,0.56] with model size 17.28 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 16.91 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.51 while real data is 0.12
+Real data is IN
+Prediction interval is [0.15,0.61] with model size 17.38 while real data is 0.68
+Real data is OUT
+Prediction interval is [0.02,0.48] with model size 17.76 while real data is 0.23
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.85 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.89 while real data is 0.10
+Real data is IN
+Prediction interval is [0.08,0.56] with model size 17.53 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.00 while real data is 0.22
+Real data is IN
+Prediction interval is [0.01,0.48] with model size 17.67 while real data is 0.22
+Real data is IN
+Prediction interval is [0.08,0.54] with model size 17.69 while real data is 0.55
+Real data is OUT
+Prediction interval is [0.00,0.35] with model size 17.16 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 19.23 while real data is 0.03
+Real data is IN
+Prediction interval is [0.02,0.48] with model size 17.09 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.31 while real data is 0.07
+Real data is IN
+Prediction interval is [0.17,0.65] with model size 17.44 while real data is 0.57
+Real data is IN
+Prediction interval is [0.19,0.67] with model size 17.52 while real data is 0.37
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.45 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 18.36 while real data is 0.03
+Real data is IN
+Prediction interval is [0.29,0.79] with model size 17.05 while real data is 0.50
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.44 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 17.59 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 16.99 while real data is 0.21
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.46 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 17.52 while real data is 0.02
+Real data is IN
+Prediction interval is [0.02,0.48] with model size 17.25 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.49] with model size 17.01 while real data is 0.18
+Real data is IN
+Prediction interval is [0.11,0.61] with model size 17.37 while real data is 0.12
+Real data is IN
+Prediction interval is [0.29,0.80] with model size 17.77 while real data is 0.68
+Real data is IN
+Prediction interval is [0.04,0.51] with model size 17.44 while real data is 0.75
+Real data is OUT
+Prediction interval is [0.17,0.64] with model size 17.90 while real data is 0.30
+Real data is IN
+Prediction interval is [0.11,0.62] with model size 17.35 while real data is 0.24
+Real data is IN
+Prediction interval is [0.03,0.54] with model size 17.33 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.25] with model size 18.67 while real data is 0.00
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.13 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 18.00 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.67 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 19.03 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 18.58 while real data is 0.15
+Real data is IN
+Prediction interval is [0.01,0.52] with model size 16.84 while real data is 0.63
+Real data is OUT
+Prediction interval is [0.00,0.47] with model size 17.56 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.78 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 16.71 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 16.88 while real data is 0.40
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.17 while real data is 0.37
+Real data is IN
+Prediction interval is [0.05,0.55] with model size 17.03 while real data is 0.45
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.40 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.22 while real data is 0.09
+Real data is IN
+Prediction interval is [0.10,0.57] with model size 17.18 while real data is 0.39
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 18.51 while real data is 0.02
+Real data is IN
+Prediction interval is [0.11,0.58] with model size 17.68 while real data is 0.34
+Real data is IN
+Prediction interval is [0.07,0.53] with model size 17.71 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.90 while real data is 0.08
+Real data is IN
+Prediction interval is [0.29,0.77] with model size 17.74 while real data is 0.44
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.48 while real data is 0.24
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 17.00 while real data is 0.09
+Real data is IN
+Prediction interval is [0.06,0.54] with model size 17.72 while real data is 0.26
+Real data is IN
+Prediction interval is [0.20,0.67] with model size 17.18 while real data is 0.40
+Real data is IN
+Prediction interval is [0.15,0.65] with model size 17.53 while real data is 0.56
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.60 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.06 while real data is 0.06
+Real data is IN
+Prediction interval is [0.03,0.52] with model size 16.91 while real data is 0.20
+Real data is IN
+Prediction interval is [0.20,0.70] with model size 17.38 while real data is 0.51
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 18.12 while real data is 0.04
+Real data is IN
+Prediction interval is [0.54,1.00] with model size 17.57 while real data is 0.86
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 18.67 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.18 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 17.79 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 16.97 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.20 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.54 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 18.10 while real data is 0.17
+Real data is IN
+Prediction interval is [0.07,0.56] with model size 17.63 while real data is 0.14
+Real data is IN
+Prediction interval is [0.29,0.78] with model size 17.35 while real data is 0.62
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 18.36 while real data is 0.03
+Real data is IN
+Prediction interval is [0.35,0.84] with model size 17.45 while real data is 0.23
+Real data is OUT
+Prediction interval is [0.01,0.48] with model size 17.13 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 17.25 while real data is 0.27
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 18.28 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 18.67 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 17.76 while real data is 0.09
+Real data is IN
+Prediction interval is [0.02,0.51] with model size 17.62 while real data is 0.38
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.74 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 18.03 while real data is 0.09
+Real data is IN
+Prediction interval is [0.35,0.83] with model size 16.87 while real data is 0.30
+Real data is OUT
+Prediction interval is [0.00,0.29] with model size 16.93 while real data is 0.05
+Real data is IN
+Prediction interval is [0.01,0.48] with model size 17.22 while real data is 0.17
+Real data is IN
+Prediction interval is [0.15,0.64] with model size 17.59 while real data is 0.53
+Real data is IN
+Prediction interval is [0.38,0.87] with model size 17.45 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.42] with model size 17.24 while real data is 0.05
+Real data is IN
+Prediction interval is [0.22,0.70] with model size 17.64 while real data is 0.63
+Real data is IN
+Prediction interval is [0.07,0.53] with model size 17.69 while real data is 0.21
+Real data is IN
+Prediction interval is [0.26,0.73] with model size 17.44 while real data is 0.86
+Real data is OUT
+Prediction interval is [0.00,0.32] with model size 17.76 while real data is 0.03
+Real data is IN
+Prediction interval is [0.29,0.80] with model size 17.89 while real data is 0.87
+Real data is OUT
+Prediction interval is [0.00,0.30] with model size 18.46 while real data is 0.03
+Real data is IN
+Prediction interval is [0.09,0.56] with model size 17.77 while real data is 0.48
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 18.16 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.81 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.69 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 19.14 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.18 while real data is 0.25
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.63 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 16.95 while real data is 0.15
+Real data is IN
+Prediction interval is [0.19,0.67] with model size 17.50 while real data is 0.46
+Real data is IN
+Prediction interval is [0.07,0.53] with model size 17.25 while real data is 0.23
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 16.64 while real data is 0.08
+Real data is IN
+Prediction interval is [0.21,0.75] with model size 17.38 while real data is 0.20
+Real data is OUT
+Prediction interval is [0.21,0.69] with model size 17.47 while real data is 0.73
+Real data is OUT
+Prediction interval is [0.00,0.36] with model size 18.03 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.73 while real data is 0.07
+Real data is IN
+Prediction interval is [0.50,0.98] with model size 18.42 while real data is 0.83
+Real data is IN
+Prediction interval is [0.08,0.55] with model size 17.09 while real data is 0.12
+Real data is IN
+Prediction interval is [0.05,0.54] with model size 17.75 while real data is 0.25
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 18.11 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.67 while real data is 0.19
+Real data is IN
+Prediction interval is [0.18,0.65] with model size 17.55 while real data is 0.36
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.96 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 18.75 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 18.18 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.65 while real data is 0.10
+Real data is IN
+Prediction interval is [0.10,0.58] with model size 17.59 while real data is 0.10
+Real data is OUT
+Prediction interval is [0.00,0.42] with model size 16.76 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.75 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.94 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.36 while real data is 0.01
+Real data is IN
+Prediction interval is [0.42,0.92] with model size 17.40 while real data is 0.41
+Real data is OUT
+Prediction interval is [0.10,0.62] with model size 17.56 while real data is 0.26
+Real data is IN
+Prediction interval is [0.21,0.69] with model size 17.13 while real data is 0.42
+Real data is IN
+Prediction interval is [0.05,0.52] with model size 17.86 while real data is 0.18
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 18.49 while real data is 0.13
+Real data is IN
+Prediction interval is [0.05,0.54] with model size 17.70 while real data is 0.29
+Real data is IN
+Prediction interval is [0.21,0.71] with model size 17.00 while real data is 0.68
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 16.70 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 16.74 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.08 while real data is 0.26
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.26 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.83 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.75 while real data is 0.15
+Real data is IN
+Prediction interval is [0.19,0.69] with model size 17.32 while real data is 0.29
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 18.68 while real data is 0.01
+Real data is IN
+Prediction interval is [0.17,0.66] with model size 17.99 while real data is 0.66
+Real data is OUT
+Prediction interval is [0.00,0.35] with model size 18.11 while real data is 0.05
+Real data is IN
+Prediction interval is [0.08,0.55] with model size 17.66 while real data is 0.49
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.64 while real data is 0.04
+Real data is IN
+Prediction interval is [0.26,0.75] with model size 17.43 while real data is 0.16
+Real data is OUT
+Prediction interval is [0.00,0.39] with model size 17.03 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 16.56 while real data is 0.04
+Real data is IN
+Prediction interval is [0.33,0.83] with model size 17.79 while real data is 0.36
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.02 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 16.94 while real data is 0.16
+Real data is IN
+Prediction interval is [0.15,0.62] with model size 17.64 while real data is 0.10
+Real data is OUT
+Prediction interval is [0.17,0.66] with model size 17.99 while real data is 0.74
+Real data is OUT
+Prediction interval is [0.29,0.79] with model size 17.87 while real data is 0.63
+Real data is IN
+Prediction interval is [0.34,0.84] with model size 17.71 while real data is 0.42
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 16.74 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.30 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.75 while real data is 0.20
+Real data is IN
+Prediction interval is [0.09,0.58] with model size 17.59 while real data is 0.11
+Real data is IN
+Prediction interval is [0.07,0.56] with model size 18.21 while real data is 0.27
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.20 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.60 while real data is 0.37
+Real data is IN
+Prediction interval is [0.05,0.53] with model size 17.11 while real data is 0.18
+Real data is IN
+Prediction interval is [0.01,0.51] with model size 16.59 while real data is 0.12
+Real data is IN
+Prediction interval is [0.11,0.57] with model size 17.58 while real data is 0.32
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.67 while real data is 0.18
+Real data is IN
+Prediction interval is [0.20,0.68] with model size 17.70 while real data is 0.70
+Real data is OUT
+Prediction interval is [0.03,0.51] with model size 18.08 while real data is 0.22
+Real data is IN
+Prediction interval is [0.40,0.88] with model size 17.72 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.44] with model size 17.51 while real data is 0.03
+Real data is IN
+Prediction interval is [0.20,0.67] with model size 17.47 while real data is 0.74
+Real data is OUT
+Prediction interval is [0.18,0.65] with model size 17.24 while real data is 0.63
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 17.58 while real data is 0.05
+Real data is IN
+Prediction interval is [0.07,0.52] with model size 17.26 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 17.99 while real data is 0.04
+Real data is IN
+Prediction interval is [0.29,0.78] with model size 17.74 while real data is 0.93
+Real data is OUT
+Prediction interval is [0.08,0.57] with model size 17.09 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.63 while real data is 0.03
+Real data is IN
+Prediction interval is [0.02,0.56] with model size 17.43 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.72 while real data is 0.53
+Real data is OUT
+Prediction interval is [0.21,0.68] with model size 17.66 while real data is 0.59
+Real data is IN
+Prediction interval is [0.51,0.99] with model size 17.16 while real data is 0.67
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 17.77 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 16.92 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.67 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.56 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 16.78 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.75 while real data is 0.69
+Real data is OUT
+Prediction interval is [0.00,0.34] with model size 18.12 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.72 while real data is 0.24
+Real data is IN
+Prediction interval is [0.09,0.56] with model size 18.19 while real data is 0.35
+Real data is IN
+Prediction interval is [0.16,0.65] with model size 17.47 while real data is 0.27
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.05 while real data is 0.13
+Real data is IN
+Prediction interval is [0.21,0.68] with model size 16.93 while real data is 0.36
+Real data is IN
+Prediction interval is [0.30,0.78] with model size 17.78 while real data is 0.34
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.58 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 16.52 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 18.14 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.08 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.48] with model size 17.29 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.53 while real data is 0.06
+Real data is IN
+Prediction interval is [0.02,0.49] with model size 17.26 while real data is 0.32
+Real data is IN
+Prediction interval is [0.04,0.51] with model size 17.30 while real data is 0.19
+Real data is IN
+Prediction interval is [0.22,0.70] with model size 17.50 while real data is 0.51
+Real data is IN
+Prediction interval is [0.00,0.20] with model size 17.85 while real data is 0.01
+Real data is IN
+Prediction interval is [0.06,0.54] with model size 17.20 while real data is 0.59
+Real data is OUT
+Prediction interval is [0.00,0.31] with model size 17.42 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 16.63 while real data is 0.10
+Real data is IN
+Prediction interval is [0.07,0.59] with model size 16.91 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 17.55 while real data is 0.03
+Real data is IN
+Prediction interval is [0.10,0.58] with model size 17.24 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 18.38 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.96 while real data is 0.12
+Real data is IN
+Prediction interval is [0.33,0.80] with model size 17.55 while real data is 0.67
+Real data is IN
+Prediction interval is [0.10,0.62] with model size 17.78 while real data is 0.29
+Real data is IN
+Prediction interval is [0.11,0.59] with model size 17.09 while real data is 0.36
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 17.46 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.04 while real data is 0.03
+Real data is IN
+Prediction interval is [0.09,0.56] with model size 17.75 while real data is 0.35
+Real data is IN
+Prediction interval is [0.03,0.53] with model size 17.17 while real data is 0.25
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 19.74 while real data is 0.45
+Real data is OUT
+Prediction interval is [0.17,0.67] with model size 17.48 while real data is 0.23
+Real data is IN
+Prediction interval is [0.11,0.58] with model size 17.54 while real data is 0.32
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 18.88 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.48 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.48 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 18.03 while real data is 0.20
+Real data is IN
+Prediction interval is [0.17,0.64] with model size 17.00 while real data is 0.51
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.79 while real data is 0.18
+Real data is IN
+Prediction interval is [0.19,0.68] with model size 17.66 while real data is 0.30
+Real data is IN
+Prediction interval is [0.30,0.80] with model size 17.29 while real data is 0.37
+Real data is IN
+Prediction interval is [0.30,0.83] with model size 17.41 while real data is 0.31
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.96 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 18.24 while real data is 0.48
+Real data is OUT
+Prediction interval is [0.00,0.42] with model size 17.01 while real data is 0.07
+Real data is IN
+Prediction interval is [0.15,0.65] with model size 17.51 while real data is 0.27
+Real data is IN
+Prediction interval is [0.04,0.50] with model size 17.30 while real data is 0.30
+Real data is IN
+Prediction interval is [0.21,0.73] with model size 17.80 while real data is 0.34
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.63 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.00 while real data is 0.17
+Real data is IN
+Prediction interval is [0.09,0.56] with model size 17.47 while real data is 0.17
+Real data is IN
+Prediction interval is [0.25,0.76] with model size 17.76 while real data is 0.34
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.48 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 18.07 while real data is 0.04
+Real data is IN
+Prediction interval is [0.63,1.00] with model size 17.23 while real data is 1.00
+Real data is IN
+Prediction interval is [0.11,0.59] with model size 17.18 while real data is 0.48
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 18.46 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.12 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.52 while real data is 0.05
+Real data is IN
+Prediction interval is [0.03,0.48] with model size 17.63 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.15 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.51 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.43 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.36 while real data is 0.00
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.64 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.33 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.24 while real data is 0.18
+Real data is IN
+Prediction interval is [0.17,0.69] with model size 17.85 while real data is 0.58
+Real data is IN
+Prediction interval is [0.02,0.48] with model size 17.85 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 18.63 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.62 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.76 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.37 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.50 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.48] with model size 17.31 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.29 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.68 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.18 while real data is 0.07
+Real data is IN
+Prediction interval is [0.02,0.49] with model size 17.48 while real data is 0.41
+Real data is IN
+Prediction interval is [0.08,0.55] with model size 17.41 while real data is 0.22
+Real data is IN
+Prediction interval is [0.48,1.00] with model size 18.19 while real data is 1.00
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 16.99 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.41 while real data is 0.06
+Real data is IN
+Prediction interval is [0.16,0.62] with model size 17.35 while real data is 0.45
+Real data is IN
+Prediction interval is [0.17,0.72] with model size 17.21 while real data is 0.14
+Real data is OUT
+Prediction interval is [0.00,0.47] with model size 18.17 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.67 while real data is 0.07
+Real data is IN
+Prediction interval is [0.25,0.72] with model size 17.48 while real data is 0.60
+Real data is IN
+Prediction interval is [0.05,0.53] with model size 17.67 while real data is 0.18
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 16.98 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 16.49 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 18.83 while real data is 0.83
+Real data is OUT
+Prediction interval is [0.00,0.26] with model size 17.00 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.24 while real data is 0.08
+Real data is IN
+Prediction interval is [0.21,0.70] with model size 18.20 while real data is 0.26
+Real data is IN
+Prediction interval is [0.04,0.51] with model size 17.83 while real data is 0.23
+Real data is IN
+Prediction interval is [0.26,0.75] with model size 17.53 while real data is 0.49
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 16.99 while real data is 0.15
+Real data is IN
+Prediction interval is [0.32,0.79] with model size 17.33 while real data is 0.54
+Real data is IN
+Prediction interval is [0.09,0.57] with model size 17.70 while real data is 0.31
+Real data is IN
+Prediction interval is [0.09,0.56] with model size 17.00 while real data is 0.39
+Real data is IN
+Prediction interval is [0.07,0.53] with model size 17.67 while real data is 0.50
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.05 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 18.24 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 18.70 while real data is 0.04
+Real data is IN
+Prediction interval is [0.14,0.62] with model size 17.44 while real data is 0.58
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.48 while real data is 0.10
+Real data is IN
+Prediction interval is [0.22,0.79] with model size 17.19 while real data is 0.39
+Real data is IN
+Prediction interval is [0.19,0.66] with model size 17.25 while real data is 0.18
+Real data is OUT
+Prediction interval is [0.21,0.72] with model size 17.77 while real data is 0.80
+Real data is OUT
+Prediction interval is [0.14,0.61] with model size 18.11 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.39,0.88] with model size 17.86 while real data is 0.40
+Real data is IN
+Prediction interval is [0.12,0.59] with model size 17.59 while real data is 0.05
+Real data is OUT
+Prediction interval is [0.21,0.72] with model size 17.62 while real data is 0.21
+Real data is IN
+Prediction interval is [0.15,0.65] with model size 17.28 while real data is 0.68
+Real data is OUT
+Prediction interval is [0.34,0.83] with model size 17.99 while real data is 0.32
+Real data is OUT
+Prediction interval is [0.00,0.44] with model size 17.45 while real data is 0.20
+Real data is IN
+Prediction interval is [0.22,0.71] with model size 17.61 while real data is 0.62
+Real data is IN
+Prediction interval is [0.32,0.80] with model size 17.55 while real data is 0.53
+Real data is IN
+Prediction interval is [0.52,1.00] with model size 17.16 while real data is 1.00
+Real data is IN
+Prediction interval is [0.09,0.57] with model size 17.36 while real data is 0.20
+Real data is IN
+Prediction interval is [0.02,0.50] with model size 17.50 while real data is 0.21
+Real data is IN
+Prediction interval is [0.63,1.00] with model size 18.69 while real data is 1.00
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.45 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.02 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.99 while real data is 0.13
+Real data is IN
+Prediction interval is [0.30,0.79] with model size 17.51 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.48] with model size 17.72 while real data is 0.69
+Real data is OUT
+Prediction interval is [0.00,0.34] with model size 18.37 while real data is 0.06
+Real data is IN
+Prediction interval is [0.20,0.70] with model size 16.84 while real data is 0.66
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.33 while real data is 0.03
+Real data is IN
+Prediction interval is [0.05,0.53] with model size 17.56 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 17.96 while real data is 0.00
+Real data is IN
+Prediction interval is [0.27,0.75] with model size 17.40 while real data is 0.76
+Real data is OUT
+Prediction interval is [0.00,0.46] with model size 17.52 while real data is 0.71
+Real data is OUT
+Prediction interval is [0.15,0.73] with model size 18.13 while real data is 0.42
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 16.44 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.83 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 16.50 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.19 while real data is 0.06
+Real data is IN
+Prediction interval is [0.09,0.56] with model size 17.34 while real data is 0.24
+Real data is IN
+Prediction interval is [0.08,0.55] with model size 17.32 while real data is 0.35
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.08 while real data is 0.04
+Real data is IN
+Prediction interval is [0.35,0.83] with model size 17.53 while real data is 0.72
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 16.82 while real data is 0.06
+Real data is IN
+Prediction interval is [0.48,0.97] with model size 17.68 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.30] with model size 16.98 while real data is 0.05
+Real data is IN
+Prediction interval is [0.29,0.80] with model size 18.01 while real data is 0.63
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.57 while real data is 0.05
+Real data is IN
+Prediction interval is [0.09,0.57] with model size 17.78 while real data is 0.20
+Real data is IN
+Prediction interval is [0.05,0.53] with model size 16.71 while real data is 0.07
+Real data is IN
+Prediction interval is [0.25,0.72] with model size 16.97 while real data is 0.64
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.92 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.52 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.30 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.23] with model size 16.89 while real data is 0.02
+Real data is IN
+Prediction interval is [0.32,0.83] with model size 17.50 while real data is 0.55
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 17.71 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.14 while real data is 0.37
+Real data is IN
+Prediction interval is [0.08,0.56] with model size 16.75 while real data is 0.33
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.51 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.42 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.96 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.61 while real data is 0.03
+Real data is IN
+Prediction interval is [0.09,0.57] with model size 17.12 while real data is 0.22
+Real data is IN
+Prediction interval is [0.24,0.71] with model size 17.47 while real data is 0.78
+Real data is OUT
+Prediction interval is [0.10,0.58] with model size 17.23 while real data is 0.46
+Real data is IN
+Prediction interval is [0.31,0.82] with model size 17.35 while real data is 0.34
+Real data is IN
+Prediction interval is [0.05,0.55] with model size 17.50 while real data is 0.22
+Real data is IN
+Prediction interval is [0.15,0.63] with model size 17.16 while real data is 0.14
+Real data is OUT
+Prediction interval is [0.26,0.79] with model size 17.54 while real data is 0.37
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 18.17 while real data is 0.06
+Real data is IN
+Prediction interval is [0.08,0.56] with model size 17.08 while real data is 0.24
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.05 while real data is 0.40
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.21 while real data is 0.22
+Real data is IN
+Prediction interval is [0.16,0.63] with model size 17.69 while real data is 0.69
+Real data is OUT
+Prediction interval is [0.00,0.46] with model size 17.87 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 18.34 while real data is 0.02
+Real data is IN
+Prediction interval is [0.19,0.66] with model size 17.03 while real data is 0.25
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 16.87 while real data is 0.10
+Real data is IN
+Prediction interval is [0.01,0.48] with model size 17.67 while real data is 0.05
+Real data is IN
+Prediction interval is [0.04,0.53] with model size 17.84 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.08 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 17.77 while real data is 0.01
+Real data is IN
+Prediction interval is [0.45,0.94] with model size 17.67 while real data is 0.29
+Real data is OUT
+Prediction interval is [0.00,0.23] with model size 16.92 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.82 while real data is 0.05
+Real data is IN
+Prediction interval is [0.37,0.86] with model size 17.64 while real data is 0.36
+Real data is OUT
+Prediction interval is [0.17,0.70] with model size 17.28 while real data is 0.22
+Real data is IN
+Prediction interval is [0.06,0.52] with model size 17.47 while real data is 0.17
+Real data is IN
+Prediction interval is [0.08,0.55] with model size 17.60 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.00 while real data is 0.14
+Real data is IN
+Prediction interval is [0.44,0.92] with model size 17.52 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.36] with model size 17.16 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.43 while real data is 0.24
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 18.59 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 16.56 while real data is 0.04
+Real data is IN
+Prediction interval is [0.10,0.56] with model size 17.20 while real data is 0.21
+Real data is IN
+Prediction interval is [0.19,0.67] with model size 17.43 while real data is 0.70
+Real data is OUT
+Prediction interval is [0.00,0.40] with model size 17.27 while real data is 0.13
+Real data is IN
+Prediction interval is [0.22,0.77] with model size 17.48 while real data is 0.24
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.39 while real data is 0.04
+Real data is IN
+Prediction interval is [0.04,0.51] with model size 17.63 while real data is 0.22
+Real data is IN
+Prediction interval is [0.02,0.48] with model size 17.95 while real data is 0.17
+Real data is IN
+Prediction interval is [0.02,0.48] with model size 17.62 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.18 while real data is 0.21
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.15 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.88 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.38 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.19 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 18.72 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 16.79 while real data is 0.17
+Real data is IN
+Prediction interval is [0.20,0.67] with model size 17.84 while real data is 0.46
+Real data is IN
+Prediction interval is [0.10,0.58] with model size 18.32 while real data is 0.24
+Real data is IN
+Prediction interval is [0.02,0.51] with model size 17.05 while real data is 0.08
+Real data is IN
+Prediction interval is [0.14,0.61] with model size 17.23 while real data is 0.66
+Real data is OUT
+Prediction interval is [0.42,0.93] with model size 17.42 while real data is 0.25
+Real data is OUT
+Prediction interval is [0.00,0.46] with model size 16.89 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 16.85 while real data is 0.00
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 18.31 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 16.63 while real data is 0.15
+Real data is IN
+Prediction interval is [0.20,0.69] with model size 17.64 while real data is 0.41
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.27 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.22 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.72 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 16.79 while real data is 0.05
+Real data is IN
+Prediction interval is [0.07,0.54] with model size 17.26 while real data is 0.18
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.68 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.70 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.03 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.77 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 18.45 while real data is 0.05
+Real data is IN
+Prediction interval is [0.32,0.82] with model size 17.66 while real data is 0.36
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.40 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 18.12 while real data is 0.18
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 18.22 while real data is 0.06
+Real data is IN
+Prediction interval is [0.05,0.53] with model size 17.21 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.13 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.28 while real data is 0.05
+Real data is IN
+Prediction interval is [0.27,0.78] with model size 17.39 while real data is 0.52
+Real data is IN
+Prediction interval is [0.10,0.57] with model size 18.13 while real data is 0.21
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.30 while real data is 0.01
+Real data is IN
+Prediction interval is [0.07,0.54] with model size 17.14 while real data is 0.36
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 18.25 while real data is 0.36
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 18.10 while real data is 0.07
+Real data is IN
+Prediction interval is [0.59,1.00] with model size 17.31 while real data is 0.85
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.15 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.60 while real data is 0.12
+Real data is IN
+Prediction interval is [0.05,0.51] with model size 17.00 while real data is 0.25
+Real data is IN
+Prediction interval is [0.49,1.00] with model size 17.79 while real data is 1.00
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 17.49 while real data is 0.36
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.57 while real data is 0.41
+Real data is IN
+Prediction interval is [0.03,0.52] with model size 16.94 while real data is 0.33
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.20 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.27 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.51 while real data is 0.07
+Real data is IN
+Prediction interval is [0.03,0.57] with model size 16.74 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.05 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 18.09 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 18.12 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 16.83 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.48] with model size 17.09 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 16.82 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 18.56 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.40 while real data is 0.27
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 16.92 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.81 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.40 while real data is 0.09
+Real data is IN
+Prediction interval is [0.46,0.94] with model size 17.39 while real data is 0.56
+Real data is IN
+Prediction interval is [0.21,0.78] with model size 17.17 while real data is 0.52
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.56 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 16.81 while real data is 0.12
+Real data is IN
+Prediction interval is [0.21,0.73] with model size 16.85 while real data is 0.41
+Real data is IN
+Prediction interval is [0.55,1.00] with model size 17.54 while real data is 0.87
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 16.91 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.01 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 18.16 while real data is 0.03
+Real data is IN
+Prediction interval is [0.05,0.51] with model size 17.22 while real data is 0.11
+Real data is IN
+Prediction interval is [0.11,0.58] with model size 18.60 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 16.88 while real data is 0.24
+Real data is IN
+Prediction interval is [0.12,0.63] with model size 16.55 while real data is 0.21
+Real data is IN
+Prediction interval is [0.21,0.70] with model size 17.36 while real data is 0.03
+Real data is OUT
+Prediction interval is [0.22,0.70] with model size 17.56 while real data is 0.39
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 16.77 while real data is 0.23
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 17.64 while real data is 0.10
+Real data is IN
+Prediction interval is [0.28,0.76] with model size 17.88 while real data is 0.59
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.53 while real data is 0.24
+Real data is IN
+Prediction interval is [0.08,0.55] with model size 18.11 while real data is 0.13
+Real data is IN
+Prediction interval is [0.10,0.57] with model size 17.18 while real data is 0.59
+Real data is OUT
+Prediction interval is [0.00,0.24] with model size 17.52 while real data is 0.01
+Real data is IN
+Prediction interval is [0.04,0.50] with model size 17.57 while real data is 0.41
+Real data is IN
+Prediction interval is [0.09,0.57] with model size 17.26 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.15 while real data is 0.24
+Real data is IN
+Prediction interval is [0.03,0.50] with model size 16.53 while real data is 0.10
+Real data is IN
+Prediction interval is [0.08,0.58] with model size 16.80 while real data is 0.40
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.54 while real data is 0.82
+Real data is OUT
+Prediction interval is [0.00,0.32] with model size 17.77 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.64 while real data is 0.18
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.13 while real data is 0.13
+Real data is IN
+Prediction interval is [0.22,0.76] with model size 17.81 while real data is 0.33
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.42 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.62 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.13 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.51 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.05 while real data is 0.01
+Real data is IN
+Prediction interval is [0.04,0.52] with model size 17.60 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 18.62 while real data is 0.17
+Real data is IN
+Prediction interval is [0.61,1.00] with model size 18.19 while real data is 0.89
+Real data is IN
+Prediction interval is [0.53,1.00] with model size 17.28 while real data is 0.85
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 16.94 while real data is 0.14
+Real data is IN
+Prediction interval is [0.37,0.90] with model size 17.07 while real data is 0.32
+Real data is OUT
+Prediction interval is [0.00,0.48] with model size 17.73 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.23 while real data is 0.09
+Real data is IN
+Prediction interval is [0.20,0.81] with model size 17.83 while real data is 0.20
+Real data is IN
+Prediction interval is [0.15,0.63] with model size 17.38 while real data is 0.54
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.94 while real data is 0.15
+Real data is IN
+Prediction interval is [0.23,0.77] with model size 16.51 while real data is 0.24
+Real data is IN
+Prediction interval is [0.58,1.00] with model size 18.16 while real data is 0.94
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 17.74 while real data is 0.65
+Real data is OUT
+Prediction interval is [0.00,0.30] with model size 17.35 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 17.68 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.81 while real data is 0.26
+Real data is IN
+Prediction interval is [0.26,0.82] with model size 17.09 while real data is 0.12
+Real data is OUT
+Prediction interval is [0.00,0.28] with model size 18.45 while real data is 0.03
+Real data is IN
+Prediction interval is [0.18,0.67] with model size 17.56 while real data is 0.41
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.08 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.09 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.65 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 17.97 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.63 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.04 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.16 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.48] with model size 17.48 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.75 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 18.32 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 16.50 while real data is 0.41
+Real data is OUT
+Prediction interval is [0.25,0.82] with model size 16.87 while real data is 0.22
+Real data is OUT
+Prediction interval is [0.00,0.27] with model size 17.73 while real data is 0.03
+Real data is IN
+Prediction interval is [0.11,0.58] with model size 17.42 while real data is 0.35
+Real data is IN
+Prediction interval is [0.33,0.87] with model size 17.96 while real data is 0.63
+Real data is IN
+Prediction interval is [0.02,0.51] with model size 17.70 while real data is 0.09
+Real data is IN
+Prediction interval is [0.01,0.48] with model size 17.03 while real data is 0.25
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.79 while real data is 0.22
+Real data is IN
+Prediction interval is [0.42,1.00] with model size 17.63 while real data is 0.36
+Real data is OUT
+Prediction interval is [0.41,0.91] with model size 18.24 while real data is 0.81
+Real data is IN
+Prediction interval is [0.15,0.63] with model size 17.34 while real data is 0.27
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.53 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.55 while real data is 0.04
+Real data is IN
+Prediction interval is [0.25,0.75] with model size 17.58 while real data is 0.61
+Real data is IN
+Prediction interval is [0.20,0.67] with model size 17.17 while real data is 0.24
+Real data is IN
+Prediction interval is [0.36,0.85] with model size 17.74 while real data is 0.95
+Real data is OUT
+Prediction interval is [0.28,0.75] with model size 17.58 while real data is 0.81
+Real data is OUT
+Prediction interval is [0.01,0.48] with model size 17.65 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 16.62 while real data is 0.05
+Real data is IN
+Prediction interval is [0.38,0.91] with model size 17.13 while real data is 0.38
+Real data is IN
+Prediction interval is [0.14,0.61] with model size 17.46 while real data is 0.37
+Real data is IN
+Prediction interval is [0.50,1.00] with model size 18.89 while real data is 0.53
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.77 while real data is 0.23
+Real data is IN
+Prediction interval is [0.09,0.56] with model size 17.65 while real data is 0.26
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 18.30 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.24 while real data is 0.18
+Real data is IN
+Prediction interval is [0.41,0.98] with model size 18.05 while real data is 0.62
+Real data is IN
+Prediction interval is [0.15,0.63] with model size 17.26 while real data is 0.50
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 16.80 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.00 while real data is 0.06
+Real data is IN
+Prediction interval is [0.35,0.83] with model size 17.70 while real data is 0.54
+Real data is IN
+Prediction interval is [0.37,0.88] with model size 17.27 while real data is 0.61
+Real data is IN
+Prediction interval is [0.55,1.00] with model size 17.03 while real data is 0.35
+Real data is OUT
+Prediction interval is [0.04,0.52] with model size 17.89 while real data is 0.38
+Real data is IN
+Prediction interval is [0.42,0.93] with model size 17.75 while real data is 0.72
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 17.19 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.23 while real data is 0.09
+Real data is IN
+Prediction interval is [0.10,0.59] with model size 17.48 while real data is 0.51
+Real data is IN
+Prediction interval is [0.40,0.96] with model size 18.05 while real data is 0.54
+Real data is IN
+Prediction interval is [0.01,0.50] with model size 17.17 while real data is 0.10
+Real data is IN
+Prediction interval is [0.07,0.53] with model size 17.05 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 18.63 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.92 while real data is 0.29
+Real data is IN
+Prediction interval is [0.06,0.53] with model size 17.47 while real data is 0.42
+Real data is IN
+Prediction interval is [0.01,0.52] with model size 17.08 while real data is 0.18
+Real data is IN
+Prediction interval is [0.04,0.52] with model size 17.58 while real data is 0.36
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.10 while real data is 0.10
+Real data is IN
+Prediction interval is [0.18,0.65] with model size 17.52 while real data is 0.62
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 16.39 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.19 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.48] with model size 17.43 while real data is 0.23
+Real data is IN
+Prediction interval is [0.05,0.56] with model size 18.03 while real data is 0.18
+Real data is IN
+Prediction interval is [0.05,0.52] with model size 17.24 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.57 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 17.92 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 18.45 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.49 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 17.59 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.81 while real data is 0.23
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 16.99 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.98 while real data is 0.02
+Real data is IN
+Prediction interval is [0.63,1.00] with model size 17.52 while real data is 0.90
+Real data is IN
+Prediction interval is [0.48,0.98] with model size 17.40 while real data is 0.34
+Real data is OUT
+Prediction interval is [0.00,0.38] with model size 17.55 while real data is 0.01
+Real data is IN
+Prediction interval is [0.14,0.61] with model size 17.70 while real data is 0.21
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.97 while real data is 0.06
+Real data is IN
+Prediction interval is [0.03,0.51] with model size 17.84 while real data is 0.59
+Real data is OUT
+Prediction interval is [0.43,0.93] with model size 17.37 while real data is 0.66
+Real data is IN
+Prediction interval is [0.03,0.51] with model size 17.42 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.99 while real data is 0.10
+Real data is IN
+Prediction interval is [0.27,0.78] with model size 17.61 while real data is 0.40
+Real data is IN
+Prediction interval is [0.04,0.54] with model size 17.47 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.66 while real data is 0.04
+Real data is IN
+Prediction interval is [0.06,0.53] with model size 17.17 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.13 while real data is 0.13
+Real data is IN
+Prediction interval is [0.17,0.65] with model size 17.45 while real data is 0.27
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.99 while real data is 0.23
+Real data is IN
+Prediction interval is [0.32,0.80] with model size 17.73 while real data is 0.59
+Real data is IN
+Prediction interval is [0.05,0.52] with model size 17.61 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.72 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.63 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.78 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.87 while real data is 0.05
+Real data is IN
+Prediction interval is [0.21,0.71] with model size 17.38 while real data is 0.12
+Real data is OUT
+Prediction interval is [0.00,0.51] with model size 17.23 while real data is 0.10
+Real data is IN
+Prediction interval is [0.02,0.48] with model size 17.13 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.64 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 16.86 while real data is 0.11
+Real data is IN
+Prediction interval is [0.03,0.50] with model size 17.53 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 18.11 while real data is 0.05
+Real data is IN
+Prediction interval is [0.08,0.57] with model size 17.71 while real data is 0.24
+Real data is IN
+Prediction interval is [0.14,0.61] with model size 17.88 while real data is 0.33
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 16.90 while real data is 0.19
+Real data is IN
+Prediction interval is [0.10,0.61] with model size 17.53 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.22 while real data is 0.21
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 17.00 while real data is 0.16
+Real data is IN
+Prediction interval is [0.07,0.55] with model size 17.25 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.12 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.74 while real data is 0.05
+Real data is IN
+Prediction interval is [0.15,0.62] with model size 17.16 while real data is 0.34
+Real data is IN
+Prediction interval is [0.04,0.54] with model size 17.59 while real data is 0.23
+Real data is IN
+Prediction interval is [0.22,0.71] with model size 17.24 while real data is 0.24
+Real data is IN
+Prediction interval is [0.14,0.60] with model size 17.54 while real data is 0.52
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 16.85 while real data is 0.00
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.86 while real data is 0.24
+Real data is IN
+Prediction interval is [0.02,0.48] with model size 17.71 while real data is 0.30
+Real data is IN
+Prediction interval is [0.60,1.00] with model size 17.79 while real data is 1.00
+Real data is IN
+Prediction interval is [0.12,0.59] with model size 17.36 while real data is 0.43
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 18.19 while real data is 0.11
+Real data is IN
+Prediction interval is [0.29,0.80] with model size 18.10 while real data is 0.22
+Real data is OUT
+Prediction interval is [0.27,0.75] with model size 17.16 while real data is 0.70
+Real data is IN
+Prediction interval is [0.03,0.51] with model size 17.29 while real data is 0.10
+Real data is IN
+Prediction interval is [0.36,0.84] with model size 17.48 while real data is 0.61
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.49 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.74 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.60 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.99 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 18.03 while real data is 0.04
+Real data is IN
+Prediction interval is [0.21,0.70] with model size 17.58 while real data is 0.18
+Real data is OUT
+Prediction interval is [0.29,0.78] with model size 17.99 while real data is 0.47
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 16.95 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 18.24 while real data is 0.21
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 18.66 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 16.65 while real data is 0.25
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.90 while real data is 0.02
+Real data is IN
+Prediction interval is [0.01,0.48] with model size 17.70 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.58 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.49] with model size 16.86 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 16.41 while real data is 0.02
+Real data is IN
+Prediction interval is [0.15,0.63] with model size 17.55 while real data is 0.27
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 18.10 while real data is 0.06
+Real data is IN
+Prediction interval is [0.14,0.63] with model size 17.52 while real data is 0.50
+Real data is IN
+Prediction interval is [0.14,0.61] with model size 17.80 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 17.95 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.56 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.09 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.50] with model size 17.29 while real data is 0.02
+Real data is IN
+Prediction interval is [0.42,0.93] with model size 17.65 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.10,0.58] with model size 17.51 while real data is 0.24
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 18.30 while real data is 0.10
+Real data is IN
+Prediction interval is [0.13,0.64] with model size 17.20 while real data is 0.12
+Real data is OUT
+Prediction interval is [0.00,0.42] with model size 18.13 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.72 while real data is 0.06
+Real data is IN
+Prediction interval is [0.17,0.67] with model size 17.10 while real data is 0.15
+Real data is OUT
+Prediction interval is [0.00,0.32] with model size 18.28 while real data is 0.03
+Real data is IN
+Prediction interval is [0.36,0.84] with model size 17.58 while real data is 0.30
+Real data is OUT
+Prediction interval is [0.00,0.47] with model size 17.53 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.15 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 16.59 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.36 while real data is 0.07
+Real data is IN
+Prediction interval is [0.36,0.87] with model size 17.38 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.04,0.52] with model size 17.39 while real data is 0.35
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.59 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.49 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.74 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 18.64 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 18.23 while real data is 0.11
+Real data is IN
+Prediction interval is [0.14,0.64] with model size 17.75 while real data is 0.79
+Real data is OUT
+Prediction interval is [0.00,0.42] with model size 17.70 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 18.73 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.22] with model size 17.81 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.13 while real data is 0.23
+Real data is IN
+Prediction interval is [0.39,0.89] with model size 17.16 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.44] with model size 17.62 while real data is 0.18
+Real data is IN
+Prediction interval is [0.30,0.80] with model size 17.23 while real data is 0.50
+Real data is IN
+Prediction interval is [0.08,0.55] with model size 17.28 while real data is 0.40
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.24 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.46 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 16.43 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.93 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 18.03 while real data is 0.01
+Real data is IN
+Prediction interval is [0.17,0.69] with model size 17.03 while real data is 0.31
+Real data is IN
+Prediction interval is [0.39,0.90] with model size 17.34 while real data is 0.62
+Real data is IN
+Prediction interval is [0.34,0.82] with model size 17.51 while real data is 0.60
+Real data is IN
+Prediction interval is [0.25,0.75] with model size 17.33 while real data is 0.97
+Real data is OUT
+Prediction interval is [0.10,0.65] with model size 17.82 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.60 while real data is 0.13
+Real data is IN
+Prediction interval is [0.21,0.72] with model size 17.26 while real data is 0.07
+Real data is OUT
+Prediction interval is [0.02,0.51] with model size 17.47 while real data is 0.26
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 18.17 while real data is 0.07
+Real data is IN
+Prediction interval is [0.23,0.79] with model size 17.38 while real data is 0.29
+Real data is IN
+Prediction interval is [0.28,0.76] with model size 17.75 while real data is 0.85
+Real data is OUT
+Prediction interval is [0.22,0.70] with model size 17.09 while real data is 0.76
+Real data is OUT
+Prediction interval is [0.08,0.54] with model size 17.69 while real data is 0.17
+Real data is IN
+Prediction interval is [0.20,0.67] with model size 16.81 while real data is 0.65
+Real data is IN
+Prediction interval is [0.20,0.69] with model size 16.90 while real data is 0.36
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 18.38 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.30 while real data is 0.18
+Real data is IN
+Prediction interval is [0.14,0.61] with model size 17.93 while real data is 0.35
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 16.51 while real data is 0.06
+Real data is IN
+Prediction interval is [0.12,0.62] with model size 17.09 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.35 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.48 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 18.18 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 17.16 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.07 while real data is 0.06
+Real data is IN
+Prediction interval is [0.15,0.63] with model size 17.37 while real data is 0.48
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.65 while real data is 0.09
+Real data is IN
+Prediction interval is [0.13,0.59] with model size 17.20 while real data is 0.19
+Real data is IN
+Prediction interval is [0.12,0.60] with model size 17.36 while real data is 0.26
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 19.36 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.24] with model size 18.63 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.14 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 18.22 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 16.96 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.00 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.42 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.54 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.22 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 18.09 while real data is 0.24
+Real data is IN
+Prediction interval is [0.05,0.51] with model size 17.45 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.48] with model size 18.07 while real data is 0.50
+Real data is OUT
+Prediction interval is [0.14,0.63] with model size 17.19 while real data is 0.26
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.41 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 18.60 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.23 while real data is 0.55
+Real data is OUT
+Prediction interval is [0.00,0.36] with model size 17.28 while real data is 0.18
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 17.26 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 17.21 while real data is 0.09
+Real data is IN
+Prediction interval is [0.16,0.64] with model size 17.52 while real data is 0.46
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 18.43 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 18.05 while real data is 0.07
+Real data is IN
+Prediction interval is [0.28,0.76] with model size 17.76 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.28] with model size 18.06 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.78 while real data is 0.13
+Real data is IN
+Prediction interval is [0.04,0.52] with model size 17.76 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 18.12 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 17.78 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.60 while real data is 0.09
+Real data is IN
+Prediction interval is [0.49,1.00] with model size 17.59 while real data is 0.53
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.55 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.21 while real data is 0.10
+Real data is IN
+Prediction interval is [0.11,0.61] with model size 17.62 while real data is 0.45
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 19.06 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.02 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 18.41 while real data is 0.15
+Real data is IN
+Prediction interval is [0.08,0.56] with model size 17.90 while real data is 0.39
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 16.36 while real data is 0.03
+Real data is IN
+Prediction interval is [0.04,0.51] with model size 17.44 while real data is 0.23
+Real data is IN
+Prediction interval is [0.01,0.50] with model size 18.52 while real data is 0.10
+Real data is IN
+Prediction interval is [0.03,0.50] with model size 17.58 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.10 while real data is 0.26
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.28 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 18.09 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.23 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.84 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.48] with model size 17.06 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.16 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.83 while real data is 0.18
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.76 while real data is 0.20
+Real data is IN
+Prediction interval is [0.04,0.52] with model size 17.20 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 18.09 while real data is 0.04
+Real data is IN
+Prediction interval is [0.08,0.59] with model size 17.47 while real data is 0.16
+Real data is IN
+Prediction interval is [0.41,0.89] with model size 17.39 while real data is 0.64
+Real data is IN
+Prediction interval is [0.24,0.73] with model size 17.44 while real data is 0.65
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.05 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.52 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.69 while real data is 0.12
+Real data is IN
+Prediction interval is [0.29,0.81] with model size 17.45 while real data is 0.74
+Real data is IN
+Prediction interval is [0.35,0.85] with model size 18.00 while real data is 0.73
+Real data is IN
+Prediction interval is [0.00,0.51] with model size 17.42 while real data is 0.24
+Real data is IN
+Prediction interval is [0.61,1.00] with model size 18.66 while real data is 1.00
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.54 while real data is 0.03
+Real data is IN
+Prediction interval is [0.09,0.58] with model size 18.02 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.04,0.54] with model size 16.86 while real data is 0.21
+Real data is IN
+Prediction interval is [0.24,0.71] with model size 17.69 while real data is 0.25
+Real data is IN
+Prediction interval is [0.04,0.52] with model size 17.27 while real data is 0.26
+Real data is IN
+Prediction interval is [0.25,0.72] with model size 17.69 while real data is 0.51
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 18.06 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 18.34 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 18.47 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.28 while real data is 0.16
+Real data is IN
+Prediction interval is [0.27,0.75] with model size 17.76 while real data is 0.52
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 16.79 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.54 while real data is 0.24
+Real data is IN
+Prediction interval is [0.04,0.52] with model size 17.34 while real data is 0.30
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 18.07 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 18.29 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.81 while real data is 0.09
+Real data is IN
+Prediction interval is [0.54,1.00] with model size 18.24 while real data is 0.77
+Real data is IN
+Prediction interval is [0.19,0.73] with model size 17.76 while real data is 0.33
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 16.20 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 17.67 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.34 while real data is 0.09
+Real data is IN
+Prediction interval is [0.01,0.50] with model size 17.55 while real data is 0.21
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.03 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 17.51 while real data is 0.05
+Real data is IN
+Prediction interval is [0.13,0.63] with model size 17.58 while real data is 0.23
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 19.35 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 17.51 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 16.92 while real data is 0.12
+Real data is IN
+Prediction interval is [0.29,0.76] with model size 17.64 while real data is 0.40
+Real data is IN
+Prediction interval is [0.04,0.52] with model size 17.41 while real data is 0.45
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 16.73 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 18.18 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.89 while real data is 0.07
+Real data is IN
+Prediction interval is [0.47,0.98] with model size 17.18 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.29] with model size 16.10 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.31 while real data is 0.06
+Real data is IN
+Prediction interval is [0.25,0.72] with model size 17.46 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.02,0.48] with model size 17.69 while real data is 0.20
+Real data is IN
+Prediction interval is [0.45,0.94] with model size 17.53 while real data is 0.67
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 18.09 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.00 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 16.81 while real data is 0.02
+Real data is IN
+Prediction interval is [0.36,0.88] with model size 17.17 while real data is 0.39
+Real data is IN
+Prediction interval is [0.26,0.72] with model size 17.15 while real data is 0.29
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 18.46 while real data is 0.02
+Real data is IN
+Prediction interval is [0.01,0.50] with model size 17.85 while real data is 0.25
+Real data is IN
+Prediction interval is [0.06,0.53] with model size 17.60 while real data is 0.23
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.31 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.67 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.50] with model size 16.46 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 18.18 while real data is 0.04
+Real data is IN
+Prediction interval is [0.24,0.72] with model size 17.48 while real data is 0.14
+Real data is OUT
+Prediction interval is [0.13,0.60] with model size 17.24 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.00 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.26 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 17.20 while real data is 0.11
+Real data is IN
+Prediction interval is [0.36,0.86] with model size 17.17 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.31] with model size 17.74 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 18.49 while real data is 0.01
+Real data is IN
+Prediction interval is [0.03,0.51] with model size 17.43 while real data is 0.24
+Real data is IN
+Prediction interval is [0.21,0.69] with model size 17.26 while real data is 0.43
+Real data is IN
+Prediction interval is [0.13,0.61] with model size 17.58 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.00 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 19.03 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 16.79 while real data is 0.07
+Real data is IN
+Prediction interval is [0.07,0.70] with model size 17.96 while real data is 0.05
+Real data is OUT
+Prediction interval is [0.00,0.27] with model size 17.77 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 17.87 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.43 while real data is 0.40
+Real data is IN
+Prediction interval is [0.00,0.50] with model size 16.25 while real data is 0.16
+Real data is IN
+Prediction interval is [0.08,0.56] with model size 17.42 while real data is 0.20
+Real data is IN
+Prediction interval is [0.32,0.84] with model size 18.15 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.32] with model size 16.22 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 18.84 while real data is 0.08
+Real data is IN
+Prediction interval is [0.62,1.00] with model size 17.95 while real data is 1.00
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.49 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 18.27 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.67 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.48] with model size 17.58 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.11 while real data is 0.13
+Real data is IN
+Prediction interval is [0.19,0.67] with model size 16.96 while real data is 0.45
+Real data is IN
+Prediction interval is [0.41,0.91] with model size 17.79 while real data is 0.44
+Real data is IN
+Prediction interval is [0.21,0.71] with model size 17.43 while real data is 0.45
+Real data is IN
+Prediction interval is [0.00,0.52] with model size 17.37 while real data is 0.39
+Real data is IN
+Prediction interval is [0.09,0.55] with model size 17.37 while real data is 0.26
+Real data is IN
+Prediction interval is [0.41,0.91] with model size 17.72 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.13,0.59] with model size 17.53 while real data is 0.30
+Real data is IN
+Prediction interval is [0.18,0.66] with model size 17.83 while real data is 0.27
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.69 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 18.49 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.66 while real data is 0.09
+Real data is IN
+Prediction interval is [0.19,0.67] with model size 17.84 while real data is 0.26
+Real data is IN
+Prediction interval is [0.29,0.86] with model size 17.57 while real data is 0.17
+Real data is OUT
+Prediction interval is [0.05,0.55] with model size 17.34 while real data is 0.31
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.93 while real data is 0.07
+Real data is IN
+Prediction interval is [0.11,0.59] with model size 17.75 while real data is 0.33
+Real data is IN
+Prediction interval is [0.00,0.50] with model size 17.47 while real data is 0.15
+Real data is IN
+Prediction interval is [0.05,0.52] with model size 17.39 while real data is 0.21
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.05 while real data is 0.10
+Real data is IN
+Prediction interval is [0.32,0.83] with model size 17.36 while real data is 0.51
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 17.99 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.93 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.40 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 18.11 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.24 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.70 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.49] with model size 17.58 while real data is 0.34
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.32 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 16.73 while real data is 0.24
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 16.63 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.00 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 18.18 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 18.43 while real data is 0.02
+Real data is IN
+Prediction interval is [0.18,0.65] with model size 17.17 while real data is 0.37
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.30 while real data is 0.07
+Real data is IN
+Prediction interval is [0.50,1.00] with model size 17.01 while real data is 0.71
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.27 while real data is 0.18
+Real data is IN
+Prediction interval is [0.21,0.71] with model size 17.64 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.45 while real data is 0.44
+Real data is OUT
+Prediction interval is [0.00,0.34] with model size 17.77 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.14 while real data is 0.19
+Real data is IN
+Prediction interval is [0.23,0.71] with model size 17.69 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 18.76 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 17.44 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 18.34 while real data is 0.32
+Real data is IN
+Prediction interval is [0.21,0.72] with model size 17.39 while real data is 0.19
+Real data is OUT
+Prediction interval is [0.05,0.53] with model size 17.63 while real data is 0.16
+Real data is IN
+Prediction interval is [0.01,0.48] with model size 18.02 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.88 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.35 while real data is 0.11
+Real data is IN
+Prediction interval is [0.19,0.66] with model size 17.56 while real data is 0.36
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.19 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.78 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 16.93 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.67 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.27 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.41 while real data is 0.12
+Real data is IN
+Prediction interval is [0.05,0.55] with model size 17.67 while real data is 0.47
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 16.77 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 18.07 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.22 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.31 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 16.99 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 18.22 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 18.15 while real data is 0.03
+Real data is IN
+Prediction interval is [0.32,0.81] with model size 17.45 while real data is 0.71
+Real data is IN
+Prediction interval is [0.03,0.52] with model size 17.50 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 18.18 while real data is 0.38
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 18.26 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 18.87 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.07 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.40 while real data is 0.05
+Real data is IN
+Prediction interval is [0.04,0.51] with model size 16.99 while real data is 0.29
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 18.54 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.49] with model size 17.63 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 16.98 while real data is 0.06
+Real data is IN
+Prediction interval is [0.02,0.57] with model size 16.81 while real data is 0.21
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.05 while real data is 0.06
+Real data is IN
+Prediction interval is [0.19,0.70] with model size 17.15 while real data is 0.51
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.74 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.48] with model size 17.90 while real data is 0.21
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.73 while real data is 0.39
+Real data is IN
+Prediction interval is [0.44,1.00] with model size 17.98 while real data is 0.66
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.91 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 18.66 while real data is 0.06
+Real data is IN
+Prediction interval is [0.35,0.86] with model size 17.36 while real data is 0.53
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 16.73 while real data is 0.08
+Real data is IN
+Prediction interval is [0.12,0.61] with model size 16.97 while real data is 0.59
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.69 while real data is 0.12
+Real data is IN
+Prediction interval is [0.11,0.61] with model size 17.28 while real data is 0.29
+Real data is IN
+Prediction interval is [0.56,1.00] with model size 18.26 while real data is 1.00
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 15.92 while real data is 0.03
+Real data is IN
+Prediction interval is [0.01,0.48] with model size 17.46 while real data is 0.29
+Real data is IN
+Prediction interval is [0.11,0.60] with model size 18.22 while real data is 0.38
+Real data is IN
+Prediction interval is [0.56,1.00] with model size 18.12 while real data is 1.00
+Real data is IN
+Prediction interval is [0.23,0.73] with model size 17.29 while real data is 0.30
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.95 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.17 while real data is 0.29
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 17.24 while real data is 0.02
+Real data is IN
+Prediction interval is [0.14,0.62] with model size 17.86 while real data is 0.19
+Real data is IN
+Prediction interval is [0.21,0.71] with model size 16.80 while real data is 0.38
+Real data is IN
+Prediction interval is [0.04,0.52] with model size 17.73 while real data is 0.31
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 18.84 while real data is 0.07
+Real data is IN
+Prediction interval is [0.15,0.64] with model size 17.39 while real data is 0.60
+Real data is IN
+Prediction interval is [0.07,0.56] with model size 18.61 while real data is 0.54
+Real data is IN
+Prediction interval is [0.35,0.89] with model size 17.68 while real data is 0.45
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 18.22 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 16.73 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.22] with model size 18.02 while real data is 0.00
+Real data is IN
+Prediction interval is [0.02,0.50] with model size 17.70 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 17.58 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 16.55 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 19.16 while real data is 0.03
+Real data is IN
+Prediction interval is [0.25,0.74] with model size 17.69 while real data is 0.69
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.54 while real data is 0.19
+Real data is IN
+Prediction interval is [0.24,0.78] with model size 17.14 while real data is 0.41
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.20 while real data is 0.08
+Real data is IN
+Prediction interval is [0.04,0.51] with model size 17.56 while real data is 0.31
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.56 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.61 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.21 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.16 while real data is 0.15
+Real data is IN
+Prediction interval is [0.14,0.61] with model size 17.67 while real data is 0.54
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 18.52 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 18.61 while real data is 0.31
+Real data is IN
+Prediction interval is [0.46,0.95] with model size 17.74 while real data is 0.65
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 18.30 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 18.74 while real data is 0.02
+Real data is IN
+Prediction interval is [0.21,0.69] with model size 17.28 while real data is 0.82
+Real data is OUT
+Prediction interval is [0.00,0.34] with model size 18.04 while real data is 0.02
+Real data is IN
+Prediction interval is [0.04,0.53] with model size 17.24 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 18.27 while real data is 0.40
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.73 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.67 while real data is 0.12
+Real data is IN
+Prediction interval is [0.20,0.69] with model size 17.60 while real data is 0.61
+Real data is IN
+Prediction interval is [0.48,0.99] with model size 17.46 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.31] with model size 18.08 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.99 while real data is 0.09
+Real data is IN
+Prediction interval is [0.13,0.62] with model size 17.90 while real data is 0.76
+Real data is OUT
+Prediction interval is [0.00,0.30] with model size 17.00 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 16.98 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.87 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.43 while real data is 0.06
+Real data is IN
+Prediction interval is [0.14,0.61] with model size 17.40 while real data is 0.20
+Real data is IN
+Prediction interval is [0.18,0.65] with model size 17.77 while real data is 0.25
+Real data is IN
+Prediction interval is [0.00,0.23] with model size 17.87 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.60 while real data is 0.06
+Real data is IN
+Prediction interval is [0.21,0.69] with model size 17.72 while real data is 0.19
+Real data is OUT
+Prediction interval is [0.00,0.27] with model size 18.01 while real data is 0.06
+Real data is IN
+Prediction interval is [0.02,0.49] with model size 17.90 while real data is 0.16
+Real data is IN
+Prediction interval is [0.07,0.53] with model size 17.66 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.67 while real data is 0.18
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 18.39 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.88 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 18.01 while real data is 0.03
+Real data is IN
+Prediction interval is [0.01,0.52] with model size 17.55 while real data is 0.33
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.71 while real data is 0.00
+Real data is IN
+Prediction interval is [0.05,0.53] with model size 17.10 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 17.38 while real data is 0.04
+Real data is IN
+Prediction interval is [0.03,0.51] with model size 17.05 while real data is 0.35
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 16.74 while real data is 0.10
+Real data is IN
+Prediction interval is [0.22,0.71] with model size 17.46 while real data is 0.46
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 19.08 while real data is 0.04
+Real data is IN
+Prediction interval is [0.04,0.52] with model size 17.31 while real data is 0.18
+Real data is IN
+Prediction interval is [0.18,0.66] with model size 17.42 while real data is 0.40
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.59 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.49 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.21 while real data is 0.03
+Real data is IN
+Prediction interval is [0.29,0.79] with model size 16.89 while real data is 0.52
+Real data is IN
+Prediction interval is [0.09,0.56] with model size 17.57 while real data is 0.27
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.63 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 18.23 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.80 while real data is 0.17
+Real data is IN
+Prediction interval is [0.18,0.66] with model size 17.12 while real data is 0.47
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.06 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.29 while real data is 0.06
+Real data is IN
+Prediction interval is [0.22,0.70] with model size 17.63 while real data is 0.39
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 18.27 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.97 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.46 while real data is 0.26
+Real data is IN
+Prediction interval is [0.19,0.66] with model size 17.50 while real data is 0.55
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 16.51 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 18.32 while real data is 0.10
+Real data is IN
+Prediction interval is [0.61,1.00] with model size 18.02 while real data is 0.84
+Real data is IN
+Prediction interval is [0.03,0.50] with model size 17.48 while real data is 0.18
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 19.32 while real data is 0.04
+Real data is IN
+Prediction interval is [0.10,0.57] with model size 17.63 while real data is 0.34
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 17.11 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.78 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 18.20 while real data is 0.02
+Real data is IN
+Prediction interval is [0.19,0.72] with model size 17.76 while real data is 0.31
+Real data is IN
+Prediction interval is [0.54,1.00] with model size 17.13 while real data is 0.97
+Real data is IN
+Prediction interval is [0.13,0.61] with model size 18.15 while real data is 0.33
+Real data is IN
+Prediction interval is [0.40,0.92] with model size 17.67 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.29,0.78] with model size 18.13 while real data is 0.96
+Real data is OUT
+Prediction interval is [0.03,0.50] with model size 18.25 while real data is 0.25
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.73 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 16.65 while real data is 0.12
+Real data is IN
+Prediction interval is [0.13,0.62] with model size 17.67 while real data is 0.52
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.58 while real data is 0.09
+Real data is IN
+Prediction interval is [0.03,0.50] with model size 16.84 while real data is 0.14
+Real data is IN
+Prediction interval is [0.09,0.58] with model size 17.25 while real data is 0.36
+Real data is IN
+Prediction interval is [0.31,0.79] with model size 17.87 while real data is 0.59
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.99 while real data is 0.49
+Real data is OUT
+Prediction interval is [0.13,0.59] with model size 17.72 while real data is 0.53
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 18.43 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.95 while real data is 0.19
+Real data is IN
+Prediction interval is [0.14,0.61] with model size 17.32 while real data is 0.28
+Real data is IN
+Prediction interval is [0.02,0.50] with model size 17.11 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.40 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 18.09 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.23] with model size 19.48 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.93 while real data is 0.07
+Real data is IN
+Prediction interval is [0.21,0.69] with model size 17.75 while real data is 0.21
+Real data is OUT
+Prediction interval is [0.08,0.56] with model size 17.71 while real data is 0.21
+Real data is IN
+Prediction interval is [0.09,0.57] with model size 17.80 while real data is 0.40
+Real data is IN
+Prediction interval is [0.00,0.23] with model size 18.95 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.59 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 18.26 while real data is 0.05
+Real data is IN
+Prediction interval is [0.16,0.65] with model size 17.14 while real data is 0.54
+Real data is IN
+Prediction interval is [0.26,0.73] with model size 17.60 while real data is 0.54
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.22 while real data is 0.11
+Real data is IN
+Prediction interval is [0.25,0.73] with model size 17.43 while real data is 0.42
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.41 while real data is 0.06
+Real data is IN
+Prediction interval is [0.17,0.72] with model size 17.62 while real data is 0.70
+Real data is IN
+Prediction interval is [0.21,0.70] with model size 18.33 while real data is 0.45
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 17.65 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.73 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.75 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 17.56 while real data is 0.03
+Real data is IN
+Prediction interval is [0.11,0.58] with model size 17.83 while real data is 0.39
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 16.62 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.28 while real data is 0.03
+Real data is IN
+Prediction interval is [0.02,0.48] with model size 17.23 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.65 while real data is 0.07
+Real data is IN
+Prediction interval is [0.14,0.60] with model size 17.31 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 16.40 while real data is 0.02
+Real data is IN
+Prediction interval is [0.05,0.52] with model size 17.80 while real data is 0.41
+Real data is IN
+Prediction interval is [0.00,0.49] with model size 17.07 while real data is 0.12
+Real data is IN
+Prediction interval is [0.06,0.53] with model size 17.36 while real data is 0.34
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 16.57 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.69 while real data is 0.04
+Real data is IN
+Prediction interval is [0.08,0.55] with model size 17.26 while real data is 0.30
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 18.17 while real data is 0.09
+Real data is IN
+Prediction interval is [0.22,0.73] with model size 17.52 while real data is 0.42
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.52 while real data is 0.02
+Real data is IN
+Prediction interval is [0.04,0.50] with model size 17.71 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 18.11 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.61 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.00 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.13 while real data is 0.11
+Real data is IN
+Prediction interval is [0.32,0.82] with model size 17.27 while real data is 0.52
+Real data is IN
+Prediction interval is [0.18,0.67] with model size 17.15 while real data is 0.25
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 16.92 while real data is 0.11
+Real data is IN
+Prediction interval is [0.26,0.77] with model size 18.54 while real data is 0.82
+Real data is OUT
+Prediction interval is [0.13,0.68] with model size 17.38 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 18.21 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 16.84 while real data is 0.27
+Real data is IN
+Prediction interval is [0.17,0.71] with model size 17.66 while real data is 0.15
+Real data is OUT
+Prediction interval is [0.03,0.51] with model size 17.81 while real data is 0.16
+Real data is IN
+Prediction interval is [0.04,0.51] with model size 18.01 while real data is 0.47
+Real data is IN
+Prediction interval is [0.12,0.61] with model size 17.48 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.50] with model size 16.46 while real data is 0.26
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 17.84 while real data is 0.02
+Real data is IN
+Prediction interval is [0.70,1.00] with model size 18.90 while real data is 1.00
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.76 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 19.18 while real data is 0.31
+Real data is IN
+Prediction interval is [0.12,0.63] with model size 17.76 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.02 while real data is 0.06
+Real data is IN
+Prediction interval is [0.11,0.63] with model size 17.27 while real data is 0.14
+Real data is IN
+Prediction interval is [0.28,0.77] with model size 17.10 while real data is 0.35
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.60 while real data is 0.02
+Real data is IN
+Prediction interval is [0.21,0.71] with model size 17.31 while real data is 0.36
+Real data is IN
+Prediction interval is [0.07,0.53] with model size 17.63 while real data is 0.39
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.99 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.16 while real data is 0.13
+Real data is IN
+Prediction interval is [0.21,0.69] with model size 17.56 while real data is 0.57
+Real data is IN
+Prediction interval is [0.41,0.89] with model size 17.32 while real data is 0.59
+Real data is IN
+Prediction interval is [0.33,0.81] with model size 17.89 while real data is 0.31
+Real data is OUT
+Prediction interval is [0.31,0.82] with model size 17.31 while real data is 0.34
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 16.94 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.62 while real data is 0.47
+Real data is OUT
+Prediction interval is [0.04,0.53] with model size 17.18 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.29 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.58 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 18.10 while real data is 0.04
+Real data is IN
+Prediction interval is [0.07,0.54] with model size 17.02 while real data is 0.12
+Real data is IN
+Prediction interval is [0.19,0.66] with model size 17.49 while real data is 0.39
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.51 while real data is 0.18
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 16.59 while real data is 0.10
+Real data is IN
+Prediction interval is [0.34,0.83] with model size 16.99 while real data is 0.86
+Real data is OUT
+Prediction interval is [0.00,0.36] with model size 18.31 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 19.09 while real data is 0.06
+Real data is IN
+Prediction interval is [0.14,0.61] with model size 18.14 while real data is 0.20
+Real data is IN
+Prediction interval is [0.18,0.67] with model size 17.16 while real data is 0.60
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.61 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.52 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.24] with model size 18.24 while real data is 0.04
+Real data is IN
+Prediction interval is [0.38,0.97] with model size 18.16 while real data is 0.36
+Real data is OUT
+Prediction interval is [0.00,0.40] with model size 17.23 while real data is 0.10
+Real data is IN
+Prediction interval is [0.11,0.58] with model size 17.61 while real data is 0.27
+Real data is IN
+Prediction interval is [0.00,0.23] with model size 16.51 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.00 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 18.61 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 18.01 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 18.11 while real data is 0.26
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.14 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.32 while real data is 0.08
+Real data is IN
+Prediction interval is [0.34,0.87] with model size 17.54 while real data is 0.47
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.96 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.98 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 16.75 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.33 while real data is 0.21
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.61 while real data is 0.12
+Real data is IN
+Prediction interval is [0.08,0.57] with model size 17.59 while real data is 0.59
+Real data is OUT
+Prediction interval is [0.11,0.58] with model size 17.36 while real data is 0.70
+Real data is OUT
+Prediction interval is [0.00,0.34] with model size 16.81 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.25 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 16.68 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 16.81 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.28 while real data is 0.11
+Real data is IN
+Prediction interval is [0.09,0.59] with model size 17.57 while real data is 0.15
+Real data is IN
+Prediction interval is [0.21,0.70] with model size 16.60 while real data is 0.51
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 18.92 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.69 while real data is 0.06
+Real data is IN
+Prediction interval is [0.13,0.63] with model size 17.85 while real data is 0.51
+Real data is IN
+Prediction interval is [0.21,0.71] with model size 17.58 while real data is 0.58
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 18.00 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 19.37 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.80 while real data is 0.21
+Real data is IN
+Prediction interval is [0.28,0.77] with model size 17.38 while real data is 0.65
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 18.79 while real data is 0.10
+Real data is IN
+Prediction interval is [0.14,0.65] with model size 17.74 while real data is 0.23
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 18.02 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.50] with model size 17.26 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.21 while real data is 0.06
+Real data is IN
+Prediction interval is [0.03,0.50] with model size 17.01 while real data is 0.14
+Real data is IN
+Prediction interval is [0.13,0.62] with model size 17.53 while real data is 0.54
+Real data is IN
+Prediction interval is [0.06,0.53] with model size 17.20 while real data is 0.25
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.34 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 17.45 while real data is 0.04
+Real data is IN
+Prediction interval is [0.29,0.76] with model size 17.53 while real data is 0.44
+Real data is IN
+Prediction interval is [0.24,0.72] with model size 17.11 while real data is 0.60
+Real data is IN
+Prediction interval is [0.09,0.56] with model size 17.82 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.73 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.17 while real data is 0.11
+Real data is IN
+Prediction interval is [0.38,0.93] with model size 17.23 while real data is 0.32
+Real data is OUT
+Prediction interval is [0.12,0.60] with model size 17.18 while real data is 0.38
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.56 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 16.91 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.25 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 17.78 while real data is 0.00
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 18.80 while real data is 0.02
+Real data is IN
+Prediction interval is [0.07,0.54] with model size 17.80 while real data is 0.36
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.64 while real data is 0.25
+Real data is IN
+Prediction interval is [0.17,0.65] with model size 17.93 while real data is 0.33
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 17.64 while real data is 0.04
+Real data is IN
+Prediction interval is [0.15,0.63] with model size 16.94 while real data is 0.48
+Real data is IN
+Prediction interval is [0.19,0.78] with model size 17.19 while real data is 0.13
+Real data is OUT
+Prediction interval is [0.00,0.36] with model size 17.69 while real data is 0.01
+Real data is IN
+Prediction interval is [0.09,0.63] with model size 17.40 while real data is 0.29
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.71 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 17.89 while real data is 0.03
+Real data is IN
+Prediction interval is [0.10,0.58] with model size 18.09 while real data is 0.21
+Real data is IN
+Prediction interval is [0.16,0.65] with model size 17.68 while real data is 0.57
+Real data is IN
+Prediction interval is [0.03,0.52] with model size 16.89 while real data is 0.37
+Real data is IN
+Prediction interval is [0.51,1.00] with model size 17.61 while real data is 0.67
+Real data is IN
+Prediction interval is [0.04,0.56] with model size 17.57 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 18.25 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.38 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 17.39 while real data is 0.03
+Real data is IN
+Prediction interval is [0.04,0.51] with model size 17.27 while real data is 0.51
+Real data is OUT
+Prediction interval is [0.01,0.48] with model size 16.99 while real data is 0.09
+Real data is IN
+Prediction interval is [0.03,0.50] with model size 17.20 while real data is 0.20
+Real data is IN
+Prediction interval is [0.35,0.85] with model size 17.14 while real data is 0.30
+Real data is OUT
+Prediction interval is [0.00,0.28] with model size 17.24 while real data is 0.03
+Real data is IN
+Prediction interval is [0.25,0.73] with model size 18.08 while real data is 0.23
+Real data is OUT
+Prediction interval is [0.00,0.40] with model size 18.79 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.68 while real data is 0.11
+Real data is IN
+Prediction interval is [0.09,0.62] with model size 17.78 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.00 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 17.00 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 18.23 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.46 while real data is 0.25
+Real data is IN
+Prediction interval is [0.16,0.64] with model size 17.58 while real data is 0.76
+Real data is OUT
+Prediction interval is [0.00,0.36] with model size 17.37 while real data is 0.15
+Real data is IN
+Prediction interval is [0.09,0.56] with model size 17.10 while real data is 0.14
+Real data is IN
+Prediction interval is [0.03,0.51] with model size 17.65 while real data is 0.37
+Real data is IN
+Prediction interval is [0.30,0.78] with model size 17.86 while real data is 0.61
+Real data is IN
+Prediction interval is [0.28,0.77] with model size 17.66 while real data is 0.37
+Real data is IN
+Prediction interval is [0.05,0.52] with model size 17.83 while real data is 0.14
+Real data is IN
+Prediction interval is [0.23,0.73] with model size 18.01 while real data is 0.32
+Real data is IN
+Prediction interval is [0.30,0.79] with model size 17.91 while real data is 0.35
+Real data is IN
+Prediction interval is [0.17,0.64] with model size 17.06 while real data is 0.37
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 18.49 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 16.06 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 16.49 while real data is 0.34
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 18.40 while real data is 0.03
+Real data is IN
+Prediction interval is [0.43,0.94] with model size 17.60 while real data is 0.93
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 17.74 while real data is 0.26
+Real data is IN
+Prediction interval is [0.03,0.49] with model size 17.63 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.32 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 16.73 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 16.07 while real data is 0.01
+Real data is IN
+Prediction interval is [0.07,0.53] with model size 17.29 while real data is 0.49
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 18.38 while real data is 0.18
+Real data is IN
+Prediction interval is [0.13,0.63] with model size 17.61 while real data is 0.25
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 18.37 while real data is 0.05
+Real data is IN
+Prediction interval is [0.21,0.68] with model size 17.63 while real data is 0.36
+Real data is IN
+Prediction interval is [0.10,0.60] with model size 17.92 while real data is 0.34
+Real data is IN
+Prediction interval is [0.14,0.61] with model size 17.37 while real data is 0.18
+Real data is IN
+Prediction interval is [0.11,0.59] with model size 17.28 while real data is 0.21
+Real data is IN
+Prediction interval is [0.08,0.54] with model size 17.26 while real data is 0.22
+Real data is IN
+Prediction interval is [0.42,0.97] with model size 17.58 while real data is 0.35
+Real data is OUT
+Prediction interval is [0.22,0.71] with model size 17.80 while real data is 0.75
+Real data is OUT
+Prediction interval is [0.00,0.38] with model size 17.26 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.49 while real data is 0.05
+Real data is IN
+Prediction interval is [0.08,0.55] with model size 17.81 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.00 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.64 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 17.75 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.30 while real data is 0.03
+Real data is IN
+Prediction interval is [0.03,0.52] with model size 17.57 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.61 while real data is 0.32
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 17.61 while real data is 0.37
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.17 while real data is 0.33
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.55 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.66 while real data is 0.29
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.00 while real data is 0.08
+Real data is IN
+Prediction interval is [0.46,0.95] with model size 17.81 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.08,0.57] with model size 17.31 while real data is 0.24
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.85 while real data is 0.04
+Real data is IN
+Prediction interval is [0.10,0.57] with model size 17.68 while real data is 0.27
+Real data is IN
+Prediction interval is [0.13,0.61] with model size 17.66 while real data is 0.50
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.12 while real data is 0.06
+Real data is IN
+Prediction interval is [0.33,0.82] with model size 17.45 while real data is 0.53
+Real data is IN
+Prediction interval is [0.01,0.48] with model size 17.33 while real data is 0.53
+Real data is OUT
+Prediction interval is [0.00,0.35] with model size 16.86 while real data is 0.07
+Real data is IN
+Prediction interval is [0.13,0.66] with model size 17.01 while real data is 0.31
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.24 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 18.14 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.05 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 18.13 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.28 while real data is 0.12
+Real data is IN
+Prediction interval is [0.03,0.52] with model size 16.99 while real data is 0.26
+Real data is IN
+Prediction interval is [0.19,0.75] with model size 17.31 while real data is 0.07
+Real data is OUT
+Prediction interval is [0.00,0.35] with model size 17.70 while real data is 0.06
+Real data is IN
+Prediction interval is [0.04,0.54] with model size 17.61 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 18.26 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.97 while real data is 0.11
+Real data is IN
+Prediction interval is [0.15,0.60] with model size 17.88 while real data is 0.29
+Real data is IN
+Prediction interval is [0.04,0.54] with model size 17.67 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.24 while real data is 0.11
+Real data is IN
+Prediction interval is [0.04,0.52] with model size 18.49 while real data is 0.24
+Real data is IN
+Prediction interval is [0.35,0.82] with model size 17.74 while real data is 0.87
+Real data is OUT
+Prediction interval is [0.00,0.32] with model size 17.29 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 17.46 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 16.94 while real data is 0.04
+Real data is IN
+Prediction interval is [0.40,0.90] with model size 17.30 while real data is 0.54
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.67 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.48] with model size 17.62 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 16.58 while real data is 0.04
+Real data is IN
+Prediction interval is [0.26,0.77] with model size 17.55 while real data is 0.69
+Real data is IN
+Prediction interval is [0.11,0.60] with model size 17.82 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.29 while real data is 0.06
+Real data is IN
+Prediction interval is [0.21,0.71] with model size 18.26 while real data is 0.91
+Real data is OUT
+Prediction interval is [0.00,0.31] with model size 17.49 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.68 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 18.21 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.92 while real data is 0.02
+Real data is IN
+Prediction interval is [0.09,0.60] with model size 17.37 while real data is 0.31
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 17.22 while real data is 0.03
+Real data is IN
+Prediction interval is [0.28,0.77] with model size 17.36 while real data is 0.27
+Real data is OUT
+Prediction interval is [0.01,0.48] with model size 18.31 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.19 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 18.55 while real data is 0.01
+Real data is IN
+Prediction interval is [0.10,0.58] with model size 17.09 while real data is 0.50
+Real data is IN
+Prediction interval is [0.08,0.56] with model size 18.06 while real data is 0.32
+Real data is IN
+Prediction interval is [0.25,0.73] with model size 17.78 while real data is 0.43
+Real data is IN
+Prediction interval is [0.16,0.63] with model size 17.53 while real data is 0.30
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 17.98 while real data is 0.02
+Real data is IN
+Prediction interval is [0.14,0.64] with model size 16.96 while real data is 0.38
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 16.70 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.04 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.02 while real data is 0.04
+Real data is IN
+Prediction interval is [0.02,0.52] with model size 17.07 while real data is 0.30
+Real data is IN
+Prediction interval is [0.35,0.84] with model size 17.68 while real data is 0.80
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 18.26 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.69 while real data is 0.11
+Real data is IN
+Prediction interval is [0.18,0.65] with model size 17.62 while real data is 0.90
+Real data is OUT
+Prediction interval is [0.05,0.51] with model size 17.21 while real data is 0.09
+Real data is IN
+Prediction interval is [0.04,0.61] with model size 17.01 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.41 while real data is 0.07
+Real data is IN
+Prediction interval is [0.42,0.92] with model size 17.62 while real data is 0.79
+Real data is IN
+Prediction interval is [0.21,0.71] with model size 17.87 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 18.51 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 16.33 while real data is 0.03
+Real data is IN
+Prediction interval is [0.01,0.49] with model size 18.04 while real data is 0.15
+Real data is IN
+Prediction interval is [0.04,0.51] with model size 16.87 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.67 while real data is 0.08
+Real data is IN
+Prediction interval is [0.14,0.60] with model size 18.33 while real data is 0.33
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.84 while real data is 0.05
+Real data is IN
+Prediction interval is [0.08,0.55] with model size 18.21 while real data is 0.25
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 18.57 while real data is 0.09
+Real data is IN
+Prediction interval is [0.02,0.51] with model size 16.83 while real data is 0.23
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 17.06 while real data is 0.06
+Real data is IN
+Prediction interval is [0.04,0.55] with model size 17.25 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.74 while real data is 0.08
+Real data is IN
+Prediction interval is [0.02,0.55] with model size 17.61 while real data is 0.42
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 17.86 while real data is 0.00
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.46 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.02 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 18.03 while real data is 0.06
+Real data is IN
+Prediction interval is [0.33,0.83] with model size 17.52 while real data is 0.59
+Real data is IN
+Prediction interval is [0.42,0.92] with model size 17.23 while real data is 0.33
+Real data is OUT
+Prediction interval is [0.00,0.46] with model size 16.55 while real data is 0.75
+Real data is OUT
+Prediction interval is [0.02,0.50] with model size 17.18 while real data is 0.43
+Real data is IN
+Prediction interval is [0.11,0.60] with model size 17.37 while real data is 0.02
+Real data is OUT
+Prediction interval is [0.00,0.39] with model size 18.92 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.23] with model size 17.83 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.64 while real data is 0.07
+Real data is IN
+Prediction interval is [0.30,0.80] with model size 17.06 while real data is 0.25
+Real data is OUT
+Prediction interval is [0.27,0.77] with model size 17.67 while real data is 0.48
+Real data is IN
+Prediction interval is [0.03,0.52] with model size 17.43 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.99 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.35 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 18.16 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.69 while real data is 0.18
+Real data is IN
+Prediction interval is [0.11,0.63] with model size 17.64 while real data is 0.28
+Real data is IN
+Prediction interval is [0.28,0.74] with model size 17.97 while real data is 0.57
+Real data is IN
+Prediction interval is [0.35,0.86] with model size 17.34 while real data is 0.39
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.27 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 18.04 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 18.34 while real data is 0.06
+Real data is IN
+Prediction interval is [0.51,1.00] with model size 17.70 while real data is 1.00
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 16.84 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.24] with model size 18.46 while real data is 0.02
+Real data is IN
+Prediction interval is [0.01,0.48] with model size 17.71 while real data is 0.34
+Real data is IN
+Prediction interval is [0.34,0.86] with model size 17.83 while real data is 0.39
+Real data is IN
+Prediction interval is [0.13,0.65] with model size 17.31 while real data is 0.29
+Real data is IN
+Prediction interval is [0.17,0.65] with model size 17.42 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.23 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.68 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.06 while real data is 0.32
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.25 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 16.81 while real data is 0.04
+Real data is IN
+Prediction interval is [0.41,0.98] with model size 18.32 while real data is 0.59
+Real data is IN
+Prediction interval is [0.13,0.60] with model size 16.71 while real data is 0.50
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.04 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.10 while real data is 0.09
+Real data is IN
+Prediction interval is [0.23,0.74] with model size 17.50 while real data is 0.52
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.00 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.73 while real data is 0.05
+Real data is IN
+Prediction interval is [0.24,0.75] with model size 17.62 while real data is 0.38
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.06 while real data is 0.02
+Real data is IN
+Prediction interval is [0.02,0.51] with model size 17.95 while real data is 0.22
+Real data is IN
+Prediction interval is [0.21,0.77] with model size 17.06 while real data is 0.28
+Real data is IN
+Prediction interval is [0.09,0.57] with model size 17.75 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 19.37 while real data is 0.18
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 19.75 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 19.11 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 17.28 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.72 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 17.54 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.19 while real data is 0.23
+Real data is IN
+Prediction interval is [0.12,0.58] with model size 17.58 while real data is 0.11
+Real data is OUT
+Prediction interval is [0.34,0.81] with model size 17.82 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.40] with model size 16.82 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.00 while real data is 0.11
+Real data is IN
+Prediction interval is [0.08,0.54] with model size 17.21 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 18.00 while real data is 0.04
+Real data is IN
+Prediction interval is [0.21,0.71] with model size 17.73 while real data is 0.32
+Real data is IN
+Prediction interval is [0.18,0.65] with model size 17.45 while real data is 0.42
+Real data is IN
+Prediction interval is [0.03,0.50] with model size 17.25 while real data is 0.33
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.09 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.61 while real data is 0.08
+Real data is IN
+Prediction interval is [0.16,0.66] with model size 17.09 while real data is 0.24
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.38 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 16.87 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 16.83 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.26 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 18.24 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.54 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.18 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 17.68 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.00 while real data is 0.06
+Real data is IN
+Prediction interval is [0.11,0.60] with model size 18.23 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 17.01 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 18.05 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 18.64 while real data is 0.06
+Real data is IN
+Prediction interval is [0.09,0.55] with model size 17.31 while real data is 0.50
+Real data is IN
+Prediction interval is [0.26,0.72] with model size 17.86 while real data is 0.67
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.98 while real data is 0.17
+Real data is IN
+Prediction interval is [0.19,0.66] with model size 17.87 while real data is 0.35
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 18.12 while real data is 0.19
+Real data is IN
+Prediction interval is [0.08,0.54] with model size 17.12 while real data is 0.60
+Real data is OUT
+Prediction interval is [0.04,0.53] with model size 17.06 while real data is 0.60
+Real data is OUT
+Prediction interval is [0.00,0.36] with model size 17.54 while real data is 0.06
+Real data is IN
+Prediction interval is [0.02,0.50] with model size 17.57 while real data is 0.27
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 16.62 while real data is 0.09
+Real data is IN
+Prediction interval is [0.45,0.95] with model size 17.57 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.29] with model size 17.92 while real data is 0.12
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.78 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.73 while real data is 0.16
+Real data is IN
+Prediction interval is [0.02,0.48] with model size 17.55 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.63 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 17.20 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.88 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.58 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.18 while real data is 0.09
+Real data is IN
+Prediction interval is [0.31,0.81] with model size 17.56 while real data is 0.75
+Real data is IN
+Prediction interval is [0.05,0.54] with model size 17.17 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 18.52 while real data is 0.03
+Real data is IN
+Prediction interval is [0.31,0.80] with model size 17.08 while real data is 0.47
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 17.49 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.45 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.44 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.83 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 18.22 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.75 while real data is 0.09
+Real data is IN
+Prediction interval is [0.11,0.59] with model size 17.13 while real data is 0.39
+Real data is IN
+Prediction interval is [0.27,0.74] with model size 18.06 while real data is 0.53
+Real data is IN
+Prediction interval is [0.18,0.65] with model size 17.53 while real data is 0.52
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 17.19 while real data is 0.08
+Real data is IN
+Prediction interval is [0.21,0.71] with model size 17.64 while real data is 0.60
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 17.23 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.21 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 17.18 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.38 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.07 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.38 while real data is 0.14
+Real data is IN
+Prediction interval is [0.08,0.56] with model size 17.12 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 16.93 while real data is 0.07
+Real data is IN
+Prediction interval is [0.32,0.79] with model size 17.45 while real data is 0.72
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.11 while real data is 0.07
+Real data is IN
+Prediction interval is [0.08,0.57] with model size 18.05 while real data is 0.27
+Real data is IN
+Prediction interval is [0.01,0.47] with model size 17.66 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 17.85 while real data is 0.13
+Real data is IN
+Prediction interval is [0.22,0.71] with model size 17.49 while real data is 0.26
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.56 while real data is 0.06
+Real data is IN
+Prediction interval is [0.41,0.93] with model size 17.46 while real data is 0.62
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 18.08 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.39 while real data is 0.09
+Real data is IN
+Prediction interval is [0.52,1.00] with model size 17.25 while real data is 0.64
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 18.37 while real data is 0.01
+Real data is IN
+Prediction interval is [0.29,0.77] with model size 17.62 while real data is 0.50
+Real data is IN
+Prediction interval is [0.00,0.26] with model size 18.08 while real data is 0.02
+Real data is IN
+Prediction interval is [0.05,0.52] with model size 17.09 while real data is 0.24
+Real data is IN
+Prediction interval is [0.06,0.53] with model size 16.70 while real data is 0.23
+Real data is IN
+Prediction interval is [0.00,0.48] with model size 17.77 while real data is 0.38
+Real data is IN
+Prediction interval is [0.48,0.98] with model size 17.25 while real data is 0.23
+Real data is OUT
+Prediction interval is [0.00,0.44] with model size 17.19 while real data is 0.41
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 18.30 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.75 while real data is 0.18
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.71 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 18.50 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 17.37 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.38 while real data is 0.07
+Real data is IN
+Prediction interval is [0.02,0.52] with model size 16.98 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.82 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 17.03 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 17.01 while real data is 0.15
+Real data is IN
+Prediction interval is [0.52,1.00] with model size 17.75 while real data is 0.65
+Real data is IN
+Prediction interval is [0.52,1.00] with model size 17.17 while real data is 0.86
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.25 while real data is 0.12
+Real data is IN
+Prediction interval is [0.23,0.73] with model size 17.83 while real data is 0.57
+Real data is IN
+Prediction interval is [0.03,0.48] with model size 17.46 while real data is 0.16
+Real data is IN
+Prediction interval is [0.14,0.60] with model size 17.01 while real data is 0.18
+Real data is IN
+Prediction interval is [0.23,0.71] with model size 17.82 while real data is 0.16
+Real data is OUT
+Prediction interval is [0.33,0.82] with model size 17.80 while real data is 0.24
+Real data is OUT
+Prediction interval is [0.14,0.64] with model size 17.78 while real data is 0.44
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 17.19 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.62 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 16.83 while real data is 0.08
+Real data is IN
+Prediction interval is [0.55,1.00] with model size 18.01 while real data is 0.55
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.47 while real data is 0.13
+Real data is IN
+Prediction interval is [0.00,0.50] with model size 17.41 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.48] with model size 16.97 while real data is 0.29
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 17.25 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.73 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 16.93 while real data is 0.14
+Real data is IN
+Prediction interval is [0.18,0.66] with model size 17.49 while real data is 0.34
+Real data is IN
+Prediction interval is [0.04,0.51] with model size 17.50 while real data is 0.27
+Real data is IN
+Prediction interval is [0.00,0.30] with model size 18.17 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.22] with model size 18.23 while real data is 0.02
+Real data is IN
+Prediction interval is [0.36,0.86] with model size 17.96 while real data is 0.95
+Real data is OUT
+Prediction interval is [0.00,0.31] with model size 17.49 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 18.08 while real data is 0.19
+Real data is IN
+Prediction interval is [0.15,0.66] with model size 16.89 while real data is 0.34
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.37 while real data is 0.11
+Real data is IN
+Prediction interval is [0.34,0.81] with model size 17.64 while real data is 0.53
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.00 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 16.69 while real data is 0.21
+Real data is IN
+Prediction interval is [0.01,0.47] with model size 17.20 while real data is 0.18
+Real data is IN
+Prediction interval is [0.03,0.51] with model size 17.13 while real data is 0.15
+Real data is IN
+Prediction interval is [0.37,0.90] with model size 17.71 while real data is 0.88
+Real data is IN
+Prediction interval is [0.53,1.00] with model size 17.27 while real data is 0.20
+Real data is OUT
+Prediction interval is [0.04,0.51] with model size 18.18 while real data is 0.22
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.77 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.31] with model size 18.27 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.02 while real data is 0.11
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.72 while real data is 0.08
+Real data is IN
+Prediction interval is [0.02,0.48] with model size 17.69 while real data is 0.29
+Real data is IN
+Prediction interval is [0.17,0.64] with model size 17.64 while real data is 0.36
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.69 while real data is 0.09
+Real data is IN
+Prediction interval is [0.04,0.53] with model size 18.29 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 17.05 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.96 while real data is 0.15
+Real data is IN
+Prediction interval is [0.05,0.52] with model size 17.27 while real data is 0.30
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 17.50 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.56 while real data is 0.19
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 16.44 while real data is 0.15
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 16.85 while real data is 0.01
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.52 while real data is 0.50
+Real data is OUT
+Prediction interval is [0.00,0.42] with model size 17.36 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.61 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.35] with model size 17.55 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 18.83 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 18.59 while real data is 0.05
+Real data is IN
+Prediction interval is [0.01,0.47] with model size 16.79 while real data is 0.09
+Real data is IN
+Prediction interval is [0.05,0.54] with model size 17.35 while real data is 0.26
+Real data is IN
+Prediction interval is [0.34,0.82] with model size 17.59 while real data is 0.67
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 18.71 while real data is 0.05
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.05 while real data is 0.29
+Real data is IN
+Prediction interval is [0.02,0.51] with model size 18.17 while real data is 0.54
+Real data is OUT
+Prediction interval is [0.00,0.30] with model size 18.04 while real data is 0.10
+Real data is IN
+Prediction interval is [0.35,0.86] with model size 17.53 while real data is 0.63
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.03 while real data is 0.20
+Real data is IN
+Prediction interval is [0.09,0.56] with model size 17.57 while real data is 0.29
+Real data is IN
+Prediction interval is [0.11,0.60] with model size 17.45 while real data is 0.27
+Real data is IN
+Prediction interval is [0.26,0.79] with model size 17.07 while real data is 0.13
+Real data is OUT
+Prediction interval is [0.09,0.63] with model size 17.67 while real data is 0.16
+Real data is IN
+Prediction interval is [0.15,0.62] with model size 17.73 while real data is 0.32
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.11 while real data is 0.11
+Real data is IN
+Prediction interval is [0.26,0.78] with model size 17.15 while real data is 0.29
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 16.79 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.23 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.41] with model size 17.11 while real data is 0.17
+Real data is IN
+Prediction interval is [0.00,0.22] with model size 19.09 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.24] with model size 18.26 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 18.10 while real data is 0.03
+Real data is IN
+Prediction interval is [0.00,0.33] with model size 18.80 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.36] with model size 16.85 while real data is 0.06
+Real data is IN
+Prediction interval is [0.00,0.47] with model size 17.33 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.45] with model size 17.45 while real data is 0.08
+Real data is IN
+Prediction interval is [0.13,0.59] with model size 17.53 while real data is 0.56
+Real data is IN
+Prediction interval is [0.07,0.54] with model size 17.64 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.44] with model size 17.56 while real data is 0.12
+Real data is IN
+Prediction interval is [0.06,0.56] with model size 17.80 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.37] with model size 17.83 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.00 while real data is 0.15
+Real data is IN
+Prediction interval is [0.08,0.57] with model size 17.57 while real data is 0.20
+Real data is IN
+Prediction interval is [0.00,0.25] with model size 18.76 while real data is 0.18
+Real data is IN
+Prediction interval is [0.12,0.58] with model size 17.65 while real data is 0.23
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 16.95 while real data is 0.18
+Real data is IN
+Prediction interval is [0.00,0.39] with model size 17.27 while real data is 0.26
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 18.28 while real data is 0.11
+Real data is IN
+Prediction interval is [0.26,0.78] with model size 18.54 while real data is 0.48
+Real data is IN
+Prediction interval is [0.13,0.59] with model size 17.65 while real data is 0.30
+Real data is IN
+Prediction interval is [0.22,0.70] with model size 17.73 while real data is 1.00
+Real data is OUT
+Prediction interval is [0.00,0.39] with model size 18.03 while real data is 0.10
+Real data is IN
+Prediction interval is [0.00,0.38] with model size 18.62 while real data is 0.02
+Real data is IN
+Prediction interval is [0.04,0.53] with model size 17.64 while real data is 0.02
+Real data is OUT
+Prediction interval is [0.23,0.71] with model size 17.63 while real data is 0.32
+Real data is IN
+Prediction interval is [0.32,0.82] with model size 17.11 while real data is 0.45
+Real data is IN
+Prediction interval is [0.41,0.89] with model size 17.92 while real data is 0.60
+Real data is IN
+Prediction interval is [0.10,0.57] with model size 17.61 while real data is 0.30
+Real data is IN
+Prediction interval is [0.00,0.23] with model size 17.27 while real data is 0.04
+Real data is IN
+Prediction interval is [0.23,0.71] with model size 18.03 while real data is 0.19
+Real data is OUT
+Prediction interval is [0.29,0.84] with model size 17.75 while real data is 0.75
+Real data is IN
+Prediction interval is [0.05,0.53] with model size 17.05 while real data is 0.53
+Real data is IN
+Prediction interval is [0.03,0.49] with model size 17.68 while real data is 0.22
+Real data is IN
+Prediction interval is [0.04,0.50] with model size 17.59 while real data is 0.30
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.87 while real data is 0.04
+Real data is IN
+Prediction interval is [0.13,0.65] with model size 17.69 while real data is 0.52
+Real data is IN
+Prediction interval is [0.00,0.42] with model size 17.36 while real data is 0.09
+Real data is IN
+Prediction interval is [0.00,0.32] with model size 18.29 while real data is 0.08
+Real data is IN
+Prediction interval is [0.00,0.43] with model size 16.80 while real data is 0.25
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 17.42 while real data is 0.04
+Real data is IN
+Prediction interval is [0.04,0.52] with model size 18.36 while real data is 0.16
+Real data is IN
+Prediction interval is [0.00,0.46] with model size 17.21 while real data is 0.28
+Real data is IN
+Prediction interval is [0.00,0.34] with model size 18.67 while real data is 0.07
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 17.64 while real data is 0.03
+Real data is IN
+Prediction interval is [0.14,0.61] with model size 17.85 while real data is 0.56
+Real data is IN
+Prediction interval is [0.00,0.29] with model size 16.53 while real data is 0.14
+Real data is IN
+Prediction interval is [0.09,0.57] with model size 17.10 while real data is 0.14
+Real data is IN
+Prediction interval is [0.00,0.27] with model size 17.56 while real data is 0.02
+Real data is IN
+Prediction interval is [0.00,0.28] with model size 16.73 while real data is 0.04
+Real data is IN
+Prediction interval is [0.00,0.40] with model size 17.19 while real data is 0.09
+Real data is IN
+Prediction interval is [0.20,0.69] with model size 17.57 while real data is 0.45
+Real data is IN
+Prediction interval is [0.23,0.71] with model size 17.65 while real data is 0.48
+Real data is IN
+The coverage is 0.913
+Average interval length is 0.414

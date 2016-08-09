@@ -101,14 +101,9 @@ while i<=n
             ccount=0;
             while 1
                 selection = setxor(1:m+1,outlier);
-                try
                 beta = glmnetCoef(glmnet(X_withnew(selection,:),Y_withnew(selection),...
                     [],options));
                 beta = beta(2:p+1);
-                catch ME
-                    [yconf,modelsize,supportcounter] = [ytrial,0,0];
-                    return;
-                end
                 [~,outlier]=max((X_withnew*beta-Y_withnew).^2);
                 if outlier == outlierOld || ccount>20
                     break
