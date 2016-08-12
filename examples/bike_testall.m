@@ -2,9 +2,9 @@ COVER = zeros(1,108);
 addpath(genpath(pwd));
 
 fileID = fopen('bike_ALL_3.txt','w');
-for i=1:108
+for i=106:108
     try
-        [COVER(i) l]=bike(i);
+        [COVER(i),l]=bike(i);
     catch ME
         continue
     end
