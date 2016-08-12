@@ -1,4 +1,4 @@
-function bike(yind)
+function coverage = bike(yind)
 %% Import data from spreadsheet
 % Script for importing data from the following spreadsheet:
 %
@@ -40,6 +40,11 @@ md=max(normD(:));
 normD = normD ./ md;
 
 Ytot = normD(:,yind);
+meanYtot = mean(Ytot);
+maxYtot = max(abs(Ytot));
+
+Ytot = Ytot-meanYtot ;
+Ytot = Ytot/maxYtot;
 Xtot = normD(:,setxor(1:newp,yind));
 if newm<20
     fprintf('Too few.\n');
@@ -56,6 +61,7 @@ n = length(Ytest);
 folder = fullfile(pwd, '\Outputs');
 filename = sprintf('BikeWithRespone_%d.txt',yind);
 fileID = fopen(fullfile(folder, filename),'w');
+fileID = fopen('bike_ALL','w');
 
 incounter = 0;
 fprintf(fileID,'Taking Station number %d as response.\n',yind);
@@ -65,11 +71,17 @@ for i=1:n
     xnew = Xtest(i,:);
     X_withnew = [Xtrain;xnew];
     y = Ytest(i);
-    ytrial = 0:0.001:1;  
+    ytrial = -1:0.01:1;  
     
-    [yconf,modelsize,sc] = conformalLOO(Xtrain,Ytrain,xnew,.05,ytrial,0.05);
+    try
+        [yconf,modelsize,sc] = conformalLOO(Xtrain,Ytrain,xnew,.1,ytrial,0.05);
+    catch ME
+        yconf = ytrial;
+        modelsize = 0; sc=0;
+        fprintf('GLMNET ERROR\n');
+    end
     fprintf(fileID,'Prediction interval is [%.2f,%.2f] with model size %.2f while real data is %.0f\n',...
-        min(yconf)*md+ min(D(:)),max(yconf)*md+ min(D(:)),modelsize,y*md+ min(D(:)));
+        min(yconf)*md*maxYtot+meanYtot,max(yconf)*md*maxYtot+meanYtot,modelsize,y*md*maxYtot+meanYtot);
     if (min(yconf)<=y)&&(y<=max(yconf))
         incounter=incounter+1;
         fprintf(fileID,'Real data is IN\n');
@@ -80,14 +92,15 @@ for i=1:n
     U = [U max(yconf)];
 end
 
-plot(1:73,Ytest*md,'bo');
+plot(1:73,Ytest*md*maxYtot+meanYtot,'bo');
 hold on;
 plot([find(U'-Ytest<0)' find(L'-Ytest>0)'],...
-    md*Ytest([find(U'-Ytest<0)' find(L'-Ytest>0)']),'ro');
+    md*maxYtot*Ytest([find(U'-Ytest<0)' find(L'-Ytest>0)'])+meanYtot,'ro');
 for i=1:73
-    line([i i], [L(i)*md U(i)*md]);
+    line([i i], [L(i)*md*maxYtot+meanYtot U(i)*md*maxYtot+meanYtot]);
 end
 title(sprintf('Conformal Prediction intervals for Station %d',yind));
 hold off;
 fprintf(fileID,'The coverage is %.3f\n',incounter/(newm-20));
 fclose(fileID);
+coverage = incounter/(newm-20);
