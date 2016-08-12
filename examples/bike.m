@@ -1,4 +1,4 @@
-function coverage = bike(yind)
+function [coverage,l] = bike(yind)
 %% Import data from spreadsheet
 % Script for importing data from the following spreadsheet:
 %
@@ -46,12 +46,14 @@ maxYtot = max(abs(Ytot));
 Ytot = Ytot-meanYtot ;
 Ytot = Ytot/maxYtot;
 Xtot = normD(:,setxor(1:newp,yind));
+Xtot = (Xtot - 0.5)*2;
 if newm<20
     fprintf('Too few.\n');
     return;
 end
 
-fitind = randsample(1:newm,20);
+nsample = 33;
+fitind = randsample(1:newm,nsample);
 Xtrain = Xtot(fitind,:);
 Ytrain = Ytot(fitind);
 Xtest = Xtot(setxor(1:newm,fitind),:);
@@ -74,7 +76,7 @@ for i=1:n
     ytrial = -1:0.01:1;  
     
     try
-        [yconf,modelsize,sc] = conformalLOO(Xtrain,Ytrain,xnew,.1,ytrial,0.05);
+        [yconf,modelsize,sc] = conformalLOO(Xtrain,Ytrain,xnew,.1,ytrial,0.08);
     catch ME
         yconf = ytrial;
         modelsize = 0; sc=0;
@@ -92,15 +94,16 @@ for i=1:n
     U = [U max(yconf)];
 end
 
-plot(1:73,Ytest*md*maxYtot+meanYtot,'bo');
+plot(1:(newm-nsample),(Ytest*maxYtot+meanYtot)*md,'bo');
 hold on;
 plot([find(U'-Ytest<0)' find(L'-Ytest>0)'],...
-    md*maxYtot*Ytest([find(U'-Ytest<0)' find(L'-Ytest>0)'])+meanYtot,'ro');
-for i=1:73
-    line([i i], [L(i)*md*maxYtot+meanYtot U(i)*md*maxYtot+meanYtot]);
+    md*(maxYtot*Ytest([find(U'-Ytest<0)' find(L'-Ytest>0)'])+meanYtot),'ro');
+for i=1:(newm-nsample)
+    line([i i], [(L(i)*maxYtot+meanYtot)*md (U(i)*maxYtot+meanYtot)*md]);
 end
 title(sprintf('Conformal Prediction intervals for Station %d',yind));
 hold off;
-fprintf(fileID,'The coverage is %.3f\n',incounter/(newm-20));
+fprintf(fileID,'The coverage is %.3f\n',incounter/(newm-nsample));
 fclose(fileID);
-coverage = incounter/(newm-20);
+coverage = incounter/(newm-nsample);
+l= (mean(U-L)*maxYtot++meanYtot)*md;
