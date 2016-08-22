@@ -52,7 +52,7 @@ if newm<20
     return;
 end
 
-nsample = 33;
+nsample = 92;
 fitind = randsample(1:newm,nsample);
 Xtrain = Xtot(fitind,:);
 Ytrain = Ytot(fitind);
@@ -76,7 +76,7 @@ for i=1:n
     ytrial = -1:0.01:1;  
     
     try
-        [yconf,modelsize,sc] = conformalLOO(Xtrain,Ytrain,xnew,.1,ytrial,0.08);
+        [yconf,modelsize,sc] = conformalLOO(Xtrain,Ytrain,xnew,.1,ytrial,0.1);
     catch ME
         yconf = ytrial;
         modelsize = 0; sc=0;

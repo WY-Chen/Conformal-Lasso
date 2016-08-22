@@ -2,7 +2,7 @@
 % Method: run conformal inference on a data set
 
 %% Method
-function yconf = conformal(X,Y,xnew,alpha,A,ytrial)
+function [yconf,modelsize,sc] = conformal(X,Y,xnew,alpha,A,ytrial)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
@@ -21,7 +21,7 @@ if strcmp(A,'linear')
 end
 
 if strcmp(A,'lasso')
-    mtd=@(y,x)cvglmnetPredict(cvglmnet(x,y),x)
+    mtd=@(y,x)cvglmnetPredict(cvglmnet(x,y),x);
 end
 
 for i = 1:n
@@ -31,5 +31,6 @@ for i = 1:n
     Pi_trial(i) = sum(Resid<=Resid(end))/(m+1);
 end
 yconf = ytrial((m+1)*Pi_trial<=ceil((1-alpha)*(m+1)));
+modelsize=0;sc=0; % not implemented yet
     
     

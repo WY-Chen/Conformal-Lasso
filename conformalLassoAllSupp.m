@@ -32,7 +32,7 @@ options.lambda = lambdain/m;
 yconfidx = []; beta = zeros(p,1);
 supportcounter = 0;
 
-h = waitbar(0,'Please wait...');
+% h = waitbar(0,'Please wait...');
 compcase=1;
 for i = 1:n
     y = ytrial(i);
@@ -40,7 +40,6 @@ for i = 1:n
         case 2
             stepsize = ytrial(i)-ytrial(i-1);
             yfit = yfit + yfitincrement*stepsize;
-            yfit = X_withnew*beta;
             Resid = abs(yfit - [Y;y]);
             Pi_trial = sum(Resid<=Resid(end))/(m+1);
             if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
@@ -90,11 +89,11 @@ for i = 1:n
             end
     end
     modelsizes(i) = length(E);
-    % waitbar
-    waitbar(i/n,h,sprintf('Current model size %d. Number of Lasso support computed %d',...
-        length(E),supportcounter))
+%     % waitbar
+%     waitbar(i/n,h,sprintf('Current model size %d. Number of Lasso support computed %d',...
+%         length(E),supportcounter))
 end
-close(h)
+% close(h)
 modelsize = mean(modelsizes);
 yconf  = ytrial(yconfidx);
 

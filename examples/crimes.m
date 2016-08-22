@@ -71,7 +71,8 @@ communitiesnames = [dataArray{1:end-1}];
 clearvars filename delimiter formatSpec fileID dataArray ans;
 
 % set up diary
-t=randi(100);
+% t=randi(100);
+t=0;
 folder = fullfile(pwd, '\Outputs');
 filename = sprintf('crimerates_%d.txt',t);
 fileID = fopen(fullfile(folder, filename),'w');
@@ -109,7 +110,7 @@ for i=1:(M-m)
     ytrial = -1:0.01:1;  
     
 %     [yconf,modelsize,sc] = conformalLTSLassoAllSupp(Xtrain,Ytrain,xnew,.1,ytrial,0.2,0.8);
-    [yconf,modelsize,sc] = conformalLOO(Xtrain,Ytrain,xnew,.1,ytrial,2);
+    [yconf,modelsize,sc] = conformal(Xtrain,Ytrain,xnew,.1,'linear',ytrial);
     fprintf(fileID,'Prediction interval is [%.2f,%.2f] with model size %.2f while real data is %.2f\n',...
         min(yconf)/2+0.5,max(yconf)/2+0.5,modelsize,y/2+0.5);
     if (min(yconf)<=y)&&(y<=max(yconf))

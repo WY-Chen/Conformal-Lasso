@@ -51,7 +51,7 @@ n = length(ytrial); % new truncated trial set.
 
 %% Fit the trial set
 i=1; compcase=1;yconfidx=[];
-h = waitbar(0,'Please wait...');
+% h = waitbar(0,'Please wait...');
 modelsizes = zeros(1,n); supportcounter=0;
 while i<=n
     y=ytrial(i); Y_withnew = [Y;y];
@@ -181,13 +181,13 @@ while i<=n
                 compcase=1;
             end
     end
-    waitbar((oldn-n+i)/oldn,h,...
-        sprintf('Current model size %d. Number of Lasso support computed %d',...
-        length(E),supportcounter))
+%     waitbar((oldn-n+i)/oldn,h,...
+%         sprintf('Current model size %d. Number of Lasso support computed %d',...
+%         length(E),supportcounter))
     modelsizes(i)=length(E);
     i=i+1;
 end
-close(h);
+% close(h);
 modelsize = mean(modelsizes);
 yconf  = ytrial(yconfidx);
             

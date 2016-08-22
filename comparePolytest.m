@@ -1,7 +1,7 @@
 %% Run Testing
 % Run testing on a setting with a method. 
 %% Implementation
-function compareLOOtest(setting,tail,alpha,stepsize,nruns,filename)
+function comparePolytest(setting,tail,alpha,stepsize,nruns,filename)
 % Setting = 'A', 'B', 'C'.
 %       A : Linear. X iid N(0,1). epsilon iid N(0,1). 
 %       B : B-spline. X iid N(0,1). epsilon iid t(2).
@@ -30,7 +30,7 @@ if ~exist('filename','var')
     fileID = 1;
 else
     folder = fullfile(pwd, '\Outputs');
-    filename = sprintf('Setting%s%s_%dIterations.txt',setting,tail,nruns);
+    filename = sprintf('Poly_Setting%s%s_%dIterations.txt',setting,tail,nruns);
     fileID = fopen(fullfile(folder, filename),'w');
 end
 % Testing
@@ -62,15 +62,10 @@ for i=1:nruns
     end
     lambda = t/100;
     if setting=='B'
-        if strcmp(tail,'norm')
-            lambda=628;
-        else
-            lambda=1016;
-        end
+        lambda=400;
         range = max(Y)-min(Y);
         ytrial = (min(Y)-range/2):stepsize:(max(Y)+range/2); 
     end
-
 
     % run method
     tic;
@@ -82,13 +77,14 @@ for i=1:nruns
         fprintf('GLMNET ERROR\n');
     end
     t2=toc;time2=time2+t2;tic;
-    try
-        [yconf4,modelsize4,sc2] = conformalLOO(X,Y,xnew,alpha,ytrial,lambda);
-    catch ME
-        yconf4 = ytrial;
-        modelsize4=0;sc2=0;
-        fprintf('GLMNET ERROR\n');
-    end
+%     try
+%         [yconf4,modelsize4,sc2] = conformalLassoPolyhedron(X,Y,xnew,alpha,ytrial,lambda);
+%     catch ME
+%         yconf4 = ytrial;
+%         modelsize4=0;sc2=0;
+%         fprintf('GLMNET ERROR\n');
+%     end
+[yconf4,modelsize4,sc2] = conformalLassoSolve(X,Y,xnew,alpha,ytrial,lambda);
     t4=toc;time4=time4+t4;
     totalsp1 = totalsp1+sc1;
     totalsp2 = totalsp2+sc2;
