@@ -76,6 +76,7 @@ t=0;
 folder = fullfile(pwd, '\Outputs');
 filename = sprintf('crimerates_%d.txt',t);
 fileID = fopen(fullfile(folder, filename),'w');
+fileID=1; % change output here.
 rng(t);
 
 % set up data
@@ -85,56 +86,98 @@ communities = communities(:,2:end);
 data = communities;
 data=data(:,~any(isnan(data)));
 
-Ytotal = (data(:,end)-0.5)*2;
-Xtotal = data(:,1:end-1);
-Xtotal = (Xtotal-0.5)*2;
-[M,p]=size(Xtotal);
-m=294;
-
-train = randsample(1:M,m);
-Xtrain = Xtotal(train,:);
-Ytrain = Ytotal(train);
-
-test = setxor(1:M,train);
-Xtest = Xtotal(test,:);
-Ytest = Ytotal(test);
+Ytot = (data(:,end)-0.5)*2;
+Xtot = data(:,1:end-1);
+Xtot = (Xtot-0.5)*2;
+[M,p]=size(Xtot);
+% m=294;
+% 
+% train = randsample(1:M,m);
+% Xtrain = Xtotal(train,:);
+% Ytrain = Ytotal(train);
+% 
+% test = setxor(1:M,train);
+% Xtest = Xtotal(test,:);
+% Ytest = Ytotal(test);
 
 % test the data
-incounter = 0;
-L = [];
-U = [];
-for i=1:(M-m)
-    xnew = Xtest(i,:);
-    X_withnew = [Xtrain;xnew];
-    y = Ytest(i);
-    ytrial = -1:0.01:1;  
+incounter1 = 0;incounter2 = 0;
+L1 = []; U1 = [];
+L2 = []; U2 = [];
+
+test = randsample(1:M,500);
+for i=1:500
     
-%     [yconf,modelsize,sc] = conformalLTSLassoAllSupp(Xtrain,Ytrain,xnew,.1,ytrial,0.2,0.8);
-    [yconf,modelsize,sc] = conformal(Xtrain,Ytrain,xnew,.1,'linear',ytrial);
-    fprintf(fileID,'Prediction interval is [%.2f,%.2f] with model size %.2f while real data is %.2f\n',...
-        min(yconf)/2+0.5,max(yconf)/2+0.5,modelsize,y/2+0.5);
-    if (min(yconf)<=y)&&(y<=max(yconf))
-        incounter=incounter+1;
-        fprintf(fileID,'Real data is IN\n');
+    xnew = Xtot(test(i),:);
+    train = setxor(1:M,test(i));
+    train = randsample(train,500);
+    Xtrain = Xtot(train,:);
+    Ytrain = Ytot(train);    
+    
+    X_withnew = [Xtrain;xnew];
+    y = Ytot(test(i));
+    ytrial = -1:0.01:1;   
+    
+    [yconf1,ms1,~] = conformalLOO(Xtrain,Ytrain,xnew,.1,ytrial,26.95);
+    [yconf2,~,~] = conformal(Xtrain,Ytrain,xnew,.1,'linear',ytrial);
+    fprintf(fileID,'Prediction interval: LOO: [%.2f,%.2f] OLS:[%.2f, %.2f]\n',...
+        min(yconf1)/2+0.5,max(yconf1)/2+0.5,...
+        min(yconf2)/2+0.5,max(yconf2)/2+0.5);
+    if (min(yconf1)<=y)&&(y<=max(yconf1))
+        incounter1=incounter1+1;
+        fprintf(fileID,'Real data is LOO: IN  ');
     else
-        fprintf(fileID,'Real data is OUT\n');
+        fprintf(fileID,'Real data is LOO: OUT  ');
     end
-    L = [L min(yconf)/2+0.5];
-    U = [U max(yconf)/2+0.5];
-    disp(i/(M-m));
+    if (min(yconf2)<=y)&&(y<=max(yconf2))
+        incounter2=incounter2+1;
+        fprintf(fileID,'OLS: IN\n');
+    else
+        fprintf(fileID,'OLS: OUT\n');
+    end
+    L1 = [L1 min(yconf1)/2+0.5];
+    U1 = [U1 max(yconf1)/2+0.5];
+    L2 = [L2 min(yconf2)/2+0.5];
+    U2 = [U2 max(yconf2)/2+0.5];
+    disp(i/500);
+% %     [yconf,modelsize,sc] = conformalLTSLassoAllSupp(Xtrain,Ytrain,xnew,.1,ytrial,0.2,0.8);
+%     [yconf,modelsize,sc] = conformal(Xtrain,Ytrain,xnew,.1,'linear',ytrial);
+%     fprintf(fileID,'Prediction interval is [%.2f,%.2f] with model size %.2f while real data is %.2f\n',...
+%         min(yconf)/2+0.5,max(yconf)/2+0.5,modelsize,y/2+0.5);
+%     if (min(yconf)<=y)&&(y<=max(yconf))
+%         incounter=incounter+1;
+%         fprintf(fileID,'Real data is IN\n');
+%     else
+%         fprintf(fileID,'Real data is OUT\n');
+%     end
+%     L = [L min(yconf)/2+0.5];
+%     U = [U max(yconf)/2+0.5];
+%     disp(i/(M-m));
 end
-plot(1:200,Ytest(1:200)/2+0.5,'bo');
+plot(1:500,Ytot(test)/2+0.5,'bo','MarkerFaceColor','b');
+set(gca, 'color', [.85 .85 .85]);
 hold on;
-plot([find(U(1:200)'-Ytest(1:200)/2-0.5<0)' find(L(1:200)'-Ytest(1:200)/2-0.5>0)'],...
-    Ytest([find(U(1:200)'-Ytest(1:200)/2-0.5<0)' find(L(1:200)'-Ytest(1:200)/2-0.5>0)'])/2+0.5,'ro');
-for i=1:200
-    line([i i], [L(i) U(i)]);
+plot([find(U1'-Ytot(test)/2-0.5<0)'...
+    find(L1'-Ytot(test)/2-0.5>0)'],...
+    Ytot(test(([find(U1'-Ytot(test)/2-0.5<0)'...
+    find(L1'-Ytot(test)/2-0.5>0)'])))/2+0.5,'ro','MarkerFaceColor','r');
+plot([find(U2'-Ytot(test)/2-0.5<0)'...
+    find(L2'-Ytot(test)/2-0.5>0)'],...
+    Ytot(test(([find(U2'-Ytot(test)/2-0.5<0)'...
+    find(L2'-Ytot(test)/2-0.5>0)'])))/2+0.5,'ro','MarkerFaceColor','r');
+for i=1:500
+    pl1=line([i i], [L1(i) U1(i)],'LineWidth',2);
+    pl2=line([i i], [L2(i) U2(i)],'LineWidth',2);
+    pl3=line([i i], [max(L2(i),L1(i)) min(U1(i),U2(i))],'LineWidth',2);
+    pl1.Color=([1,1,0,1]);pl2.Color =([0,1,1,1]);pl2.Color =([0,1,0,1]);
 end
 title('Conformal Prediction intervals');
+legend([pl1,pl2,pl3],'LOO','OLS','Overlapping');
 hold off;
-fprintf(fileID,'The coverage is %.3f\n',incounter/(M-m));
-fprintf(fileID,'Average interval length is %.3f\n',mean(U-L));
-fclose(fileID);
+fprintf(fileID,'The coverage is LOO:%.3f OLS:%.3f\n',incounter1/500,incounter2/500);
+fprintf(fileID,'Average interval length is LOO:%.3f OLS:%.3f\n',mean(U1-L1),mean(U2-L2));
+fprintf(fileID,'Median interval length is LOO:%.3f OLS:%.3f\n',median(U1-L1),median(U2-L2));
+fprintf(fileID,'LOO model size %.2f\n',ms1);
 
 
 

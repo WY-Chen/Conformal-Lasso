@@ -84,7 +84,6 @@ while 1
     if y>ytrial(end)
         break;
     end
-    disp([(y-ytrial(1))/(ytrial(end)-ytrial(1)) y2max supportmax]);
 end
 yconf = [yconfmin,yconfmax];
 modelsize = mean(modelsizes);

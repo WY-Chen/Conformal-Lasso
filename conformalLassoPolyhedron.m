@@ -66,36 +66,23 @@ end
 modelsize=length(E);
 lengthE=length(E);
 supportcounter = 1;
+if isempty(E)
+    supportmin = inf;
+end
 
-h = waitbar(0,'Please wait...');
 for i = 2:n
     y = ytrial(i);
     if supportmin< y && supportmax >y
         stepsize = ytrial(i)-ytrial(i-1);
         yfit = yfit + yfitincrement*stepsize;
     else
-        Ineq_violated = find(A*[Y;y]-b>=0,1);
-        if isempty(Ineq_violated)
-            fprintf(2,'ERROR: Polynomial\n');
-            continue
-        end
-        del = Ineq_violated(Ineq_violated>2*(p-lengthE));
-        addpos = Ineq_violated(Ineq_violated<=(p-lengthE));
-        addneg = Ineq_violated((p-lengthE)<Ineq_violated& Ineq_violated<=2*(p-lengthE));
-        
-        delind = del-2*(p-lengthE);
-        addposind = addpos; addnegind = addneg - p +lengthE;
-        for jj = 1:lengthE
-            Ejj=E(jj);
-            addposind(addposind>=Ejj)=addposind(addposind>=Ejj)+1;
-            addnegind(addnegind>=Ejj)=addnegind(addnegind>=Ejj)+1;
-        end
-        E = sort(unique([setxor(E,delind);addposind;addnegind]));
-        Z(delind)=0; 
-        Z(addposind)=1;
-        Z(addnegind)=-1;
+        Ineq_violated = [find(X_withnew'*(X_withnew*beta-[Y;y])>lambdain);...
+            find(X_withnew'*(X_withnew*beta-[Y;y])<-lambdain)];
+        E=sort(Ineq_violated);
+        Z=zeros(p,1);
+        Z(X_withnew'*(X_withnew*beta-[Y;y])>lambdain)=1;
+        Z(X_withnew'*(X_withnew*beta-[Y;y])<-lambdain)=-1;
         Z_E=Z(E);
-        fprintf('added %d, delete %d, [%d]\n',[addposind;addnegind],delind,E)
 
         lengthE=length(E);
         X_E = X_withnew(:,E);
@@ -129,24 +116,7 @@ for i = 2:n
         yconfidx = [yconfidx i];
     end
     modelsizes(i) = length(E);
-    % waitbar
-    waitbar(i/n,h,sprintf('Current model size %d. Number of Lasso support computed %d',...
-        lengthE,supportcounter))
 end
-close(h)
 modelsize = mean(modelsizes);
 yconf  = ytrial(yconfidx);
-
-% Plots
-plotFlag=0;  % change to 0 to turn off
-if plotFlag == 1
-    subplot(1,2,1)
-    boxplot(yconf);
-    title('Spread of Yconf')
-    subplot(1,2,2)
-    plot(ytrial,modelsizes);
-    title('Model size vs. Ytrial')
-    hold on, plot(ytrial(yconfidx), modelsizes(yconfidx), 'r.')
-    hold off
-end
 end

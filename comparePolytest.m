@@ -77,14 +77,8 @@ for i=1:nruns
         fprintf('GLMNET ERROR\n');
     end
     t2=toc;time2=time2+t2;tic;
-%     try
-%         [yconf4,modelsize4,sc2] = conformalLassoPolyhedron(X,Y,xnew,alpha,ytrial,lambda);
-%     catch ME
-%         yconf4 = ytrial;
-%         modelsize4=0;sc2=0;
-%         fprintf('GLMNET ERROR\n');
-%     end
-[yconf4,modelsize4,sc2] = conformalLassoSolve(X,Y,xnew,alpha,ytrial,lambda);
+    [yconf4,modelsize4,sc2] = conformalLassoPolyhedron(X,Y,xnew,alpha,ytrial,lambda);
+% [yconf4,modelsize4,sc2] = conformalLassoSolve(X,Y,xnew,alpha,ytrial,lambda);
     t4=toc;time4=time4+t4;
     totalsp1 = totalsp1+sc1;
     totalsp2 = totalsp2+sc2;
@@ -100,7 +94,7 @@ for i=1:nruns
     conflen4(i) = max(yconf4)-min(yconf4);
 
     % format print
-    fprintf(fileID,'\t\t\t\tLassoAllSupp\t\t\tLOO\n');
+    fprintf(fileID,'\t\t\t\tLassoAllSupp\t\t\tLassoAllSuppPoly\n');
     fprintf(fileID,'\tModelsize \t%.1f\t\t\t\t%.1f\n',modelsize2,modelsize4);
     fprintf(fileID,'\tInterval \t[%.3f,%.3f] [%.3f,%.3f].\n',...
         min(yconf2),max(yconf2),min(yconf4),max(yconf4));
