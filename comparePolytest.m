@@ -100,6 +100,7 @@ for i=1:nruns
         min(yconf2),max(yconf2),min(yconf4),max(yconf4));
     fprintf(fileID,'\tCoverage \t%.3f\t\t\t%.3f,\n',coverage2(i),coverage4(i));
     fprintf(fileID,'\tTime \t\t%.3f\t\t\t%.3f,\n',t2,t4);
+    fprintf(fileID,'\tSupports \t\t%.3f\t\t\t%.3f,\n',sc1,sc2);
 end
 fprintf(fileID,'%d-fold average coverage is %.3f, %.3f\n', nruns, mean(coverage2),mean(coverage4));
 fprintf(fileID,'Average inverval length is %.3f, %.3f\n',mean(conflen2),mean(conflen4));

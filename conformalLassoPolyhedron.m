@@ -63,12 +63,8 @@ yfit = X_withnew*beta;
 if isempty(E)
     supportmin = inf;
 end
-modelsize=length(E);
-lengthE=length(E);
 supportcounter = 1;
-if isempty(E)
-    supportmin = inf;
-end
+Resid = abs(yfit - [Y;ytrial(2)]);
 
 for i = 2:n
     y = ytrial(i);
@@ -76,28 +72,31 @@ for i = 2:n
         stepsize = ytrial(i)-ytrial(i-1);
         yfit = yfit + yfitincrement*stepsize;
     else
-        Ineq_violated = [find(X_withnew'*(X_withnew*beta-[Y;y])>lambdain);...
-            find(X_withnew'*(X_withnew*beta-[Y;y])<-lambdain)];
+        residold=X_withnew'*Resid;
+        eplus = find(residold>lambdain);
+        eminus = find(residold<-lambdain);
+        Ineq_violated = [eplus;eminus];
         E=sort(Ineq_violated);
         Z=zeros(p,1);
-        Z(X_withnew'*(X_withnew*beta-[Y;y])>lambdain)=1;
-        Z(X_withnew'*(X_withnew*beta-[Y;y])<-lambdain)=-1;
+        Z(eplus)=1;
+        Z(eminus)=-1;
         Z_E=Z(E);
+        
 
-        lengthE=length(E);
         X_E = X_withnew(:,E);
         X_minusE = X_withnew(:,setxor(E,1:p));
         xesquareinv = (X_E'*X_E)\eye(length(E));
         P_E = X_E*xesquareinv*X_E';
         temp = X_minusE'*pinv(X_E')*Z_E;
         a0=X_minusE'*(eye(m+1)-P_E)./lambdain;
+        b1temp = lambdain*xesquareinv*Z_E;
         % calculate the inequalities for fitting.
         A = [a0;
             -a0;
             -diag(Z_E)*xesquareinv*X_E'];
         b = [ones(p-length(E),1)-temp;
             ones(p-length(E),1)+temp;
-            -lambdain*diag(Z_E)*xesquareinv*Z_E];
+            -diag(Z_E)*b1temp];
         supportcounter = supportcounter+1;
         [supportmin,supportmax] = solveInt(A,b,Y);
         if isempty(E)
@@ -108,6 +107,8 @@ for i = 2:n
         betaincrement = zeros(p,1);
         betaincrement(E) = betalast;
         yfitincrement = X_withnew*betaincrement;
+        beta = zeros(p,1);
+        beta(E) = pinvxe*[Y;y] - b1temp;
         yfit = X_withnew*beta;
     end
     Resid = abs(yfit - [Y;y]);
