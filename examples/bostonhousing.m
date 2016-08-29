@@ -88,7 +88,7 @@ for i=1:200
     y = Ytot(test(i));
     ytrial = -1:0.01:1;  
     
-    [yconf1,~,~] = conformalLOO(Xtrain,Ytrain,xnew,.1,ytrial,0.0125);
+    [yconf1,ms1,~] = conformalLOO(Xtrain,Ytrain,xnew,.1,ytrial,0.0125);
     [yconf2,~,~] = conformal(Xtrain,Ytrain,xnew,.1,'linear',ytrial);
     fprintf(fileID,'Prediction interval: LOO: [%.2f,%.2f] OLS:[%.2f, %.2f]\n',...
         min(yconf1)*maxYtot+meanYtot,max(yconf1)*maxYtot+meanYtot,...
@@ -133,4 +133,6 @@ legend([pl1,pl2,pl3],'LOO','OLS','Overlapping');
 hold off;
 fprintf(fileID,'The coverage is LOO:%.3f OLS:%.3f\n',incounter1/200,incounter2/200);
 fprintf(fileID,'Average interval length is LOO:%.3f OLS:%.3f\n',mean(U1-L1),mean(U2-L2));
+fprintf(fileID,'Median interval length is LOO:%.3f OLS:%.3f\n',median(U1-L1),median(U2-L2));
+fprintf(fileID,'LOO model size %.2f\n',ms1);
 
