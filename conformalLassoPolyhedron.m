@@ -64,7 +64,6 @@ if isempty(E)
     supportmin = inf;
 end
 supportcounter = 1;
-Resid = abs(yfit - [Y;ytrial(2)]);
 
 for i = 2:n
     y = ytrial(i);
@@ -72,7 +71,7 @@ for i = 2:n
         stepsize = ytrial(i)-ytrial(i-1);
         yfit = yfit + yfitincrement*stepsize;
     else
-        residold=X_withnew'*Resid;
+        residold=X_withnew'*([Y;y]-yfit);
         eplus = find(residold>lambdain);
         eminus = find(residold<-lambdain);
         Ineq_violated = [eplus;eminus];
@@ -80,8 +79,11 @@ for i = 2:n
         Z=zeros(p,1);
         Z(eplus)=1;
         Z(eminus)=-1;
-        Z_E=Z(E);
-        
+        Z_E=Z(E);        
+        if length(E)>m
+            E=[];
+            Z_E=[];
+        end
 
         X_E = X_withnew(:,E);
         X_minusE = X_withnew(:,setxor(E,1:p));
@@ -111,8 +113,9 @@ for i = 2:n
         beta(E) = pinvxe*[Y;y] - b1temp;
         yfit = X_withnew*beta;
     end
-    Resid = abs(yfit - [Y;y]);
-    Pi_trial = sum(Resid<=Resid(end))/(m+1);
+    Resid = [Y;y]-yfit;
+    absResid=abs(Resid);
+    Pi_trial = sum(absResid<=absResid(end))/(m+1);
     if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
         yconfidx = [yconfidx i];
     end
