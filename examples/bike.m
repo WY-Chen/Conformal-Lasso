@@ -35,7 +35,7 @@ end
 D=data(dayone(id):(dayone(id+1)-1),1:id);
 
 [newm,newp]=size(D);
-normD = D - min(D(:));
+normD = D;
 md=max(normD(:));
 normD = normD ./ md;
 
@@ -53,7 +53,8 @@ if newm<20
 end
 
 nsample = 92;
-fitind = randsample(1:newm,nsample);
+% fitind = randsample(1:newm,nsample);
+fitind = [1:92];
 Xtrain = Xtot(fitind,:);
 Ytrain = Ytot(fitind);
 Xtest = Xtot(setxor(1:newm,fitind),:);
@@ -61,9 +62,10 @@ Ytest = Ytot(setxor(1:newm,fitind),:);
 n = length(Ytest);
 
 folder = fullfile(pwd, '\Outputs');
-filename = sprintf('BikeWithRespone_%d.txt',yind);
-fileID = fopen(fullfile(folder, filename),'w');
-fileID = fopen('bike_ALL','w');
+% filename = sprintf('BikeWithRespone_%d.txt',yind);
+% fileID = fopen(fullfile(folder, filename),'w');
+% fileID = fopen('bike_ALL','w');
+fileID=1;
 
 incounter = 0;
 fprintf(fileID,'Taking Station number %d as response.\n',yind);
@@ -83,7 +85,7 @@ for i=1:n
         fprintf('GLMNET ERROR\n');
     end
     fprintf(fileID,'Prediction interval is [%.2f,%.2f] with model size %.2f while real data is %.0f\n',...
-        min(yconf)*md*maxYtot+meanYtot,max(yconf)*md*maxYtot+meanYtot,modelsize,y*md*maxYtot+meanYtot);
+        (min(yconf)*maxYtot+meanYtot)*md,(max(yconf)*maxYtot+meanYtot)*md,modelsize,(y*maxYtot+meanYtot)*md);
     if (min(yconf)<=y)&&(y<=max(yconf))
         incounter=incounter+1;
         fprintf(fileID,'Real data is IN\n');
@@ -93,17 +95,17 @@ for i=1:n
     L = [L min(yconf)];
     U = [U max(yconf)];
 end
-
-plot(1:(newm-nsample),(Ytest*maxYtot+meanYtot)*md,'bo');
-hold on;
-plot([find(U'-Ytest<0)' find(L'-Ytest>0)'],...
-    md*(maxYtot*Ytest([find(U'-Ytest<0)' find(L'-Ytest>0)'])+meanYtot),'ro');
-for i=1:(newm-nsample)
-    line([i i], [(L(i)*maxYtot+meanYtot)*md (U(i)*maxYtot+meanYtot)*md]);
-end
-title(sprintf('Conformal Prediction intervals for Station %d',yind));
-hold off;
+% 
+% plot(1:(newm-nsample),(Ytest*maxYtot+meanYtot)*md,'bo');
+% hold on;
+% plot([find(U'-Ytest<0)' find(L'-Ytest>0)'],...
+%     md*(maxYtot*Ytest([find(U'-Ytest<0)' find(L'-Ytest>0)'])+meanYtot),'ro');
+% for i=1:(newm-nsample)
+%     line([i i], [(L(i)*maxYtot+meanYtot)*md (U(i)*maxYtot+meanYtot)*md]);
+% end
+% title(sprintf('Conformal Prediction intervals for Station %d',yind));
+% hold off;
 fprintf(fileID,'The coverage is %.3f\n',incounter/(newm-nsample));
-fclose(fileID);
+% fclose(fileID);
 coverage = incounter/(newm-nsample);
 l= (mean(U-L)*maxYtot++meanYtot)*md;

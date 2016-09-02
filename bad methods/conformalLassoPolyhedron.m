@@ -71,7 +71,7 @@ for i = 2:n
         stepsize = ytrial(i)-ytrial(i-1);
         yfit = yfit + yfitincrement*stepsize;
     else
-        residold=X_withnew'*([Y;y]-yfit);
+        residold=X_withnew'*([Y;y]-yfit-yfitincrement*stepsize);
         eplus = find(residold>lambdain);
         eminus = find(residold<-lambdain);
         Ineq_violated = [eplus;eminus];
@@ -80,10 +80,6 @@ for i = 2:n
         Z(eplus)=1;
         Z(eminus)=-1;
         Z_E=Z(E);        
-        if length(E)>m
-            E=[];
-            Z_E=[];
-        end
 
         X_E = X_withnew(:,E);
         X_minusE = X_withnew(:,setxor(E,1:p));
