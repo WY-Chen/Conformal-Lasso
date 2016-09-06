@@ -77,7 +77,7 @@ for i=1:nruns
         fprintf('GLMNET ERROR\n');
     end
     t2=toc;time2=time2+t2;tic;
-    [yconf4,modelsize4,sc2] = conformalLassoNoGrid(X,Y,xnew,alpha,ytrial,lambda);
+    [yconf4,modelsize4,sc2] = conformalLassoSuppFit(X,Y,xnew,alpha,ytrial,lambda);
 % [yconf4,modelsize4,sc2] = conformalLassoSolve(X,Y,xnew,alpha,ytrial,lambda);
     t4=toc;time4=time4+t4;
     totalsp1 = totalsp1+sc1;

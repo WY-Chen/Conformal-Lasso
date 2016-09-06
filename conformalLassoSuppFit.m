@@ -3,7 +3,7 @@
 % Check if the new point is in known support, if yes, subgradient method
 % if no, run full lasso
 %% Method
-function [yconf,modelsize,supportcounter] = conformalLassoNoGrid(X,Y,xnew,alpha,ytrial,lambdain)
+function [yconf,modelsize,supportcounter] = conformalLassoSuppFit(X,Y,xnew,alpha,ytrial,lambdain)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
@@ -47,17 +47,16 @@ betaincrement = zeros(p,1);
 betaincrement(E) = betalast;
 yfitincrement = X_withnew*betaincrement;
 yfit = X_withnew*beta;
-A = X_withnew'*([Y;0]-X_withnew*beta);
+A = X_withnew'*([Y;0]-yfit);
 left=xnew'-X_withnew'*yfitincrement;
 rightplus=lambdain-A-xnew'*yinit;
 rightminus=-lambdain-A-xnew'*yinit;
 
 supportcounter = 1;
 ysmax=yinit;
-yconf = []; modelsize=[];
+yconf = []; modelsize=0;
 while 1
     % solve for the next model
-    supportcounter = supportcounter+1;
     deltaplus = rightplus./left;
     deltaplus(deltaplus<=0)=inf;
     [minstepplus,minstepplusind] = min(deltaplus);
@@ -77,7 +76,9 @@ while 1
     ysmax = ysmax + step;
    
     % solve for conformal
-    for y=ytrial(ytrial>ysmin & ytrial<min(ysmax,yterm))
+    thistrial = ytrial(ytrial>ysmin & ytrial<ysmax);
+    modelsize = modelsize + length(E)*length(thistrial);
+    for y=thistrial
         yfit = yfit + yfitincrement*stepsize;
         Resid = abs([Y;y]-yfit);
         Pi_trial = sum(Resid<=Resid(end))/(m+1);
@@ -96,6 +97,12 @@ while 1
         Z(stepind)=stepsign;
         Z_E=Z(E);
     end
+    if ysmax > yterm
+        break
+    end
+    if isempty(E)
+        fprintf(2,'E empty \n');
+    end
     X_E = X_withnew(:,E);
     xesquareinv = (X_E'*X_E)\eye(length(E));
     pinvxe=pinv(X_E);
@@ -107,14 +114,12 @@ while 1
     beta(E) = pinvxe*[Y;ysmax] - lambdain*xesquareinv*Z_E;
     yfit = X_withnew*beta;
     
-    A = X_withnew'*([Y;0]-X_withnew*beta);
+    A = X_withnew'*([Y;0]-yfit);
     left=xnew'-X_withnew'*yfitincrement;
-    rightplus=lambdain-A-xnew'*yinit;
-    rightminus=-lambdain-A-xnew'*yinit;
+    rightplus=lambdain-A-xnew'*ysmax;
+    rightminus=-lambdain-A-xnew'*ysmax;
     
-    if ysmax > yterm
-        break
-    end
+    supportcounter = supportcounter+1;
 end
-
+modelsize = modelsize/n;
 end
