@@ -37,6 +37,14 @@ options.alpha = 1.0;                % Lasso (no L2 norm penalty)
 options.thresh = 1E-12;
 options.nlambda = 1;
 options.lambda = lambdain/m;
+
+optioninit = glmnetSet();
+optioninit.standardize = false;        % original X
+optioninit.intr = false;               % no intersection
+optioninit.standardize_resp = false;   % original Y
+optioninit.alpha = 1.0;                % Lasso (no L2 norm penalty)
+optioninit.thresh = 1E-4;              % use less precission here.
+optioninit.nlambda = 1;
 %% Fit the known data. 
 % this is the condition of the new pair being outlier
 betaN = glmnetCoef(glmnet(X,Y,[],options));
@@ -52,7 +60,7 @@ n = length(ytrial); % new truncated trial set.
 %% Fit the trial set
 i=1; compcase=1;yconfidx=[];
 % h = waitbar(0,'Please wait...');
-modelsizes = zeros(1,n); supportcounter=0;
+modelsizes = zeros(1,n); supportcounter=1;
 while i<=n
     y=ytrial(i); Y_withnew = [Y;y];
     switch compcase
@@ -60,41 +68,7 @@ while i<=n
             % recompute full lasso: C-steps
             
             % Initiation
-            if nargin==7&initn~=0
-                % if named number of initialization, do n-fold
-                initOuts = zeros(1,initn);
-                for j=1:initn
-                    % Initialize with 3 points
-                    init = randsample(1:m+1,3);
-                    initlambda = 2*norm((X_withnew(init,:)'*normrnd(0,1,[3,1])),inf);
-                    
-                    optioninit = glmnetSet();
-                    optioninit.standardize = false;        % original X
-                    optioninit.intr = false;               % no intersection
-                    optioninit.standardize_resp = false;   % original Y
-                    optioninit.alpha = 1.0;                % Lasso (no L2 norm penalty)
-                    optioninit.thresh = 1E-4;              % use less precission here. 
-                    optioninit.nlambda = 1;
-                    optioninit.lambda = initlambda/3;
-                    
-                    beta = glmnetCoef(glmnet(X_withnew(init,:),Y_withnew(init),...
-                        [],optioninit));
-                    beta = beta(2:p+1);
-                    [~,initOut]=max((X_withnew*beta-Y_withnew).^2);
-                    selection = setxor(1:m+1,initOut);
-                    % C-Step in initialzation. 
-                    beta = glmnetCoef(glmnet(X_withnew(selection,:),Y_withnew(selection),...
-                        [],options));
-                    beta = beta(2:p+1);
-                    [~,initOut]=max((X_withnew*beta-Y_withnew).^2);
-                    initOuts(j) = initOut;
-                end
-                % Majority vote
-                outlier = mode(initOuts);
-            else 
-                % if no number specified, just pick randomly. 
-                outlier = randi([1,m]);
-            end
+            outlier = randi([1,m]);
             
             % C-steps
             outlierOld = outlier;
@@ -123,37 +97,41 @@ while i<=n
             
             % compute the sign/supports
             E = find(beta); Z = sign(beta); Z_E = Z(E);
-            X_minusE = X_withnew(selection,setxor(E,1:p));
             X_E = X_withnew(selection,E);
             % accelerate computation
-            xesquareinv = (X_E'*X_E)\eye(length(E));
-            temp = X_minusE'*pinv(X_E')*Z_E;
-            P_E = X_E*xesquareinv*X_E';
-            a0=X_minusE'*(eye(m)-P_E)./lambdain;
-            % calculate the inequalities for fitting.
-            A = [a0;
-                -a0;
-                -diag(Z_E)*xesquareinv*X_E'];
-            b = [ones(p-length(E),1)-temp;
-                ones(p-length(E),1)+temp;
-                -lambdain*diag(Z_E)*xesquareinv*Z_E];
+            pinvxe=pinv(X_E);            
+            betalast = pinvxe(:,end);
+            betaincrement = zeros(p,1);
+            betaincrement(E) = betalast;
+            yfitincrement = X_withnew*betaincrement;
+            A = X_withnew'*([Y;0]-yfit);
+            left=xnew'-X_withnew'*yfitincrement;
+            rightplus=lambdain-A-xnew'*y;
+            rightminus=-lambdain-A-xnew'*y;
             if selection(end)~=m+1
                 i=i+1;
                 continue;
             end
-            [supportmin,supportmax] = solveInt(A,b,Y(selection(1:m-1)));
+            deltaplus = rightplus./left;
+            deltaplus(deltaplus<=0)=inf;
+            [minstepplus,minstepplusind] = min(deltaplus);
+            deltaminus = rightminus./left;
+            deltaminus(deltaminus<=0)=inf;
+            [minstepminus,minstepminusind] = min(deltaminus);
+            if minstepplus<=minstepminus
+                step = minstepplus;
+                stepind = minstepplusind;
+                stepsign = 1;
+            else
+                step = minstepminus;
+                stepind = minstepminusind;
+                stepsign = -1;
+            end
+            supportmax = y+step;
             
             % Change computation mode
-            if supportmin<= ytrial(min(i+1,n)) & ytrial(min(i+1,n))<=supportmax
+            if ytrial(min(i+1,n))<=supportmax
                 compcase=2;
-                beta = zeros(p,1);
-                % the following is to ease computation in mode 2
-                pinvxe=pinv(X_E);
-                beta(E) = pinvxe*Y_withnew(selection) - lambdain*xesquareinv*Z_E;
-                betalast = pinvxe(:,end);
-                betaincrement = zeros(p,1);
-                betaincrement(E) = betalast;
-                yfitincrement = X_withnew*betaincrement;
             end
             supportcounter = supportcounter+1;
         case 2
@@ -177,7 +155,7 @@ while i<=n
             end
             
             % Change computation mode
-            if supportmin> ytrial(min(i+1,n)) | ytrial(min(i+1,n))>supportmax
+            if ytrial(min(i+1,n))>supportmax
                 compcase=1;
             end
     end

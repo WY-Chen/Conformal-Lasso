@@ -80,7 +80,7 @@ for i=1:nruns
     t1=toc;time1=time1+t1;tic;
     [yconf2,modelsize2,sc2] = conformalLassoSuppFit(X,Y,xnew,alpha,ytrial,lambda);
     t2=toc;time2=time2+t2;tic;
-    [yconf3,modelsize3,sc3] = conformalLOO(X,Y,xnew,alpha,ytrial,lambda);
+    [yconf3,modelsize3,sc3] = conformalLOOSuppFit(X,Y,xnew,alpha,ytrial,lambda);
     t3=toc;time3=time3+t3;
     totalsp1 = totalsp1+sc1;
     totalsp2 = totalsp2+sc2;
