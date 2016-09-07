@@ -3,7 +3,7 @@
 % Check if the new point is in known support, if yes, subgradient method
 % if no, run full lasso
 %% Method
-function [yconf,modelsize,supportcounter] = conformalLassoSuppFit(X,Y,xnew,alpha,ytrial,lambdain)
+function [yconf,modelsize,supportcounter] = conformalLassoCtnFit(X,Y,xnew,alpha,ytrial,lambdain)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level

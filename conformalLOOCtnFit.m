@@ -14,7 +14,7 @@
 %                       until the next one is not in known support. 
 %               (b) If not, rerun with mode 1.
 %% Method
-function [yconf,modelsize,supportcounter] = conformalLOOSuppFit(X,Y,xnew,alpha,ytrial,lambdain,initn)
+function [yconf,modelsize,supportcounter] = conformalLOOCtnFit(X,Y,xnew,alpha,ytrial,lambdain,initn)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level

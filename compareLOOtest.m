@@ -80,11 +80,11 @@ for i=1:nruns
     tic;
     [yconf1,modelsize1,sc1] = conformalLassoAllSupp(X,Y,xnew,alpha,ytrial,lambda);
     t1=toc;time1=time1+t1;tic;
-    [yconf2,modelsize2,sc2] = conformalLassoSuppFit(X,Y,xnew,alpha,ytrial,lambda);
+    [yconf2,modelsize2,sc2] = conformalLassoCtnFit(X,Y,xnew,alpha,ytrial,lambda);
     t2=toc;time2=time2+t2;tic;
     [yconf3,modelsize3,sc3] = conformalLOO(X,Y,xnew,alpha,ytrial,lambda);
     t3=toc;time3=time3+t3;
-    [yconf4,modelsize4,sc4] = conformalLOOSuppFit(X,Y,xnew,alpha,ytrial,lambda);
+    [yconf4,modelsize4,sc4] = conformalLOOCtnFit(X,Y,xnew,alpha,ytrial,lambda);
     t4=toc;time4=time4+t4;
     totalsp1 = totalsp1+sc1;
     totalsp2 = totalsp2+sc2;
@@ -99,6 +99,9 @@ for i=1:nruns
     if isempty(yconf3)
         yconf3=ytrial;
     end
+    if isempty(yconf4)
+        yconf4=ytrial;
+    end
     coverage1(i) = sum((min(yconf1)<y)&(y<max(yconf1)))/10000;
     coverage2(i) = sum((min(yconf2)<y)&(y<max(yconf2)))/10000;
     coverage3(i) = sum((min(yconf3)<y)&(y<max(yconf3)))/10000;
@@ -108,7 +111,7 @@ for i=1:nruns
     conflen3(i) = max(yconf3)-min(yconf3);
     conflen4(i) = max(yconf4)-min(yconf4);
     % format print
-    fprintf(fileID,'\t\t\t\tLassoAllSupp\tLassoSuppFit\t\tLOO\t\tLOOSuppfit\n');
+    fprintf(fileID,'\t\t\t\tLassoAllSupp\tLassoCtnFit\t\tLOO\t\tLOOCtnFit\n');
     fprintf(fileID,'\tModelsize \t%.1f\t\t\t\t%.1f\t\t\t\t%.1f\t\t\t\t%.1f\n',...
         modelsize1,modelsize2,modelsize3,modelsize4);
     fprintf(fileID,'\tInterval \t[%.3f,%.3f] [%.3f,%.3f] [%.3f,%.3f] [%.3f,%.3f]\n',...
