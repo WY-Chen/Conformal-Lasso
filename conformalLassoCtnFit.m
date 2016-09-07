@@ -113,6 +113,22 @@ while 1
     beta = zeros(p,1);
     beta(E) = pinvxe*[Y;ysmax] - lambdain*xesquareinv*Z_E;
     yfit = X_withnew*beta;
+    % Robooting
+    ineqviolated = find(abs(X_withnew'*([Y;ysmax]-yfit))>=lambdain);
+    if ~isequal(ineqviolated, E)
+        beta = glmnetCoef(glmnet(X_withnew,[Y;ysmax],[],options));
+        beta=beta(2:p+1);
+        E = find(beta);
+        Z = sign(beta);
+        X_E = X_withnew(:,E);
+        % accelerate computation
+        pinvxe=pinv(X_E);
+        betalast = pinvxe(:,end);
+        betaincrement = zeros(p,1);
+        betaincrement(E) = betalast;
+        yfitincrement = X_withnew*betaincrement;
+        yfit = X_withnew*beta;
+    end
     
     A = X_withnew'*([Y;0]-yfit);
     left=xnew'-X_withnew'*yfitincrement;

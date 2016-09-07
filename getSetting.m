@@ -14,7 +14,7 @@ else
 end
 
 if setting=='A'
-    beta = [2,2,2,2,2,zeros(1,1995)];
+    beta = [-2,-2,-2,-2,-2,zeros(1,1995)];
     X = normrnd(0,1,[200,2000]);
     Y = X*beta'+epsilon1;
     xnew = normrnd(0,1,[1,2000]);

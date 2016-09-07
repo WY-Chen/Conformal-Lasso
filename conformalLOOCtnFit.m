@@ -38,6 +38,13 @@ options.thresh = 1E-12;
 options.nlambda = 1;
 options.lambda = lambdain/m;
 
+optioninit = glmnetSet();
+optioninit.standardize = false;        % original X
+optioninit.intr = false;               % no intersection
+optioninit.standardize_resp = false;   % original Y
+optioninit.alpha = 1.0;                % Lasso (no L2 norm penalty)
+optioninit.thresh = 1E-4;              % use less precission here.
+optioninit.nlambda = 1;
 %% Fit the known data. 
 % this is the condition of the new pair being outlier
 betaN = glmnetCoef(glmnet(X,Y,[],options));
@@ -51,96 +58,16 @@ ytrial = ytrial(ytrial> ypred-sqrt(maxOutErrNval)...
 n = length(ytrial); % new truncated trial set. 
 
 %% Fit the trial set
-stepsize = ytrial(2)-ytrial(1);
-
-% Initial and Stopping range
-yinit = min(ytrial);
-yterm = max(ytrial);
-
-% Fit initial Lasso
-% Initiation
-outlier = randi([1,m]);
-
-% C-steps
-outlierOld = outlier;
-ccount=0;
-Y_withnew=[Y;ytrial(1)];
-while 1
-    selection = setxor(1:m+1,outlier);
-    beta = glmnetCoef(glmnet(X_withnew(selection,:),Y_withnew(selection),...
-        [],options));
-    beta = beta(2:p+1);
-    [~,outlier]=max((X_withnew*beta-Y_withnew).^2);
-    if outlier == outlierOld || ccount>20
-        break
-    end
-    outlierOld = outlier;
-    ccount=ccount+1;
-end
-selection = setxor(1:m+1,outlier);
-E = find(beta);
-Z = sign(beta);
-X_E = X_withnew(selection,E);
-% accelerate computation
-pinvxe=pinv(X_E);
-betalast = pinvxe(:,end);
-betaincrement = zeros(p,1);
-betaincrement(E) = betalast;
-yfitincrement = X_withnew*betaincrement;
-yfit = X_withnew*beta;
-A = X_withnew(selection,:)'*([Y(selection(1:m-1));0]-yfit(selection));
-left=xnew'-X_withnew(selection,:)'*yfitincrement(selection);
-rightplus=lambdain-A-xnew'*yinit;
-rightminus=-lambdain-A-xnew'*yinit;
-
-supportcounter = 1;
-ysmax=yinit;
-yconf = []; modelsize=0;outlierFlag=0;
-
-while 1
-    % solve for the next model
-    deltaplus = rightplus./left;
-    deltaplus(deltaplus<=0)=inf;
-    [minstepplus,minstepplusind] = min(deltaplus);
-    deltaminus = rightminus./left;
-    deltaminus(deltaminus<=0)=inf;
-    [minstepminus,minstepminusind] = min(deltaminus);
-    if minstepplus<=minstepminus
-        step = minstepplus;
-        stepind = minstepplusind;
-        stepsign = 1;
-    else
-        step = minstepminus;
-        stepind = minstepminusind;
-        stepsign = -1;
-    end
-    ysmin = ysmax;
-    ysmax = ysmax + step;
-   
-    % solve for conformal
-    thistrial = ytrial(ytrial>ysmin & ytrial<ysmax);
-    modelsize = modelsize + length(E)*length(thistrial);
-    for y=thistrial
-        yfit = yfit + yfitincrement*stepsize;
-        Resid = abs([Y;y]-yfit);
-        [~,fitoutind]=max(Resid);
+i=1; compcase=1;yconfidx=[];
+% h = waitbar(0,'Please wait...');
+modelsizes = zeros(1,n); supportcounter=1;
+while i<=n
+    y=ytrial(i); Y_withnew = [Y;y];
+    switch compcase
+        case 1
+            % recompute full lasso: C-steps
             
-        % check if the selection is same
-        if fitoutind == outlier
-            Pi_trial = sum(Resid<=Resid(end))/(m+1);
-            if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
-                yconf = [yconf y];
-            end
-        else
-            % if not the same outlier, the computation is invalid
-            % redo this point in mode 1
-            outlierFlag = 1;
-            break
-        end
-    end
-    % end of solving
-    while 1
-        if outlierFlag == 1
+            % Initiation
             outlier = randi([1,m]);
             
             % C-steps
@@ -158,58 +85,89 @@ while 1
                 outlierOld = outlier;
                 ccount=ccount+1;
             end
-            selection = setxor(1:m+1,outlier);
-            E = find(beta);
-            Z = sign(beta);
-            Z_E=Z(E);
-            X_E = X_withnew(selection,E);
-            pinvxe=pinv(X_E);
-            betalast = pinvxe(:,end);
-            betaincrement = zeros(p,1);
-            betaincrement(E) = betalast;
-            yfitincrement = X_withnew*betaincrement;
-            outlierFlag = 0;
+            
+            % Conformal
             yfit = X_withnew*beta;
-            break;
-        else
-            if ismember(stepind,E)
-                E = E(E~=stepind);
-                Z(stepind)=0;
-                Z_E = Z(E);
-            else
-                E = sort([E;stepind]);
-                Z(stepind)=stepsign;
-                Z_E=Z(E);
+            Resid = abs(yfit - [Y;y]);
+            Pi_trial = sum(Resid<=Resid(end))/(m+1);
+            if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
+                yconfidx = [yconfidx i];
             end
-            selection = setxor(1:m+1,outlier);
+            
+            
+            % compute the sign/supports
+            E = find(beta); Z = sign(beta); Z_E = Z(E);
             X_E = X_withnew(selection,E);
-            xesquareinv = (X_E'*X_E)\eye(length(E));
-            pinvxe=pinv(X_E);
+            % accelerate computation
+            pinvxe=pinv(X_E);            
             betalast = pinvxe(:,end);
             betaincrement = zeros(p,1);
             betaincrement(E) = betalast;
             yfitincrement = X_withnew*betaincrement;
-            beta = zeros(p,1);
-            beta(E) = pinvxe*[Y(selection(1:m-1));ysmax] - lambdain*xesquareinv*Z_E;
-            yfit = X_withnew*beta;
-            [~,fitoutind] = max(abs([Y;ysmax]-yfit));
+            A = X_withnew'*([Y;0]-yfit);
+            left=xnew'-X_withnew'*yfitincrement;
+            rightplus=lambdain-A-xnew'*y;
+            rightminus=-lambdain-A-xnew'*y;
+            if selection(end)~=m+1
+                i=i+1;
+                continue;
+            end
+            deltaplus = rightplus./left;
+            deltaplus(deltaplus<=0)=inf;
+            [minstepplus,minstepplusind] = min(deltaplus);
+            deltaminus = rightminus./left;
+            deltaminus(deltaminus<=0)=inf;
+            [minstepminus,minstepminusind] = min(deltaminus);
+            if minstepplus<=minstepminus
+                step = minstepplus;
+                stepind = minstepplusind;
+                stepsign = 1;
+            else
+                step = minstepminus;
+                stepind = minstepminusind;
+                stepsign = -1;
+            end
+            supportmax = y+step;
+            
+            % Change computation mode
+            if ytrial(min(i+1,n))<=supportmax
+                compcase=2;
+            end
+            supportcounter = supportcounter+1;
+        case 2
+            % Fit the known support/sign
+            stepsize = ytrial(i)-ytrial(i-1);
+            yfit = yfit + yfitincrement*stepsize;
+            Resid = abs(yfit - [Y;y]);
+            [~,fitoutind]=max(Resid);
+            
+            % check if the selection is same
             if fitoutind == outlier
-                break;
+                Pi_trial = sum(Resid<=Resid(end))/(m+1);
+                if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
+                    yconfidx = [yconfidx i];
+                end
             else
-                outlierFlag = 1;
+                % if not the same outlier, the computation is invalid
+                % redo this point in mode 1
+                compcase=1;
+                continue;
             end
-        end
+            
+            % Change computation mode
+            if ytrial(min(i+1,n))>supportmax
+                compcase=1;
+            end
     end
-    
-    A = X_withnew(selection,:)'*([Y(selection(1:m-1));0]-yfit(selection));
-    left=xnew'-X_withnew(selection,:)'*yfitincrement(selection);
-    rightplus=lambdain-A-xnew'*ysmax;
-    rightminus=-lambdain-A-xnew'*ysmax;
-    
-    supportcounter = supportcounter+1;
-    if ysmax > yterm
-        break
-    end
-end           
-modelsize = modelsize/n;
+%     waitbar((oldn-n+i)/oldn,h,...
+%         sprintf('Current model size %d. Number of Lasso support computed %d',...
+%         length(E),supportcounter))
+    modelsizes(i)=length(E);
+    i=i+1;
+end
+% close(h);
+modelsize = mean(modelsizes);
+yconf  = ytrial(yconfidx);
+            
+        
         
