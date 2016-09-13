@@ -94,15 +94,19 @@ for i=1:nruns
     totalsp4 = totalsp4+sc4;
     if isempty(yconf1)
         yconf1=ytrial;
+        fprintf(2,'Empty yconf\n');
     end
     if isempty(yconf2)
         yconf2=ytrial;
+        fprintf(2,'Empty yconf\n');
     end
     if isempty(yconf3)
         yconf3=ytrial;
+        fprintf(2,'Empty yconf\n');
     end
     if isempty(yconf4)
         yconf4=ytrial;
+        fprintf(2,'Empty yconf\n');
     end
     coverage1(i) = sum((min(yconf1)<y)&(y<max(yconf1)))/10000;
     coverage2(i) = sum((min(yconf2)<y)&(y<max(yconf2)))/10000;

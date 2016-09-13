@@ -46,7 +46,7 @@ for i = 1:n
                 yconfidx = [yconfidx i];
             end
             % Change computation mode
-            if supportmin>= ytrial(min(i+1,n)) | ytrial(min(i+1,n))>=supportmax
+            if ytrial(min(i+1,n))>supportmax
                 compcase=1;
             end
         case 1
@@ -55,6 +55,9 @@ for i = 1:n
             E = find(beta);
             Z = sign(beta);
             Z_E = Z(E);
+            
+%             fprintf(2,'AllSupp:%2d,%2d',supportcounter,length(E));
+            
             X_minusE = X_withnew(:,setxor(E,1:p));
             X_E = X_withnew(:,E);
             % accelerate computation
@@ -78,8 +81,11 @@ for i = 1:n
                 yconfidx = [yconfidx i];
             end
             supportcounter = supportcounter+1;
-            [supportmin,supportmax] = solveInt(A,b,Y);
-            if supportmin< ytrial(min(n,i+1)) & supportmax >ytrial(min(n,i+1))
+            
+            ineqviolate = (b - A*[Y;y])./A(:,end);
+            supportmax = y+min(ineqviolate(ineqviolate>0));
+
+            if supportmax >ytrial(min(n,i+1))
                 compcase=2;
                 pinvxe=pinv(X_E);
                 betalast = pinvxe(:,end);
