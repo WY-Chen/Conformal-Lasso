@@ -54,7 +54,7 @@ for i=1:nruns
     [X,Y,xnew,y] = getSetting(setting,tail);
     X_withnew = [X;xnew];
     rangeY=max(Y)-min(Y);
-    ytrial = (min(Y)-rangeY):stepsize:(max(Y)+rangeY);
+    ytrial = (min(Y)-2*rangeY):stepsize:(max(Y)+2*rangeY);
 %     ytrial = min(Y):stepsize:max(Y);
     % Get lambda from empirical expectation
     t=0;

@@ -16,7 +16,11 @@ addpath(genpath(pwd));
 X_withnew = [X;xnew];
 [m,p] = size(X);
 n = length(ytrial);
-modelsizes = zeros(1,n);
+stepsize = ytrial(2)-ytrial(1);
+
+% Initial and Stopping range
+yinit = min(ytrial);
+yterm = max(ytrial);
 
 % Tune GLMNET
 options = glmnetSet();
@@ -29,61 +33,111 @@ options.nlambda = 1;
 options.lambda = lambdain/m;
 
 %% Initialization with the first point
-yconfidx = []; 
-supportcounter = 1;
-beta = glmnetCoef(glmnet(X_withnew,[Y;ytrial(1)],[],options));
+
+% Fit initial Lasso
+beta = glmnetCoef(glmnet(X_withnew,[Y;yinit],[],options));
 beta=beta(2:p+1);
 E = find(beta);
 Z = sign(beta);
 X_E = X_withnew(:,E);
+% accelerate computation
 pinvxe=pinv(X_E);
 betalast = pinvxe(:,end);
 betaincrement = zeros(p,1);
 betaincrement(E) = betalast;
 yfitincrement = X_withnew*betaincrement;
-stepsize = ytrial(2)-ytrial(1);
 yfit = X_withnew*beta;
+A = X_withnew'*([Y;0]-yfit);
+left=xnew'-X_withnew'*yfitincrement;
+rightplus=lambdain-A-xnew'*yinit;
+rightminus=-lambdain-A-xnew'*yinit;
 
-for i=2:n
-    y = ytrial(i);
-    yfit = yfit + yfitincrement*stepsize;
-    ineqviolatedplus = find(X_withnew'*([Y;y]-yfit)>lambdain);
-    ineqviolatedminus = find(X_withnew'*([Y;y]-yfit)<-lambdain);
-    if ~isequal([ineqviolatedminus;ineqviolatedplus],E)
-        beta = glmnetCoef(glmnet(X_withnew,[Y;y],[],options));
-        beta = beta(2:p+1);
+supportcounter = 1;
+ysmax=yinit;
+yconf = []; modelsize=0;
+while 1
+    % solve for the next model
+    deltaplus = rightplus./left;
+    deltaplus(deltaplus<=0)=inf;
+    [minstepplus,minstepplusind] = min(deltaplus);
+    deltaminus = rightminus./left;
+    deltaminus(deltaminus<=0)=inf;
+    [minstepminus,minstepminusind] = min(deltaminus);
+    if minstepplus<=minstepminus
+        step = minstepplus;
+        stepind = minstepplusind;
+        stepsign = 1;
+    else
+        step = minstepminus;
+        stepind = minstepminusind;
+        stepsign = -1;
+    end
+    ysmin = ysmax;
+    ysmax = ysmax + step;
+   
+    % solve for conformal
+    thistrial = ytrial(ytrial>ysmin & ytrial<ysmax);
+    modelsize = modelsize + length(E)*length(thistrial);
+    for y=thistrial
+        yfit = yfit + yfitincrement*stepsize;
+        Resid = abs([Y;y]-yfit);
+        Pi_trial = sum(Resid<=Resid(end))/(m+1);
+        if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
+            yconf = [yconf y];
+        end
+    end
+    % end of solving
+    
+    if ismember(stepind,E)
+        E = E(E~=stepind);
+        Z(stepind)=0;
+        Z_E = Z(E);
+    else
+        E = sort([E;stepind]);
+        Z(stepind)=stepsign;
+        Z_E=Z(E);
+    end
+    if ysmax > yterm
+        break
+    end
+    if isempty(E)
+        fprintf(2,'E empty \n');
+    end
+    X_E = X_withnew(:,E);
+    xesquareinv = (X_E'*X_E)\eye(length(E));
+    pinvxe=pinv(X_E);
+    betalast = pinvxe(:,end);
+    betaincrement = zeros(p,1);
+    betaincrement(E) = betalast;
+    yfitincrement = X_withnew*betaincrement;
+    beta = zeros(p,1);
+    beta(E) = pinvxe*[Y;ysmax] - lambdain*xesquareinv*Z_E;
+    yfit = X_withnew*beta;
+    % Robooting
+    ineqviolated = find(abs(X_withnew'*([Y;ysmax]-yfit))>=lambdain);
+    if ~isequal(ineqviolated, E)
+        beta = glmnetCoef(glmnet(X_withnew,[Y;ysmax],[],options));
+        beta=beta(2:p+1);
         E = find(beta);
+        Z = sign(beta);
         X_E = X_withnew(:,E);
+        % accelerate computation
         pinvxe=pinv(X_E);
         betalast = pinvxe(:,end);
         betaincrement = zeros(p,1);
         betaincrement(E) = betalast;
         yfitincrement = X_withnew*betaincrement;
         yfit = X_withnew*beta;
-        supportcounter = supportcounter +1;
     end
-    Resid = abs(yfit - [Y;y]);
-    Pi_trial = sum(Resid<=Resid(end))/(m+1);
-    if Pi_trial<=ceil((1-alpha)*(m+1))/(m+1)
-        yconfidx = [yconfidx i];
-    end
- 
-    modelsizes(i) = length(E);
+    
+    A = X_withnew'*([Y;0]-yfit);
+    left=xnew'-X_withnew'*yfitincrement;
+    rightplus=lambdain-A-xnew'*ysmax;
+    rightminus=-lambdain-A-xnew'*ysmax;
+    
+    supportcounter = supportcounter+1;
 end
-% close(h)
-modelsize = mean(modelsizes);
-yconf  = ytrial(yconfidx);
-
-% Plots
-plotFlag=0;  % change to 0 to turn off
-if plotFlag == 1
-    subplot(1,2,1)
-    boxplot(yconf);
-    title('Spread of Yconf')
-    subplot(1,2,2)
-    plot(ytrial,modelsizes);
-    title('Model size vs. Ytrial')
-    hold on, plot(ytrial(yconfidx), modelsizes(yconfidx), 'r.')
-    hold off
+modelsize = modelsize/n;
 end
-end
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
