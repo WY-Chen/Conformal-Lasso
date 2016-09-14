@@ -1,7 +1,9 @@
 %% 
 % This is a testing file for three different conditions
+addpath(genpath(pwd));
 load('badexample.mat');
 ytest = -38;
+xnew = X_withnew(end,:);
 %% GLMNET
 
 %%
