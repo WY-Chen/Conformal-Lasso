@@ -1,11 +1,19 @@
 %% Run Testing
 % Run testing on a setting with a method. 
 %% Implementation
-function compareLOOtest(setting,tail,alpha,stepsize,nruns,filename)
+function compareLOOtest(setting,tail,width,alpha,stepsize,nruns,filename)
 % Setting = 'A', 'B', 'C'.
 %       A : Linear. X iid N(0,1). epsilon iid N(0,1). 
 %       B : B-spline. X iid N(0,1). epsilon iid t(2).
 %       C : Linear. X highly correlated. epsilon iid t(2).
+
+% tail = 'norm', 't'
+%    norm : Normal (0,1) tail
+%       t : t(2) tail
+
+% width = 'range', 'wide'
+%   range : min(Y):max(Y)
+%    wide : min(Y)-2*range: max(Y)+2*range
 
 % alpha = level of confidence
 
@@ -30,7 +38,7 @@ if ~exist('filename','var')
     fileID = 1;
 else
     folder = fullfile(pwd, '\Outputs');
-    filename = sprintf('Setting%s%s_%dIterations.txt',setting,tail,nruns);
+    filename = sprintf('Setting%s%s%s_%dIterations.txt',setting,tail,width,nruns);
     fileID = fopen(fullfile(folder, filename),'w');
 end
 % Testing
@@ -54,8 +62,14 @@ for i=1:nruns
     [X,Y,xnew,y] = getSetting(setting,tail);
     X_withnew = [X;xnew];
     rangeY=max(Y)-min(Y);
-    ytrial = (min(Y)-2*rangeY):stepsize:(max(Y)+2*rangeY);
-%     ytrial = min(Y):stepsize:max(Y);
+    if strcmp(width,'wide')
+        ytrial = (min(Y)-2*rangeY):stepsize:(max(Y)+2*rangeY);
+    elseif strcmp(width, 'range')
+        ytrial = min(Y):stepsize:max(Y);
+    else
+        fprintf(2,'ERROR:wrong width');
+        return;
+    end
     % Get lambda from empirical expectation
     t=0;
     for j=1:100
@@ -81,13 +95,13 @@ for i=1:nruns
     % run method
     tic;
     [yconf1,modelsize1,sc1] = conformalLassoAllSupp(X,Y,xnew,alpha,ytrial,lambda);
-    t1=toc;time1=time1+t1;tic;
+    t1=toc;time1=time1+t1;fprintf(2,'1');tic;
     [yconf2,modelsize2,sc2] = conformalLassoCtnFit(X,Y,xnew,alpha,ytrial,lambda);
-    t2=toc;time2=time2+t2;tic;
+    t2=toc;time2=time2+t2;fprintf(2,'2');tic;
     [yconf3,modelsize3,sc3] = conformalLOO(X,Y,xnew,alpha,ytrial,lambda);
-    t3=toc;time3=time3+t3;
-    [yconf4,modelsize4,sc4] = conformalLOOCtnFit(X,Y,xnew,alpha,ytrial,lambda);
-    t4=toc;time4=time4+t4;
+    t3=toc;time3=time3+t3;fprintf(2,'3');tic;
+    [yconf4,modelsize4,sc4] = conformalLOOold(X,Y,xnew,alpha,ytrial,lambda);
+    t4=toc;time4=time4+t4;fprintf(2,'4\n');
     totalsp1 = totalsp1+sc1;
     totalsp2 = totalsp2+sc2;
     totalsp3 = totalsp3+sc3;
@@ -117,7 +131,7 @@ for i=1:nruns
     conflen3(i) = max(yconf3)-min(yconf3);
     conflen4(i) = max(yconf4)-min(yconf4);
     % format print
-    fprintf(fileID,'\t\t\t\tLassoAllSupp\tLassoCtnFit\t\tLOO\t\tLOOCtnFit\n');
+    fprintf(fileID,'\t\t\t\tLassoAllSupp\tLassoCtnFit\t\tLOO\t\t\t\tLOOold\n');
     fprintf(fileID,'\tModelsize \t%.1f\t\t\t\t%.1f\t\t\t\t%.1f\t\t\t\t%.1f\n',...
         modelsize1,modelsize2,modelsize3,modelsize4);
     fprintf(fileID,'\tInterval \t[%.3f,%.3f] [%.3f,%.3f] [%.3f,%.3f] [%.3f,%.3f]\n',...

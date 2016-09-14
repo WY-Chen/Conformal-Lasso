@@ -41,6 +41,7 @@ options.lambda = lambdain/m;
 % this is the condition of the new pair being outlier
 betaN = glmnetCoef(glmnet(X,Y,[],options));
 betaN=betaN(2:p+1);
+beta = betaN;
 ypred=xnew*betaN;
 % message = sprintf('\tPrediction point is %2.2f', ypred);
 % disp(message);
@@ -99,17 +100,50 @@ while i<=n
             % C-steps
             outlierOld = outlier;
             ccount=0;
-            while 1
-                selection = setxor(1:m+1,outlier);
-                beta = glmnetCoef(glmnet(X_withnew(selection,:),Y_withnew(selection),...
+            selection = setxor(1:m+1,outlier);
+            beta = glmnetCoef(glmnet(X_withnew(selection,:),Y_withnew(selection),...
                     [],options));
-                beta = beta(2:p+1);
+            beta=beta(2:p+1);
+            while 1
+                % given beta, choose H
                 [~,outlier]=max((X_withnew*beta-Y_withnew).^2);
                 if outlier == outlierOld || ccount>20
                     break
                 end
+%                 fprintf(2,'C-step %d outlier %d\n',ccount, outlier);
+                selection = setxor(1:m+1,outlier);
+                % given H, choose beta
+                q = X_withnew(selection,:)'*...
+                    (X_withnew(selection,:)*beta-Y_withnew(selection))./(m-1);
+                % line search 
+                ita = 1;
+                snew = softthresh(ita*lambdain/(m-1),beta-ita*q);
+%                 s = beta;
+%                 sfit = X_withnew(selection,:)*s;
+%                 snewfit = X_withnew(selection,:)*snew;
+%                 normold = norm(sfit-Y_withnew(selection));
+%                 while 0<normold-norm(snewfit-Y_withnew(selection))<=-ita*sum(q)./2
+%                     ita = ita*.8;
+%                     snew = softthresh(ita,beta-ita*q);
+%                     snewfit = X_withnew(selection,:)*snew;
+% %                     fprintf(2,'+');
+%                 end
+% %                 fprintf(2,'%.2f\n',ita);
+                beta = snew;
+                if outlier == m+1
+                    outlier=outlierOld;
+                    break;
+                end
                 outlierOld = outlier;
                 ccount=ccount+1;
+            end
+            
+            % re-fit (because above is inaccurate)
+            if ccount>0
+                selection = setxor(1:m+1,outlier);
+                beta = glmnetCoef(glmnet(X_withnew(selection,:),Y_withnew(selection),...
+                    [],options));
+                beta=beta(2:p+1);
             end
             
             % Conformal
@@ -146,10 +180,8 @@ while i<=n
             % Change computation mode
             if supportmin<= ytrial(min(i+1,n)) & ytrial(min(i+1,n))<=supportmax
                 compcase=2;
-                beta = zeros(p,1);
                 % the following is to ease computation in mode 2
                 pinvxe=pinv(X_E);
-                beta(E) = pinvxe*Y_withnew(selection) - lambdain*xesquareinv*Z_E;
                 betalast = pinvxe(:,end);
                 betaincrement = zeros(p,1);
                 betaincrement(E) = betalast;
