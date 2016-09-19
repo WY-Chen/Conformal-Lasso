@@ -76,7 +76,9 @@ for i = 1:n
                 pinvxe = pinv(X_E);
                 xesquareinv = (X_E'*X_E)\eye(length(E));
                 beta = zeros(p,1);
-                beta(E) = pinvxe*[Y;y] - xesquareinv*Z_E*lambdain;
+                if ~isempty(E)
+                    beta(E) = pinvxe*[Y;y] - xesquareinv*Z_E*lambdain;
+                end
 %                 fprintf('r%d\n',changeind);
             elseif changeind > p-length(E)
                 changeind = changeind - (p-length(E));
@@ -125,6 +127,9 @@ for i = 1:n
 
             P_E = X_E*xesquareinv*X_E';
             temp = X_minusE'*pinv(X_E')*Z_E;
+            if isempty(temp)
+                temp=0;
+            end
             a0=X_minusE'*(eye(m+1)-P_E)./lambdain;
             % calculate the inequalities for fitting.
             A = [a0;

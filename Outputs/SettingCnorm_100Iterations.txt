@@ -1,0 +1,705 @@
+TESTING SETTING C.
+TESTING=== run 1/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				28.2				5.0				5.0
+	Interval 	[1.611,6.511] [1.614,6.514] [1.601,6.471] [1.604,6.474]
+	Coverage 	0.959			0.960			0.956			0.957
+	Support 	2.00			149.00			2.00			2.00
+	Time 		0.279			4.251			0.263			0.262
+TESTING=== run 2/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.2				25.9				5.0				5.0
+	Interval 	[-9.140,-4.280] [-9.146,-4.286] [-9.170,-4.150] [-9.176,-4.146]
+	Coverage 	0.664			0.666			0.674			0.677
+	Support 	3.00			140.00			3.00			3.00
+	Time 		0.269			3.916			0.304			0.310
+TESTING=== run 3/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				27.7				5.0				5.0
+	Interval 	[-2.030,2.990] [-2.032,2.988] [-2.030,2.980] [-2.032,2.978]
+	Coverage 	0.862			0.862			0.862			0.862
+	Support 	2.00			152.00			2.00			2.00
+	Time 		0.251			4.436			0.256			0.249
+TESTING=== run 4/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				15.2				5.0				5.0
+	Interval 	[-8.467,-3.837] [-8.464,-3.844] [-8.507,-3.887] [-8.504,-3.884]
+	Coverage 	0.976			0.976			0.976			0.975
+	Support 	1.00			74.00			2.00			2.00
+	Time 		0.232			1.938			0.249			0.264
+TESTING=== run 5/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				18.3				5.0				5.0
+	Interval 	[6.277,11.357] [6.291,11.361] [6.147,11.297] [6.151,11.301]
+	Coverage 	0.948			0.948			0.942			0.942
+	Support 	1.00			102.00			2.00			2.00
+	Time 		0.282			2.711			0.262			0.257
+TESTING=== run 6/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				19.7				5.0				5.0
+	Interval 	[-6.954,-2.394] [-6.952,-2.392] [-6.954,-2.344] [-6.952,-2.342]
+	Coverage 	0.979			0.979			0.980			0.980
+	Support 	1.00			99.00			2.00			2.00
+	Time 		0.223			2.599			0.250			0.247
+TESTING=== run 7/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				20.8				5.0				5.0
+	Interval 	[-4.607,-0.157] [-4.609,-0.159] [-4.617,-0.227] [-4.619,-0.229]
+	Coverage 	0.944			0.944			0.944			0.945
+	Support 	1.00			94.00			2.00			2.00
+	Time 		0.223			2.531			0.251			0.266
+TESTING=== run 8/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				29.7				5.0				5.0
+	Interval 	[-3.607,1.723] [-3.609,1.721] [-3.677,1.773] [-3.679,1.771]
+	Coverage 	0.951			0.952			0.958			0.958
+	Support 	1.00			144.00			2.00			2.00
+	Time 		0.232			3.924			0.270			0.267
+TESTING=== run 9/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.1				24.7				5.0				5.0
+	Interval 	[0.459,4.759] [0.455,4.755] [0.369,4.809] [0.375,4.815]
+	Coverage 	0.921			0.921			0.934			0.934
+	Support 	2.00			120.00			2.00			2.00
+	Time 		0.262			3.356			0.265			0.261
+TESTING=== run 10/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.1				18.9				5.0				5.0
+	Interval 	[4.785,9.545] [4.779,9.539] [4.695,9.515] [4.699,9.509]
+	Coverage 	0.484			0.483			0.472			0.470
+	Support 	2.00			104.00			2.00			2.00
+	Time 		0.267			2.796			0.248			0.265
+TESTING=== run 11/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				23.0				5.0				5.0
+	Interval 	[-4.957,-0.457] [-4.962,-0.462] [-4.987,-0.387] [-4.982,-0.392]
+	Coverage 	0.968			0.968			0.971			0.970
+	Support 	1.00			130.00			2.00			2.00
+	Time 		0.225			3.576			0.258			0.275
+TESTING=== run 12/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				17.2				5.0				5.0
+	Interval 	[3.952,8.572] [3.949,8.569] [3.802,8.562] [3.969,8.559]
+	Coverage 	0.977			0.977			0.979			0.976
+	Support 	1.00			102.00			3.00			2.00
+	Time 		0.229			2.759			0.296			0.257
+TESTING=== run 13/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.3				31.5				5.0				5.0
+	Interval 	[-9.824,-4.974] [-9.823,-4.983] [-9.774,-4.924] [-9.773,-4.923]
+	Coverage 	0.937			0.937			0.930			0.930
+	Support 	5.00			163.00			2.00			2.00
+	Time 		0.310			5.076			0.271			0.260
+TESTING=== run 14/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				28.2				5.0				5.0
+	Interval 	[-1.633,2.777] [-1.622,2.768] [-1.813,2.917] [-1.812,2.918]
+	Coverage 	0.972			0.971			0.981			0.981
+	Support 	2.00			138.00			2.00			2.00
+	Time 		0.300			4.156			0.276			0.278
+TESTING=== run 15/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.1				31.6				5.0				5.0
+	Interval 	[-8.441,-3.731] [-8.445,-3.735] [-8.401,-3.661] [-8.405,-3.665]
+	Coverage 	0.965			0.965			0.962			0.962
+	Support 	2.00			164.00			2.00			2.00
+	Time 		0.262			4.795			0.298			0.268
+TESTING=== run 16/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				40.2				5.0				5.0
+	Interval 	[-0.057,4.813] [-0.042,4.808] [-0.067,4.783] [-0.062,4.788]
+	Coverage 	0.977			0.977			0.976			0.976
+	Support 	1.00			200.00			2.00			2.00
+	Time 		0.252			6.368			0.255			0.251
+TESTING=== run 17/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.4				35.4				5.0				5.0
+	Interval 	[-3.643,1.087] [-3.640,1.090] [-3.783,1.147] [-3.780,1.140]
+	Coverage 	0.982			0.982			0.987			0.987
+	Support 	5.00			188.00			2.00			2.00
+	Time 		0.329			5.690			0.246			0.261
+TESTING=== run 18/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				15.7				5.0				5.0
+	Interval 	[-6.857,-2.537] [-6.858,-2.548] [-6.747,-2.407] [-6.748,-2.408]
+	Coverage 	0.912			0.912			0.895			0.895
+	Support 	1.00			78.00			2.00			2.00
+	Time 		0.247			2.168			0.262			0.250
+TESTING=== run 19/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.1				23.2				5.0				5.0
+	Interval 	[5.346,10.086] [5.336,10.086] [5.296,10.016] [5.296,10.016]
+	Coverage 	0.827			0.827			0.807			0.807
+	Support 	2.00			124.00			2.00			2.00
+	Time 		0.256			3.433			0.243			0.257
+TESTING=== run 20/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				30.9				5.0				5.0
+	Interval 	[1.276,6.136] [1.273,6.133] [1.296,6.166] [1.303,6.163]
+	Coverage 	0.986			0.986			0.986			0.986
+	Support 	1.00			171.00			2.00			2.00
+	Time 		0.237			4.924			0.277			0.253
+TESTING=== run 21/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				27.2				5.0				5.0
+	Interval 	[-9.074,-5.084] [-9.069,-5.089] [-9.064,-4.924] [-9.069,-4.929]
+	Coverage 	0.902			0.901			0.903			0.903
+	Support 	2.00			147.00			2.00			2.00
+	Time 		0.249			4.269			0.263			0.280
+TESTING=== run 22/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				19.4				5.0				5.0
+	Interval 	[-5.652,-0.402] [-5.661,-0.411] [-5.682,-0.402] [-5.691,-0.411]
+	Coverage 	0.990			0.990			0.991			0.991
+	Support 	1.00			96.00			2.00			2.00
+	Time 		0.234			2.465			0.251			0.285
+TESTING=== run 23/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				24.6				5.0				5.0
+	Interval 	[-3.351,0.949] [-3.351,0.949] [-3.351,0.979] [-3.341,0.979]
+	Coverage 	0.964			0.964			0.965			0.964
+	Support 	1.00			129.00			2.00			2.00
+	Time 		0.245			3.885			0.275			0.271
+TESTING=== run 24/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				29.3				5.0				5.0
+	Interval 	[0.023,5.363] [0.028,5.368] [0.003,5.383] [0.008,5.388]
+	Coverage 	0.994			0.994			0.994			0.994
+	Support 	1.00			154.00			2.00			2.00
+	Time 		0.248			4.469			0.268			0.277
+TESTING=== run 25/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.5				31.3				5.0				5.0
+	Interval 	[-2.081,2.379] [-2.071,2.379] [-2.161,2.429] [-2.161,2.429]
+	Coverage 	0.953			0.952			0.960			0.960
+	Support 	5.00			153.00			2.00			2.00
+	Time 		0.317			4.243			0.249			0.250
+TESTING=== run 26/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.1				22.1				5.0				5.0
+	Interval 	[-1.017,3.503] [-1.016,3.504] [-1.157,3.543] [-1.156,3.544]
+	Coverage 	0.967			0.967			0.971			0.971
+	Support 	3.00			116.00			2.00			2.00
+	Time 		0.290			3.357			0.287			0.276
+TESTING=== run 27/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				39.6				5.0				5.0
+	Interval 	[2.450,7.190] [2.451,7.191] [2.240,7.050] [2.241,7.051]
+	Coverage 	0.969			0.969			0.958			0.958
+	Support 	2.00			189.00			2.00			2.00
+	Time 		0.281			6.348			0.272			0.272
+TESTING=== run 28/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.2				25.9				5.0				5.0
+	Interval 	[-7.226,-2.436] [-7.228,-2.448] [-7.226,-2.406] [-7.228,-2.408]
+	Coverage 	0.959			0.959			0.959			0.959
+	Support 	3.00			146.00			2.00			2.00
+	Time 		0.315			4.493			0.283			0.286
+TESTING=== run 29/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.2				30.2				5.0				5.0
+	Interval 	[-6.912,-2.502] [-6.901,-2.511] [-6.922,-2.432] [-6.921,-2.431]
+	Coverage 	0.965			0.964			0.967			0.967
+	Support 	2.00			162.00			2.00			2.00
+	Time 		0.271			5.152			0.277			0.269
+TESTING=== run 30/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				26.5				5.0				5.0
+	Interval 	[1.992,6.832] [1.991,6.831] [1.972,6.952] [1.971,6.951]
+	Coverage 	0.984			0.984			0.986			0.986
+	Support 	1.00			140.00			2.00			2.00
+	Time 		0.255			3.706			0.230			0.207
+TESTING=== run 31/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.8				30.3				5.0				5.0
+	Interval 	[-9.195,-4.875] [-9.194,-4.884] [-9.105,-4.795] [-9.104,-4.794]
+	Coverage 	0.889			0.888			0.870			0.870
+	Support 	6.00			147.00			2.00			2.00
+	Time 		0.292			3.787			0.221			0.217
+TESTING=== run 32/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				24.5				5.0				5.0
+	Interval 	[0.901,5.551] [0.905,5.545] [0.941,5.531] [0.935,5.525]
+	Coverage 	0.952			0.952			0.950			0.950
+	Support 	1.00			133.00			2.00			2.00
+	Time 		0.190			3.296			0.215			0.212
+TESTING=== run 33/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.1				37.4				5.0				5.0
+	Interval 	[-4.215,0.775] [-4.221,0.769] [-4.255,0.615] [-4.251,0.609]
+	Coverage 	0.983			0.984			0.983			0.983
+	Support 	3.00			183.00			2.00			2.00
+	Time 		0.230			4.844			0.212			0.215
+TESTING=== run 34/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.8				33.7				5.0				5.0
+	Interval 	[-3.277,2.923] [-3.278,2.922] [-3.257,2.963] [-3.258,2.962]
+	Coverage 	0.983			0.983			0.981			0.981
+	Support 	6.00			165.00			2.00			2.00
+	Time 		0.292			4.432			0.281			0.221
+TESTING=== run 35/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.4				24.0				5.0				5.0
+	Interval 	[4.931,9.711] [4.936,9.706] [4.921,9.731] [4.916,9.726]
+	Coverage 	0.937			0.936			0.939			0.939
+	Support 	5.00			116.00			2.00			2.00
+	Time 		0.260			2.910			0.226			0.205
+TESTING=== run 36/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				36.0				5.0				5.0
+	Interval 	[-1.087,3.023] [-1.087,3.023] [-1.177,3.133] [-1.177,3.133]
+	Coverage 	0.959			0.959			0.968			0.968
+	Support 	1.00			166.00			2.00			2.00
+	Time 		0.198			4.510			0.206			0.238
+TESTING=== run 37/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				22.4				5.0				5.0
+	Interval 	[-0.283,4.447] [-0.271,4.449] [-0.213,4.507] [-0.221,4.509]
+	Coverage 	0.980			0.980			0.979			0.979
+	Support 	1.00			109.00			2.00			2.00
+	Time 		0.207			3.291			0.292			0.282
+TESTING=== run 38/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				22.7				5.0				5.0
+	Interval 	[-3.180,1.400] [-3.179,1.401] [-3.240,1.420] [-3.239,1.421]
+	Coverage 	0.976			0.976			0.979			0.979
+	Support 	1.00			121.00			2.00			2.00
+	Time 		0.254			3.801			0.283			0.279
+TESTING=== run 39/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.1				26.7				5.0				5.0
+	Interval 	[-7.384,-2.524] [-7.385,-2.535] [-7.384,-2.454] [-7.385,-2.455]
+	Coverage 	0.974			0.974			0.975			0.975
+	Support 	2.00			136.00			2.00			2.00
+	Time 		0.273			4.302			0.288			0.288
+TESTING=== run 40/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.6				28.0				5.0				5.0
+	Interval 	[-9.198,-3.568] [-9.208,-3.568] [-9.208,-3.558] [-9.208,-3.558]
+	Coverage 	0.943			0.944			0.944			0.944
+	Support 	4.00			139.00			2.00			2.00
+	Time 		0.330			4.383			0.269			0.280
+TESTING=== run 41/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				25.4				5.0				5.0
+	Interval 	[-8.613,-4.093] [-8.615,-4.095] [-8.623,-3.983] [-8.625,-3.985]
+	Coverage 	0.969			0.969			0.971			0.970
+	Support 	2.00			130.00			2.00			2.00
+	Time 		0.289			4.065			0.275			0.286
+TESTING=== run 42/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				20.9				5.0				5.0
+	Interval 	[-4.266,-0.016] [-4.263,-0.023] [-4.286,0.014] [-4.283,0.017]
+	Coverage 	0.927			0.927			0.930			0.930
+	Support 	1.00			106.00			2.00			2.00
+	Time 		0.243			3.093			0.281			0.292
+TESTING=== run 43/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.2				26.2				5.0				5.0
+	Interval 	[-1.044,3.566] [-1.041,3.569] [-1.054,3.576] [-1.051,3.579]
+	Coverage 	0.892			0.893			0.894			0.894
+	Support 	2.00			127.00			2.00			2.00
+	Time 		0.318			4.187			0.293			0.283
+TESTING=== run 44/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.6				37.5				5.0				5.0
+	Interval 	[4.443,9.903] [4.444,9.904] [4.233,9.713] [4.234,9.714]
+	Coverage 	0.638			0.639			0.568			0.568
+	Support 	5.00			214.00			2.00			2.00
+	Time 		0.371			7.531			0.284			0.289
+TESTING=== run 45/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				22.2				5.0				5.0
+	Interval 	[-1.856,2.514] [-1.855,2.515] [-1.916,2.544] [-1.915,2.545]
+	Coverage 	0.964			0.964			0.967			0.967
+	Support 	1.00			121.00			2.00			2.00
+	Time 		0.264			3.696			0.286			0.276
+TESTING=== run 46/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.2				31.9				5.0				5.0
+	Interval 	[-6.906,-2.416] [-6.898,-2.408] [-6.876,-2.316] [-6.878,-2.318]
+	Coverage 	0.954			0.955			0.962			0.961
+	Support 	2.00			151.00			2.00			2.00
+	Time 		0.308			4.755			0.289			0.281
+TESTING=== run 47/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				25.6				5.0				5.0
+	Interval 	[0.814,4.964] [0.823,4.963] [0.764,5.104] [0.763,5.103]
+	Coverage 	0.954			0.954			0.965			0.965
+	Support 	1.00			132.00			2.00			2.00
+	Time 		0.266			4.104			0.271			0.294
+TESTING=== run 48/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				21.5				5.0				5.0
+	Interval 	[3.642,8.302] [3.649,8.299] [3.562,8.282] [3.569,8.279]
+	Coverage 	0.978			0.978			0.978			0.978
+	Support 	2.00			107.00			2.00			2.00
+	Time 		0.295			3.181			0.308			0.285
+TESTING=== run 49/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				28.2				5.0				5.0
+	Interval 	[1.385,6.265] [1.390,6.270] [1.365,6.235] [1.360,6.230]
+	Coverage 	0.963			0.963			0.961			0.961
+	Support 	1.00			142.00			2.00			2.00
+	Time 		0.262			4.446			0.295			0.295
+TESTING=== run 50/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.2				25.4				5.0				5.0
+	Interval 	[0.561,5.221] [0.561,5.221] [0.521,5.221] [0.521,5.221]
+	Coverage 	0.963			0.962			0.965			0.965
+	Support 	2.00			122.00			2.00			2.00
+	Time 		0.296			3.700			0.281			0.279
+TESTING=== run 51/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.4				31.3				5.0				5.0
+	Interval 	[-5.639,-0.619] [-5.634,-0.634] [-5.729,-0.639] [-5.724,-0.644]
+	Coverage 	0.985			0.985			0.985			0.985
+	Support 	5.00			152.00			2.00			2.00
+	Time 		0.373			4.810			0.302			0.337
+TESTING=== run 52/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	7.2				47.2				5.1				5.1
+	Interval 	[-4.452,1.248] [-4.457,1.243] [-4.412,1.258] [-4.417,1.263]
+	Coverage 	0.971			0.971			0.968			0.969
+	Support 	15.00			209.00			3.00			3.00
+	Time 		0.607			7.184			0.358			0.359
+TESTING=== run 53/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.1				43.7				5.0				5.0
+	Interval 	[3.384,7.814] [3.384,7.814] [3.374,7.804] [3.374,7.804]
+	Coverage 	0.974			0.973			0.973			0.973
+	Support 	2.00			224.00			2.00			2.00
+	Time 		0.316			8.293			0.285			0.286
+TESTING=== run 54/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				19.0				5.0				5.0
+	Interval 	[-3.127,1.903] [-3.118,1.902] [-3.177,1.893] [-3.168,1.892]
+	Coverage 	0.915			0.915			0.914			0.914
+	Support 	1.00			87.00			2.00			2.00
+	Time 		0.240			2.524			0.249			0.296
+TESTING=== run 55/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.1				38.1				5.0				5.0
+	Interval 	[-7.066,-1.916] [-7.066,-1.926] [-7.006,-1.856] [-7.006,-1.856]
+	Coverage 	0.768			0.768			0.750			0.750
+	Support 	3.00			191.00			2.00			2.00
+	Time 		0.293			6.256			0.333			0.331
+TESTING=== run 56/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				19.6				5.0				5.0
+	Interval 	[-8.853,-3.923] [-8.848,-3.928] [-8.913,-3.853] [-8.908,-3.848]
+	Coverage 	0.976			0.976			0.979			0.979
+	Support 	1.00			96.00			2.00			2.00
+	Time 		0.242			2.624			0.247			0.274
+TESTING=== run 57/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				22.1				5.0				5.0
+	Interval 	[-8.810,-4.340] [-8.808,-4.348] [-8.900,-4.260] [-8.898,-4.258]
+	Coverage 	0.958			0.958			0.966			0.966
+	Support 	1.00			123.00			2.00			2.00
+	Time 		0.250			3.546			0.248			0.257
+TESTING=== run 58/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.2				29.7				5.0				5.0
+	Interval 	[-9.863,-5.703] [-9.867,-5.707] [-9.833,-5.583] [-9.827,-5.577]
+	Coverage 	0.915			0.915			0.911			0.910
+	Support 	4.00			152.00			2.00			2.00
+	Time 		0.303			4.472			0.369			0.401
+TESTING=== run 59/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.3				43.7				5.0				5.0
+	Interval 	[-0.496,4.294] [-0.490,4.290] [-0.546,4.324] [-0.550,4.330]
+	Coverage 	0.974			0.974			0.977			0.977
+	Support 	4.00			217.00			2.00			2.00
+	Time 		0.293			7.347			0.291			0.268
+TESTING=== run 60/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.3				33.7				5.0				5.0
+	Interval 	[-4.686,0.124] [-4.672,0.118] [-4.716,0.134] [-4.712,0.138]
+	Coverage 	0.983			0.983			0.984			0.984
+	Support 	3.00			167.00			2.00			2.00
+	Time 		0.274			4.747			0.264			0.263
+TESTING=== run 61/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.1				30.4				5.0				5.0
+	Interval 	[-2.138,2.662] [-2.140,2.660] [-2.158,2.732] [-2.160,2.730]
+	Coverage 	0.969			0.969			0.970			0.970
+	Support 	3.00			153.00			2.00			2.00
+	Time 		0.266			4.265			0.249			0.253
+TESTING=== run 62/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				21.6				5.0				5.0
+	Interval 	[-8.113,-3.373] [-8.114,-3.384] [-8.103,-3.323] [-8.104,-3.324]
+	Coverage 	0.980			0.980			0.981			0.981
+	Support 	1.00			101.00			2.00			2.00
+	Time 		0.226			2.739			0.302			0.314
+TESTING=== run 63/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				23.5				5.0				5.0
+	Interval 	[3.984,8.994] [3.984,8.994] [4.034,9.164] [4.034,9.164]
+	Coverage 	0.985			0.985			0.989			0.989
+	Support 	2.00			120.00			2.00			2.00
+	Time 		0.263			3.305			0.266			0.272
+TESTING=== run 64/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				20.1				5.0				5.0
+	Interval 	[1.187,5.777] [1.192,5.782] [1.047,5.737] [1.042,5.732]
+	Coverage 	0.877			0.877			0.871			0.870
+	Support 	1.00			107.00			2.00			2.00
+	Time 		0.242			2.825			0.267			0.256
+TESTING=== run 65/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.1				22.0				5.0				5.0
+	Interval 	[-10.868,-6.148] [-10.867,-6.157] [-10.918,-6.208] [-10.917,-6.207]
+	Coverage 	0.903			0.902			0.911			0.911
+	Support 	4.00			102.00			2.00			2.00
+	Time 		0.281			2.774			0.244			0.262
+TESTING=== run 66/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				30.3				5.0				5.0
+	Interval 	[-3.657,1.203] [-3.647,1.193] [-3.637,1.263] [-3.637,1.263]
+	Coverage 	0.976			0.975			0.978			0.978
+	Support 	1.00			139.00			2.00			2.00
+	Time 		0.227			3.850			0.322			0.281
+TESTING=== run 67/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				31.9				5.0				5.0
+	Interval 	[-3.314,1.726] [-3.303,1.717] [-3.304,1.746] [-3.303,1.747]
+	Coverage 	0.989			0.989			0.989			0.989
+	Support 	1.00			155.00			2.00			2.00
+	Time 		0.230			4.399			0.247			0.270
+TESTING=== run 68/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				24.1				5.0				5.0
+	Interval 	[-5.682,-1.522] [-5.682,-1.532] [-5.722,-1.532] [-5.722,-1.532]
+	Coverage 	0.942			0.941			0.945			0.945
+	Support 	1.00			123.00			2.00			2.00
+	Time 		0.239			2.887			0.206			0.192
+TESTING=== run 69/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				26.4				5.0				5.0
+	Interval 	[-4.070,-0.020] [-4.072,-0.012] [-4.060,-0.020] [-4.062,-0.022]
+	Coverage 	0.958			0.958			0.957			0.957
+	Support 	2.00			136.00			2.00			2.00
+	Time 		0.197			3.075			0.204			0.204
+TESTING=== run 70/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.3				20.5				NaN				5.0
+	Interval 	[-11.056,15.144] [-16.803,-12.113] [-11.056,15.144] [-16.693,-11.893]
+	Coverage 	0.000			0.562			0.000			0.518
+	Support 	4.00			97.00			1.00			2.00
+	Time 		0.231			2.233			0.147			0.194
+TESTING=== run 71/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				16.6				5.0				5.0
+	Interval 	[-7.548,-2.318] [-7.547,-2.327] [-7.568,-2.318] [-7.567,-2.317]
+	Coverage 	0.981			0.980			0.981			0.981
+	Support 	1.00			87.00			2.00			2.00
+	Time 		0.184			1.908			0.195			0.198
+TESTING=== run 72/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.2				23.1				5.0				5.0
+	Interval 	[-13.058,-8.318] [-13.067,-8.327] [-12.948,-8.188] [-12.947,-8.187]
+	Coverage 	0.761			0.763			0.726			0.725
+	Support 	4.00			121.00			2.00			2.00
+	Time 		0.225			2.788			0.216			0.193
+TESTING=== run 73/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.2				32.9				5.0				5.0
+	Interval 	[1.362,5.882] [1.364,5.884] [1.372,5.912] [1.374,5.914]
+	Coverage 	0.962			0.962			0.963			0.964
+	Support 	3.00			174.00			2.00			2.00
+	Time 		0.237			4.182			0.215			0.218
+TESTING=== run 74/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				29.4				5.0				5.0
+	Interval 	[2.299,6.679] [2.301,6.681] [2.309,6.739] [2.311,6.741]
+	Coverage 	0.964			0.964			0.969			0.969
+	Support 	2.00			139.00			2.00			2.00
+	Time 		0.205			3.150			0.193			0.190
+TESTING=== run 75/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				27.5				5.0				5.0
+	Interval 	[-7.186,-2.376] [-7.186,-2.376] [-7.216,-2.466] [-7.216,-2.466]
+	Coverage 	0.980			0.980			0.977			0.977
+	Support 	1.00			145.00			2.00			2.00
+	Time 		0.201			3.371			0.198			0.191
+TESTING=== run 76/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.1				24.7				5.0				5.0
+	Interval 	[-8.098,-2.948] [-8.102,-2.952] [-8.098,-2.948] [-8.102,-2.942]
+	Coverage 	0.968			0.969			0.968			0.969
+	Support 	2.00			128.00			2.00			2.00
+	Time 		0.190			2.978			0.212			0.213
+TESTING=== run 77/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				31.1				5.0				5.0
+	Interval 	[-3.204,1.746] [-3.206,1.744] [-3.234,1.796] [-3.226,1.794]
+	Coverage 	0.968			0.969			0.971			0.970
+	Support 	2.00			158.00			2.00			2.00
+	Time 		0.195			3.744			0.224			0.196
+TESTING=== run 78/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	7.1				45.8				5.0				5.0
+	Interval 	[-7.188,-2.408] [-7.190,-2.410] [-7.158,-2.378] [-7.160,-2.380]
+	Coverage 	0.980			0.980			0.981			0.980
+	Support 	14.00			221.00			2.00			2.00
+	Time 		0.419			5.902			0.239			0.206
+TESTING=== run 79/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				23.0				5.0				5.0
+	Interval 	[-2.064,2.566] [-2.057,2.573] [-2.154,2.586] [-2.157,2.593]
+	Coverage 	0.970			0.971			0.973			0.973
+	Support 	1.00			121.00			4.00			3.00
+	Time 		0.197			2.783			0.283			0.233
+TESTING=== run 80/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.6				46.1				5.0				5.0
+	Interval 	[-0.719,3.931] [-0.724,3.926] [-0.799,3.971] [-0.804,3.966]
+	Coverage 	0.973			0.973			0.978			0.978
+	Support 	6.00			222.00			2.00			2.00
+	Time 		0.278			5.810			0.198			0.207
+TESTING=== run 81/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.3				28.6				5.0				5.0
+	Interval 	[0.309,5.319] [0.305,5.315] [0.229,5.359] [0.225,5.365]
+	Coverage 	0.917			0.916			0.922			0.923
+	Support 	2.00			142.00			2.00			2.00
+	Time 		0.233			3.348			0.205			0.191
+TESTING=== run 82/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.3				28.4				5.0				5.0
+	Interval 	[-3.873,0.637] [-3.871,0.629] [-3.853,0.647] [-3.851,0.639]
+	Coverage 	0.930			0.930			0.927			0.927
+	Support 	3.00			153.00			2.00			2.00
+	Time 		0.224			3.568			0.195			0.195
+TESTING=== run 83/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	6.3				30.3				5.0				5.0
+	Interval 	[-9.823,-4.893] [-9.827,-4.887] [-9.903,-4.923] [-9.897,-4.927]
+	Coverage 	0.986			0.986			0.986			0.986
+	Support 	8.00			143.00			2.00			2.00
+	Time 		0.303			3.507			0.197			0.209
+TESTING=== run 84/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				21.9				5.0				5.0
+	Interval 	[-3.634,1.196] [-3.626,1.184] [-3.654,1.286] [-3.656,1.284]
+	Coverage 	0.967			0.966			0.969			0.969
+	Support 	1.00			116.00			2.00			2.00
+	Time 		0.185			2.644			0.228			0.225
+TESTING=== run 85/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.3				37.2				5.0				5.0
+	Interval 	[1.782,7.012] [1.781,7.011] [1.642,7.012] [1.641,7.011]
+	Coverage 	0.989			0.989			0.990			0.990
+	Support 	3.00			185.00			2.00			2.00
+	Time 		0.233			4.628			0.198			0.232
+TESTING=== run 86/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				23.3				5.0				5.0
+	Interval 	[-7.469,-2.149] [-7.473,-2.163] [-7.439,-2.059] [-7.433,-2.053]
+	Coverage 	0.986			0.986			0.985			0.984
+	Support 	1.00			118.00			2.00			2.00
+	Time 		0.175			2.706			0.242			0.234
+TESTING=== run 87/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	6.6				29.7				5.0				5.0
+	Interval 	[9.634,13.034] [9.626,14.026] [9.504,13.034] [9.506,14.016]
+	Coverage 	0.773			0.958			0.774			0.958
+	Support 	9.00			145.00			2.00			2.00
+	Time 		0.318			3.510			0.193			0.200
+TESTING=== run 88/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.1				22.2				5.0				5.0
+	Interval 	[0.265,4.525] [0.268,4.528] [0.205,4.595] [0.208,4.588]
+	Coverage 	0.963			0.963			0.967			0.967
+	Support 	3.00			111.00			2.00			2.00
+	Time 		0.217			2.683			0.200			0.208
+TESTING=== run 89/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				31.2				5.0				5.0
+	Interval 	[3.344,8.114] [3.361,8.111] [3.374,8.104] [3.381,8.101]
+	Coverage 	0.969			0.969			0.968			0.968
+	Support 	1.00			154.00			2.00			2.00
+	Time 		0.181			3.905			0.231			0.228
+TESTING=== run 90/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				20.7				5.0				5.0
+	Interval 	[1.261,6.081] [1.263,6.083] [1.171,6.071] [1.173,6.073]
+	Coverage 	0.968			0.968			0.968			0.968
+	Support 	1.00			114.00			2.00			2.00
+	Time 		0.172			2.728			0.203			0.252
+TESTING=== run 91/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				29.0				5.0				5.0
+	Interval 	[-7.807,-2.947] [-7.803,-2.953] [-7.797,-2.897] [-7.803,-2.893]
+	Coverage 	0.983			0.983			0.985			0.985
+	Support 	2.00			154.00			2.00			2.00
+	Time 		0.246			3.631			0.191			0.196
+TESTING=== run 92/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	8.4				51.1				5.0				5.0
+	Interval 	[-6.998,-2.388] [-7.002,-2.392] [-6.998,-2.298] [-6.992,-2.302]
+	Coverage 	0.942			0.943			0.943			0.941
+	Support 	18.00			239.00			2.00			2.00
+	Time 		0.477			6.313			0.217			0.202
+TESTING=== run 93/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.6				29.4				5.0				5.0
+	Interval 	[-11.596,-6.836] [-11.597,-6.837] [-11.436,-6.766] [-11.437,-6.767]
+	Coverage 	0.967			0.967			0.955			0.955
+	Support 	5.00			147.00			2.00			2.00
+	Time 		0.241			3.474			0.204			0.205
+TESTING=== run 94/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				18.5				5.0				5.0
+	Interval 	[3.709,8.199] [3.713,8.203] [3.699,8.219] [3.703,8.213]
+	Coverage 	0.912			0.912			0.915			0.914
+	Support 	2.00			91.00			2.00			2.00
+	Time 		0.197			1.969			0.215			0.204
+TESTING=== run 95/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	7.4				31.5				NaN				5.0
+	Interval 	[-21.165,12.255] [15.907,21.337] [-21.165,12.255] [15.717,21.177]
+	Coverage 	0.000			0.956			0.000			0.940
+	Support 	12.00			150.00			1.00			2.00
+	Time 		0.392			3.930			0.164			0.205
+TESTING=== run 96/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				32.9				5.0				5.0
+	Interval 	[2.305,7.315] [2.306,7.316] [2.285,7.325] [2.276,7.316]
+	Coverage 	0.985			0.985			0.985			0.985
+	Support 	1.00			163.00			2.00			2.00
+	Time 		0.189			3.870			0.200			0.209
+TESTING=== run 97/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.4				42.8				5.0				5.0
+	Interval 	[-1.379,3.711] [-1.382,3.718] [-1.439,3.701] [-1.442,3.698]
+	Coverage 	0.943			0.943			0.942			0.941
+	Support 	5.00			204.00			3.00			3.00
+	Time 		0.262			5.300			0.235			0.241
+TESTING=== run 98/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.0				27.9				5.0				5.0
+	Interval 	[1.683,6.513] [1.689,6.509] [1.683,6.553] [1.679,6.549]
+	Coverage 	0.975			0.975			0.977			0.977
+	Support 	1.00			142.00			2.00			2.00
+	Time 		0.173			3.273			0.190			0.190
+TESTING=== run 99/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.1				38.3				5.0				5.0
+	Interval 	[8.000,12.890] [8.005,12.885] [8.030,12.890] [8.025,12.895]
+	Coverage 	0.864			0.862			0.864			0.865
+	Support 	2.00			186.00			2.00			2.00
+	Time 		0.199			5.004			0.202			0.230
+TESTING=== run 100/100.
+				LassoCtnFit	LassoCtnFit_wide		LOO				LOO_wide
+	Modelsize 	5.3				16.8				5.0				5.0
+	Interval 	[0.673,5.493] [0.669,5.489] [0.693,5.453] [0.689,5.449]
+	Coverage 	0.968			0.968			0.965			0.965
+	Support 	2.00			75.00			2.00			2.00
+	Time 		0.184			1.707			0.207			0.213
+100-fold average coverage is 0.921, 0.938, 0.920, 0.937
+Average inverval length is 5.244, 4.755, 5.296, 4.810
+Average number of support computed is 2.84, 141.34, 2.04, 2.04
+Average time is 0.260, 3.926, 0.250, 0.251

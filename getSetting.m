@@ -25,7 +25,7 @@ elseif setting=='B'
      meanY = mean(Y); Y=Y-meanY;
      xnew = normrnd(0,1,[1,2000]);
      y = 2*xnew(:,1)+2*xnew(:,2).^2+2*xnew(:,3).^4+epsilon2;
-     y=y-meanY;
+     y=(y-meanY)./1;
 elseif setting=='C'
     beta = [2,2,2,2,2,zeros(1,1995)];
     X = randi([1,3],201,2000);
@@ -39,7 +39,7 @@ elseif setting=='C'
     xnew = X(201,:);
     X = X(1:200,:);
     Y = X*beta' + epsilon1;
-    mY=mean(Y);
+    mY=mean(Y); 
     Y= Y-mY;
     y = xnew * beta'+epsilon2-mY;
 elseif setting=='D'
