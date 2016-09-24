@@ -14,7 +14,7 @@
 %                       until the next one is not in known support. 
 %               (b) If not, rerun with mode 1.
 %% Method
-function [yconf,modelsize,supportcounter] = conformalLOO(X,Y,xnew,alpha,ytrial,lambdain,initn)
+function [yconf,modelsize,supportcounter] = conformalLOO(X,Y,xnew,alpha,ytrial,lambdain)
 % X, Y      input data, in format of matrix
 % xnew      new point of x
 % alpha     level
@@ -39,15 +39,15 @@ options.nlambda = 1;
 options.lambda = lambdain/m;
 %% Fit the known data. 
 % this is the condition of the new pair being outlier
+% use this condition to truncate the trial set
 betaN = glmnetCoef(glmnet(X,Y,[],options));
 betaN=betaN(2:p+1);
-beta = betaN;
 ypred=xnew*betaN;
 % message = sprintf('\tPrediction point is %2.2f', ypred);
 % disp(message);
-[maxOutErrNval,~] = max((X*betaN - Y).^2);
-ytrial = ytrial(ytrial> ypred-sqrt(maxOutErrNval)...
-    & ytrial < ypred+sqrt(maxOutErrNval));
+[maxOutErrNval,~] = max(abs(X*betaN - Y));
+ytrial = ytrial(ytrial> ypred-maxOutErrNval...
+    & ytrial < ypred+maxOutErrNval);
 n = length(ytrial); % new truncated trial set. 
 
 %% Fit the trial set
@@ -61,41 +61,7 @@ while i<=n
             % recompute full lasso: C-steps
             
             % Initiation
-            if nargin==7&initn~=0
-                % if named number of initialization, do n-fold
-                initOuts = zeros(1,initn);
-                for j=1:initn
-                    % Initialize with 3 points
-                    init = randsample(1:m+1,3);
-                    initlambda = 2*norm((X_withnew(init,:)'*normrnd(0,1,[3,1])),inf);
-                    
-                    optioninit = glmnetSet();
-                    optioninit.standardize = false;        % original X
-                    optioninit.intr = false;               % no intersection
-                    optioninit.standardize_resp = false;   % original Y
-                    optioninit.alpha = 1.0;                % Lasso (no L2 norm penalty)
-                    optioninit.thresh = 1E-4;              % use less precission here. 
-                    optioninit.nlambda = 1;
-                    optioninit.lambda = initlambda/3;
-                    
-                    beta = glmnetCoef(glmnet(X_withnew(init,:),Y_withnew(init),...
-                        [],optioninit));
-                    beta = beta(2:p+1);
-                    [~,initOut]=max((X_withnew*beta-Y_withnew).^2);
-                    selection = setxor(1:m+1,initOut);
-                    % C-Step in initialzation. 
-                    beta = glmnetCoef(glmnet(X_withnew(selection,:),Y_withnew(selection),...
-                        [],options));
-                    beta = beta(2:p+1);
-                    [~,initOut]=max((X_withnew*beta-Y_withnew).^2);
-                    initOuts(j) = initOut;
-                end
-                % Majority vote
-                outlier = mode(initOuts);
-            else 
-                % if no number specified, just pick randomly. 
-                outlier = randi([1,m]);
-            end
+            outlier = randi([1,m]);
             
             % C-steps
             outlierOld = outlier;
@@ -106,7 +72,7 @@ while i<=n
             beta=beta(2:p+1);
             while 1
                 % given beta, choose H
-                [~,outlier]=max((X_withnew*beta-Y_withnew).^2);
+                [~,outlier]=max(abs(X_withnew*beta-Y_withnew));
                 if outlier == outlierOld || ccount>20
                     break
                 end
@@ -171,14 +137,11 @@ while i<=n
             b = [ones(p-length(E),1)-temp;
                 ones(p-length(E),1)+temp;
                 -lambdain*diag(Z_E)*xesquareinv*Z_E];
-            if selection(end)~=m+1
-                i=i+1;
-                continue;
-            end
-            [supportmin,supportmax] = solveInt(A,b,Y(selection(1:m-1)));
+            ineqviolate = (b - A*Y_withnew(selection))./A(:,end);
+            supportmax = y+min(ineqviolate(ineqviolate>0));
             
             % Change computation mode
-            if supportmin<= ytrial(min(i+1,n)) & ytrial(min(i+1,n))<=supportmax
+            if ytrial(min(i+1,n))<=supportmax
                 compcase=2;
                 % the following is to ease computation in mode 2
                 pinvxe=pinv(X_E);
@@ -209,7 +172,7 @@ while i<=n
             end
             
             % Change computation mode
-            if supportmin> ytrial(min(i+1,n)) | ytrial(min(i+1,n))>supportmax
+            if ytrial(min(i+1,n))>supportmax
                 compcase=1;
             end
     end
@@ -222,6 +185,4 @@ end
 % close(h);
 modelsize = mean(modelsizes);
 yconf  = ytrial(yconfidx);
-            
-        
-        
+end
