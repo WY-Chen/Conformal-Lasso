@@ -19,14 +19,14 @@ if setting=='A'
     Y = X*beta'+epsilon1;
     xnew = normrnd(0,1,[1,2000]);
     y = xnew*beta'+epsilon2;
-elseif setting=='B'
+elseif setting=='D'
      X = normrnd(0,1,[200,2000]);
      Y = 2*X(:,1)+2*X(:,2).^2+2*X(:,3).^4+epsilon1;
      meanY = mean(Y); Y=Y-meanY;
      xnew = normrnd(0,1,[1,2000]);
      y = 2*xnew(:,1)+2*xnew(:,2).^2+2*xnew(:,3).^4+epsilon2;
      y=(y-meanY)./1;
-elseif setting=='C'
+elseif setting=='E'
     beta = [2,2,2,2,2,zeros(1,1995)];
     X = randi([1,3],201,2000);
     X(X==1)=normrnd(0,1,[1,length(X(X==1))]);
@@ -42,14 +42,14 @@ elseif setting=='C'
     mY=mean(Y); 
     Y= Y-mY;
     y = xnew * beta'+epsilon2-mY;
-elseif setting=='D'
+elseif setting=='B'
     beta = [2,2,2,2,2,zeros(1,1995)];
     D = mvnrnd(zeros(201,2000),ones(2000,2000)*0.6+0.4*diag(ones(1,2000)));
     X = D(1:200,:);
     Y = X*beta'+epsilon1;
     xnew = D(201,:);
     y = xnew*beta'+epsilon2;
-elseif setting=='E'
+elseif setting=='C'
     beta = [2,2,2,2,2,zeros(1,1995)];
     a = rand(2000,2000); a = a- mean(a(:)); ata = a'*a;
     sigma = ata/max(abs(ata(:)));
@@ -57,6 +57,29 @@ elseif setting=='E'
     X = D(1:200,:);
     Y = X*beta'+epsilon1;
     xnew = D(201,:);
+    y = xnew*beta'+epsilon2;
+elseif setting=='F'
+    beta = [-2,-2,-2,-2,-2,zeros(1,1995)];
+    X1 = normrnd(0,1,[100,2000]);
+    X2= trnd(2,[100,2000]);
+    X=[X1; X2];
+    Y = X*beta'+epsilon1;
+    xnew = normrnd(0,1,[1,2000]);
+    y = xnew*beta'+epsilon2;
+elseif setting=='G'
+    beta = [-2,-2,-2,-2,-2,zeros(1,1995)];
+    X = normrnd(0,1,[200,2000]);
+
+    perms=randperm(200);
+    choose=perms(1:5); %choose which observations to be perturbed
+
+    for i=1:5
+        add=randi(5,1,2000); 
+        X(choose(i),:)=X(choose(i),:)+add; %add an integer of 1-5 for each selected observation
+    end
+
+    Y = X*beta'+epsilon1;
+    xnew = normrnd(0,1,[1,2000]);
     y = xnew*beta'+epsilon2;
 else
     fprintf('ERROR: No such Setting')
