@@ -44,8 +44,8 @@ root2 = (-A(1:m)-A(m+1))./(B(m+1)+B(1:m));
 Cleft = min(root1,root2);
 Cright = max(root1,root2);
 
-tmin = prctile(Cleft,1);
-tmax = prctile(Cright,99);
+tmin = prctile(Cleft,m/(m+1));
+tmax = prctile(Cright,100-m/(m+1));
 triallen = tmax-tmin;
 ytrial = ytrial(ytrial> tmin...
     & ytrial < tmax);

@@ -1,0 +1,24 @@
+function [yconf,1,1] = conformalLassoSplit(X,Y,xnew,alpha,ytrial,lambdain)
+
+% prepare for fitting
+addpath(genpath(pwd));
+X_withnew = [X;xnew];
+[m,p] = size(X);
+n = length(ytrial);
+stepsize = ytrial(2)-ytrial(1);
+
+% Tune GLMNET
+options = glmnetSet();
+options.standardize = false;        % original X
+options.intr = false;               % no intersection
+options.standardize_resp = false;   % original Y
+options.alpha = 1.0;                % Lasso (no L2 norm penalty)
+options.thresh = 1E-12;
+options.nlambda = 1;
+options.lambda = lambdain/m;
+
+% randomize two sets
+I1 = sample(1:m,floor(m/2));
+I2 = setxor(1:m,I1);
+
+beta = glmnetCoef(glmnet(X(I1,:),Y(I1),[],options));

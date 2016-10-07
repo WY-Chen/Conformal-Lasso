@@ -1,7 +1,7 @@
 %% Run Testing
 % Run testing on a setting with a method. 
 %% Implementation
-function compareLOOtest(setting,tail,width,alpha,stepsize,nruns,filename)
+function compareLOOtest(setting,tail,sig,nfeatures,alpha,stepsize,nruns,filename)
 % Setting = 'A', 'B', 'C'.
 %       A : Linear. X iid N(0,1). epsilon iid N(0,1). 
 %       B : B-spline. X iid N(0,1). epsilon iid t(2).
@@ -10,10 +10,6 @@ function compareLOOtest(setting,tail,width,alpha,stepsize,nruns,filename)
 % tail = 'norm', 't'
 %    norm : Normal (0,1) tail
 %       t : t(2) tail
-
-% width = 'range', 'wide'
-%   range : min(Y):max(Y)
-%    wide : min(Y)-2*range: max(Y)+2*range
 
 % alpha = level of confidence
 
@@ -59,17 +55,9 @@ for i=1:nruns
     fprintf(2,'TESTING=== run %d/%d.\n',i,nruns);
     
     % Get testing data
-    [X,Y,xnew,y] = getSetting(setting,tail);
+    [X,Y,xnew,y] = getSetting(setting,tail,sig,nfeatures);
     X_withnew = [X;xnew];
-    rangeY=max(Y)-min(Y);
-    if strcmp(width,'wide')
-        ytrial = (min(Y)-2*rangeY):stepsize:(max(Y)+2*rangeY);
-    elseif strcmp(width, 'range')
-        ytrial = min(Y):stepsize:max(Y);
-    else
-        fprintf(2,'ERROR:wrong width');
-        return;
-    end
+
     % Get lambda from empirical expectation
     t=0;
     for j=1:100
@@ -81,24 +69,16 @@ for i=1:nruns
         t=t+norm(X_withnew'*epsilon,inf)*2;
     end
     lambda = t/100;
-    if setting=='B'
-        if strcmp(tail,'norm')
-            lambda=628;
-        else
-            lambda=1016;
-        end
-        range = max(Y)-min(Y);
-        ytrial = (min(Y)-range/2):stepsize:(max(Y)+range/2); 
-    end
-
+    rangeY = max(Y)-min(Y);
+    ytrial = (min(Y)-2*rangeY):stepsize:(max(Y)+2*rangeY);
 
     % run method
     tic;
-    [yconf1,modelsize1,sc1] = conformalLassoCtnFit(X,Y,xnew,alpha,ytrial,lambda);
+    [yconf1,modelsize1,sc1] = conformalLassoSplit(X,Y,xnew,alpha,[],lambda);
     t1=toc;time1=time1+t1;fprintf(2,'1');tic;
     [yconf2,modelsize2,sc2] = conformalLassoCtnFit(X,Y,xnew,alpha,min(Y):stepsize:max(Y),lambda);
     t2=toc;time2=time2+t2;fprintf(2,'2');tic;
-    [yconf3,modelsize3,sc3,tlloo] = conformalLassoTruncate(X,Y,xnew,alpha,ytrial,lambda);
+    [yconf3,modelsize3,sc3,tlloo] = conformalLassoTruncate_LOO(X,Y,xnew,alpha,ytrial,lambda);
     t3=toc;time3=time3+t3;fprintf(2,'3');tic;
     [yconf4,modelsize4,sc4,tlr] = conformalLassoTruncate_ridge(X,Y,xnew,alpha,ytrial,lambda);
     t4=toc;time4=time4+t4;fprintf(2,'4\n');
@@ -131,7 +111,7 @@ for i=1:nruns
     conflen3(i) = max(yconf3)-min(yconf3);
     conflen4(i) = max(yconf4)-min(yconf4);
     % format print
-    fprintf(fileID,'\t\t\t\tWideRange\tLassoMinmax\t\tT_LOO\t\t\t\tT_Ridge\n');
+    fprintf(fileID,'\t\t\t\tSplit\tLassoMinmax\t\t\tT_LOO\t\t\t\tT_Ridge\n');
     fprintf(fileID,'\tModelsize \t%.1f\t\t\t\t%.1f\t\t\t\t%.1f\t\t\t\t%.1f\n',...
         modelsize1,modelsize2,modelsize3,modelsize4);
     fprintf(fileID,'\tInterval \t[%.3f,%.3f] [%.3f,%.3f] [%.3f,%.3f] [%.3f,%.3f]\n',...

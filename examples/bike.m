@@ -77,13 +77,8 @@ for i=1:n
     y = Ytest(i);
     ytrial = -1:0.01:1;  
     
-    try
-        [yconf,modelsize,sc] = conformalLOO(Xtrain,Ytrain,xnew,.1,ytrial,0.1);
-    catch ME
-        yconf = ytrial;
-        modelsize = 0; sc=0;
-        fprintf('GLMNET ERROR\n');
-    end
+
+        [yconf,modelsize,sc] = conformalLassoTruncate_ridge(Xtrain,Ytrain,xnew,.1,ytrial,0.1);
     fprintf(fileID,'Prediction interval is [%.2f,%.2f] with model size %.2f while real data is %.0f\n',...
         (min(yconf)*maxYtot+meanYtot)*md,(max(yconf)*maxYtot+meanYtot)*md,modelsize,(y*maxYtot+meanYtot)*md);
     if (min(yconf)<=y)&&(y<=max(yconf))
