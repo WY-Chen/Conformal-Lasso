@@ -94,13 +94,13 @@ for i=1:nruns
 
     % run method
     tic;
-    [yconf1,modelsize1,sc1] = conformalLassoAllSupp(X,Y,xnew,alpha,ytrial,lambda);
+    [yconf1,modelsize1,sc1] = conformalLassoCtnFit(X,Y,xnew,alpha,ytrial,lambda);
     t1=toc;time1=time1+t1;fprintf(2,'1');tic;
-    [yconf2,modelsize2,sc2] = conformalLassoCtnFit(X,Y,xnew,alpha,ytrial,lambda);
+    [yconf2,modelsize2,sc2] = conformalLassoCtnFit(X,Y,xnew,alpha,min(Y):stepsize:max(Y),lambda);
     t2=toc;time2=time2+t2;fprintf(2,'2');tic;
-    [yconf3,modelsize3,sc3] = conformalLOO(X,Y,xnew,alpha,ytrial,lambda);
+    [yconf3,modelsize3,sc3,tlloo] = conformalLassoTruncate(X,Y,xnew,alpha,ytrial,lambda);
     t3=toc;time3=time3+t3;fprintf(2,'3');tic;
-    [yconf4,modelsize4,sc4] = conformalLOOold(X,Y,xnew,alpha,ytrial,lambda);
+    [yconf4,modelsize4,sc4,tlr] = conformalLassoTruncate_ridge(X,Y,xnew,alpha,ytrial,lambda);
     t4=toc;time4=time4+t4;fprintf(2,'4\n');
     totalsp1 = totalsp1+sc1;
     totalsp2 = totalsp2+sc2;
@@ -131,7 +131,7 @@ for i=1:nruns
     conflen3(i) = max(yconf3)-min(yconf3);
     conflen4(i) = max(yconf4)-min(yconf4);
     % format print
-    fprintf(fileID,'\t\t\t\tLassoAllSupp\tLassoCtnFit\t\tLOO\t\t\t\tLOOold\n');
+    fprintf(fileID,'\t\t\t\tWideRange\tLassoMinmax\t\tT_LOO\t\t\t\tT_Ridge\n');
     fprintf(fileID,'\tModelsize \t%.1f\t\t\t\t%.1f\t\t\t\t%.1f\t\t\t\t%.1f\n',...
         modelsize1,modelsize2,modelsize3,modelsize4);
     fprintf(fileID,'\tInterval \t[%.3f,%.3f] [%.3f,%.3f] [%.3f,%.3f] [%.3f,%.3f]\n',...
@@ -142,6 +142,8 @@ for i=1:nruns
     sc1,sc2,sc3,sc4);
     fprintf(fileID,'\tTime \t\t%.3f\t\t\t%.3f\t\t\t%.3f\t\t\t%.3f\n',t1,t2,t3,t4);
 end
+fprintf(fileID,'Trial set length is %.3f, %.3f, %.3f, %.3f\n',...
+    max(ytrial)-min(ytrial),max(Y)-min(Y),tlloo,tlr);
 fprintf(fileID,'%d-fold average coverage is %.3f, %.3f, %.3f, %.3f\n',...
     nruns, mean(coverage1),mean(coverage2),mean(coverage3),mean(coverage4));
 fprintf(fileID,'Average inverval length is %.3f, %.3f, %.3f, %.3f\n',...

@@ -45,15 +45,17 @@ betaN=betaN(2:p+1);
 ypred=xnew*betaN;
 % message = sprintf('\tPrediction point is %2.2f', ypred);
 % disp(message);
-[maxOutErrNval,~] = max(abs(X*betaN - Y));
+[maxOutErrNval,maxoutind] = max(abs(X*betaN - Y));
 ytrial = ytrial(ytrial> ypred-maxOutErrNval...
     & ytrial < ypred+maxOutErrNval);
 n = length(ytrial); % new truncated trial set. 
-
+stepsize = ytrial(2)-ytrial(1);
 %% Fit the trial set
-i=1; compcase=1;yconfidx=[];
+
+i=1; compcase=1;yconfidx=[];outlier = maxoutind;
 % h = waitbar(0,'Please wait...');
 modelsizes = zeros(1,n); supportcounter=1;
+supportmax=-inf;
 while i<=n
     y=ytrial(i); Y_withnew = [Y;y];
     switch compcase
@@ -153,7 +155,6 @@ while i<=n
             supportcounter = supportcounter+1;
         case 2
             % Fit the known support/sign
-            stepsize = ytrial(i)-ytrial(i-1);
             yfit = yfit + yfitincrement*stepsize;
             Resid = abs(yfit - [Y;y]);
             [~,fitoutind]=max(Resid);
