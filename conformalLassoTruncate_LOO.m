@@ -64,6 +64,11 @@ b = [ones(p-length(E),1)-temp;
 if all(A*[Y;ytrial(1)]<b)
     compcase=2;
     yfit = X_withnew*beta;
+    pinvxe=pinv(X_E);
+    betalast = pinvxe(:,end);
+    betaincrement = zeros(p,1);
+    betaincrement(E) = betalast;
+    yfitincrement = X_withnew*betaincrement;
 else
     compcase=1;
 end
