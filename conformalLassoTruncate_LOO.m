@@ -69,6 +69,8 @@ if all(A*[Y;ytrial(1)]<b)
     betaincrement = zeros(p,1);
     betaincrement(E) = betalast;
     yfitincrement = X_withnew*betaincrement;
+    ineqviolate = (b - A*[Y;ypred])./A(:,end);
+    supportmax = ypred+min(ineqviolate(ineqviolate>0));
 else
     compcase=1;
 end

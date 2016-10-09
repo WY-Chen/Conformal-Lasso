@@ -41,11 +41,11 @@ B(end) = B(end)-1;
 
 root1 = (A(m+1)-A(1:m))./(B(1:m)-B(m+1));
 root2 = (-A(1:m)-A(m+1))./(B(m+1)+B(1:m));
-Cleft = min(root1,root2);
-Cright = max(root1,root2);
+Cleft = sort(min(root1,root2));
+Cright = sort(max(root1,root2));
 
-tmin = prctile(Cleft,m/(m+1));
-tmax = prctile(Cright,100-m/(m+1));
+tmin = Cleft(2);
+tmax = Cright(m-2);
 triallen = tmax-tmin;
 ytrial = ytrial(ytrial> tmin...
     & ytrial < tmax);
