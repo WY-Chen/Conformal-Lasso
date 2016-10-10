@@ -55,7 +55,7 @@ for i=1:nruns
     fprintf(2,'TESTING=== run %d/%d.\n',i,nruns);
     
     % Get testing data
-    [X,Y,xnew,y] = getSetting(setting,tail,sig,nfeatures);
+    [X,Y,xnew,y] = getSetting(setting,tail,sig,nfeatures,200);
     X_withnew = [X;xnew];
 
     % Get lambda from empirical expectation
