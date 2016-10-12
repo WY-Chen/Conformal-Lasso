@@ -23,7 +23,7 @@ beta = beta(2:p+1);
 mu = xnew*beta;
 fitI2 = X(I2,:)*beta;
 resid = sort(abs(fitI2-Y(I2)));
-d = resid(ceil((m/2+1)*(1-alpha)));
+d = resid(min(ceil((m/2+1)*(1-alpha)),length(I2)));
 
 yconf = [mu-d,mu+d];
 mc = length(find(beta));sc=1;

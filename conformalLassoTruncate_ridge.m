@@ -31,7 +31,7 @@ options.lambda = lambdain/m;
 %% Fit the known data. 
 % this is the condition of the new pair being outlier
 % use this condition to truncate the trial set
-tau=1;
+tau=0.5;
 
 t = X_withnew*((X_withnew'*X_withnew+tau*eye(p))\X_withnew');
 
@@ -44,8 +44,10 @@ root2 = (-A(1:m)-A(m+1))./(B(m+1)+B(1:m));
 Cleft = sort(min(root1,root2));
 Cright = sort(max(root1,root2));
 
-tmin = Cleft(2);
-tmax = Cright(m-2);
+atrim=1/(m+1);
+tmin = Cleft(ceil(atrim*m));
+tmax = Cright(ceil((1-atrim)*m));
+
 triallen = tmax-tmin;
 ytrial = ytrial(ytrial> tmin...
     & ytrial < tmax);

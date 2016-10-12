@@ -17,19 +17,19 @@ for i=1:nruns
     X_withnew = [X;xnew];
 
     % Get lambda from empirical expectation
+    
     if strcmp(tail,'norm')
-        lambda = mean(arrayfun(@(t) norm(X_withnew'*normrnd(0,1,[n+1,1]),inf)*2, 1:1000));
+        lambda = mean(arrayfun(@(t) norm(X_withnew'*normrnd(0,sig,[n+1,1]),inf)*2, 1:1000));
     else
         lambda = mean(arrayfun(@(t) norm(X_withnew'*trnd(2,[n+1,1]),inf)*2, 1:1000));
     end
     rangeY = max(Y)-min(Y);
     ytrial = (min(Y)-2*rangeY):stepsize:(max(Y)+2*rangeY);
-
     % run method
     tic;
     [yconf1,~,sc1] = conformalLassoSplit(X,Y,xnew,alpha,[],lambda);
     t1=toc;time1=time1+t1;tic;
-    [yconf2,~,sc2] = conformalLassoCtnFit(X,Y,xnew,alpha,min(Y):stepsize:max(Y),lambda);
+    [yconf2,~,sc2] = conformalLassoCtnFit(X,Y,xnew,alpha,-max(abs(Y)):stepsize:max(abs(Y)),lambda);
     t2=toc;time2=time2+t2;tic;
     [yconf3,~,sc3,~] = conformalLassoTruncate_LOO(X,Y,xnew,alpha,ytrial,lambda);
     t3=toc;time3=time3+t3;tic;
